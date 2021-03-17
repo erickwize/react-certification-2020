@@ -1,22 +1,24 @@
 import React from 'react';
-
-import './Header.styles.css';
+import { Header, HeaderWrapper, Menu, Search, HeaderToggleWrapper,
+  HeaderToggle, HeaderToggleLabel, LoginMenu } from './Header.styles.js';
+import MenuIcon from './img/icon_menu.png'
+import LoginIcon from './img/icon_login.png'
 
 function HeaderMenu() {
   return (
-    <header className="headerMenu">
-      <div className="headerWrapper">
-        <span className="icon"/>
-        <input type="text" id="name" placeholder="Search..." disabled/>
-      </div>
-      <div className="headerWrapper">
-        <div className="headerToggleWrapper">
-          <input type="checkbox" name="darkMode" className="headerToggle" id="darkMode"/>
-          <label htmlFor="darkMode" className="headerToggleLabel">Dark mode</label>
-        </div>
-        <span className="loginIcon"/>
-      </div>
-    </header>
+    <Header>
+      <HeaderWrapper>
+        <Menu img={MenuIcon} />
+        <Search type="text" id="name" placeholder="Search..." disabled />
+      </HeaderWrapper>
+      <HeaderWrapper>
+        <HeaderToggleWrapper>
+          <HeaderToggle type="checkbox" name="darkMode" id="darkMode" />
+          <HeaderToggleLabel htmlFor="darkMode" >Dark mode</HeaderToggleLabel>
+        </HeaderToggleWrapper>
+        <LoginMenu img={LoginIcon} />
+      </HeaderWrapper>
+    </Header>
   );
 }
 
