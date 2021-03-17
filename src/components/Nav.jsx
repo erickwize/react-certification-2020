@@ -15,7 +15,7 @@ const Nav = () => {
         <InputTextIcon />
       </LeftNav>
       <RightNav>
-        <Toggle label="Dark mode" />
+        <Toggle labelOn="🌙" labelOff="☀️" />
         <LoginButton>
           <StyledLoginSvg viewBox="0 0 330 330">
             <path d="M305,149.998H121.215l44.392-44.392c5.858-5.858,5.858-15.355,0-21.213c-5.857-5.858-15.355-5.858-21.213,0l-69.998,69.998 c-5.858,5.857-5.858,15.355,0,21.213l69.998,70.002c2.929,2.929,6.767,4.394,10.606,4.394c3.838-0.001,7.678-1.465,10.606-4.393 c5.857-5.858,5.858-15.355,0-21.213l-44.394-44.396H305c8.284,0,15-6.716,15-15C320,156.714,313.284,149.998,305,149.998z" />
@@ -40,7 +40,11 @@ const LeftNav = styled.div`
   display: flex;
   flex: 1;
   align-items: center;
-  padding: 1vh 1vw;
+  padding: 1vh 1.5vw;
+  width: 100%;
+  @media screen and (max-width: 500px) {
+    justify-content: space-around;
+  }
 `;
 
 const StyledHamburger = styled.svg`
@@ -54,11 +58,15 @@ const RightNav = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  flex: 1;
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const LoginButton = styled.div`
   background-color: #bebebe;
+  margin-left: 15px;
   display: flex;
   align-items: center;
   justify-content: space-around;

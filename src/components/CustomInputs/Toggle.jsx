@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Toggle = ({ label }) => {
+const Toggle = ({ labelOn, labelOff }) => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheck = (e) => {
+    setIsChecked(e.target.checked);
+  };
+
   return (
     <CheckBoxWrapper>
-      <CheckBox id="checkbox" type="checkbox" />
+      <CheckBox id="checkbox" type="checkbox" onChange={handleCheck} />
       <CheckBoxLabel htmlFor="checkbox" />
-      <label htmlFor="checkbox">{label}</label>
+      <label htmlFor="checkbox">{isChecked ? labelOn : labelOff}</label>
     </CheckBoxWrapper>
   );
 };
@@ -18,7 +24,7 @@ const CheckBoxWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  margin: 0% 2%;
+  padding: 0% 3%;
 `;
 
 const CheckBoxLabel = styled.label`

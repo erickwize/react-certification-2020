@@ -23,8 +23,11 @@ export default InputTextIcon;
 const Wrapper = styled.div`
   position: relative;
   background-color: #bebebe;
-  margin: 0% 5%;
+  margin: 0% 3%;
   border-radius: 25px;
+  @media screen and (max-width: 280px) {
+    width: 65%;
+  }
 `;
 
 const SvgWrapper = styled.div`
@@ -55,6 +58,7 @@ const InputWrapper = styled.div`
 `;
 
 const StyledInputText = styled.input`
+  width: 95%;
   padding: 8px 5px;
   font-size: 1em;
   padding-left: calc(1em + 25px);
