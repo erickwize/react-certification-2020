@@ -1,137 +1,53 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
-export const Header = styled.section `
-width: 100vw;
-min-height: 60px;
-background-color: #0085b6;
-padding: 15px 18px;
-color: #fff;
-display: flex;
-justify-content: space-between;
+export const VideoCardWrapper = styled.section `
+height: fit-content;
+width: 30%;
+height: 345px;
+margin: 10px;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+border-radius: 10px;
+margin-bottom: 30px;
+cursor: not-allowed;
+
+&:hover {
+  box-shadow: rgba(254,223,3, 0.12) 0px 2px 4px 0px, rgba(254,223,3) 0px 2px 16px 0px;
+
+}
 `;
 
-export const HeaderWrapper = styled.section `
-display: flex;
+export const VideoTitle = styled.p `
+font-size: 18px;
+margin: 10px 0 8px;
 `;
 
-export const Menu = styled.button `
-background: url(${props => props.img}) no-repeat;
-width: 35px;
-height: 35px;
-display: block;
-background-size: 35px;
-margin-right: 15px;
-border: none;
-`;
-
-export const Search = styled.input`
-  padding: 0.5em;
-  margin: 0.2em 0;
-  background: white;
-  border: none;
-  border-radius: 3px;
-  height: 30px;
-`;
-
-export const HeaderToggleWrapper = styled.section `
+export const VideoChannel = styled.p `
+font-size: 12px;
+font-weight: bold;
 display: inline-flex;
-margin-right: 25px;
+margin: 0;
 `;
 
-export const HeaderToggleLabel = styled.label `
-margin-left: 8px;
-font-size: 14px;
-line-height: 30px;
+export const UploadDate = styled.span `
+font-size: 12px;
+font-weight: normal;
+margin-left: 5px;
 `;
 
-export const LoginMenu = styled.button `
+export const Thumbnail = styled.div `
 background: url(${props => props.img}) no-repeat;
-width: 35px;
-height: 35px;
+height: 150px;
 display: block;
-background-size: 35px;
-margin-right: 15px;
-border: none;
-`;
-
-const off = keyframes`
-{
-  0% {
-    transform: translateX(80px);
-    width: 26px;
-  }
-
-  50% {
-    width: 45px;
-    border-radius: 25px;
-  }
-
-  100% {
-    transform: translateX(0px);
-    width: 26px;
-  }
-}
-`;
-
-const on = keyframes`
-{
-  0% {
-    transform: translateX(0px);
-    width: 26px;
-  }
-
-  50% {
-    width: 45px;
-    border-radius: 25px;
-  }
-
-  100% {
-    transform: translateX(80px);
-    width: 26px;
-  }
-}
-`;
-
-export const HeaderToggle = styled.input`
-margin-right: 1rem;
-position: relative;
-width: 80px;
-height: 30px;
-margin: 0px;
-appearance: none;
--webkit-appearance: none;
 background-size: cover;
-background-repeat: no-repeat;
-border-radius: 25px;
-box-shadow: inset 0px 0px 2px rgba(255, 255, 255, .7);
-transition: background-image .7s ease-in-out;
-outline: none;
-cursor: pointer;
-overflow: hidden;
+background-position: center;
+border-radius: 10px 10px 0 0;
+`;
 
-&:checked {
-  background-size: cover;
-  transition: background-image 1s ease-in-out;
-}
+export const VideoCardInfo = styled.div `
+margin: 10px;
+`;
 
-&:after {
-  content: '';
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background-color: #fedf03;
-  position: absolute;
-  left: 3px;
-  top: 2px;
-  transform: translateX(0px);
-  animation: ${off} .7s forwards cubic-bezier(.8, .5, .2, 1.4);
-  box-shadow: inset 5px -5px 4px rgba(53, 53, 53, 0.3);
-}
-
-&:checked:after {
-  background-color: #ff005d;
-  animation: ${on} .7s forwards cubic-bezier(.8, .5, .2, 1.4);
-  box-shadow: inset -5px -5px 4px rgba(53, 53, 53, 0.3);
-  left: -29px;
-}
+export const VideoDescription = styled.p `
+font-size: 14px;
+margin-top: 8px;
 `;

@@ -1,10 +1,13 @@
 import styled, { keyframes } from 'styled-components'
 
-export const Header = styled.section `
+export const Header = styled.header `
+z-index: 500;
 width: 100vw;
 min-height: 60px;
-background-color: #0085b6;
-padding: 15px 18px;
+background: #0085b6;
+background: linear-gradient(90deg,#0085b6 0%, #00b1bf 80%);
+background: -webkit-linear-gradient(90deg,#0085b6 0%, #00b1bf 80%);
+background: -moz-linear-gradient(90deg,#0085b6 0%, #00b1bf 80%);padding: 15px 18px;
 color: #fff;
 display: flex;
 justify-content: space-between;

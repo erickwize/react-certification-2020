@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import { Link, useHistory } from 'react-router-dom';
 
 // import { useAuth } from '../../providers/Auth';
-import { VideoList } from './Home.styles.jsx';
+import { VideoList, HomeTitle } from './Home.styles.jsx';
 import mock from './mock/mock.json'
 import VideoCard from '../../components/VideoCard'
 
@@ -30,8 +30,8 @@ function HomePage() {
     return date.toLocaleDateString(undefined, options)
   }
 
-  const getUsefullData = (videoData) => {
-    console.log(videoData.etag)
+  const getUsefullData = (videoData, idx) => {
+    console.log('TEST DATA:', idx, videoData.etag)
     const { publishedAt, title, channelTitle,
       description, thumbnails } = videoData.snippet
     return {
@@ -44,12 +44,17 @@ function HomePage() {
   }
 
   return (
+    <div>
+    <HomeTitle>
+    Welcome y'all!
+    </HomeTitle>
     <VideoList>
-    {videoList.map((video) =>
-        <VideoCard key={video.etag}
-                  videoData={getUsefullData(video)} />
+    {videoList.map((video, idx) =>
+        videoList.length && <VideoCard key={video.etag}
+                  videoData={getUsefullData(video, idx)} />
       )}
     </VideoList>
+    </div>
     /* <section className="homepage" ref={sectionRef}>
       <h1>Hello stranger!</h1>
       {authenticated ? (

@@ -10,7 +10,6 @@ import Private from '../Private';
 import Fortune from '../Fortune';
 import Layout from '../Layout';
 import HeaderMenu from '../Header';
-import VideoCard from '../VideoCard';
 
 import { random } from '../../utils/fns';
 
@@ -36,7 +35,6 @@ function App() {
   return (
     <BrowserRouter>
     <HeaderMenu />
-    <VideoCard />
       <AuthProvider>
         <Layout>
           <Switch>
