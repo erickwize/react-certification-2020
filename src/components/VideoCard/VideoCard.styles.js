@@ -19,12 +19,15 @@ cursor: not-allowed;
 export const VideoTitle = styled.p `
 font-size: 18px;
 margin: 10px 0 8px;
+font-weight: 500;
 `;
 
 export const VideoChannel = styled.p `
 font-size: 12px;
 font-weight: bold;
 display: inline-flex;
+display: flex;
+justify-content: flex-end;
 margin: 0;
 `;
 

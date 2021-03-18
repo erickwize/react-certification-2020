@@ -25,6 +25,7 @@ display: block;
 background-size: 35px;
 margin-right: 15px;
 border: none;
+cursor: not-allowed;
 `;
 
 export const Search = styled.input`
@@ -34,6 +35,7 @@ export const Search = styled.input`
   border: none;
   border-radius: 3px;
   height: 30px;
+  cursor: not-allowed;
 `;
 
 export const HeaderToggleWrapper = styled.div `
@@ -55,6 +57,7 @@ display: block;
 background-size: 35px;
 margin-right: 15px;
 border: none;
+cursor: not-allowed;
 `;
 
 const off = keyframes`

@@ -31,7 +31,6 @@ function HomePage() {
   }
 
   const getUsefullData = (videoData, idx) => {
-    console.log('TEST DATA:', idx, videoData.etag)
     const { publishedAt, title, channelTitle,
       description, thumbnails } = videoData.snippet
     return {
@@ -44,9 +43,9 @@ function HomePage() {
   }
 
   return (
-    <div>
+    <section>
     <HomeTitle>
-    Welcome y'all!
+      Welcome y'all!
     </HomeTitle>
     <VideoList>
     {videoList.map((video, idx) =>
@@ -54,7 +53,7 @@ function HomePage() {
                   videoData={getUsefullData(video, idx)} />
       )}
     </VideoList>
-    </div>
+    </section>
     /* <section className="homepage" ref={sectionRef}>
       <h1>Hello stranger!</h1>
       {authenticated ? (

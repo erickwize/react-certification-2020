@@ -11,13 +11,6 @@ export const HomeTitle = styled.h1 `
 margin: 30px;
 display: block;
 text-align: center;
+font-size: 50px;
+letter-spacing: -2px;
 `;
-
-/* .homepage {
-  text-align: center;
-}
-
-.homepage h1 {
-  font-size: 3rem;
-  letter-spacing: -2px;
-} */

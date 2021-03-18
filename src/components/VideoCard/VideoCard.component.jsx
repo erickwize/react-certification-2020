@@ -3,7 +3,6 @@ import { VideoCardWrapper, Thumbnail, VideoTitle, VideoChannel, UploadDate,
  VideoCardInfo, VideoDescription } from './VideoCard.styles.js';
 
 function VideoCard({ videoData }) {
-  console.log('test', videoData)
   return (
     <VideoCardWrapper>
       <Thumbnail img={videoData.thumbnail} alt={videoData.title}/>
