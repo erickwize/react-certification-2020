@@ -33,7 +33,7 @@ export const Search = styled.input`
   height: 30px;
 `;
 
-export const HeaderToggleWrapper = styled.div `
+export const HeaderToggleWrapper = styled.section `
 display: inline-flex;
 margin-right: 25px;
 `;
