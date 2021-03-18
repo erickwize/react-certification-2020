@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../Header/Header.component';
-// import Cards from '../Cards/Cards.component';
 import CardContainer from '../CardContainer/CardContainer.component';
 
 const Main = styled.div`
