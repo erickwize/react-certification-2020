@@ -1,8 +1,9 @@
 .homepage {
-  text-align: center;
+    text-align: center;
+    display: flex;
 }
 
 .homepage h1 {
-  font-size: 3rem;
-  letter-spacing: -2px;
+    font-size: 3rem;
+    letter-spacing: -2px;
 }
