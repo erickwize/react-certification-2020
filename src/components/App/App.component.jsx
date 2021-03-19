@@ -35,7 +35,6 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Header />
-
         <Layout>
           <Switch>
             <Route exact path="/">
