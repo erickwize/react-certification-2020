@@ -59,12 +59,9 @@ width: 35px;
 height: 35px;
 display: block;
 background-size: 35px;
-margin-right: 15px;
 border: none;
 cursor: not-allowed;
-@media screen and(max - width: 750 px) {
-  margin - right: 0;
-}`;
+`;
 
 const off = keyframes`
 {
