@@ -26,7 +26,7 @@ const Navbar = () => {
         <span />
       </Hamburger>
       <Menu isOpen={isOpen}>
-        <MenuLink to="/home/card" as={Link}>
+        <MenuLink to="/home" as={Link}>
           {' '}
           Home
         </MenuLink>
