@@ -1,6 +1,6 @@
 import React from 'react';
 import { VideoCardWrapper, Thumbnail, VideoTitle, VideoChannel, UploadDate,
- VideoCardInfo, VideoDescription } from './VideoCard.styles.js';
+ VideoCardInfo, VideoDescription } from './VideoCard.styles';
 
 function VideoCard({ videoData }) {
   return (

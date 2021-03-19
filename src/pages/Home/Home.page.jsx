@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { VideoList, HomeTitle } from './Home.styles.jsx';
+import { VideoList, HomeTitle } from './Home.styles';
 import youtubeVideoList from '../../utils/mock/youtube-videos-mock.json'
 import VideoCard from '../../components/VideoCard'
 import { getReadableDate } from '../../utils/fns';

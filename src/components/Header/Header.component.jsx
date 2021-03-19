@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, HeaderWrapper, Menu, Search, HeaderToggleWrapper,
-  HeaderToggle, HeaderToggleLabel, LoginMenu } from './Header.styles.js';
+  HeaderToggle, HeaderToggleLabel, LoginMenu } from './Header.styles';
 import MenuIcon from './img/icon_menu.png'
 import LoginIcon from './img/icon_login.png'
 
