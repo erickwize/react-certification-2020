@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
-export const VideoCardWrapper = styled.section `
+export const VideoCardWrapper = styled.div `
 height: fit-content;
-width: 30%;
+width: 350px;
 height: 345px;
-margin: 10px;
 box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 border-radius: 10px;
 margin-bottom: 30px;
@@ -12,7 +11,11 @@ cursor: not-allowed;
 
 &:hover {
   box-shadow: rgba(254,223,3, 0.12) 0px 2px 4px 0px, rgba(254,223,3) 0px 2px 16px 0px;
-
+}
+@media screen and (max-width: 750px) {
+  width: 95%;
+  max-width: 340px;
+  height: 365px;
 }
 `;
 
@@ -23,7 +26,7 @@ font-weight: 500;
 `;
 
 export const VideoChannel = styled.p `
-font-size: 12px;
+font-size: 11px;
 font-weight: bold;
 display: inline-flex;
 display: flex;
@@ -32,7 +35,7 @@ margin: 0;
 `;
 
 export const UploadDate = styled.span `
-font-size: 12px;
+font-size: 11px;
 font-weight: normal;
 margin-left: 5px;
 `;

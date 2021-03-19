@@ -41,6 +41,10 @@ export const Search = styled.input`
 export const HeaderToggleWrapper = styled.div `
 display: inline-flex;
 margin-right: 25px;
+
+@media screen and (max-width: 750px) {
+  display: none;
+}
 `;
 
 export const HeaderToggleLabel = styled.label `
@@ -58,7 +62,9 @@ background-size: 35px;
 margin-right: 15px;
 border: none;
 cursor: not-allowed;
-`;
+@media screen and(max - width: 750 px) {
+  margin - right: 0;
+}`;
 
 const off = keyframes`
 {
