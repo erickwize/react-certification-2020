@@ -1,31 +1,11 @@
-import React from 'react'
 import './Button.css'
+import styled from 'styled-components'
 
-const STYLES = [
-    'btn--primary',
-    'btn--outline'
-]
-
-const SIZES = [
-    'btn--medium',
-    'btn--large'
-]
-
-export const Button = ({
-    children,
-    type,
-    onClick,
-    buttonStyle,
-    buttonSize
-}) => {
-
-    const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0]
-
-    const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
-
-    return (
-        <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type}>
-            {children}
-        </button>
-    )
-}
+export const Button = styled.button`
+background: transparent;
+border-radius: 3px;
+border: 2px solid palevioletred;
+color: palevioletred;
+margin: 0 1em;
+padding: 0.25em 1em;
+`;

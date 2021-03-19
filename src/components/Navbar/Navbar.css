@@ -16,10 +16,19 @@
 
 .navbar-search{
    position: absolute;
-   width:"70rem";
-   color: brown;
+   width:300px;
+   height: 30px;
+   color: gray;
    border:"none";
    padding:"0.5rem";
+   border-radius: 6px;
+   font-size:medium;
+   
+   
+}
+::placeholder{
+    color: gray;
+    text-align: center;
 }
 
 .fa-react {
