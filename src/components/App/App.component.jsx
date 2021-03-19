@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
+import HomeCard from '../../pages/HomeCard';
 import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
@@ -10,6 +11,7 @@ import Private from '../Private';
 import Fortune from '../Fortune';
 import Layout from '../Layout';
 import { random } from '../../utils/fns';
+import Navbar from '../Navbar';
 
 function App() {
   useLayoutEffect(() => {
@@ -32,21 +34,18 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Navbar />
       <AuthProvider>
         <Layout>
           <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/home" exact component={HomePage} />
+            <Route path="/homecard" exact component={HomeCard} />
+            <Route path="/login" exact component={LoginPage} />
             <Private exact path="/secret">
               <SecretPage />
             </Private>
-            <Route path="*">
-              <NotFound />
-            </Route>
+            <Route path="*" exact component={NotFound} />
           </Switch>
           <Fortune />
         </Layout>
