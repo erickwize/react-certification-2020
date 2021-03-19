@@ -41,7 +41,6 @@ const Navbar = () => {
                 checked={stateSwith.checkedA}
                 onChange={handleChange}
                 name="checkedA"
-                color="#7b7fda;"
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
               />
             }

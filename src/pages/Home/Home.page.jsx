@@ -17,6 +17,7 @@ function HomeCard() {
     padding: 0.5rem;
   `;
 
+
   return (
     <div
       style={{
@@ -27,15 +28,18 @@ function HomeCard() {
       }}
     >
       <Grid>
-        {videos[0].items.map((item) => (
-          <Item>
-            <Card classes="mr" key={item.id.videoId}>
+        {
+         
+        videos[0].items.map((item) => (
+  
+          <Item className="ItemComponent" key={item.id.id}>
+            <Card classes="mr"  className="CardComponent">
               <Card.Image
                 src={item.snippet.thumbnails.medium.url}
                 alt={item.snippet.title}
               />
-              <Card.Body>
-                <Card.Title>{item.snippet.title}</Card.Title>
+              <Card.Body >
+                <Card.Title >{item.snippet.title}</Card.Title>
                 <Card.Text>{item.snippet.description}</Card.Text>
               </Card.Body>
             </Card>
