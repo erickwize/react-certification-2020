@@ -1,0 +1,23 @@
+.user-actions div {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.user-actions div:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.user-actions div > * {
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+
+.user-actions image {
+  color: white;
+}
