@@ -1,24 +1,35 @@
 import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-
-import { useAuth } from '../../providers/Auth';
+// import { Link, useHistory } from 'react-router-dom';
+import styled from 'styled-components'
+// import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
+import VideoCard from '../../components/VideoCard'
+import YoutubeVideos from '../../mock/youtube-videos-mock.json'
+
+const GridList = styled.div`
+  display: grid;
+  justify-items: center;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  margin: 20px;
+`
+
 
 function HomePage() {
-  const history = useHistory();
+  // const history = useHistory();
   const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
+  // const { authenticated, logout } = useAuth();
 
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
+  // function deAuthenticate(event) {
+  //   event.preventDefault();
+  //   logout();
+  //   history.push('/');
+  // }
 
   return (
     <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
+      <h1>Welcome to the Challenge!</h1>
+      {/* {authenticated ? (
         <>
           <h2>Good to have you back</h2>
           <span>
@@ -31,7 +42,11 @@ function HomePage() {
         </>
       ) : (
         <Link to="/login">let me in →</Link>
-      )}
+      )} */}
+      
+      <GridList>
+        {YoutubeVideos.items.map((video) => <VideoCard key={video.etag} video={video}/>)}
+      </GridList>
     </section>
   );
 }
