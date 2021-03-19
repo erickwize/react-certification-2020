@@ -91,7 +91,7 @@ const Header = () => {
                 <Menu><i className="fas fa-bars fa-2x"/></Menu>
                 <IconWrapper>
                     <YtIcon><i className="fab fa-youtube fa-2x"/></YtIcon>
-                    <Title>Wizeline Challenge</Title>
+                    <Title data-testid="title-content">Wizeline Challenge</Title>
                 </IconWrapper>
             </Section>
             <Search>
@@ -105,7 +105,7 @@ const Header = () => {
                     <DarkMode><span role="img" aria-label="dark-mode">🌚</span></DarkMode>
                 </Section>
                 <ImgWrapper>
-                    <Image src="https://www.vertexacc.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="user"/>
+                    <Image data-testid="image" src="https://www.vertexacc.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="user"/>
                 </ImgWrapper>
             </Section>
         </NavBar>

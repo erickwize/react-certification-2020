@@ -37,16 +37,14 @@ const Description = styled.p`
 const Cards = ({ img, title, channel, description, date }) => {
 
     return(
-        <>
-            <Card>
-                <Image src={img} alt={title}/>
-                <InfoContainer>
-                    <Title>{title}</Title>
-                    <Subtitle>By {channel} • {date.split('T')[0]}</Subtitle> 
-                    <Description>{description}</Description>
-                </InfoContainer>
-            </Card>
-        </>
+        <Card>
+            <Image data-testid="card-img" src={img} alt={title}/>
+            <InfoContainer>
+                <Title data-testid="card-title">{title}</Title>
+                <Subtitle data-testid="card-subtitle">By {channel} • {date.split('T')[0]}</Subtitle> 
+                <Description data-testid="card-description">{description}</Description>
+            </InfoContainer>
+        </Card>
     );
 }
 
