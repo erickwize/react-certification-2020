@@ -1,0 +1,76 @@
+---------------------------|----------|----------|----------|----------|----------------|
+File                       |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+---------------------------|----------|----------|----------|----------|----------------|
+ src\                      |       80 |       50 |      100 |       80 |                |
+  global.js                |      100 |       50 |      100 |      100 |                |
+  index.js                 |        0 |      100 |      100 |        0 |              5 |
+ src\components\App\       |      100 |      100 |      100 |      100 |                |
+  App.js                   |      100 |      100 |      100 |      100 |                |
+ src\components\Card\      |      100 |       50 |      100 |      100 |                |
+  Card.js                  |      100 |      100 |      100 |      100 |                |
+  Card.styled.js           |      100 |       50 |      100 |      100 |                |
+ src\components\Container\ |      100 |       50 |      100 |      100 |                |
+  Container.js             |      100 |      100 |      100 |      100 |                |
+  Container.styled.js      |      100 |       50 |      100 |      100 |                |
+ src\components\Fortune\   |      100 |      100 |      100 |      100 |                |
+  Fortune.js               |      100 |      100 |      100 |      100 |                |
+  Fortune.styled.js        |      100 |      100 |      100 |      100 |                |
+ src\components\Hamburger\ |    90.91 |       50 |    85.71 |    90.91 |                |
+  Hamburger.js             |       80 |      100 |       50 |       80 |              9 |
+  Hamburger.syled.js       |      100 |       50 |      100 |      100 |                |
+ src\components\Header\    |      100 |      100 |      100 |      100 |                |
+  Header.js                |      100 |      100 |      100 |      100 |                |
+  Header.styled.js         |      100 |      100 |      100 |      100 |                |
+ src\components\Input\     |    33.33 |      100 |        0 |    33.33 |                |
+  Input.js                 |        0 |      100 |        0 |        0 |            5,6 |
+  Input.styled.js          |      100 |      100 |      100 |      100 |                |
+ src\components\Layout\    |      100 |      100 |      100 |      100 |                |
+  Layout.js                |      100 |      100 |      100 |      100 |                |
+  Layout.styled.js         |      100 |      100 |      100 |      100 |                |
+ src\components\Menu\      |      100 |       50 |      100 |      100 |                |
+  Menu.js                  |      100 |      100 |      100 |      100 |                |
+  Menu.styled.js           |      100 |       50 |      100 |      100 |                |
+ src\components\Private\   |        0 |        0 |        0 |        0 |                |
+  Private.js               |        0 |        0 |        0 |        0 |         7,9,10 |
+ src\components\Seacrh\    |      100 |      100 |      100 |      100 |                |
+  Seacrh.styled.js         |      100 |      100 |      100 |      100 |                |
+  Search.js                |      100 |      100 |      100 |      100 |                |
+ src\components\Theme\     |        0 |      100 |        0 |        0 |                |
+  Theme.js                 |        0 |      100 |        0 |        0 |            4,5 |
+  Theme.styled.js          |        0 |      100 |      100 |        0 |              3 |
+ src\components\Toggle\    |    83.33 |      100 |       50 |    83.33 |                |
+  Toggle.js                |       80 |      100 |       50 |       80 |              9 |
+  Toggle.styled.js         |      100 |      100 |      100 |      100 |                |
+ src\components\User\      |      100 |      100 |      100 |      100 |                |
+  User.js                  |      100 |      100 |      100 |      100 |                |
+  User.styled..js          |      100 |      100 |      100 |      100 |                |
+ src\context\              |    52.63 |      100 |       20 |    52.63 |                |
+  context.js               |    52.63 |      100 |       20 |    52.63 |... 21,23,25,27 |
+ src\pages\Home\           |      100 |      100 |      100 |      100 |                |
+  Home.page.js             |      100 |      100 |      100 |      100 |                |
+  Home.styled.js           |      100 |      100 |      100 |      100 |                |
+ src\pages\Login\          |        0 |      100 |        0 |        0 |                |
+  Login.page.jsx           |        0 |      100 |        0 |        0 |8,9,12,13,14,17 |
+  index.js                 |      100 |      100 |      100 |      100 |                |
+ src\pages\NotFound\       |        0 |      100 |        0 |        0 |                |
+  NotFound.page.jsx        |        0 |      100 |        0 |        0 |              7 |
+  index.js                 |      100 |      100 |      100 |      100 |                |
+ src\pages\Secret\         |        0 |      100 |        0 |        0 |                |
+  Secret.page.jsx          |        0 |      100 |        0 |        0 |              5 |
+  index.js                 |      100 |      100 |      100 |      100 |                |
+ src\providers\Auth\       |    35.29 |        0 |       20 |    35.29 |                |
+  Auth.provider.jsx        |    35.29 |        0 |       20 |    35.29 |... 27,28,32,33 |
+  index.js                 |      100 |      100 |      100 |      100 |                |
+ src\styles\               |      100 |      100 |      100 |      100 |                |
+  colors.js                |      100 |      100 |      100 |      100 |                |
+ src\utils\                |    22.22 |      100 |        0 |    22.22 |                |
+  constants.js             |      100 |      100 |      100 |      100 |                |
+  fns.js                   |        0 |      100 |        0 |        0 |              2 |
+  storage.js               |    14.29 |      100 |        0 |    14.29 |   3,4,5,7,8,13 |
+ src\utils\hooks\          |    30.77 |        0 |       20 |    30.77 |                |
+  useFortune.js            |    30.77 |        0 |       20 |    30.77 |... 25,29,33,34 |
+---------------------------|----------|----------|----------|----------|----------------|
+All files                  |    62.84 |    44.12 |    55.36 |    62.33 |                |
+---------------------------|----------|----------|----------|----------|----------------|
+
+Done
