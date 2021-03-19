@@ -14,6 +14,7 @@ function VideoPreviewCardList() {
               description={video.snippet.description}
               channelTitle={video.snippet.channelTitle}
               publishTime={video.snippet.publishTime}
+              image={video.snippet.thumbnails.medium.url}
             />
           </div>
         ))}
