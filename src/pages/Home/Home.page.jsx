@@ -4,6 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
 
+import VideoPreviewCardList from '../../components/VideoPreview/VideoPreviewCardList';
+
 function HomePage() {
   const history = useHistory();
   const sectionRef = useRef(null);
@@ -17,10 +19,9 @@ function HomePage() {
 
   return (
     <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
       {authenticated ? (
         <>
-          <h2>Good to have you back</h2>
+          <VideoPreviewCardList />
           <span>
             <Link to="/" onClick={deAuthenticate}>
               ← logout
