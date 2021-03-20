@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
 import { useAuth } from '../../providers/Auth';
+import NavBar from '../../components/NavBar/Navbar';
+import VideoGrid from '../../components/VideoGrid/VideoGrid';
 import './Home.styles.css';
 
 function HomePage() {
@@ -17,7 +18,8 @@ function HomePage() {
 
   return (
     <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
+      <NavBar/>
+      <VideoGrid/>
       {authenticated ? (
         <>
           <h2>Good to have you back</h2>
@@ -30,7 +32,7 @@ function HomePage() {
           </span>
         </>
       ) : (
-        <Link to="/login">let me in →</Link>
+        <Link to="/login">{/*let me in →*/}</Link>
       )}
     </section>
   );

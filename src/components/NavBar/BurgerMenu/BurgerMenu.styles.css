@@ -1,0 +1,11 @@
+.burgerMenu{
+    margin: 12px;
+}
+.burgerMenu div{
+    align-self: flex-start;
+    width: 25px;
+    height: 3px;
+    background-color: #f0efef;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
