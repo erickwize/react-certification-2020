@@ -1,0 +1,16 @@
+ PASS  src/data/youtube-videos-mock.test.js
+ PASS  src/components/VideoPreview/VideoPreviewCard.test.jsx
+ PASS  src/components/Header/Header.test.jsx
+
+=============================== Coverage summary ===============================
+Statements   : 14.63% ( 12/82 )
+Branches     : 0% ( 0/6 )
+Functions    : 6.9% ( 2/29 )
+Lines        : 14.63% ( 12/82 )
+================================================================================
+
+Test Suites: 3 passed, 3 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        4.375s, estimated 5s
+Ran all test suites.

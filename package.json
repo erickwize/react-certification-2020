@@ -59,5 +59,10 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "jest": {
+    "coverageReporters": [
+      "text-summary"
+    ]
   }
 }
