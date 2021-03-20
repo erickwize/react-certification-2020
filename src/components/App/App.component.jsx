@@ -1,16 +1,23 @@
 import React from 'react';
-
-import HomePage from '../../pages/Home';
+import styled from 'styled-components'
 import Header from '../Header';
-import Layout from '../Layout';
+import Videos from '../Videos';
+import data from "../../mock/youtube-videos-mock.json";
+
+const Content  = styled.div`
+
+`;
+
 
 function App() {
 
   return (
-        <Layout>
+        <div className="App">
             <Header/>
-              <HomePage />
-        </Layout>
+            <Content >
+              <Videos data= {data}/>
+            </Content>
+        </div>
   );
 }
 
