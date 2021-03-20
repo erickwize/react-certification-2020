@@ -17,36 +17,32 @@ function HomeCard() {
     padding: 0.5rem;
   `;
 
+ const Element = styled.div`
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    height: 50vh;
+  `;
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignContent: 'center',
-        height: '50vh',
-      }}
-    >
+    <Element>
       <Grid>
-        {
-         
-        videos[0].items.map((item) => (
-  
+        {videos[0].items.map((item) => (
           <Item className="ItemComponent" key={item.id.id}>
-            <Card classes="mr"  className="CardComponent">
+            <Card classes="mr" className="CardComponent">
               <Card.Image
                 src={item.snippet.thumbnails.medium.url}
                 alt={item.snippet.title}
               />
-              <Card.Body >
-                <Card.Title >{item.snippet.title}</Card.Title>
+              <Card.Body>
+                <Card.Title>{item.snippet.title}</Card.Title>
                 <Card.Text>{item.snippet.description}</Card.Text>
               </Card.Body>
             </Card>
           </Item>
         ))}
       </Grid>
-    </div>
+    </Element>
   );
 }
 
