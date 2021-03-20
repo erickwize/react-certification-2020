@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Header Header renders with default props 1`] = `
+<div
+  className="sc-crrsfI qrNWt"
+>
+  <div
+    className="sc-dQppl ea-dLjL"
+  >
+    <div
+      className="sc-hKgILt hpfQOr"
+    >
+      <div
+        className="sc-eCssSg fSuOCU"
+      >
+        <div
+          className="sc-jSgupP eKSphI"
+        />
+        <div
+          className="sc-jSgupP eKSphI"
+        />
+        <div
+          className="sc-jSgupP eKSphI"
+        />
+      </div>
+    </div>
+    <div
+      className="sc-bdfBwQ ffLsOo"
+    >
+      <div
+        className="sc-gsTCUz HFjtR"
+      />
+      <input
+        className="sc-dlfnbm ifQijI"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="sc-bqyKva duXVGw"
+  >
+    <div
+      className="sc-gKsewC gcycVY"
+    >
+      <div
+        className="sc-iBPRYJ gqNZGR"
+      >
+        <div
+          className="sc-fubCfw gWoYKE"
+        />
+        <div
+          className="sc-pFZIQ xJzqo"
+        />
+      </div>
+      <div
+        className="sc-jrAGrp bqZhEl"
+      >
+        Dark Mode
+      </div>
+    </div>
+    <div
+      className="sc-kEjbxe cpepa-d"
+    >
+      <div
+        className="sc-iqHYGH fIAESH"
+      />
+    </div>
+  </div>
+</div>
+`;

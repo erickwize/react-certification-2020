@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: DarkMode DarkMode renders with default props 1`] = `
+<div
+  className="sc-bdfBwQ goSDW"
+>
+  <div
+    className="sc-gsTCUz dIgXFX"
+  >
+    <div
+      className="sc-dlfnbm tFEro"
+    />
+    <div
+      className="sc-hKgILt dxvrxJ"
+    />
+  </div>
+  <div
+    className="sc-eCssSg bKUxkL"
+  >
+    Dark Mode
+  </div>
+</div>
+`;

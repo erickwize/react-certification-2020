@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Search Search renders with default props 1`] = `
+<div
+  className="sc-bdfBwQ ffLsOo"
+>
+  <div
+    className="sc-gsTCUz HFjtR"
+  />
+  <input
+    className="sc-dlfnbm ifQijI"
+    type="text"
+  />
+</div>
+`;

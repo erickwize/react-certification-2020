@@ -1,0 +1,54 @@
+> react-scripts test --env=jest-environment-jsdom-sixteen "--coverage" "--watchAll=false"
+
+ PASS  src/tests/Fortune.test.jsx
+ PASS  src/tests/Header.test.jsx
+ PASS  src/tests/App.test.jsx
+ PASS  src/tests/MainMenu.test.jsx
+ PASS  src/tests/VideoHome.test.jsx
+ PASS  src/tests/VideoItem.test.jsx
+ PASS  src/tests/UserMenu.test.jsx
+ PASS  src/tests/Search.test.jsx
+ PASS  src/tests/globals.test.js
+ PASS  src/tests/DarkMode.test.jsx
+--------------------------|----------|----------|----------|----------|-------------------|
+File                      |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+--------------------------|----------|----------|----------|----------|-------------------|
+All files                 |      100 |      100 |      100 |      100 |                   |
+ App                      |        0 |        0 |        0 |        0 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ DarkMode                 |      100 |      100 |      100 |      100 |                   |
+  DarkMode.component.jsx  |      100 |      100 |      100 |      100 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ Fortune                  |      100 |      100 |      100 |      100 |                   |
+  Fortune.component.jsx   |      100 |      100 |      100 |      100 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ Header                   |      100 |      100 |      100 |      100 |                   |
+  Header.component.jsx    |      100 |      100 |      100 |      100 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ Layout                   |      100 |      100 |      100 |      100 |                   |
+  Layout.component.jsx    |      100 |      100 |      100 |      100 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ MainMenu                 |      100 |      100 |      100 |      100 |                   |
+  MainMenu.component.jsx  |      100 |      100 |      100 |      100 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ Private                  |        0 |        0 |        0 |        0 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ Search                   |      100 |      100 |      100 |      100 |                   |
+  Search.component.jsx    |      100 |      100 |      100 |      100 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ UserMenu                 |      100 |      100 |      100 |      100 |                   |
+  UserMenu.component.jsx  |      100 |      100 |      100 |      100 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ VideoHome                |      100 |      100 |      100 |      100 |                   |
+  VideoHome.component.jsx |      100 |      100 |      100 |      100 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+ VideoItem                |      100 |      100 |      100 |      100 |                   |
+  VideoItem.component.jsx |      100 |      100 |      100 |      100 |                   |
+  index.js                |        0 |        0 |        0 |        0 |                   |
+--------------------------|----------|----------|----------|----------|-------------------|
+
+Test Suites: 10 passed, 10 total
+Tests:       10 passed, 10 total
+Snapshots:   9 passed, 9 total
+Time:        6.535s
+Ran all test suites.

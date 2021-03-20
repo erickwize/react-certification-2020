@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: MainMenu MainMenu renders with default props 1`] = `
+<div
+  className="sc-bdfBwQ kPShWq"
+>
+  <div
+    className="sc-gsTCUz dtQtlu"
+  >
+    <div
+      className="sc-dlfnbm ieMrRo"
+    />
+    <div
+      className="sc-dlfnbm ieMrRo"
+    />
+    <div
+      className="sc-dlfnbm ieMrRo"
+    />
+  </div>
+</div>
+`;
