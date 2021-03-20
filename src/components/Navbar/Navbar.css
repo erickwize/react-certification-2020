@@ -15,12 +15,12 @@
 }
 
 .navbar-search{
-   position: absolute;
+   position:absolute;
    width:300px;
    height: 30px;
    color: gray;
    border:"none";
-   padding:"0.5rem";
+   padding:"10px";
    border-radius: 6px;
    font-size:medium;
    
@@ -71,7 +71,31 @@
     display: none;
 }
 
-@media screen and (max-width: 960px) {
+div.card-item {
+    height: 200px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin: 10px;
+    flex-basis: calc(20% - 22px);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    
+  }
+  
+  .card-item > h2 {
+    color: black;
+    font-size: 1em;
+  }
+  
+  div.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+
+@media screen and (max-width: 1240px) {
     .NavbarItems {
         position: relative;
     }
@@ -152,5 +176,17 @@
     Button {
         display: none;
         
+    }
+
+    .navbar-search{
+        
+        width:230px;
+        height: 30px;
+        color: gray;
+        border:"none";
+        padding:"0.5rem";
+        border-radius: 6px;
+        font-size:medium;
+        margin-left: 100px;
     }
 }
