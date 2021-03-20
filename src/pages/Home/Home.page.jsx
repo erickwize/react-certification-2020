@@ -4,8 +4,6 @@ import Nav from '../../components/Nav';
 import VideoCard from '../../components/VideoCard';
 import youtubeVideos from '../../mocks/youtube-videos';
 
-import './Home.styles.css';
-
 function HomePage() {
   return (
     <>

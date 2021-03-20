@@ -9,7 +9,7 @@ const Toggle = ({ labelOn, labelOff }) => {
   };
 
   return (
-    <CheckBoxWrapper>
+    <CheckBoxWrapper data-testid="toggleDarkMode">
       <CheckBox id="checkbox" type="checkbox" onChange={handleCheck} />
       <CheckBoxLabel htmlFor="checkbox" />
       <label htmlFor="checkbox">{isChecked ? labelOn : labelOff}</label>

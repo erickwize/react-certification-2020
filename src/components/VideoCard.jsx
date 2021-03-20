@@ -8,7 +8,7 @@ const VideoCard = ({ data }) => {
   const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(formattedDate);
 
   return (
-    <Card>
+    <Card data-testid={data.etag}>
       <header>
         <img src={data.snippet.thumbnails.medium.url} alt={data.snippet.title} />
         <div>{data.snippet.title}</div>

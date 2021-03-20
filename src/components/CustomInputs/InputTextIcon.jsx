@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const InputTextIcon = ({ path }) => {
   return (
-    <Wrapper>
+    <Wrapper data-testid="searchTextWrapper">
       <SvgWrapper>
         <StyledSvg focusable="false" viewBox="0 0 24 24">
           {path || (
