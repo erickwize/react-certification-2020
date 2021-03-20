@@ -8,8 +8,8 @@ import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
 import Fortune from '../Fortune';
-import Layout from '../Layout';
-import { Header } from '../Layout'
+import Layout, { Header } from '../Layout';
+
 import { random } from '../../utils/fns';
 
 function App() {
