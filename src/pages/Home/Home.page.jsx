@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import videos from '../../youtube-videos-mock.json';
+import videos from '../../mock/youtube-videos-mock.json';
 import VideoCard from '../../components/VideoCard';
 import { Container, Title, VideoGrid } from './Home.styles';
 import { useAuth } from '../../providers/Auth';
@@ -9,7 +9,7 @@ import './Home.styles.js';
 function HomePage() {
   const history = useHistory();
   
-  const { logout } = useAuth();
+  //const { logout } = useAuth();
   const { items = [] } = videos;
 
   const videosList = items.map((video) => {
