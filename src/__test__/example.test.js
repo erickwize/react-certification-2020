@@ -1,4 +1,4 @@
-describe('this is for group test cases', () => {
+describe('this is for group test examples', () => {
   it('description', () => {
     expect(true).toBe(true);
   });
