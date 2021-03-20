@@ -1,13 +1,13 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import videos from '../../mock/youtube-videos-mock.json';
 import VideoCard from '../../components/VideoCard';
 import { Container, Title, VideoGrid } from './Home.styles';
-import { useAuth } from '../../providers/Auth';
+// import { useAuth } from '../../providers/Auth';
 import './Home.styles.js';
 
 function HomePage() {
-  const history = useHistory();
+  // const history = useHistory();
   
   //const { logout } = useAuth();
   const { items = [] } = videos;
@@ -32,11 +32,11 @@ function HomePage() {
     />;
   });
 
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
+  // function deAuthenticate(event) {
+  //   event.preventDefault();
+  //   logout();
+  //   history.push('/');
+  // }
 
   return (
     <Container>
