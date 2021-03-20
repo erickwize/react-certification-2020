@@ -19,20 +19,7 @@ function HomePage() {
 
   return (
     <section className="homepage" ref={sectionRef}>
-      {authenticated ? (
-        <>
-          <VideoPreviewCardList />
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
+      <VideoPreviewCardList />
     </section>
   );
 }
