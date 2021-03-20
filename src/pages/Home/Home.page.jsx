@@ -1,39 +1,44 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-
-import { useAuth } from '../../providers/Auth';
-import './Home.styles.css';
+import React from 'react';
+import styled from 'styled-components';
+import Nav from '../../components/Nav';
+import VideoCard from '../../components/VideoCard';
+import youtubeVideos from '../../mocks/youtube-videos';
 
 function HomePage() {
-  const history = useHistory();
-  const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
-
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
-
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
-    </section>
+    <>
+      <Nav />
+      <BodyContainer>
+        <h1>YouTube video search app</h1>
+        <VideoGrid>
+          {youtubeVideos.items
+            .filter((obj) => obj.id.videoId && true)
+            .map((obj) => (
+              <VideoCard key={obj.id.videoId} data={obj} />
+            ))}
+        </VideoGrid>
+      </BodyContainer>
+    </>
   );
 }
 
 export default HomePage;
+
+const BodyContainer = styled.div`
+  padding: 5%;
+
+  h1 {
+    text-align: center;
+    margin: 0px 0px 5% 0px;
+    color: #525252;
+  }
+`;
+
+const VideoGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  grid-gap: 2.5em;
+  @media screen and (max-width: 750px) {
+    grid-gap: 1.5em;
+  }
+`;
