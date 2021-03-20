@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoCards from '../../components/Video/VideoCards.component';
-
+import './Home.styles.css';
 
 function HomePage() {
 
