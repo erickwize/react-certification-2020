@@ -1,10 +1,11 @@
 import React from "react";
 
-function CardItem({ name, sprite }) {
+function CardItem({ name, sprite, description }) {
   return (
     <div className="card-item">
       <img src={sprite} />
       <h2>{name}</h2>
+      <h3>{description}</h3>
     </div>
   );
 }

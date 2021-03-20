@@ -19,6 +19,7 @@ function App() {
           <CardItem
             sprite={data.snippet.thumbnails.default.url}
             name={data.snippet.title}
+            description={data.snippet.description}
 
           ></CardItem>
         ))}
