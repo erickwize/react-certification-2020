@@ -3,14 +3,14 @@ function random(limit) {
 }
 
 function getReadableDate(timeStamp) {
-  const date = new Date(timeStamp)
+  const date = new Date(timeStamp);
   const options = {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
   };
 
-  return date.toLocaleDateString(undefined, options)
+  return date.toLocaleDateString(undefined, options);
 }
 
 export { random, getReadableDate };
