@@ -1,0 +1,32 @@
+--------------------|----------|----------|----------|----------|-------------------|\
+File                |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |\
+--------------------|----------|----------|----------|----------|-------------------|\
+All files           |     67.5 |      100 |    63.64 |     67.5 |                   |\
+ src                |       50 |      100 |      100 |       50 |                   |\
+  index.js          |        0 |      100 |      100 |        0 |                 6 |\
+  mockData.js       |      100 |      100 |      100 |      100 |                   |\
+ src/components     |      100 |      100 |      100 |      100 |                   |\
+  Header.jsx        |      100 |      100 |      100 |      100 |                   |\
+  VideoCard.jsx     |      100 |      100 |      100 |      100 |                   |\
+ src/components/App |        0 |      100 |        0 |        0 |                   |\
+  App.component.jsx |        0 |      100 |        0 |        0 |... 29,30,31,35,42 |\
+  index.js          |        0 |        0 |        0 |        0 |                   |\
+ src/pages/Home     |      100 |      100 |      100 |      100 |                   |\
+  Home.page.jsx     |      100 |      100 |      100 |      100 |                   |\
+  index.js          |        0 |        0 |        0 |        0 |                   |\
+ src/styles         |      100 |      100 |      100 |      100 |                   |\
+  HomeStyle.js      |      100 |      100 |      100 |      100 |                   |\
+  MenuButton.js     |      100 |      100 |      100 |      100 |                   |\
+  NavStyle.js       |      100 |      100 |      100 |      100 |                   |\
+  SearchStyle.js    |      100 |      100 |      100 |      100 |                   |\
+  SwitchStyle.jsx   |      100 |      100 |      100 |      100 |                   |\
+--------------------|----------|----------|----------|----------|-------------------|\
+Jest: "global" coverage threshold for statements (100%) not met: 67.5%\
+Jest: "global" coverage threshold for lines (100%) not met: 67.5%\
+Jest: "global" coverage threshold for functions (100%) not met: 63.64%\
+\
+Test Suites: 5 passed, 5 total\
+Tests:       7 passed, 7 total\
+Snapshots:   0 total\
+Time:        12.391s\
+Ran all test suites.}
