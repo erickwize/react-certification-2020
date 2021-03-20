@@ -1,8 +1,12 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { VideosGrid } from '../../components/VideosGrid/VideosGrid.component';
 
 import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
+
+
+const data = require('../../mock-data/youtube-videos-mock.json');
 
 function HomePage() {
   const history = useHistory();
@@ -17,6 +21,8 @@ function HomePage() {
 
   return (
     <section className="homepage" ref={sectionRef}>
+      <VideosGrid data={data}/>
+      
       <h1>Hello stranger!</h1>
       {authenticated ? (
         <>
@@ -32,6 +38,9 @@ function HomePage() {
       ) : (
         <Link to="/login">let me in →</Link>
       )}
+      
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+    <div>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </section>
   );
 }
