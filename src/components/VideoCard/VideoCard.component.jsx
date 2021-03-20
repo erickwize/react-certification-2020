@@ -11,7 +11,7 @@ import {
 
 function VideoCard({ videoData }) {
   return (
-    <VideoCardWrapper>
+    <VideoCardWrapper data-testid="yt-videocard">
       <Thumbnail img={videoData.thumbnail} alt={videoData.title} />
       <VideoCardInfo>
         <VideoTitle>{videoData.title}</VideoTitle>
