@@ -1,5 +1,4 @@
 import React from 'react';
-import 'material-icons';
 import styled from 'styled-components';
 
 const SearchbarContainer = styled.div`
