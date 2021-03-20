@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Header Component matches snapshot 1`] = `
+<nav
+  className="sc-pFZIQ cLaYzh"
+>
+  <div
+    className="sc-dlfnbm CZBcd"
+  >
+    <img
+      alt="Menu Icon"
+      className="sc-gsTCUz byyktf"
+      src="/menu.svg"
+    />
+    <input
+      className="sc-bdfBwQ doNcbL"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="sc-fubCfw eKHZNB"
+  >
+    <label
+      className="sc-jSgupP dLsMOc"
+    >
+      <input
+        className="sc-eCssSg cOQNoX"
+        defaultChecked={false}
+        type="checkbox"
+      />
+      <span
+        className="sc-hKgILt fnAHGc"
+        onClick={[Function]}
+      />
+    </label>
+    <label
+      className="sc-iBPRYJ kABctc"
+      data-testid="labelTest"
+    >
+      Dark Mode
+    </label>
+    <img
+      className="sc-gKsewC javJma"
+      src="/profile.svg"
+    />
+  </div>
+</nav>
+`;
