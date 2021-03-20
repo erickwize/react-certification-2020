@@ -33,7 +33,6 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Layout>
           <Switch>
             <Route exact path="/">
               <HomePage />
@@ -49,7 +48,6 @@ function App() {
             </Route>
           </Switch>
           <Fortune />
-        </Layout>
       </AuthProvider>
     </BrowserRouter>
   );

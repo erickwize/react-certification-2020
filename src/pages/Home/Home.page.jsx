@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
+import Navbar from "../../components/Layout/Navbar";
+import styled from 'styled-components';
+import CardVideo from "../../components/Layout/CardVideo";
+import {listVideos} from "../../utils/mocks/youtube-videos-mock";
 import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
 
@@ -15,24 +18,20 @@ function HomePage() {
     history.push('/');
   }
 
+  const CardsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 50px 0 50px;
+    justify-content: center;
+  `;
+
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
-    </section>
+    <>
+      <Navbar/>
+      <CardsContainer>
+        {listVideos.items.map((item)=>{return <CardVideo key={item.etag} item={{item}}/>})}
+      </CardsContainer>
+    </>
   );
 }
 
