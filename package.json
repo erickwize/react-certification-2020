@@ -10,12 +10,14 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "npm run test -- --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint ./src --ext .js,.jsx",
     "lint:fix": "eslint ./src --ext .js,.jsx --fix"
@@ -48,14 +50,30 @@
   },
   "lint-staged": {
     "*.{js, jsx, css, json}": [
-      "yarn run lint:fix",
-      "pretty-quick --staged",
-      "git add"
+      "npm run lint:fix",
+      "pretty-quick --staged"
     ]
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/pages/Login/",
+      "/src/pages/NotFound/",
+      "/src/pages/Secret/",
+      "/src/GlobalStyle.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 100,
+        "branches": 100,
+        "lines": 100,
+        "functions": 100
+      }
     }
   }
 }
