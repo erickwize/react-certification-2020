@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import Header from '../Header/Header.component';
 import HomePage from '../../pages/Home/Home.page';
 
