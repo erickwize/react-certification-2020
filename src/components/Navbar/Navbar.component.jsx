@@ -8,23 +8,23 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="left-navbar">
-        <input disabled type="text" placeholder="Search..." />
+        <input type="text" placeholder="Search..." />
       </div>
       <div className="center-navbar">
-        <button disabled type="button">
-          <FontAwesomeIcon icon={faHome} />
-        </button>
-        <button disabled type="button">
+        <i>
+          <FontAwesomeIcon icon={faHome} className="active" />
+        </i>
+        <i>
           <FontAwesomeIcon icon={faHeart} />
-        </button>
+        </i>
       </div>
       <div className="right-navbar">
-        <button disabled type="button">
+        <i>
           <FontAwesomeIcon icon={faSignInAlt} />
-        </button>
-        <button disabled type="button">
+        </i>
+        <i>
           <FontAwesomeIcon icon={faMoon} />
-        </button>
+        </i>
       </div>
     </div>
   );

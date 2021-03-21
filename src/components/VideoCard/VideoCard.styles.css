@@ -7,11 +7,11 @@
   margin: 15px 20px;
   vertical-align: top;
   text-align: left;
-  transition: 100ms;
+  transition: 200ms;
 }
 
 .video-card:hover {
-  background-color: #fefefe;
+  background-color: #fdd0d0;
   margin-top: 10px;
   box-shadow: 6px 6px #cecece;
   cursor: pointer;
@@ -28,8 +28,8 @@
 }
 
 .video-card:hover > .img {
-  width: 328px;
-  margin-left: -14px;
+  width: 336px;
+  margin-left: -18px;
   box-shadow: 8px 1px #cecece;
 }
 

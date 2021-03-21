@@ -1,8 +1,8 @@
 .navbar {
   align-items: center;
-  background-color: brown;
+  background-color: rgb(133, 24, 24);
   display: flex;
-  height: 50px;
+  height: 55px;
   justify-content: space-between;
   padding: 10px 20px;
   width: 100%;
@@ -13,20 +13,39 @@
 }
 
 input {
-  border-radius: 15px;
+  border-radius: 25px;
   border: 0px;
   line-height: 1.5em;
   min-height: 30px;
-  max-width: 100%;
+  width: 100%;
   padding: 4px 10px;
+  transition: 200ms;
 }
 
-button {
+input:focus {
+  outline: none;
+}
+
+i {
   margin: 4px 2px;
   border-radius: 15px;
   padding: 4px 10px;
-  border: 0px;
+  color: rgb(243, 142, 124);
+  transition: 200ms;
 }
+
+i:hover{
+  cursor: pointer;
+  color: rgb(219, 83, 59);
+  font-size: 1.35em;
+}
+
+.active {
+  cursor: pointer;
+  color: rgb(255, 136, 57);
+  font-size: 1.35em;
+}
+
 
 .left-navbar {
   text-align: left;
