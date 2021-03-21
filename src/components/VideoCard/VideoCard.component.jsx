@@ -11,7 +11,7 @@ function VideoCard({ title, description, thumbnail }) {
           <strong>{title}</strong>
         </p>
         <p>
-          <small className="text">{description}</small>
+          <small>{description}</small>
         </p>
       </div>
     </div>

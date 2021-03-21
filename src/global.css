@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;400;500&family=Montserrat:wght@100;400;500&display=swap');
+
 html {
   font-size: 1.125rem;
   line-height: 1.6;
   font-weight: 400;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
