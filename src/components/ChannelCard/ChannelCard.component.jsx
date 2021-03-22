@@ -1,22 +1,22 @@
 import React from 'react';
 
-import './ChannelCard.styles.css';
+import { Channel, Content, Description, Image, Text, Title } from './ChannelCard.styles';
 
 function ChannelCard({ title, description, thumbnail }) {
   return (
-    <div className="channel-card">
-      <div className="cardContent">
-        <div className="img-channel" style={{ backgroundImage: `url(${thumbnail})` }} />
-        <div className="text">
+    <Channel>
+      <Content>
+        <Image style={{ backgroundImage: `url(${thumbnail})` }} />
+        <Text>
           <p>
-            <strong>{title}</strong>
+            <Title>{title}</Title>
           </p>
           <p>
-            <small>{description}</small>
+            <Description>{description}</Description>
           </p>
-        </div>
-      </div>
-    </div>
+        </Text>
+      </Content>
+    </Channel>
   );
 }
 
