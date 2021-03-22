@@ -1,7 +1,7 @@
-.video-card {
+.channel-card {
   background-color: #fefefe;
-  width: 300px;
-  height: 330px;
+  width: 400px;
+  height: 150px;
   border-radius: 8px;
   display: inline-block;
   margin: 15px 20px;
@@ -10,7 +10,7 @@
   transition: 200ms;
 }
 
-.video-card:hover {
+.channel-card:hover {
   background-color: #fcdfdf;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -18,9 +18,14 @@
   cursor: pointer;
 }
 
-.img-video {
-  height: 150px;
-  width: 310px;
+.cardContent {
+  display: flex;
+}
+
+.img-channel {
+  height: 160px;
+  width: 160px;
+  margin-top: -5px;
   margin-left: -5px;
   background-size: cover;
   background-position: center;
@@ -28,13 +33,14 @@
   transition: 100ms;
 }
 
-.video-card:hover > .img-video {
-  width: 336px;
+.channel-card:hover > .cardContent > .img-channel {
+  width: 180px;
   margin-left: -18px;
-  box-shadow: 8px 1px #cecece;
+  box-shadow: 4px 6-px #cecece;
 }
 
 .text {
+  flex: 2;
   margin-bottom: 10px;
   margin-left: 12px;
   margin-right: 12px;

@@ -1,6 +1,6 @@
 .navbar {
   align-items: center;
-  background-color: rgb(133, 24, 24);
+  background-color: rgb(173, 34, 34);
   display: flex;
   height: 55px;
   justify-content: space-between;
@@ -34,7 +34,7 @@ i {
   transition: 200ms;
 }
 
-i:hover{
+i:hover {
   cursor: pointer;
   color: rgb(219, 83, 59);
   font-size: 1.35em;
@@ -42,10 +42,9 @@ i:hover{
 
 .active {
   cursor: pointer;
-  color: rgb(255, 136, 57);
+  color: rgb(252, 212, 212);
   font-size: 1.35em;
 }
-
 
 .left-navbar {
   text-align: left;
