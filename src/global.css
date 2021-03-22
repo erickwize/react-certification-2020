@@ -17,37 +17,56 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-color: #020635;
+  height: 100vh;
+  width: 100vw;
   text-rendering: optimizeLegibility;
-  background-image: linear-gradient(
-    120deg,
-    #eea2a2 0,
-    #bbc1bf 19%,
-    #57c6e1 42%,
-    #b49fda 79%,
-    #7ac5d8 100%
-  );
-  background-size: 400% 400%;
-  background-position: var(--bg-position);
-  transition: background-position 2s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: inline;
 }
 
-.separator::before {
-  content: '•';
-  color: white;
-  padding: 0.4rem;
+.card {
+  width: 30%;
+  display: flex;
+  background: #eee;
+  padding: 0.6em 1em 0.6em 0.6em;
+  margin-bottom: 1em;
+  border-radius: 0.3em;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 10px;
+  border: solid 1px #ccc;
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
+.wrapper {
+  position: fixed;
+  left: 0;
+  height: 100%;
+
+  margin-left: 80px;
+  margin-right: 0px;
+  margin-top: 10px;
+
+  width: 100%;
+  background-color: #f6f5f7;
+  border-radius: 0.428rem;
+
+  width: calc(100% - 90px);
+  height: calc(100% - 20px);
 }
 
-a:active {
-  color: blueviolet;
+.disabledCursor {
+  cursor: default;
+  pointer-events: none;
 }
 
-hr {
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+  }
 }
