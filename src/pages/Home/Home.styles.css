@@ -1,8 +1,19 @@
-.homepage {
-  text-align: center;
+.col {
+  margin: 5px 5px 10px 5px;
+  padding: 6px 6px 6px 6px;
 }
 
-.homepage h1 {
-  font-size: 3rem;
-  letter-spacing: -2px;
+.row {
+  margin: 0;
+  width: 95.5%;
+
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-flow: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

@@ -1,36 +1,44 @@
-import React, { useRef } from 'react';
-// import { Link, useHistory } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
-// import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
 
-function HomePage() {
-  // const history = useHistory();
-  const sectionRef = useRef(null);
-  // const { authenticated, logout } = useAuth();
+import Video from '../../components/Video';
 
-  // function deAuthenticate(event) {
-  //   event.preventDefault();
-  //   // logout();
-  //   history.push('/');
-  // }
+function HomePage() {
+  const [videoList, setVideoList] = useState([]);
+
+  async function getVideoList() {
+    try {
+      const response = await fetch(
+        'https://gist.githubusercontent.com/jparciga/1d4dd34fb06ba74237f8966e2e777ff5/raw/f3af25f1505deb67e2cc9ee625a633f24d8983ff/youtube-videos-mock.json'
+      );
+      const responseJson = await response.json();
+      return responseJson.items;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    getVideoList().then((r) => {
+      setVideoList(r);
+    });
+  }, []);
 
   return (
-    <section className="homepage" ref={sectionRef}>
-      {/* {authenticated ? (
-        <> 
-      
-      <span>
-        <Link to="/" onClick={deAuthenticate}>
-          ← logout
-        </Link>
-        <span className="separator" />
-        <Link to="/secret">show me something cool →</Link>
-      </span>
-        </>
-       ) : (
-        <Link to="/login">let me in →</Link>
-      )} */}
+    <section className="homepage">
+      <div className="row">
+        {videoList.slice(1).map((v) => (
+          <div className="col" key={v.id.videoId.toString()}>
+            <Video
+              id="nmXMgqjQzls"
+              title="RAP AGAINST DICTATORSHIP"
+              channelName={videoList[0].snippet.title}
+              image={v.snippet.thumbnails.medium.url}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

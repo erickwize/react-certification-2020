@@ -12,12 +12,7 @@ function MenuHorizontal() {
       </li>
       <li>
         <Link to="/" className="nav-links disabledCursor">
-          <span className="text-truncate ">Home</span>
-        </Link>
-      </li>
-      <li>
-        <Link to="/" className="nav-links disabledCursor">
-          <span className="text-truncate ">Home</span>
+          <span className="text-truncate ">Favorites</span>
         </Link>
       </li>
     </ul>

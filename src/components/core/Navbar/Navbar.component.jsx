@@ -12,22 +12,10 @@ import Search from '../Search';
 function Navbar() {
   const mainNavRef = useRef(null);
 
-  // const navBarToggleRef = useRef(null);
-
   function handleOnMainNavClick() {
     const mainNav = mainNavRef.current;
     mainNav.classList.toggle('active');
   }
-
-  // useEffect(() => {
-  //   const navBarToggle = navBarToggleRef.current;
-
-  //   navBarToggle.addEventListener('click', handleOnMainNavClick);
-
-  //   return () => {
-  //     navBarToggle.removeEventListener('click', handleOnMainNavClick);
-  //   };
-  // }, []);
 
   return (
     <>
