@@ -31,7 +31,7 @@ export const Channel = styled.div`
   &:hover ${Image} {
     width: 180px;
     margin-left: -18px;
-    box-shadow: 4px 6-px #cecece;
+    box-shadow: 4px 6px #cecece;
   }
 `;
 
