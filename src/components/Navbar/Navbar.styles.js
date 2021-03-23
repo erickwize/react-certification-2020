@@ -29,6 +29,11 @@ export const Right = styled.div`
   flex: 1;
 `;
 
+export const Logo = styled.img`
+  height: 40px;
+  margin-right: 25px;
+`;
+
 export const SearchInput = styled.input`
   background-color: #eee;
   border-radius: 25px;

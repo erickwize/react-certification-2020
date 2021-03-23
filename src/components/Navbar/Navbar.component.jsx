@@ -7,7 +7,18 @@ import {
   faSignInAlt,
   faSun,
 } from '@fortawesome/free-solid-svg-icons';
-import { Wrapper, Left, Center, Right, SearchInput, Active, Icon } from './Navbar.styles';
+import {
+  Wrapper,
+  Left,
+  Center,
+  Right,
+  Logo,
+  SearchInput,
+  Active,
+  Icon,
+} from './Navbar.styles';
+
+import logo from '../../assets/logo.png';
 
 // import './Navbar.styles.css';
 
@@ -18,6 +29,7 @@ function Navbar() {
 
   return (
     <Wrapper>
+      <Logo src={logo} alt="Logo" />
       <Left>
         <SearchInput type="text" placeholder="Search..." />
       </Left>

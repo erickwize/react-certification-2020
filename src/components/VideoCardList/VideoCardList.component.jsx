@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 import VideoCard from '../VideoCard';
 import ChannelCard from '../ChannelCard';
 
 import videos from '../../providers/data/mockData.json';
-import './VideoCardList.css';
+
+const Header = styled.h1`
+  margin: 0px 100px;
+  text-align: start;
+`;
 
 const channelList = videos.items
   .filter((e) => e.id.kind.includes('channel'))
@@ -41,10 +46,10 @@ const videoList = videos.items
 
 function VideoCardList() {
   return (
-    <div className="itemList">
+    <div>
       {channelList.length > 0 ? (
         <>
-          <h1 className="resultsHeader">Channels</h1>
+          <Header>Channels</Header>
           <div>{channelList}</div>
           <hr />
         </>
@@ -53,7 +58,7 @@ function VideoCardList() {
       )}
       {videoList.length > 0 ? (
         <>
-          <h1 className="resultsHeader">Videos</h1>
+          <Header>Videos</Header>
           <div>{videoList}</div>
         </>
       ) : (

@@ -1,20 +1,20 @@
 import React from 'react';
 
-import './VideoCard.styles.css';
+import { Description, Image, Text, Title, Video } from './VideoCard.styles';
 
 function VideoCard({ title, description, thumbnail }) {
   return (
-    <div className="video-card">
-      <div className="img-video" style={{ backgroundImage: `url(${thumbnail})` }} />
-      <div className="text">
+    <Video>
+      <Image style={{ backgroundImage: `url(${thumbnail})` }} />
+      <Text>
         <p>
-          <strong>{title}</strong>
+          <Title>{title}</Title>
         </p>
         <p>
-          <small>{description}</small>
+          <Description>{description}</Description>
         </p>
-      </div>
-    </div>
+      </Text>
+    </Video>
   );
 }
 
