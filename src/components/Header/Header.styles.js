@@ -16,6 +16,12 @@ export const HeaderStyle = styled.header`
     0px 1px 10px 0px rgb(0 0 0 / 12%);
 `;
 
+export const Alignment = styled.div`
+  float: ${(props) => props.float};
+  display: flex;
+  align-items: center;
+`;
+
 export const MenuButton = styled.div`
   color: #fff;
   width: 24px;

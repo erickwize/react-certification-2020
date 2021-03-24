@@ -3,18 +3,18 @@ import Search from '../Search';
 import Menu from '../Menu';
 import Theme from '../Theme';
 import AvatarIcon from '../Avatar';
-import { HeaderStyle } from './Header.styles';
+import { HeaderStyle, Alignment } from './Header.styles';
 
 const Header = () => (
   <HeaderStyle>
-    <div style={{ float: 'left', display: 'flex', alignItems: 'center' }}>
+    <Alignment float="left">
       <Menu />
       <Search />
-    </div>
-    <div style={{ float: 'right', display: 'flex', alignItems: 'center' }}>
+    </Alignment>
+    <Alignment float="right">
       <Theme />
       <AvatarIcon />
-    </div>
+    </Alignment>
   </HeaderStyle>
 );
 
