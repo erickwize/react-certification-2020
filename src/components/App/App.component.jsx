@@ -7,9 +7,9 @@ import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
-import Fortune from '../Fortune';
 import Layout from '../Layout';
 import { random } from '../../utils/fns';
+import Header from '../Header';
 
 function App() {
   useLayoutEffect(() => {
@@ -32,6 +32,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Header />
       <AuthProvider>
         <Layout>
           <Switch>
@@ -48,7 +49,6 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
-          <Fortune />
         </Layout>
       </AuthProvider>
     </BrowserRouter>
