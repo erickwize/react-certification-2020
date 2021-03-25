@@ -165,7 +165,7 @@ describe('VideoList', () => {
     ).toBeInTheDocument();
   });
 
-  it('should reander the images in the mocked data', () => {
+  it('should render the images in the mocked data', () => {
     const { getByAltText } = render(<VideoList list={mockData} />);
     expect(
       getByAltText('Video Tour | Welcome to Wizeline Guadalajara')
