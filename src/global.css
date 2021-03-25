@@ -1,3 +1,15 @@
+:root {
+  --bg-color: #fafafa;
+  --main-color: #212b43;
+  --caret-color: #212b43;
+  --sub-color: #62cfe6;
+  --text-color: #212b43;
+  --error-color: #f19dac;
+  --error-extra-color: #e58c9d;
+  --colorful-error-color: #f19dac;
+  --colorful-error-extra-color: #e58c9d;
+}
+
 html {
   font-size: 1.125rem;
   line-height: 1.6;
@@ -17,20 +29,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility;
-  background-image: linear-gradient(
-    120deg,
-    #eea2a2 0,
-    #bbc1bf 19%,
-    #57c6e1 42%,
-    #b49fda 79%,
-    #7ac5d8 100%
-  );
-  background-size: 400% 400%;
-  background-position: var(--bg-position);
-  transition: background-position 2s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .separator::before {
@@ -47,7 +47,4 @@ a {
 
 a:active {
   color: blueviolet;
-}
-
-hr {
 }
