@@ -13,13 +13,14 @@ export const Image = styled.div`
 export const Video = styled.div`
   background-color: #fefefe;
   max-width: 300px;
-  height: 330px;
+  height: 340px;
   border-radius: 8px;
   display: inline-block;
   margin: 15px 20px;
   vertical-align: top;
   text-align: left;
   transition: 200ms;
+  position: relative;
 
   &:hover {
     background-color: #fcdfdf;
@@ -58,4 +59,11 @@ export const Title = styled.strong`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+`;
+
+export const PublishedDate = styled.p`
+  font-size: 8pt;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
 `;

@@ -31,7 +31,7 @@ const videoList = videos.items
   .filter((e) => e.id.kind.includes('video'))
   .map((video) => {
     const {
-      snippet: { title, description, thumbnails },
+      snippet: { title, description, thumbnails, publishedAt },
     } = video;
 
     return (
@@ -39,6 +39,7 @@ const videoList = videos.items
         title={title}
         description={description}
         thumbnail={thumbnails.medium.url}
+        date={publishedAt}
         key={video.etag}
       />
     );

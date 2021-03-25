@@ -1,8 +1,15 @@
 import React from 'react';
+import { getTimeLapsed } from '../../utils/fns';
+import {
+  Description,
+  Image,
+  Text,
+  Title,
+  Video,
+  PublishedDate,
+} from './VideoCard.styles';
 
-import { Description, Image, Text, Title, Video } from './VideoCard.styles';
-
-function VideoCard({ title, description, thumbnail }) {
+function VideoCard({ title, description, thumbnail, date }) {
   return (
     <Video>
       <Image style={{ backgroundImage: `url(${thumbnail})` }} />
@@ -13,6 +20,7 @@ function VideoCard({ title, description, thumbnail }) {
         <p>
           <Description>{description}</Description>
         </p>
+        <PublishedDate>{getTimeLapsed(date)}</PublishedDate>
       </Text>
     </Video>
   );
