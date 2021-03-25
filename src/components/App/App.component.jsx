@@ -7,7 +7,6 @@ import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
-// import Fortune from '../Fortune'; // This Hook is generating CORS errors, this link to fetch is down
 import Layout from '../Layout';
 
 function App() {
