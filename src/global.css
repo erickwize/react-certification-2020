@@ -20,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
-  background-color: #dedede;
+  background-color: #ebe1e1;
 }
 
 .separator::before {

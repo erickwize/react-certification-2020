@@ -1,6 +1,14 @@
 import React from 'react';
 
-import { Channel, Content, Description, Image, Text, Title } from './ChannelCard.styles';
+import {
+  Channel,
+  Content,
+  Description,
+  Image,
+  Text,
+  Title,
+  TitleBar,
+} from './ChannelCard.styles';
 
 function ChannelCard({ title, description, thumbnail }) {
   return (
@@ -8,12 +16,10 @@ function ChannelCard({ title, description, thumbnail }) {
       <Content>
         <Image style={{ backgroundImage: `url(${thumbnail})` }} />
         <Text>
-          <p>
+          <TitleBar>
             <Title>{title}</Title>
-          </p>
-          <p>
-            <Description>{description}</Description>
-          </p>
+          </TitleBar>
+          <Description>{description}</Description>
         </Text>
       </Content>
     </Channel>
