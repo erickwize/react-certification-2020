@@ -8,7 +8,7 @@ const VideoDetails = () => {
 
   return (
     <div>
-      <h1>Video details view</h1>
+      <h1>{title}</h1>
       <VideoPlayer channelId={id} title={title} />
     </div>
   );

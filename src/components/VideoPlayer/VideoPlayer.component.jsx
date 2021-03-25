@@ -4,9 +4,10 @@ function VideoPlayer({ channelId, title }) {
   return (
     <iframe
       title={title}
-      width="420"
-      height="345"
-      src={`https://www.youtube.com/embed/${channelId}`}
+      width="677"
+      height="381"
+      src={`https://www.youtube.com/embed/${channelId}?rel=0&amp;autoplay=1&mute=0`}
+      allowFullScreen="true"
     />
   );
 }

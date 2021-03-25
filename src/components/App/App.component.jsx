@@ -20,9 +20,7 @@ function App() {
             <Route exact path="/login" component={LoginPage} />
             <Private exact path="/secret" component={SecretPage} />
             <Route exact name="videoDetails" path="/video/:id" component={VideoDetails} />
-            <Route path="*">
-              <NotFound />
-            </Route>
+            <Route path="*" component={NotFound} />
           </Switch>
         </Layout>
       </AuthProvider>
