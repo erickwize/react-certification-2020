@@ -4,16 +4,16 @@ import MaterialToolbar from '@material-ui/core/Toolbar';
 import MaterialTextField from '@material-ui/core/TextField';
 import MaterialSwitch from '@material-ui/core/Switch';
 
-const AppBar = styled(MaterialAppBar)`
+export const AppBar = styled(MaterialAppBar)`
   width: 100%;
 `;
 
-const Toolbar = styled(MaterialToolbar)`
+export const Toolbar = styled(MaterialToolbar)`
   background-color: var(--text-color);
   color: var(--sub-color);
 `;
 
-const Switch = styled(MaterialSwitch)`
+export const Switch = styled(MaterialSwitch)`
   .MuiSwitch-track {
     background-color: var(--sub-color);
   }
@@ -27,19 +27,19 @@ const Switch = styled(MaterialSwitch)`
   }
 `;
 
-const EndBar = styled.div`
+export const EndBar = styled.div`
   display: flex;
   flex-flow: flex-end;
   align-items: center;
   margin-left: auto;
 `;
 
-const SearchStyled = styled.div`
+export const SearchStyled = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const TextField = styled(MaterialTextField)`
+export const TextField = styled(MaterialTextField)`
   & .MuiFormLabel-root {
     color: var(--sub-color);
   }
@@ -62,5 +62,3 @@ const TextField = styled(MaterialTextField)`
     color: var(--sub-color);
   }
 `;
-
-export { AppBar, EndBar, SearchStyled, TextField, Toolbar, Switch };
