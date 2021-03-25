@@ -16,18 +16,10 @@ function App() {
       <AuthProvider>
         <Layout>
           <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route exact path="/video/:id">
-              <VideoDetails />
-            </Route>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/login" component={LoginPage} />
+            <Private exact path="/secret" component={SecretPage} />
+            <Route exact name="videoDetails" path="/video/:id" component={VideoDetails} />
             <Route path="*">
               <NotFound />
             </Route>

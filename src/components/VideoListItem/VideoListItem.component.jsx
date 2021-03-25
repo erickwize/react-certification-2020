@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 
 import { StyledVideo, VideoTitle, Thumbnail, ChannelTitle } from './VideoListItem.styled';
 
-export default function Video({ data }) {
+const VideoLisItem = ({ data }) => {
   const { title, thumbnails, channelTitle } = data.snippet;
   return (
     <StyledVideo>
-      <Link to={`/video/${data.id.videoId}`}>
+      <Link to={{ pathname: `/video/${data.id.videoId}`, state: { title } }}>
         <Paper elevation={0}>
           <Thumbnail src={thumbnails.default.url} alt={title} />
           <VideoTitle>{title}</VideoTitle>
@@ -17,4 +17,6 @@ export default function Video({ data }) {
       </Link>
     </StyledVideo>
   );
-}
+};
+
+export default withRouter(VideoLisItem);
