@@ -32,7 +32,7 @@ export const Video = styled.div`
   &:hover ${Image} {
     width: 336px;
     margin-left: -18px;
-    box-shadow: 8px 1px #cecece;
+    box-shadow: 8px 4px #bebebe;
   }
 `;
 
