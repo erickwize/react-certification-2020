@@ -10,9 +10,9 @@ import {
   TitleBar,
 } from './ChannelCard.styles';
 
-function ChannelCard({ title, description, thumbnail }) {
+function ChannelCard({ id, title, description, thumbnail }) {
   return (
-    <Channel>
+    <Channel data-testid={id}>
       <Content>
         <Image style={{ backgroundImage: `url(${thumbnail})` }} />
         <Text>

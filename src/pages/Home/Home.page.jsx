@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import VideoCardList from '../../components/VideoCardList/VideoCardList.component';
+import ResultsList from '../../components/ResultsList';
 
 import './Home.styles.css';
 
@@ -8,7 +8,7 @@ function HomePage() {
 
   return (
     <section className="homepage" ref={sectionRef}>
-      <VideoCardList />
+      <ResultsList />
     </section>
   );
 }

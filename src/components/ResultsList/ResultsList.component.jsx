@@ -19,6 +19,7 @@ const channelList = videos.items
 
     return (
       <ChannelCard
+        id={video.etag}
         title={title}
         description={description}
         thumbnail={thumbnails.medium.url}
@@ -36,6 +37,7 @@ const videoList = videos.items
 
     return (
       <VideoCard
+        id={video.etag}
         title={title}
         description={description}
         thumbnail={thumbnails.medium.url}
@@ -45,7 +47,7 @@ const videoList = videos.items
     );
   });
 
-function VideoCardList() {
+function ResultList() {
   return (
     <div>
       {channelList.length > 0 ? (
@@ -69,4 +71,4 @@ function VideoCardList() {
   );
 }
 
-export default VideoCardList;
+export default ResultList;

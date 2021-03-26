@@ -9,9 +9,9 @@ import {
   PublishedDate,
 } from './VideoCard.styles';
 
-function VideoCard({ title, description, thumbnail, date }) {
+function VideoCard({ id, title, description, thumbnail, date }) {
   return (
-    <Video>
+    <Video data-testid={id}>
       <Image style={{ backgroundImage: `url(${thumbnail})` }} />
       <Text>
         <p>
