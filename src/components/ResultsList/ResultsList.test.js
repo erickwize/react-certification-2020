@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import TestRenderer from 'react-test-renderer';
 
-import VideoCard from '../VideoCard';
 import ResultList from './index';
+import VideoCard from '../VideoCard';
 import ChannelCard from '../ChannelCard';
 
 import data from '../../providers/data/mockData.json';
