@@ -5,10 +5,15 @@ import Paper from '@material-ui/core/Paper';
 import { StyledVideo, VideoTitle, Thumbnail, ChannelTitle } from './VideoListItem.styled';
 
 const VideoLisItem = ({ data }) => {
-  const { title, thumbnails, channelTitle } = data.snippet;
+  const { title, thumbnails, channelTitle, description, publishedAt } = data.snippet;
   return (
     <StyledVideo>
-      <Link to={{ pathname: `/video/${data.id.videoId}`, state: { title } }}>
+      <Link
+        to={{
+          pathname: `/video/${data.id.videoId}`,
+          state: { title, description, publishedAt },
+        }}
+      >
         <Paper elevation={0}>
           <Thumbnail src={thumbnails.default.url} alt={title} />
           <VideoTitle>{title}</VideoTitle>
