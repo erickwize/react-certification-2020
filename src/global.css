@@ -42,3 +42,7 @@ a:active {
 hr {
   margin: 50px 125px;
 }
+
+.active {
+  color: rgb(226, 119, 101);
+}
