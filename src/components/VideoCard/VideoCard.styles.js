@@ -46,6 +46,8 @@ export const Text = styled.div`
 export const Description = styled.small`
   font-size: 10pt;
   line-height: 1.5em;
+  margin-bottom: 16px;
+  margin-top: 8px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -56,9 +58,18 @@ export const Description = styled.small`
 export const Title = styled.strong`
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 12px 0px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+`;
+
+export const Channel = styled.p`
+  font-size: 8pt;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  font-weight: 300;
 `;
 
 export const PublishedDate = styled.p`
@@ -66,4 +77,5 @@ export const PublishedDate = styled.p`
   position: absolute;
   bottom: 0;
   right: 20px;
+  font-weight: 300;
 `;

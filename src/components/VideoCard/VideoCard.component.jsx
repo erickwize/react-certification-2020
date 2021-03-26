@@ -7,19 +7,17 @@ import {
   Title,
   Video,
   PublishedDate,
+  Channel,
 } from './VideoCard.styles';
 
-function VideoCard({ id, title, description, thumbnail, date }) {
+function VideoCard({ id, title, description, thumbnail, date, channel }) {
   return (
     <Video data-testid={id}>
       <Image style={{ backgroundImage: `url(${thumbnail})` }} />
       <Text>
-        <p>
-          <Title>{title}</Title>
-        </p>
-        <p>
-          <Description>{description}</Description>
-        </p>
+        <Title>{title}</Title>
+        <Channel>By {channel}</Channel>
+        <Description>{description}</Description>
         <PublishedDate>{getTimeLapsed(date)}</PublishedDate>
       </Text>
     </Video>
