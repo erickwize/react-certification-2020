@@ -11,12 +11,13 @@ import {
 
 const VideoListItem = ({ data }) => {
   const { title, thumbnails, channelTitle, description, publishedAt } = data.snippet;
+  const { videoId } = data.id;
 
   return (
     <Link
       to={{
         pathname: `/video/${data.id.videoId}`,
-        state: { title, description, publishedAt },
+        state: { title, description, publishedAt, videoId },
       }}
     >
       <StyledVideo>
