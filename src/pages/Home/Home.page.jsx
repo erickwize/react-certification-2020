@@ -1,18 +1,17 @@
 import React from 'react';
-import VideoContainer from '../../components/VideoContainer';
+import VideoList from '../../components/VideoList';
 
 import { mockData } from '../../assets/data/mock-videos';
-
 
 import './Home.styles.css';
 
 function HomePage() {
   return (
-    <section className="homepage" >
+    <section className="homepage">
       <div>
         <h1>Welcome to the Challenge!</h1>
       </div>
-      <VideoContainer videos={mockData.items}/>
+      <VideoList videos={mockData.items} />
     </section>
   );
 }

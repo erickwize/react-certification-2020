@@ -4,7 +4,6 @@ import Navbar from '../Navbar';
 import HomePage from '../../pages/Home';
 
 function App() {
-
   return (
     <div>
       <Navbar />

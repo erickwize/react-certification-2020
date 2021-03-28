@@ -3,13 +3,12 @@ import React from 'react';
 import './DrawerMenu.styles.css';
 
 function DrawerMenu() {
-
-  return( 
+  return (
     <div className="drawer-menu">
-      <button  className="drawer-button" type='button'>
-      <div></div>
-      <div></div>
-      <div></div>
+      <button className="drawer-button" type="button">
+        <div />
+        <div />
+        <div />
       </button>
     </div>
   );
