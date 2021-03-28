@@ -5,6 +5,8 @@ export const VideoList = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
+  height: 90vh;
+  overflow-y: scroll;
 `;
 
 export const StyledVideo = styled(Paper)`
