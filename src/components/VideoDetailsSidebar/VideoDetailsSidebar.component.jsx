@@ -31,7 +31,7 @@ const VideoListItem = ({ data }) => {
 const VideoDetailsSidebar = ({ list }) => {
   return (
     <VideoList>
-      {list.items.slice(1).map((e) => (
+      {list.items.map((e) => (
         <VideoListItem data={e} key={e.etag} />
       ))}
     </VideoList>
