@@ -1,0 +1,43 @@
+ PASS  src/components/Header/DarkmodeButton/DarkmodeButton.test.js
+ PASS  src/components/Header/ProfileButton/ProfileButton.test.js
+ PASS  src/components/Header/MenuButton/MenuButton.test.js
+ PASS  src/components/Header/Searchbar/Searchbar.test.js
+ PASS  src/components/VideosGrid/VideoGridItem/VideoGridItem.test.js
+ PASS  src/components/Header/Header.test.js
+ PASS  src/components/VideosGrid/VideoGrid.test.js
+ PASS  src/components/Layout/Layout.test.js
+ PASS  src/components/App/App.test.js
+-------------------------------------|----------|----------|----------|----------|-------------------|
+File                                 |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-------------------------------------|----------|----------|----------|----------|-------------------|
+All files                            |    93.18 |       50 |    92.31 |    93.18 |                   |
+ components/App                      |      100 |      100 |      100 |      100 |                   |
+  App.component.jsx                  |      100 |      100 |      100 |      100 |                   |
+ components/Header                   |      100 |      100 |      100 |      100 |                   |
+  Header.component.jsx               |      100 |      100 |      100 |      100 |                   |
+  HeaderIconStyles.js                |      100 |      100 |      100 |      100 |                   |
+ components/Header/DarkmodeButton    |      100 |      100 |      100 |      100 |                   |
+  DarkmodeButton.component.jsx       |      100 |      100 |      100 |      100 |                   |
+ components/Header/MenuButton        |      100 |      100 |      100 |      100 |                   |
+  MenuButton.component.jsx           |      100 |      100 |      100 |      100 |                   |
+ components/Header/ProfileButton     |      100 |      100 |      100 |      100 |                   |
+  ProfileButton.component.jsx        |      100 |      100 |      100 |      100 |                   |
+ components/Header/Searchbar         |      100 |      100 |      100 |      100 |                   |
+  Searchbar.component.jsx            |      100 |      100 |      100 |      100 |                   |
+ components/Layout                   |      100 |      100 |      100 |      100 |                   |
+  Layout.component.jsx               |      100 |      100 |      100 |      100 |                   |
+ components/VideosGrid               |      100 |      100 |      100 |      100 |                   |
+  VideosGrid.component.jsx           |      100 |      100 |      100 |      100 |                   |
+ components/VideosGrid/VideoGridItem |      100 |      100 |      100 |      100 |                   |
+  VideoGridItem.component.jsx        |      100 |      100 |      100 |      100 |                   |
+ pages/Home                          |     62.5 |       50 |       50 |     62.5 |                   |
+  Home.page.jsx                      |     62.5 |       50 |       50 |     62.5 |          17,18,19 |
+-------------------------------------|----------|----------|----------|----------|-------------------|
+
+Test Suites: 9 passed, 9 total
+Tests:       15 passed, 15 total
+Snapshots:   0 total
+Time:        4.128s
+Ran all test suites related to changed files.
+
+Watch Usage: Press w to show more
