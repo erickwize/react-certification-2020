@@ -13,7 +13,7 @@ function getTimeLapsed(publishedDate) {
   const years = Math.floor(months / 12);
   let diff = '';
 
-  if (milliseconds * 1000 < 1) {
+  if (milliseconds < 1000) {
     diff = 'Just now';
   } else if (seconds < 60) {
     diff = `${seconds} ${seconds === 1 ? 'second' : 'seconds'} ago`;
