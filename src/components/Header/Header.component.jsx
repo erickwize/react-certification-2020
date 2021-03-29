@@ -4,99 +4,117 @@ import styled from 'styled-components'
 const StyledHeader = styled.header`
     background-color: rgb(247, 247, 247);
     display: flex;
-    border-bottom: 1px solid rgb(236, 236, 236 ) !important;
+    border-bottom: 1px solid rgb(236, 236, 236);
     width: 100%;
-    flex-direction:column;
+    height: 60px;
  `;
 
-const MenuContainer = styled.div`
-    display:flex;
-    width:auto;
-    position: relative;
-    align-items:center;
-    padding-left: 20px;
-    padding-right:20px;
-    min-height: 60px;
+const LeftSide = styled.div`
+    flex: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 `;
 
 const LeftMenu = styled.div`
-display: flex;
+    display:flex;
+    max-height: 60px;
+    align-items: center;
+    justify-content: left;
 `;
 
-const CenterMenu=styled.div`
-    display: flex;
-    flex:1;
-`;
-
-const RightMenu = styled.div`
-display: flex;
-`;
-
-const ToogleMenu =styled.div`
-width: 35px;
-height: 5px;
-background-color: black;
-margin: 6px 0;
-`;
-
-const SearchItem = styled.input`
-    width: 15em;
-    margin-left: 24px;
-`;
-
-
-const UserLogin  = styled.button`
-    width: 40px important!;
-    height: 40px important!;
+const MenuButton  = styled.button`
+    display:flex;
+    width: 40px ;
+    height: 40px;
     align-items: center;
     text-align: center;
     border:none;
-    background: none;
+    background-color: rgb(161, 161, 161);
+    border-radius: 50%;
+    margin-left:30px;
+    padding:none;
+    user-select:none;
+    outline:none;
+
+    &:hover{
+        background-color: rgb(128, 191, 216);
+    }
 `;
 
-const Avatar = styled.div`
-border-radius: 50%;
-justify-content: center;
+
+
+const SearchItem = styled.input`
+    display:flex;
+    widht: 110px;
+    height: 30px;
+    border:none;
+    border-radius: 4px;
+    font-size:20px;
+    padding-left: 40px;
+    border-color:none;
+    placeholder: Search..;
+    margin-left: 30px;
+    outline:none;
+
 `;
 
-const LabelSwitch = styled.label`
-position: relative;
-display: inline-block;
-width: 60px;
-height: 34px;
-margin-right: 50px;
+const RightSide = styled.div`
+    flex: 50%;
+    display:flex;
+    align-items:center;
+    justify-content: flex-end;
+`;
+
+const UserLogin  = styled.button`
+    width: 40px ;
+    height: 40px;
+    align-items: center;
+    text-align: center;
+    border:none;
+    background-color: rgb(161, 161, 161);
+    border-radius: 50%;
+    margin-right:30px;
+    padding:none;
+    user-select:none;
+    outline:none;
+
+    &:hover{
+        background-color: rgb(128, 191, 216);
+    }
 `;
 
 function Header() {
 
   return (
     <StyledHeader>
-       <MenuContainer>
+        <LeftSide>
             <LeftMenu>
-                <div>
-                    <ToogleMenu/>
-                    <ToogleMenu/>
-                    <ToogleMenu/>
-                </div>
-                    <SearchItem/>
-                </LeftMenu>
-                <CenterMenu/>
-            <RightMenu>
-            <LabelSwitch>
-                <input id="none" type="checkbox" text="Dark Mode"/>
-                <span className="slider round"/>
-            </LabelSwitch>
-                <UserLogin>
-                    <span>
-                        <Avatar>
-                            <svg>
-                              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                <MenuButton>
+                    <span className="MenuIconLabel">
+                        <div className="MenuIconContainer">
+                            <svg className="MenuIcon" viewBox="0 0 100 80">
+                                <rect width="100" height="15"/>
+                                <rect y="30" width="100" height="15"/>
+                                <rect y="60" width="100" height="15"/>
                             </svg>
-                        </Avatar>
+                        </div>
                     </span>
-                </UserLogin>
-            </RightMenu>
-       </MenuContainer>
+                </MenuButton>
+                <SearchItem placeholder="Search.."/>
+            </LeftMenu>
+        </LeftSide>
+        <RightSide>
+            <UserLogin>
+                <span className="AvatarLabel">
+                    <div className="AvatarContainer">
+                        <svg className="UserIcon">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4 m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                </span>
+            </UserLogin>
+        </RightSide>
     </StyledHeader>
   );
 }
