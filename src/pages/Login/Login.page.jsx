@@ -16,7 +16,7 @@ function LoginPage() {
 
   return (
     <section className="login">
-      <h1>Welcome back! HELLO, HELLO, HELLO! HALLELLOOH!</h1>
+      <h1>HALLELLO!</h1>
       <form onSubmit={authenticate} className="login-form">
         <div className="form-group">
           <label htmlFor="username">
