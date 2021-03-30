@@ -1,14 +1,32 @@
-import React from 'react';
-import videos from '../../youtube-videos-mock.json';
+import React, { useEffect, useState } from 'react';
 import VideoCard from '../../components/VideoCard';
 import { Container, Title, VideoGrid } from './Home.styles';
 import './Home.styles.js';
 
-function HomePage() {
-  
-  const { items = [] } = videos;
 
-  const videosList = items.map((video) => {
+const useFetch = url => {
+
+  const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(url);
+      const data = await response.json();
+      const item = data.items;
+      setVideos(item);
+      setLoading(false);
+    }
+    fetchData();
+  });
+  return{videos, loading}
+}
+
+function HomePage() {
+  const{videos, loading} = useFetch( 'https://www.googleapis.com/youtube/v3/videos?maxResults=50&part=snippet&chart=mostPopular&key=AIzaSyB_zm0mwpFT9TcRIkaGYxLUChyOyIzmE-E')
+
+  
+  const aVideo = videos.map((video) => {
     const {
       etag,
       snippet: {
@@ -31,7 +49,9 @@ function HomePage() {
   return (
     <Container>
       <Title>Mini Challenge 1</Title>
-      <VideoGrid>{videosList}</VideoGrid>
+      <VideoGrid>
+        {loading ? <p>loading</p> : aVideo}
+      </VideoGrid>
     </Container>
   );
 }
