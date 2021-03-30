@@ -9,6 +9,8 @@ import SecretPage from '../../pages/Secret';
 import Private from '../Private';
 import Fortune from '../Fortune';
 import Layout from '../Layout';
+import MainHeader from '../Header';
+
 import { random } from '../../utils/fns';
 
 function App() {
@@ -32,15 +34,16 @@ function App() {
 
   return (
     <BrowserRouter>
+      <MainHeader />
       <AuthProvider>
         <Layout>
           <Switch>
             <Route exact path="/">
               <HomePage />
             </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
+            // <Route exact path="/login">
+            //   <LoginPage />
+            // </Route>
             <Private exact path="/secret">
               <SecretPage />
             </Private>
