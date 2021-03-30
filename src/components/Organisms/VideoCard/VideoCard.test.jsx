@@ -5,7 +5,6 @@ import VideoCard from './index';
 describe('Test VideoCard Component', () => {
   it('matches snapshot', () => {
     render(<VideoCard title="Test Heading" />);
-
     const heading = screen.getByRole('heading', { name: /Test Heading/i });
 
     expect(heading).toBeInTheDocument();
