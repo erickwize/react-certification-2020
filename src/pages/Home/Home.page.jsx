@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import HeaderLarge from '../../components/atoms/HeaderLarge';
+import HeaderLarge from '../../components/Atoms/HeaderLarge';
 import VideoList from '../../components/Templates/VideoList/index';
 import * as videos from '../../data/youtube-videos-mock.json';
 
@@ -10,7 +10,7 @@ function HomePage() {
     <section className="homepage" ref={sectionRef}>
       <HeaderLarge>Video List</HeaderLarge>
       <>
-        <VideoList list={videos} key="1232331" />
+        <VideoList list={videos} />
       </>
     </section>
   );

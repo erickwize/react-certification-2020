@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Toggle from '../Toggle';
-import Pic from '../../atoms/Pic';
-import Label from '../../atoms/Label';
+import Pic from '../../Atoms/Pic';
+import Label from '../../Atoms/Label';
 
 const NavBarRightSC = styled.div`
   display: flex;

@@ -6,6 +6,6 @@ const LabelSC = styled.label`
   margin: 0px 15px;
 `;
 
-const Label = (props) => <LabelSC data-testid="labelTest">{props.children}</LabelSC>;
+const Label = (props) => <LabelSC htmlFor={props.for}>{props.children}</LabelSC>;
 
 export default Label;

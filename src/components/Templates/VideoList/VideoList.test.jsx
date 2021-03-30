@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { cleanup } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import VideoList from './index';
 import * as data from '../../../data/youtube-videos-mock.json';
 
 describe('Test VideoList Component', () => {
-  afterEach(cleanup);
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<VideoList list={data} />, div);
+  it('renders without crashing and all videos are shown', () => {
+    render(<VideoList list={data} />);
+
+    const allVideos = screen.getAllByRole('img', { name: /Video/i });
+    expect(allVideos.length).toEqual(24);
   });
 });

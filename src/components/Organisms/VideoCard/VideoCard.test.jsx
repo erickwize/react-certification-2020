@@ -1,18 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { cleanup } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 import VideoCard from './index';
 
 describe('Test VideoCard Component', () => {
-  afterEach(cleanup);
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<VideoCard />, div);
-  });
-
   it('matches snapshot', () => {
-    const tree = renderer.create(<VideoCard />).toJSON();
-    expect(tree).toMatchSnapshot();
+    render(<VideoCard title="Test Heading" />);
+
+    const heading = screen.getByRole('heading', { name: /Test Heading/i });
+
+    expect(heading).toBeInTheDocument();
+    expect(heading).toMatchInlineSnapshot(`
+      <h4
+        class="sc-dlfnbm iGzhYW"
+      >
+        Test Heading
+      </h4>
+    `);
   });
 });

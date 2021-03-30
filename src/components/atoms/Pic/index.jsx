@@ -10,6 +10,6 @@ const IconLogin = styled.img`
   cursor: pointer;
 `;
 
-const Pic = ({ imgSrc }) => <IconLogin src={imgSrc || '/profile.svg'} />;
+const Pic = ({ imgSrc }) => <IconLogin src={imgSrc || '/profile.svg'} alt="Profile" />;
 
 export default Pic;

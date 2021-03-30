@@ -6,6 +6,6 @@ const VideoImgSC = styled.img`
   height: auto;
 `;
 
-const VideoImg = ({ imgCover }) => <VideoImgSC src={imgCover} alt="" />;
+const VideoImg = ({ imgCover }) => <VideoImgSC src={imgCover} alt="Video" />;
 
 export default VideoImg;

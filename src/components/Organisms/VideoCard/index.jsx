@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Div from '../../atoms/Div';
-import VideoImg from '../../atoms/VideoImg';
-import HeaderMedium from '../../atoms/HeaderMedium';
-import Paragraph from '../../atoms/Paragraph';
+import Div from '../../Atoms/Div';
+import VideoImg from '../../Atoms/VideoImg';
+import HeaderMedium from '../../Atoms/HeaderMedium';
+import Paragraph from '../../Atoms/Paragraph';
 
 const Card = styled.div`
   display: inline-block;

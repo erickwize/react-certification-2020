@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Input from '../../atoms/Input';
-import Hamburguer from '../../atoms/Hamburguer';
+import Input from '../../Atoms/Input';
+import Hamburguer from '../../Atoms/Hamburguer';
 
 const NavBarLeftSC = styled.div`
   display: flex;
@@ -9,6 +9,7 @@ const NavBarLeftSC = styled.div`
 `;
 
 const handleChange = (event) => {
+  // TODO
   console.log(event);
 };
 

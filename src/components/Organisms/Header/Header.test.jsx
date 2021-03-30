@@ -1,18 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { cleanup } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Header from './index';
 
 describe('Test Header Component', () => {
-  afterEach(cleanup);
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Header />, div);
-  });
+  it('renders correctly and matches snapshot', () => {
+    render(<Header />);
+    const checkbox = screen.getByRole('checkbox');
 
-  it('matches snapshot', () => {
-    const tree = renderer.create(<Header />).toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(screen.getByRole('img', { name: /Menu Icon/i })).toHaveAttribute(
+      'src',
+      '/menu.svg'
+    );
+    expect(screen.getByRole('img', { name: /Profile/i })).toHaveAttribute(
+      'src',
+      '/profile.svg'
+    );
+    expect(checkbox.checked).toEqual(false);
+    expect(checkbox).toMatchInlineSnapshot(`
+      <input
+        class="sc-eCssSg cOQNoX"
+        type="checkbox"
+      />
+    `);
+    fireEvent.click(checkbox);
+    expect(checkbox.checked).toEqual(true);
   });
 });
