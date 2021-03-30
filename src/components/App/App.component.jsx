@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import Header from '../Header';
-import Videos from '../Videos';
+import Videos from '../VideoList';
 import data from "../../mock/youtube-videos-mock.json";
 
 const Content  = styled.div`

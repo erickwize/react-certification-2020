@@ -6,9 +6,20 @@ import VideoCard from '../VideoCard';
 const VideosContainer  = styled.div`
     display: flex;
     flex-flow:wrap;
-    width: 1300px;
+    max-width:100%;
     margin: 0px auto;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right:20px;
+    padding-left: 12px;
+    padding-right: 12px;
 
+
+    @media only screen and (max-width: 600px) {
+
+        width: 600px;
+        justify-content:flex-start;
+    }
 `;
 
 function  Videos(props) {
