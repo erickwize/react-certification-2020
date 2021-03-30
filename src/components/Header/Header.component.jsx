@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(227 227 227);
     display: flex;
     border-bottom: 1px solid rgb(236, 236, 236);
     width: 100%;
     height: 60px;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
  `;
 
 const LeftSide = styled.div`
@@ -32,13 +33,22 @@ const MenuButton  = styled.button`
     border:none;
     background-color: rgb(161, 161, 161);
     border-radius: 50%;
-    margin-left:30px;
     padding:none;
     user-select:none;
     outline:none;
 
     &:hover{
         background-color: rgb(128, 191, 216);
+
+
+    }
+
+    &.loginButton{
+        margin-right:30px;
+    }
+
+    &.menuButton  {
+        margin-left:30px;
     }
 `;
 
@@ -66,23 +76,25 @@ const RightSide = styled.div`
     justify-content: flex-end;
 `;
 
-const UserLogin  = styled.button`
-    width: 40px ;
-    height: 40px;
-    align-items: center;
-    text-align: center;
-    border:none;
-    background-color: rgb(161, 161, 161);
-    border-radius: 50%;
-    margin-right:30px;
-    padding:none;
-    user-select:none;
-    outline:none;
+/* const SwitchButton = styled.input`
+ display: flex;
+ margin-right:15px;
 
-    &:hover{
-        background-color: rgb(128, 191, 216);
-    }
+&.onoffswitch{
+
+}
+`; */
+
+const SwitchLabel = styled.label`
+    display: flex;
+     align-items: center;
+     margin-left: -11px;
+     margin-right: 16px;
+     vertical-align: middle;
+     -webkit-tap-highlight-color: transparent;
 `;
+
+
 
 function Header() {
 
@@ -90,7 +102,7 @@ function Header() {
     <StyledHeader>
         <LeftSide>
             <LeftMenu>
-                <MenuButton>
+                <MenuButton className="menuButton">
                     <span className="MenuIconLabel">
                         <div className="MenuIconContainer">
                             <svg className="MenuIcon" viewBox="0 0 100 80">
@@ -102,10 +114,25 @@ function Header() {
                     </span>
                 </MenuButton>
                 <SearchItem placeholder="Search.."/>
+
             </LeftMenu>
         </LeftSide>
         <RightSide>
-            <UserLogin>
+        <div className="onoffswitch">
+            <SwitchLabel>
+                    <span className="Switch-main">
+                        <span className="Switch-base">
+                            <span className="Switchinput-container">
+                                <input className="Switch-input" type="checkbox"/>
+                            <span className="Switch-bullet"/>
+                            </span>
+                        </span>
+                        <span className="Switch-track"/>
+                    </span>
+                    <span>Dark mode</span>
+             </SwitchLabel>
+        </div>
+            <MenuButton className="loginButton">
                 <span className="AvatarLabel">
                     <div className="AvatarContainer">
                         <svg className="UserIcon">
@@ -113,7 +140,7 @@ function Header() {
                         </svg>
                     </div>
                 </span>
-            </UserLogin>
+            </MenuButton>
         </RightSide>
     </StyledHeader>
   );
