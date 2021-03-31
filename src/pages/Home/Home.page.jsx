@@ -1,37 +1,50 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-
-import { useAuth } from '../../providers/Auth';
-import './Home.styles.css';
+import React, { useState, useEffect } from 'react';
+import { VideoList, HomeTitle } from './Home.styles';
+import youtubeVideoList from '../../utils/mock/youtube-videos-mock.json';
+import VideoCard from '../../components/VideoCard';
+import { getReadableDate } from '../../utils/fns';
 
 function HomePage() {
-  const history = useHistory();
-  const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
+  const [videoList, setVideoList] = useState([]);
 
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
+  useEffect(() => {
+    const getList = async () => {
+      let listItems = [];
+      try {
+        listItems = await youtubeVideoList.items;
+      } catch {
+        console.info('Error reading json file: youtubeVideoList');
+      }
+      setVideoList(listItems);
+    };
+    getList();
+  }, [videoList]);
+
+  const getUsefullData = (videoData) => {
+    const {
+      publishedAt,
+      title,
+      channelTitle,
+      description,
+      thumbnails,
+    } = videoData.snippet;
+    return {
+      uploadDate: getReadableDate(publishedAt),
+      thumbnail: thumbnails.medium.url,
+      title,
+      description,
+      channel: channelTitle,
+    };
+  };
 
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
+    <section>
+      <HomeTitle>Welcome y&#8217;all!</HomeTitle>
+      <VideoList>
+        {videoList.map((video) => (
+          <VideoCard key={video.etag} videoData={getUsefullData(video)} />
+        ))}
+      </VideoList>
     </section>
   );
 }
