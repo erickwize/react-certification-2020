@@ -17,8 +17,7 @@ const VideosContainer  = styled.div`
 
     @media only screen and (max-width: 600px) {
 
-        width: 600px;
-        justify-content:flex-start;
+        justify-content:center;
     }
 `;
 

@@ -20,6 +20,12 @@ outline:none;
 
 }
 
+@media only screen and (max-width: 350px) {
+
+    width: 210px;
+
+}
+
 `;
 
 function Search(){

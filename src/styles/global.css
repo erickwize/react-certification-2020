@@ -86,6 +86,12 @@ h3 {
     height: 80%;
     display: inline-block;
     user-select: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.UserIcon {
+    padding-top: 2px;
 }
 
 .DefaulUserIcon {
