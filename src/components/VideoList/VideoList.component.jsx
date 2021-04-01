@@ -24,7 +24,7 @@ const VideosContainer  = styled.div`
 function  Videos(props) {
     return (
         <VideosContainer>
-            {props.data.items.map((item) => (
+            {props.data.map((item) => (
 
                     <VideoCard key={item.etag} data={item.snippet} />
                 ))}

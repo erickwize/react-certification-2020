@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const SearchItem = styled.input`
@@ -28,9 +28,21 @@ outline:none;
 
 `;
 
-function Search(){
+const Search = ({searchHandler}) =>{
+    const[query, setQuery] = useState("")
+    const getTextQuery = (e) => {
+        setQuery(e.target.value)
+    }
+
+    const onSubmitQuery = (e) =>{
+        e.preventDefault();
+        searchHandler(query);
+    }
+
     return(
-        <SearchItem placeholder="Search.."/>
+        <form onSubmit={onSubmitQuery}>
+        <SearchItem placeholder="Search.." value={query}  onChange={getTextQuery} />
+        </form>
     );
 }
 

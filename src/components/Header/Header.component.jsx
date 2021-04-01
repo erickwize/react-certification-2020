@@ -39,14 +39,14 @@ const RightSide = styled.div`
 
 
 
-function Header() {
+const Header = ({searchHandler}) =>{
 
   return (
     <StyledHeader>
         <LeftSide>
             <LeftMenu>
                 <Menu/>
-                <Search/>
+                <Search searchHandler={searchHandler}/>
             </LeftMenu>
         </LeftSide>
         <RightSide>
@@ -55,6 +55,6 @@ function Header() {
         </RightSide>
     </StyledHeader>
   );
-}
+};
 
 export default Header;

@@ -1,10 +1,9 @@
+/* eslint-disable no-shadow */
 /* global gapi */
-
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components'
 import Header from '../Header';
 import Videos from '../VideoList';
-import data from "../../mock/youtube-videos-mock.json";
 
 const Content  = styled.div`
 
@@ -12,9 +11,9 @@ const Content  = styled.div`
 
 
 const App = () => {
-
-
-  const apiKey= process.env.REACT_APP_YOUTUBE_API_KEY;
+  const [query, setQuery] = useState("react js");
+  const [data, setVideos] = useState([]);
+  const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 
   const initClient = async()=>{
     try{
@@ -36,28 +35,36 @@ const App = () => {
 
   };
 
-  const makeSearch = async () =>{
+  const makeSearch = async (query) =>{
     try {
       const promise = await gapi.client.youtube.search.list({
         part: ["snippet"],
         maxResults:20,
-        q: "Wizeline",
+        q: query,
         type:["video"]
       });
-
-      console.log("SUCCESS", promise)
+      setVideos(promise.result.items);
     } catch (error) {
       console.log("Error while searching...", error)
     }
   }
 
-  // Make sure the client is loaded before calling this method.
+  useEffect(()=>{
+    loadClient();
+  });
 
-  loadClient();
-  makeSearch();
+  useEffect(()=>{
+    makeSearch(query);
+  },[query]);
+
+  const getSearchQuery = (query) =>{
+    setQuery(query);
+  };
+
+  // Make sure the client is loaded before calling this method.
   return (
         <div className="App">
-            <Header/>
+            <Header searchHandler={getSearchQuery} />
             <Content >
               <Videos data= {data}/>
             </Content>
