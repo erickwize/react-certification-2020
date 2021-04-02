@@ -12,10 +12,10 @@ const CardList = ({list, IdVid}) => {
     useEffect(async () => {
         if (IdVid) {
             result = search ?  await fetchData.get("/search", {params: {q: search}}) : await fetchData.get("/search", {params: {relatedToVideoId: IdVid}})
+            console.log("AQUI ES: ", result)
         } else {
             result = search ?  await fetchData.get("/search", {params: {q: search}}) : await fetchData.get("/search")
         }
-        console.log(result.data)
         setData(result.data)
 
         return function cleanup() {
@@ -27,7 +27,7 @@ const CardList = ({list, IdVid}) => {
         <Grid templateColumns={!list?{"md": "repeat(3, 1fr)", "sm": "repeat(1, 1fr)"}:"repeat(1, 1fr)"} mb={5} gap={1}>
             {!data ? "hola" : data.items.map((item) => {
                 return (
-                    <Card key={item.id.videoId} item={item}/>         
+                    item.hasOwnProperty('snippet') ? <Card key={item.id.videoId} item={item}/> : null         
                 )
             })}
         </Grid>

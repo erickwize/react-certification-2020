@@ -7,6 +7,5 @@ describe('NavBar', () => {
         render(<NavBar/>);
         const title = screen.getByText(/Dutube/i);
         expect(title).toBeInTheDocument();
-    });
-    
+    });    
 });
