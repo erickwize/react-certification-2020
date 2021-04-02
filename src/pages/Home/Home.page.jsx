@@ -2,52 +2,41 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Layout from '../../components/Layout';
 import VideoCard from '../../components/VideoCard';
+import { useSearch } from '../../providers/SearchContext';
 
 const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
-const YOUTUBE_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
-
-// export async function getServerSideProps() {
-//   const res = await fetch(
-//     `${YOUTUBE_API}?part=snippet&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
-//   );
-//   const data = await res.json();
-
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
+const YOUTUBE_API = 'https://www.googleapis.com/youtube/v3/search';
 
 function HomePage() {
-  const [youtubeVideo, setYoutubeVideo] = useState(null);
+  const { query } = useSearch();
+  const [youtubeVideos, setYoutubeVideos] = useState(null);
   useEffect(() => {
     async function getServerSideProps() {
       const res = await fetch(
-        `${YOUTUBE_API}?part=snippet&playlistId=PLyzOXHX-1l7fbbYl3L0xPL482zoeLMhj2&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+        `${YOUTUBE_API}?part=snippet&q=${query}&maxResults=25&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
       );
       const data = await res.json();
-      setYoutubeVideo(data);
+      setYoutubeVideos(data);
       console.log(data);
     }
     getServerSideProps();
-  }, []);
+  }, [query]);
 
   return (
     <Layout>
       <section>
         <CardsContainer>
-          {youtubeVideo !== null &&
-            youtubeVideo.items.map((caja) => (
+          {youtubeVideos !== null &&
+            youtubeVideos.items.map((ytvideo) => (
               <VideoCard
-                key={caja.etag}
-                title={caja.snippet.title}
-                description={caja.snippet.description}
-                thumbnail={caja.snippet.thumbnails.default.url}
+                key={ytvideo.etag}
+                title={ytvideo.snippet.title}
+                description={ytvideo.snippet.description}
+                thumbnail={ytvideo.snippet.thumbnails.default.url}
               />
             ))}
         </CardsContainer>

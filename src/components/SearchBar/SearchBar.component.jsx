@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSearch } from '../../providers/SearchContext';
 
 const SearchbarContainer = styled.div`
   padding: 0 2rem;
@@ -20,13 +21,22 @@ const InputSearchbar = styled.input`
   }
 `;
 
-const SearchBar = () => (
-  <SearchbarContainer>
-    <Searchbar>
-      <span className="material-icons-outlined">search</span>
-      <InputSearchbar type="text" />
-    </Searchbar>
-  </SearchbarContainer>
-);
+const SearchBar = () => {
+  const { query, setQuery } = useSearch();
+
+  return (
+    <SearchbarContainer>
+      <Searchbar>
+        <span className="material-icons-outlined">search</span>
+        <InputSearchbar
+          type="text"
+          placeholder="Pokemon"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </Searchbar>
+    </SearchbarContainer>
+  );
+};
 
 export default SearchBar;
