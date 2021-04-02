@@ -17,7 +17,7 @@ function HomePage() {
   useEffect(() => {
     async function getServerSideProps() {
       const res = await fetch(
-        `${YOUTUBE_API}?part=snippet&q=${query}&maxResults=25&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+        `${YOUTUBE_API}?part=snippet&q=${query}&maxResults=25&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&type=video`
       );
       const data = await res.json();
       setYoutubeVideos(data);
@@ -31,14 +31,17 @@ function HomePage() {
       <section>
         <CardsContainer>
           {youtubeVideos !== null &&
-            youtubeVideos.items.map((ytvideo) => (
-              <VideoCard
-                key={ytvideo.etag}
-                title={ytvideo.snippet.title}
-                description={ytvideo.snippet.description}
-                thumbnail={ytvideo.snippet.thumbnails.default.url}
-              />
-            ))}
+            youtubeVideos.items
+              // .filter((ytvideo) => ytvideo.id.kind === 'youtube#video')
+              .map((ytvideo) => (
+                <VideoCard
+                  key={ytvideo.id.videoId}
+                  id={ytvideo.id.videoId}
+                  title={ytvideo.snippet.title}
+                  description={ytvideo.snippet.description}
+                  thumbnail={ytvideo.snippet.thumbnails.default.url}
+                />
+              ))}
         </CardsContainer>
       </section>
     </Layout>
