@@ -3,7 +3,8 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error", {
-     "endOfLine":"auto"
+     "endOfLine":"auto",
+     "global-require": 0  
    }],
     "react/jsx-filename-extension": "error",
     "react-hooks/exhaustive-deps": "warn",
