@@ -1,27 +1,28 @@
-import React, { useContext } from 'react'
+import React, { useContext, useCallback } from 'react'
 import { Context } from '../../context/context'
 import StyledToggle from './Toggle.styled'
 
-const Toggle = () => {
-  const { dark, setTheme } = useContext(Context)
+const Toggle = React.memo(() => {
+  const { state, dispatch } = useContext(Context)
 
-  const handleChange = () => {
-    setTheme()
-  }
+  const handleChange = useCallback(() => {
+    dispatch({ type: 'TOGGLE_THEME' })
+  }, [dispatch])
+
   return (
-    <StyledToggle>
+    <StyledToggle statusMenu={state.menu}>
       <input
         className="checkbox"
         id="checkbox"
         type="checkbox"
-        checked={dark}
+        checked={state.theme}
         onChange={handleChange}
       />
       <label className="switch" htmlFor="checkbox">
         <span className="slider" />
       </label>
-      <div>Dark mode</div>
+      <div className="named">Dark mode</div>
     </StyledToggle>
   )
-}
+})
 export default Toggle

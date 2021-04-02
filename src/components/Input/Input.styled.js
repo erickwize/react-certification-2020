@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledInput = styled.input.attrs({
-  className: 'search',
+  role: 'input',
 })`
   padding: 1em;
   margin: 0.8em;
