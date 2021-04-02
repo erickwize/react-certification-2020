@@ -1,23 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
 import VideoItem from '../VideoItem';
+import { Wrapper, VideoList } from './VideoHome.styled';
 import { ytdata } from '../../ytdata';
 
-const Wrapper = styled.div`
-  display: inline-block;
-`;
-const VideoList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-`;
-
-function VideoHome() {
+function VideoHome({ query }) {
   return (
     <Wrapper>
       <VideoList>
         {ytdata.items
           .filter((item) => item.id.kind === 'youtube#video')
+          .filter((item) =>
+            (item.snippet.title + item.snippet.description).includes(query)
+          )
           .map((v) => (
             <VideoItem value={v} key={v.etag} />
           ))}

@@ -1,23 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import styled from 'styled-components';
+import { Content, Footer } from './Home.styled';
 import Header from '../../components/Header';
 import VideoHome from '../../components/VideoHome';
 
 import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
 
-const Content = styled.div`
-  display: block;
-  padding: 0 20px;
-`;
-const Footer = styled.div`
-  display: block;
-  padding: 0 20px;
-`;
-
 function HomePage() {
   const history = useHistory();
+  const [query, setQuery] = useState('');
   const sectionRef = useRef(null);
   const { authenticated, logout } = useAuth();
 
@@ -29,7 +21,7 @@ function HomePage() {
 
   return (
     <section className="homepage" ref={sectionRef}>
-      <Header />
+      <Header query={query} setQuery={setQuery} />
       {authenticated ? (
         <>
           <h2>Good to have you back</h2>
@@ -44,7 +36,7 @@ function HomePage() {
       ) : (
         <>
           <Content>
-            <VideoHome />
+            <VideoHome query={query} />
           </Content>
           <Footer>
             <Link to="/login">let me in →</Link>

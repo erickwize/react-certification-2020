@@ -1,7 +1,7 @@
 import React from 'react';
-import { Wrapper, Title, Thumbnail } from './VideoItem.styled';
+import { Wrapper, Title, Thumbnail } from './VideoPlayer.styled';
 
-function VideoItem({ children, ...rest }) {
+function VideoPlayer({ children, ...rest }) {
   const text = rest.value.snippet.title.replace(/&#39;/g, "'");
   return (
     <Wrapper key={rest.value.etag}>
@@ -11,4 +11,4 @@ function VideoItem({ children, ...rest }) {
   );
 }
 
-export default VideoItem;
+export default VideoPlayer;
