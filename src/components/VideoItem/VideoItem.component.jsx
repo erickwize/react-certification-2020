@@ -24,16 +24,13 @@ const Thumbnail = styled.img`
 `;
 
 function VideoItem({ children, ...rest }) {
-  if (rest.value.id.kind === 'youtube#video') {
-    const text = rest.value.snippet.title.replace(/&#39;/g, "'");
-    return (
-      <Wrapper key={rest.value.etag}>
-        <Thumbnail src={rest.value.snippet.thumbnails.high.url} />
-        <Title>{text}</Title>
-      </Wrapper>
-    );
-  }
-  return <></>;
+  const text = rest.value.snippet.title.replace(/&#39;/g, "'");
+  return (
+    <Wrapper key={rest.value.etag}>
+      <Thumbnail src={rest.value.snippet.thumbnails.high.url} />
+      <Title>{text}</Title>
+    </Wrapper>
+  );
 }
 
 export default VideoItem;
