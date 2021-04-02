@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import SearchInput from '../SearchInput';
 import DrawerMenu from '../DrawerMenu';
 import UserActions from '../UserActions';
 import Toggle from '../Toggle';
 
-import { useHistory } from 'react-router-dom';
-import { useState } from 'react';
 import './Navbar.styles.css';
 
 function Navbar(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import VideoPlayer from '../../components/VideoPlayer';
 import VideoRecomendationsList from '../../components/VideoRecomendationsList';
-import { useLocation } from 'react-router-dom';
 
 import './VideoDetail.styles.css';
 
