@@ -1,0 +1,14 @@
+.video-detail {
+  margin-top: 60px;
+  display: flex;
+}
+
+.video-detail .video-player {
+  width: 70%;
+  display: inline-block;
+}
+
+.video-detail .video-recomendations-list {
+  width: 30%;
+  display: inline-block;
+}

@@ -1,17 +1,22 @@
 import React from 'react';
 import VideoList from '../../components/VideoList';
-
-import { mockData } from '../../assets/data/mock-videos';
+import Loading from '../../components/Loading';
 
 import './Home.styles.css';
 
-function HomePage() {
+function HomePage(props) {
   return (
     <section className="homepage">
-      <div>
-        <h1>Welcome to the Challenge!</h1>
-      </div>
-      <VideoList videos={mockData.items} />
+      {props.isLoading ? (
+        <Loading />
+      ) : (
+        <div>
+          <div>
+            <h1>Welcome to the Challenge!</h1>
+          </div>
+          <VideoList videos={props.videos} />
+        </div>
+      )}
     </section>
   );
 }

@@ -8,6 +8,13 @@
   margin: 10px;
   box-sizing: border-box;
   display: inline-block;
+  cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.video-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .video-item .thumbnail {
@@ -26,6 +33,7 @@
   font-weight: 300;
   margin-top: 0px;
   text-overflow: ellipsis;
+  color: black;
 }
 
 .video-item .info p {

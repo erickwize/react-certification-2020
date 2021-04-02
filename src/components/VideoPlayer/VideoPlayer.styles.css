@@ -1,0 +1,12 @@
+.video-youtube {
+  width: 100%;
+  height: 500px;
+}
+
+.video-player .video-info {
+  padding: 20px;
+}
+
+.video-player .video-info h2 {
+  margin: 5px 0 10px 0;
+}

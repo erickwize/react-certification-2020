@@ -1,0 +1,19 @@
+.video-recomendations-item {
+  height: 90px;
+  border-bottom: 1px solid lightgray;
+}
+.video-recomendations-item img {
+  width: 120px;
+  height: 90px;
+}
+
+.video-recomendations-item {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.video-recomendations-item h6 {
+  margin-left: 10px;
+  color: black;
+}
