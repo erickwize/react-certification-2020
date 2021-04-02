@@ -1,9 +1,11 @@
-import React from 'react'
-import StyledUser from './User.styled.'
+import React, { useContext } from 'react'
+import StyledUser from './User.styled'
+import { Context } from '../../context/context'
 
-const User = () => {
+const User = React.memo(() => {
+  const { state } = useContext(Context)
   return (
-    <StyledUser>
+    <StyledUser statusMenu={state.menu}>
       <svg viewBox="0 0 40 40">
         <path
           fill="#DFF0FE"
@@ -32,5 +34,5 @@ const User = () => {
       </svg>
     </StyledUser>
   )
-}
+})
 export default User

@@ -1,23 +1,55 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import StyledCard from './Card.styled'
+import StyledStandardCard from './CardStandard.styled'
+import { Context } from '../../context/context'
 
-const Card = ({ className, title, description, imageLink, width, height, dark }) => {
-  return (
-    <StyledCard className={className} imgLink={imageLink} toggle={dark}>
-      <div className="card__image">
-        <img
-          className="imageInside"
-          src={imageLink}
-          alt={title}
-          width={width}
-          height={height}
-        />
-      </div>
-      <div className="card__info">
-        <div className="card__info__title">{title}</div>
-        <div className="card__info__description"> {description}</div>
-      </div>
-    </StyledCard>
+const Card = React.memo((props) => {
+  const { state } = useContext(Context)
+
+  const adjustTitle = (str) => {
+    const arr = str.split(' ')
+    return arr.length > 5 ? `${arr.slice(0, 5).join(' ')}...` : `${arr.join(' ')}...`
+  }
+
+  const imageTag = (
+    <div className="card__image">
+      <img
+        className="imageInside"
+        src={props.link}
+        alt={props.title}
+        width={props.width}
+        height={props.height}
+      />
+    </div>
   )
-}
+
+  return (
+    <>
+      {props.detailed ? (
+        <StyledCard
+          id={props.id}
+          link={props.link}
+          toggle={state.theme}
+          onClick={props.customClickEvent}
+        >
+          {imageTag}
+          <div className="card__info">
+            <div className="card__info__title">{props.title}</div>
+            <div className="card__info__description"> {props.description}</div>
+          </div>
+        </StyledCard>
+      ) : (
+        <StyledStandardCard
+          id={props.id}
+          link={props.link}
+          toggle={state.theme}
+          onClick={props.customClickEvent}
+        >
+          {imageTag} <div className="card__info__title">{adjustTitle(props.title)}</div>{' '}
+        </StyledStandardCard>
+      )}
+    </>
+  )
+})
+
 export default Card

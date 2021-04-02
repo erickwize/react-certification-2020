@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledHamburger = styled.div.attrs({
-  className: 'humburger',
+  className: 'hamburger',
 })`
   cursor: pointer;
   z-index: 10;
@@ -19,7 +19,7 @@ const StyledHamburger = styled.div.attrs({
     margin-bottom: 0.3em;
     z-index: 10;
     transition-property: transform;
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
     transition-timing-function: ease;
 
     &:nth-child(1) {

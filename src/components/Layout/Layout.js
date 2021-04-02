@@ -7,17 +7,17 @@ import { Context } from '../../context/context'
 
 import StyledLayout from './Layout.styled'
 
-function Layout({ children }) {
-  const { statusMenu, dark } = useContext(Context)
+const Layout = React.memo(({ children }) => {
+  const { state } = useContext(Context)
 
   return (
     <StyledLayout>
-      <GlobalStyles statusMenu={statusMenu} theme={dark} />
+      <GlobalStyles statusMenu={state.menu} theme={state.theme} />
       <Header />
       <Menu />
-      <Container statusMenu={statusMenu}>{children}</Container>
+      <Container statusMenu={state.menu}>{children}</Container>
     </StyledLayout>
   )
-}
+})
 
 export default Layout

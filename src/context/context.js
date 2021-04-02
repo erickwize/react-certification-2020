@@ -1,44 +1,60 @@
-import React, { useEffect, useState, createContext } from 'react'
+// import Dexie from 'dexie'
+import React, { useEffect, createContext, useReducer, memo } from 'react'
+import { useFetch } from '../utils/hooks/useFetch'
 
-const jsonFile = require('../utils/assets/youtube-videos-mock.json')
+export const Context = createContext(null)
 
-export const Context = createContext()
-const ContextProvider = (props) => {
-  const [openMenu, setOpenMenu] = useState(false)
-  const [darkTheme, setDarkTheme] = useState(false)
-  const [listItems, setListItems] = useState([])
-  const showMenu = () => {
-    setOpenMenu(!openMenu)
+export const ContextReducer = (state, action) => {
+  switch (action.type) {
+    case 'TOGGLE_THEME':
+      return {
+        ...state,
+        theme: !state.theme,
+      }
+    case 'OPEN_MENU':
+      return {
+        ...state,
+        menu: !state.menu,
+      }
+    case 'GET_DATA':
+      return {
+        ...state,
+        data: action.payload,
+      }
+    case 'SET_VIEW':
+      return {
+        ...state,
+        view: action.payload,
+      }
+    case 'SET_TARGET':
+      return {
+        ...state,
+        target: action.payload,
+      }
+    default:
+      return state
   }
-  const changeTheme = () => {
-    setDarkTheme(!darkTheme)
-  }
+}
+
+export const initialState = {
+  target: 'Wizeline',
+  theme: false,
+  menu: false,
+  view: 'home',
+  data: [],
+}
+export const ContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(ContextReducer, initialState)
+  const { data, isLoading } = useFetch(state.target)
 
   useEffect(() => {
-    const getList = async () => {
-      let data = []
-      try {
-        data = await jsonFile.items
-      } catch {
-        console.log('Error reading jsonFile')
-      }
-      setListItems(data)
-    }
-    getList()
-  }, [listItems])
+    if (data) dispatch({ type: 'GET_DATA', payload: data })
+  }, [data])
 
-  return (
-    <Context.Provider
-      value={{
-        statusMenu: openMenu,
-        videoItems: listItems,
-        setOpenMenu: showMenu,
-        dark: darkTheme,
-        setTheme: changeTheme,
-      }}
-    >
-      {props.children}
-    </Context.Provider>
+  return isLoading ? (
+    <div> Loading...</div>
+  ) : (
+    <Context.Provider value={{ state, dispatch }}> {children} </Context.Provider>
   )
 }
-export default ContextProvider
+export default memo(ContextProvider)

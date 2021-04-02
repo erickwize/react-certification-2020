@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Menu component Renders Menu without crashing 1`] = `
+<div
+  className="sc-bdvvaa bYAoZE menu"
+>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    Favorites
+  </a>
+</div>
+`;
