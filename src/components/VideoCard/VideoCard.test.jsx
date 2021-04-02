@@ -1,15 +1,35 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import VideoCard from './VideoCard.component';
-import YoutubeVideosMock from '../../mock/youtube-videos-mock.json';
+import { BrowserRouter } from 'react-router-dom';
+import AuthProvider from '../../providers/Auth';
+import SearchProvider from '../../hooks/useSearch';
 
-const video = YoutubeVideosMock.items[0];
+const Wrapper = ({ children }) => (
+  <BrowserRouter>
+    <AuthProvider>
+      <SearchProvider>
+        {children}
+      </SearchProvider>
+    </AuthProvider>
+  </BrowserRouter>
+)
 
 test('renders videocard', () => {
-  render(<VideoCard video={video} />);
-  const title = screen.getByText('Wizeline', { selector: 'h2' });
+  const video = {
+    "id": "nmXMgqjQzls",
+    "title": "Video Tour | Welcome to Wizeline Guadalajara",
+    "description": "Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office. In 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, ...",
+   "thumbnail": "https://i.ytimg.com/vi/nmXMgqjQzls/mqdefault.jpg"
+  }
+  render(
+    <Wrapper>
+      <VideoCard video={video} />
+    </Wrapper>
+  );
+  const title = screen.getByText('Video Tour | Welcome to Wizeline Guadalajara', { selector: 'h2' });
   const description = screen.getByText(
-    "Wizeline transforms how teams build technology. Its customers accelerate the delivery of innovative products with proven solutions, which combine Wizeline's ...",
+    "Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office. In 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, ...",
     { selector: 'p' }
   );
   const image = screen.getByAltText('video thumbnail', { selector: 'img' });

@@ -1,0 +1,67 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "LRUbNUs0ROCgengTUo0paWDuB9Q",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "2oDXg7fEXKkB4cSuIIBq217LqGc",
+      "id": "lJIrF4YjHfQ",
+      "snippet": {
+        "publishedAt": "2016-05-13T20:15:46Z",
+        "channelId": "UCMDQxm7cUx3yXkfeHa5zJIQ",
+        "title": "Embed videos and playlists",
+        "description": "To learn more please visit the YouTube Help Center: https://www.youtube.com/help",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lJIrF4YjHfQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lJIrF4YjHfQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lJIrF4YjHfQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/lJIrF4YjHfQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/lJIrF4YjHfQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "TeamYouTube [Help]",
+        "tags": [
+          "tips",
+          "tricks",
+          "help",
+          "tutorial",
+          "youtube",
+          "youtubehelp",
+          "support",
+          "how to"
+        ],
+        "categoryId": "26",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Embed videos and playlists",
+          "description": "To learn more please visit the YouTube Help Center: https://www.youtube.com/help"
+        },
+        "defaultAudioLanguage": "en"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

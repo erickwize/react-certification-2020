@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components'
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const VideoCardWrapper = styled.div`
   display: flex;
@@ -11,35 +12,46 @@ const VideoCardWrapper = styled.div`
   height: 345px;
   align-self: center;
   padding: 12px;
-  border: 1px solid #E4E4E4;
-`
+  border: 1px solid #e4e4e4;
+`;
 
 const VideoCardImage = styled.img`
   width: 100%;
   height: 140px;
   object-fit: cover;
   border-radius: 5px;
-`
+`;
 
 const VideoCardTitle = styled.h2`
   font-weight: 900;
   font-size: 16px;
-`
+  // word-break: break-all;
+`;
 
 const VideoCardDescription = styled.p`
   font-weight: 400;
   font-size: 14px;
   margin: 0;
-`
+  word-break: break-all;
+  
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 5.4em;
+  line-height: 1.8em;
+`;
 
-
-function VideoCard({video}) {
-  const { title, description, thumbnails } = video.snippet
-  return <VideoCardWrapper>
-    <VideoCardImage src={thumbnails.medium.url} alt="video thumbnail"/>
-    <VideoCardTitle>{title}</VideoCardTitle>
-    <VideoCardDescription>{description}</VideoCardDescription>
-  </VideoCardWrapper>
+function VideoCard({ video }) {
+  const { id, title, description, thumbnail } = video;
+  return (
+    <Link to={`/video/${id}`}>
+      <VideoCardWrapper>
+        <VideoCardImage src={thumbnail} alt="video thumbnail" />
+        <VideoCardTitle>{title}</VideoCardTitle>
+        <VideoCardDescription>{description}</VideoCardDescription>
+      </VideoCardWrapper>
+    </Link>
+  );
 }
 
 export default VideoCard;
