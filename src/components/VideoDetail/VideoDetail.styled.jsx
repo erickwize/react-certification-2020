@@ -1,19 +1,18 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  display: block;
-  width: 25%;
+export const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
   padding: 10px;
-  cursor: pointer;
   @media (max-width: 500px) {
     width: 100%;
   }
 `;
-const Title = styled.p`
+export const Title = styled.p`
   font-size: 13px;
   margin-top: 0;
 `;
-const Thumbnail = styled.img`
+export const Thumbnail = styled.img`
   border-radius: 15px;
   width: 100%;
   max-height: 99px;
@@ -22,5 +21,3 @@ const Thumbnail = styled.img`
     max-height: 140px;
   }
 `;
-
-export { Wrapper, Title, Thumbnail };

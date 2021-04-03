@@ -1,11 +1,14 @@
 import React from 'react';
 import { Wrapper, Title, Thumbnail } from './VideoItem.styled';
 
-function VideoItem({ children, ...rest }) {
-  const text = rest.value.snippet.title.replace(/&#39;/g, "'");
+function VideoItem({ item, setCurrVid }) {
+  const text = item.snippet.title.replace(/&#39;/g, "'");
+  const onClickHandler = () => {
+    setCurrVid(item);
+  };
   return (
-    <Wrapper key={rest.value.etag}>
-      <Thumbnail src={rest.value.snippet.thumbnails.high.url} />
+    <Wrapper key={item.etag} onClick={onClickHandler}>
+      <Thumbnail src={item.snippet.thumbnails.high.url} />
       <Title>{text}</Title>
     </Wrapper>
   );

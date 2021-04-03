@@ -10,6 +10,7 @@ import './Home.styles.css';
 function HomePage() {
   const history = useHistory();
   const [query, setQuery] = useState('');
+  const [currVid, setCurrVid] = useState({});
   const sectionRef = useRef(null);
   const { authenticated, logout } = useAuth();
 
@@ -36,7 +37,7 @@ function HomePage() {
       ) : (
         <>
           <Content>
-            <VideoHome query={query} />
+            <VideoHome query={query} currVid={currVid} setCurrVid={setCurrVid} />
           </Content>
           <Footer>
             <Link to="/login">let me in →</Link>

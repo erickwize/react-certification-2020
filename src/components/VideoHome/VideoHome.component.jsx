@@ -1,21 +1,34 @@
 import React from 'react';
-import VideoItem from '../VideoItem';
-import { Wrapper, VideoList } from './VideoHome.styled';
+import { Wrapper } from './VideoHome.styled';
 import { ytdata } from '../../ytdata';
+import VideoDetail from '../VideoDetail';
+import VideoList from '../VideoList';
 
-function VideoHome({ query }) {
-  return (
-    <Wrapper>
-      <VideoList>
-        {ytdata.items
+function VideoHome({ query, currVid, setCurrVid }) {
+  const preprocessResults = (data, source) => {
+    switch (source) {
+      case 'youtube':
+        return {};
+      case 'mockdata':
+        return data.items
           .filter((item) => item.id.kind === 'youtube#video')
           .filter((item) =>
-            (item.snippet.title + item.snippet.description).includes(query)
-          )
-          .map((v) => (
-            <VideoItem value={v} key={v.etag} />
-          ))}
-      </VideoList>
+            (item.snippet.title + item.snippet.description)
+              .toLowerCase()
+              .includes(query.toLowerCase())
+          );
+      default:
+        return {};
+    }
+  };
+  const hasItems = (input) => {
+    return typeof input.id !== 'undefined';
+  };
+
+  return (
+    <Wrapper>
+      {hasItems(currVid) && <VideoDetail currVid={currVid} />}
+      <VideoList items={preprocessResults(ytdata, 'mockdata')} setCurrVid={setCurrVid} />
     </Wrapper>
   );
 }
