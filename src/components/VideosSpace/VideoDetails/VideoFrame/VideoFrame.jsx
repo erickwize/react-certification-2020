@@ -2,7 +2,7 @@ import React from 'react';
 import './VideoFrame.styles.css';
 
 const VideoFrame = (props) => {
-    const url = `http://www.youtube.com/embed/${props.videoId}`;
+    const url = `https://www.youtube.com/embed/${props.videoId}`;
     return(
         <iframe
             title={props.videoId}
