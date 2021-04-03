@@ -5,7 +5,7 @@ import StyledHamburger from './Hamburger.styled'
 const Hamburger = React.memo(() => {
   const { state, dispatch } = useContext(Context)
   const openMenu = useCallback(() => {
-    dispatch({ type: 'OPEN_MENU', payload: false })
+    dispatch({ type: 'OPEN_MENU', payload: true })
   }, [dispatch])
 
   return (
