@@ -9,9 +9,9 @@ import {
   VideoDescription,
 } from './VideoCard.styles';
 
-function VideoCard({ videoData }) {
+function VideoCard({ videoData, cardClick }) {
   return (
-    <VideoCardWrapper data-testid="yt-videocard">
+    <VideoCardWrapper data-testid="yt-videocard" onClick={() => cardClick(videoData)}>
       <Thumbnail img={videoData.thumbnail} alt={videoData.title} />
       <VideoCardInfo>
         <VideoTitle>{videoData.title}</VideoTitle>
