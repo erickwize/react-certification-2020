@@ -27,6 +27,7 @@ function HomePage() {
       channelTitle,
       description,
       thumbnails,
+      channelId,
     } = videoData.snippet;
     return {
       uploadDate: getReadableDate(publishedAt),
@@ -34,6 +35,7 @@ function HomePage() {
       title,
       description,
       channel: channelTitle,
+      channelId,
     };
   };
 

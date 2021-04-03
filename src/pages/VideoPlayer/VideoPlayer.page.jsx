@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Player.styles.css';
+import './VideoPlayer.styles.css';
 
 function VideoPlayer() {
   return (
