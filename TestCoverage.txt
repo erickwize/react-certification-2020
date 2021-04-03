@@ -1,32 +1,56 @@
---------------------|----------|----------|----------|----------|-------------------|\
-File                |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |\
---------------------|----------|----------|----------|----------|-------------------|\
-All files           |     67.5 |      100 |    63.64 |     67.5 |                   |\
- src                |       50 |      100 |      100 |       50 |                   |\
-  index.js          |        0 |      100 |      100 |        0 |                 6 |\
-  mockData.js       |      100 |      100 |      100 |      100 |                   |\
- src/components     |      100 |      100 |      100 |      100 |                   |\
-  Header.jsx        |      100 |      100 |      100 |      100 |                   |\
-  VideoCard.jsx     |      100 |      100 |      100 |      100 |                   |\
- src/components/App |        0 |      100 |        0 |        0 |                   |\
-  App.component.jsx |        0 |      100 |        0 |        0 |... 29,30,31,35,42 |\
-  index.js          |        0 |        0 |        0 |        0 |                   |\
- src/pages/Home     |      100 |      100 |      100 |      100 |                   |\
-  Home.page.jsx     |      100 |      100 |      100 |      100 |                   |\
-  index.js          |        0 |        0 |        0 |        0 |                   |\
- src/styles         |      100 |      100 |      100 |      100 |                   |\
-  HomeStyle.js      |      100 |      100 |      100 |      100 |                   |\
-  MenuButton.js     |      100 |      100 |      100 |      100 |                   |\
-  NavStyle.js       |      100 |      100 |      100 |      100 |                   |\
-  SearchStyle.js    |      100 |      100 |      100 |      100 |                   |\
-  SwitchStyle.jsx   |      100 |      100 |      100 |      100 |                   |\
---------------------|----------|----------|----------|----------|-------------------|\
-Jest: "global" coverage threshold for statements (100%) not met: 67.5%\
-Jest: "global" coverage threshold for lines (100%) not met: 67.5%\
-Jest: "global" coverage threshold for functions (100%) not met: 63.64%\
-\
-Test Suites: 5 passed, 5 total\
-Tests:       7 passed, 7 total\
-Snapshots:   0 total\
-Time:        12.391s\
-Ran all test suites.}
+----------------------------|----------|----------|----------|----------|-------------------|
+File                        |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+----------------------------|----------|----------|----------|----------|-------------------|
+All files                   |    89.09 |       80 |       92 |    89.81 |                   |
+ src                        |       50 |      100 |      100 |       50 |                   |
+  index.js                  |        0 |      100 |      100 |        0 |                 6 |
+  mockData.js               |      100 |      100 |      100 |      100 |                   |
+ src/components             |        0 |        0 |        0 |        0 |                   |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/components/App         |       75 |      100 |       60 |       75 |                   |
+  App.component.jsx         |       75 |      100 |       60 |       75 |       26,27,28,45 |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/components/Header      |      100 |      100 |      100 |      100 |                   |
+  Header.jsx                |      100 |      100 |      100 |      100 |                   |
+  Header.styled.js          |      100 |      100 |      100 |      100 |                   |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/components/PlayList    |      100 |      100 |      100 |      100 |                   |
+  PlayList.jsx              |      100 |      100 |      100 |      100 |                   |
+  PlayList.styled.js        |      100 |      100 |      100 |      100 |                   |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/components/PlayVideo   |      100 |      100 |      100 |      100 |                   |
+  PlayVideo.jsx             |      100 |      100 |      100 |      100 |                   |
+  PlayVideo.styled.js       |      100 |      100 |      100 |      100 |                   |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/components/Search      |      100 |      100 |      100 |      100 |                   |
+  Search.jsx                |      100 |      100 |      100 |      100 |                   |
+  Search.styled.js          |      100 |      100 |      100 |      100 |                   |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/components/ThemeButton |      100 |      100 |      100 |      100 |                   |
+  ThemeButton.jsx           |      100 |      100 |      100 |      100 |                   |
+  ThemeButton.styled.js     |      100 |      100 |      100 |      100 |                   |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/components/VideoCard   |      100 |      100 |      100 |      100 |                   |
+  VideoCard.jsx             |      100 |      100 |      100 |      100 |                   |
+  VideoCard.styled.js       |      100 |      100 |      100 |      100 |                   |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/pages/Home             |    90.91 |    83.33 |      100 |      100 |                   |
+  Home.page.jsx             |     87.5 |    83.33 |      100 |      100 |                22 |
+  Home.styled.js            |      100 |      100 |      100 |      100 |                   |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/pages/Video            |    78.57 |       25 |      100 |    78.57 |                   |
+  Video.jsx                 |       76 |       25 |      100 |       76 | 21,23,24,25,26,28 |
+  Video.styled.js           |      100 |      100 |      100 |      100 |                   |
+  index.js                  |        0 |        0 |        0 |        0 |                   |
+ src/styles                 |      100 |      100 |      100 |      100 |                   |
+  MenuButton.js             |      100 |      100 |      100 |      100 |                   |
+----------------------------|----------|----------|----------|----------|-------------------|
+Jest: "global" coverage threshold for statements (100%) not met: 89.09%
+Jest: "global" coverage threshold for branches (100%) not met: 80%
+Jest: "global" coverage threshold for lines (100%) not met: 89.81%
+Jest: "global" coverage threshold for functions (100%) not met: 92%
+
+Test Suites: 10 passed, 10 total
+Tests:       16 passed, 16 total
+Snapshots:   0 total
+Time:        18.622s
