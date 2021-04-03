@@ -14,7 +14,7 @@ export const ContextReducer = (state, action) => {
     case 'OPEN_MENU':
       return {
         ...state,
-        menu: !state.menu,
+        menu: action.payload,
       }
     case 'GET_DATA':
       return {
