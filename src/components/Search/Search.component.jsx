@@ -1,15 +1,18 @@
 import React, {useState} from 'react';
-import { Input, InputContainer, Icon } from './Seacrh.styles';
+import useInput from './../../utils/hooks/useInput';
+import { Input, InputContainer, Icon } from './Search.styles';
 
 function Search() {
-  const [value, setValue] = useState('wizeline');
 
-  const handleInputChange = (e) => {
-    setValue(e.target.value);
+  const [value, handleInputChange] = useInput('wizeline');
+
+  const submit = e => {
+    e.preventDefault();
+   console.log(value)
   }
 
   return(
-  <InputContainer>
+    <InputContainer onSubmit={submit}>
     <Icon />
       <Input value={value} onChange={handleInputChange} type="text" />
     </InputContainer>
