@@ -1,18 +1,14 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 // import { Link, useHistory } from 'react-router-dom';
 
-import { mockVideos } from '../../mockData';
 // import { useAuth } from '../../providers/Auth';
-import { HomeSection, Title, VideoContainer } from '../../styles/HomeStyle';
-import Header from '../../components/Header';
-import VideoCard from '../../components/VideoCard';
+import { HomeSection, Title, VideoContainer } from './Home.styled';
+import { VideoCard } from '../../components';
 
-const wizelineLogo = mockVideos.items.shift();
-const videosData = mockVideos;
-
-function HomePage() {
-  // const history = useHistory();
+function HomePage({ fetching }) {
+  const { videoList, loading, error } = fetching;
   const sectionRef = useRef(null);
+  // const history = useHistory();
   // const { authenticated, logout } = useAuth();
 
   // function deAuthenticate(event) {
@@ -21,21 +17,21 @@ function HomePage() {
   //   history.push('/');
   // }
 
-  useEffect(() => {
-    console.log(wizelineLogo);
-  });
+  if (loading) return <>Loading...</>;
+
+  if (error) return <>Network error</>;
 
   return (
     <>
-      <Header />
       <HomeSection ref={sectionRef}>
         <Title>
           <h1>Enjoy watching!</h1>
         </Title>
         <VideoContainer>
-          {videosData.items.map((video) => (
-            <VideoCard key={video.etag} data={video} />
-          ))}
+          {videoList?.items?.length > 0 &&
+            videoList.items.map((video) => (
+              <VideoCard key={video.etag} data={video} videoList={videoList} />
+            ))}
         </VideoContainer>
         {/* {authenticated ? (
           <>

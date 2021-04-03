@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const VideoBox = styled.div`
@@ -12,6 +11,10 @@ const VideoBox = styled.div`
   img {
     width: 100%;
     height: 150px;
+    /* background-size: cover;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center; */
   }
   h3 {
     margin: 0 1rem;
@@ -28,18 +31,4 @@ const VideoBox = styled.div`
   }
 `;
 
-function VideoCard({ data }) {
-  const { title, description } = data?.snippet;
-  const source = data?.snippet.thumbnails.default.url;
-  return (
-    <VideoBox>
-      <a href={source}>
-        <img src={source} alt={title} />
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </a>
-    </VideoBox>
-  );
-}
-
-export default VideoCard;
+export default VideoBox;
