@@ -1,0 +1,70 @@
+.videoDetailsHolder{
+    display: block;
+    position: absolute;
+    top: 80vh;
+    left: 30px;
+    width: 60%;
+}
+.FVTitle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    font-size: 18px;
+    font-weight: 500;
+}
+.FVPublished{
+    position: absolute;
+    left: 70%;
+    width: 30%;
+    text-align: right;
+}
+.FVChannel{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 65%;
+}
+
+.FVDescription{
+    position: absolute;
+    top: 60px;
+    left: 0;
+}
+
+@media only screen and (max-width: 1250px) {
+    .videoDetailsHolder {
+      width: 55%;
+      top: 65vh;
+    }
+    .FVTitle{
+        width: 100%;
+        font-size: 16px;
+    }
+    .FVPublished{
+        left: 65%;
+        top: 30px;
+        width: 35%;
+    }
+    .FVChannel{
+        top: 30px;
+    }
+    
+    .FVDescription{
+        top: 61px;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .videoDetailsHolder {
+        left: 20%;
+      }
+  }
+
+  @media only screen and (max-width: 750px) {
+    .videoDetailsHolder {
+        top: 70vh;
+        left: 5%;
+        width: 90%;
+      }
+  }

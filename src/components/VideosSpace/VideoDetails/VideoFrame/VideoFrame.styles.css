@@ -1,0 +1,30 @@
+.videoFrame{
+    display: inline-block;
+    position: absolute;
+    left: 30px;
+    margin-top: 30px;
+    width: 60%;
+    height: 65vh;
+}
+
+@media only screen and (max-width: 1250px) {
+    .videoFrame {
+      width: 55%;
+      height: 50vh;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .videoFrame {
+        left: 20%;
+    }
+  }
+
+  @media only screen and (max-width: 750px) {
+    .videoFrame {
+        left: 5%;
+        margin-top: 20px;
+        width: 90%;
+        height: 58vh;
+    }
+  }

@@ -2,7 +2,10 @@ import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../providers/Auth';
 import NavBar from '../../components/NavBar/Navbar';
-import VideoGrid from '../../components/VideoGrid/VideoGrid';
+import VideosSpace from '../../components/VideosSpace/VideosSpace';
+import { VideoProvider } from '../../providers/Videos/VideoContext';
+import { SectionProvider } from '../../providers/Section/SectionContext';
+import { RelatedVideoProvider } from '../../providers/Videos/RelatedVideoContext' ;
 import './Home.styles.css';
 
 function HomePage() {
@@ -18,8 +21,14 @@ function HomePage() {
 
   return (
     <section className="homepage" ref={sectionRef}>
-      <NavBar/>
-      <VideoGrid/>
+      <VideoProvider>
+        <NavBar/>
+        <SectionProvider>
+          <RelatedVideoProvider>
+            <VideosSpace/>
+          </RelatedVideoProvider>
+        </SectionProvider>
+      </VideoProvider>
       {authenticated ? (
         <>
           <h2>Good to have you back</h2>

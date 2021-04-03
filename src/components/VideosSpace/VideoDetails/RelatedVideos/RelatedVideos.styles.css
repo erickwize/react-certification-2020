@@ -1,0 +1,33 @@
+.relatedVideos{
+    display: inline-block;
+    position: absolute;
+    width: 400px;
+    margin-left: 15px;
+    height: 990;
+    overflow: hidden;
+    right: 30px;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 1070px) {
+    .relatedVideos{
+        width: 400px;
+        right: 5px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .relatedVideos{
+        width: 400px;
+        left: 20%;
+        top: 95vh;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .relatedVideos{
+        width: 90%;
+        left: 5%;
+        top: 95vh;
+    }
+}
