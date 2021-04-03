@@ -21,7 +21,6 @@ function HomePage() {
       );
       const data = await res.json();
       setYoutubeVideos(data);
-      console.log(data);
     }
     getServerSideProps();
   }, [query]);
@@ -31,17 +30,15 @@ function HomePage() {
       <section>
         <CardsContainer>
           {youtubeVideos !== null &&
-            youtubeVideos.items
-              // .filter((ytvideo) => ytvideo.id.kind === 'youtube#video')
-              .map((ytvideo) => (
-                <VideoCard
-                  key={ytvideo.id.videoId}
-                  id={ytvideo.id.videoId}
-                  title={ytvideo.snippet.title}
-                  description={ytvideo.snippet.description}
-                  thumbnail={ytvideo.snippet.thumbnails.default.url}
-                />
-              ))}
+            youtubeVideos.items.map((ytvideo) => (
+              <VideoCard
+                key={ytvideo.id.videoId}
+                id={ytvideo.id.videoId}
+                title={ytvideo.snippet.title}
+                description={ytvideo.snippet.description}
+                thumbnail={ytvideo.snippet.thumbnails.default.url}
+              />
+            ))}
         </CardsContainer>
       </section>
     </Layout>
