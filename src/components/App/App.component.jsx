@@ -1,5 +1,4 @@
-// import React, { useLayoutEffect } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -11,38 +10,26 @@ import SecretPage from '../../pages/Secret';
 import Private from '../Private';
 // import Fortune from '../Fortune';
 import Layout from '../Layout';
-// import { random } from '../../utils/fns';
+
 //Components
-import {Header} from '../../components/Header/Header.component';
+import { Header } from '../../components/Header/Header.component';
+import { VideoDetail } from '../../components/VideoDetail/VideoDetail.component';
 
 function App() {
-  // useLayoutEffect(() => {
-  //   const { body } = document;
 
-  //   function rotateBackground() {
-  //     const xPercent = random(100);
-  //     const yPercent = random(100);
-  //     body.style.setProperty('--bg-position', `${xPercent}% ${yPercent}%`);
-  //   }
+  const [searchValue, setSearchValue] = useState('doggos');
 
-  //   const intervalId = setInterval(rotateBackground, 3000);
-  //   body.addEventListener('click', rotateBackground);
-
-  //   return () => {
-  //     clearInterval(intervalId);
-  //     body.removeEventListener('click', rotateBackground);
-  //   };
-  // }, []);
-
-  return (
-    
+  return (  
     <BrowserRouter>
-      <Header/>
+      <Header setSearchValue={setSearchValue}/>
       <AuthProvider>
         <Layout>
           <Switch>
             <Route exact path="/">
-              <HomePage />
+              <HomePage searchValue={searchValue}/>
+            </Route>
+            <Route exact path="/:videoId">
+              <VideoDetail/>
             </Route>
             <Route exact path="/login">
               <LoginPage />

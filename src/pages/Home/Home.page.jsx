@@ -1,14 +1,15 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { VideosGrid } from '../../components/VideosGrid/VideosGrid.component';
+import { useFetchVideos } from '../../utils/hooks/useFetchVideos';
 
 import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
 
+function HomePage({searchValue, setSelectedVideo}) {
 
-const data = require('../../mock-data/youtube-videos-mock.json');
+  const {videos: data, loading} = useFetchVideos(searchValue);
 
-function HomePage() {
   const history = useHistory();
   const sectionRef = useRef(null);
   const { authenticated, logout } = useAuth();
@@ -21,7 +22,8 @@ function HomePage() {
 
   return (
     <section className="homepage" ref={sectionRef}>
-      <VideosGrid data={data}/>
+      {loading && <p>Loading</p>}
+      {!loading && <VideosGrid data={data} setSelectedVideo={setSelectedVideo}/>}
       
       <h1>Hello stranger!</h1>
       {authenticated ? (
