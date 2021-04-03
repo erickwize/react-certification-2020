@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { VideoContext } from '../../../providers/Videos/VideoContext';
+import { SectionContext } from '../../../providers/Section/SectionContext';
 import './SearchBar.styles.css';
 
 export default function SearchBar(){
     const [value, setValue] = useState('wizeline');
+    const [section, setSection] = useContext(SectionContext);
     const [, setVideos] = useContext(VideoContext);
 
     const updateValue = e => { setValue(e.target.value)}
@@ -17,9 +19,14 @@ export default function SearchBar(){
         .catch(error => console.log(error))
     }
 
+    const updateSection = () => {
+        setSection({main: true, videoId: ""});
+    }
+
     const onSubmitHandle = e =>{
         e.preventDefault();
         updateVideos();
+        updateSection();
     }
 
     return(

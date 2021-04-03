@@ -22,8 +22,8 @@ function HomePage() {
   return (
     <section className="homepage" ref={sectionRef}>
       <VideoProvider>
-        <NavBar/>
         <SectionProvider>
+          <NavBar/>
           <RelatedVideoProvider>
             <VideosSpace/>
           </RelatedVideoProvider>
