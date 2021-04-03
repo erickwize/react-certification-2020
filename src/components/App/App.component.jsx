@@ -1,17 +1,18 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
+import AppProvider from '../../providers/App/AppProvider';
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
 import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
-import Fortune from '../Fortune';
 import Layout from '../Layout';
 import { random } from '../../utils/fns';
+import Header from '../Header';
 
 function App() {
+
   useLayoutEffect(() => {
     const { body } = document;
 
@@ -29,10 +30,13 @@ function App() {
       body.removeEventListener('click', rotateBackground);
     };
   }, []);
+  
 
   return (
     <BrowserRouter>
       <AuthProvider>
+        <AppProvider>
+        <Header />
         <Layout>
           <Switch>
             <Route exact path="/">
@@ -48,8 +52,8 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
-          <Fortune />
-        </Layout>
+          </Layout>
+          </AppProvider>
       </AuthProvider>
     </BrowserRouter>
   );

@@ -1,38 +1,40 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-
-import { useAuth } from '../../providers/Auth';
-import './Home.styles.css';
+import React, { useState }from 'react';
+import VideoCard from '../../components/VideoCard';
+import { Container, Title, VideoGrid } from './Home.styles';
+import './Home.styles.js';
+import useFetch from './../../utils/hooks/useFetch';
+import Config from './../../utils/constants';
 
 function HomePage() {
-  const history = useHistory();
-  const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
 
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
+  const { videos, loading } = useFetch(  `${Config.API_URL}search?maxResults=50&part=snippet&q=${'wizeline'}&key=${Config.API_KEY}`);
+  const videoList = videos.map((video) => {
+    const {
+      etag,
+      snippet: {
+        title,
+        description,
+        thumbnails: {
+          medium: { url, width, height },
+        },
+      },
+    } = video;
+    return <VideoCard key={etag}
+      title={title}
+      description={description}
+      image={url}
+      width={width}
+      height={height}
+    />;
+  });
 
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
-    </section>
+    <Container>
+      <Title>Welcome!</Title>
+      <VideoGrid>
+        {loading ? <p>loading</p> : videoList}
+      </VideoGrid>
+    </Container>
   );
 }
 
