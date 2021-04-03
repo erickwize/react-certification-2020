@@ -21,16 +21,23 @@ const VideosContainer  = styled.div`
     }
 `;
 
-function  Videos(props) {
+
+
+
+const  VideoList =(props) => {
+
+
     return (
         <VideosContainer>
+
             {props.data.map((item) => (
 
-                    <VideoCard key={item.etag} data={item.snippet} />
+                        <VideoCard  key={item.etag} snippet={item.snippet} id={item.id} setShowDetail={props.setShowDetail}/>
                 ))}
+
         </VideosContainer>
 
     );
 }
 
-export default Videos;
+export default VideoList;

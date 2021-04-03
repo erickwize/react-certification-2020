@@ -9,6 +9,11 @@ const CardContent = styled.div`
     width:350px;
     height: 350px;
     margin:15px;
+
+    &:hover{
+        background-color: rgb(227 227 227);
+    }
+
 `;
 
 const Preview = styled.div`
@@ -22,22 +27,51 @@ const Details = styled.div`
 `;
 
 const Thumbnail = styled.img`
-width: 350px;
-height: 180px;
+    width: 350px;
+    height: 180px;
+
+    @media only screen and (max-width: 600px) {
+        width:30%;
+    }
 `;
 
+const VideoButton = styled.button`
+    background: none;
+    width: 100%;
+    display: block;
+    padding:0;
+    margin:0;
+    align-items:center;
+    border:0;
+    cursor:pointer;
+    user-select:none;
+    outline:none;
+    text-align:left;
+
+`
 
 
-function VideoCard(props){
+
+const VideoCard =(props) =>{
+
+    const showDetail=(e)=>{
+        e.preventDefault();
+        props.setShowDetail({id:props.id.videoId,
+            tittle:props.snippet.title,
+            description:props.snippet.description, setShowDetail:props.setShowDetail})
+    }
+
     return (
-        <CardContent>
-            <Preview >
-                <Thumbnail alt="default" src={props.data.thumbnails.high.url} />
-            </Preview>
-            <Details>
-                <h3>{props.data.title}</h3>
-                <p>{props.data.description}</p>
-            </Details>
+        <CardContent className="Video-Card" >
+            <VideoButton type="button"  onClick={showDetail} >
+                <Preview >
+                    <Thumbnail alt="default" src={props.snippet.thumbnails.high.url} />
+                </Preview>
+                <Details>
+                    <h3>{props.snippet.title}</h3>
+                    <p>{props.snippet.description}</p>
+                </Details>
+            </VideoButton>
         </CardContent>
 
     );

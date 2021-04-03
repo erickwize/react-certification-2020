@@ -41,7 +41,7 @@ const Search = ({searchHandler}) =>{
 
     return(
         <form onSubmit={onSubmitQuery}>
-        <SearchItem placeholder="Search.." value={query}  onChange={getTextQuery} />
+            <SearchItem placeholder="Search.." type="text" value={query}  onChange={getTextQuery} />
         </form>
     );
 }
