@@ -5,7 +5,7 @@ import './SearchBar.styles.css';
 
 export default function SearchBar(){
     const [value, setValue] = useState('wizeline');
-    const [section, setSection] = useContext(SectionContext);
+    const [, setSection] = useContext(SectionContext);
     const [, setVideos] = useContext(VideoContext);
 
     const updateValue = e => { setValue(e.target.value)}
