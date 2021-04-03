@@ -1,32 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState }from 'react';
 import VideoCard from '../../components/VideoCard';
 import { Container, Title, VideoGrid } from './Home.styles';
 import './Home.styles.js';
-
-
-const useFetch = url => {
-
-  const [videos, setVideos] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(url);
-      const data = await response.json();
-      const item = data.items;
-      setVideos(item);
-      setLoading(false);
-    }
-    fetchData();
-  });
-  return{videos, loading}
-}
+import useFetch from './../../utils/hooks/useFetch';
+import Config from './../../utils/constants';
 
 function HomePage() {
-  const{videos, loading} = useFetch( 'https://www.googleapis.com/youtube/v3/videos?maxResults=50&part=snippet&chart=mostPopular&key=AIzaSyB_zm0mwpFT9TcRIkaGYxLUChyOyIzmE-E')
 
-  
-  const aVideo = videos.map((video) => {
+  const { videos, loading } = useFetch(  `${Config.API_URL}search?maxResults=50&part=snippet&q=${'wizeline'}&key=${Config.API_KEY}`);
+  const videoList = videos.map((video) => {
     const {
       etag,
       snippet: {
@@ -48,9 +30,9 @@ function HomePage() {
 
   return (
     <Container>
-      <Title>Mini Challenge 1</Title>
+      <Title>Welcome!</Title>
       <VideoGrid>
-        {loading ? <p>loading</p> : aVideo}
+        {loading ? <p>loading</p> : videoList}
       </VideoGrid>
     </Container>
   );
