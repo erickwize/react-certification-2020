@@ -10,9 +10,6 @@ const VideosContainer  = styled.div`
 
 `;
 
-
-
-
 function VideoDetail(props){
     console.log(props)
     return (
@@ -26,7 +23,7 @@ function VideoDetail(props){
                     allowFullScreen
                     title="Embedded youtube"
                 />
-                <h4>{props.videoid.tittle}</h4>
+                <h4>{props.videoid.title}</h4>
                 <p>{props.videoid.description}</p>
             </div>
             <VideosContainer className="Video-List">

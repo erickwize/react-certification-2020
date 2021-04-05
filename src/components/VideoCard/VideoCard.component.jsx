@@ -57,7 +57,7 @@ const VideoCard =(props) =>{
     const showDetail=(e)=>{
         e.preventDefault();
         props.setShowDetail({id:props.id.videoId,
-            tittle:props.snippet.title,
+            title:props.snippet.title,
             description:props.snippet.description, setShowDetail:props.setShowDetail})
     }
 
