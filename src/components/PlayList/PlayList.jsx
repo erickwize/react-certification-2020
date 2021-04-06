@@ -11,8 +11,11 @@ const PlayList = ({ listItems, handlePlayVideo }) => {
     <>
       {listItems?.items &&
         listItems.items.map((video) => {
-          const { title, channelTitle, description } = video.snippet;
-          const sourceImg = video.snippet.thumbnails.default.url;
+          const snippet = video?.snippet ? video.snippet : false;
+          if (!snippet) return null;
+
+          const { title = '', channelTitle = '', description = '' } = snippet;
+          const sourceImg = snippet.thumbnails.default.url;
           const { videoId } = video.id;
           return (
             <Link

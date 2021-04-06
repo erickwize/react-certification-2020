@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const VideoiFrame = styled.iframe`
   width: 100%;
-  height: 68%;
+  height: 600px;
 `;
 
 const VideoDetails = styled.div`

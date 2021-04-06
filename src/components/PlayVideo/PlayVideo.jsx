@@ -11,6 +11,7 @@ const PlayVideo = ({ videoId, videoDetail }) => {
   };
 
   const buttonLayer = !add ? 'AÑADIR A FAVORITOS' : 'ELIMINAR DE FAVORITOS';
+  const vDescription = description ? description.split('.')[0] : null;
 
   return (
     <>
@@ -19,7 +20,7 @@ const PlayVideo = ({ videoId, videoDetail }) => {
         <Title>{title}</Title>
         <Button onClick={handleChange}>{buttonLayer} </Button>
       </VideoDetails>
-      <Paragraph data-testid="paragraph">{description}</Paragraph>
+      <Paragraph data-testid="paragraph">{vDescription}</Paragraph>
     </>
   );
 };
