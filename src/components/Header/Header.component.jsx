@@ -14,7 +14,7 @@ import MenuIcon from './img/icon_menu.png';
 import LoginIcon from './img/icon_login.png';
 
 function HeaderMenu({ doSearch }) {
-  const [searchKeyword, setSearchKeyword] = useState('');
+  const [searchKeyword, setSearchKeyword] = useState('wizeline');
   const { history, setHistoryVal } = useHistory('');
 
   const handleSearch = (ev) => {
@@ -31,6 +31,7 @@ function HeaderMenu({ doSearch }) {
         <Search
           type="text"
           id="name"
+          value={searchKeyword}
           placeholder="Search..."
           onChange={({ target }) => setSearchKeyword(target.value)}
           onBlur={() => handleSearch({ key: 'Blur' })}

@@ -20,6 +20,7 @@ Object {
             id="name"
             placeholder="Search..."
             type="text"
+            value="wizeline"
           />
         </section>
         <section
@@ -80,6 +81,7 @@ Object {
           id="name"
           placeholder="Search..."
           type="text"
+          value="wizeline"
         />
       </section>
       <section

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useVideList, useVideoInfo } from '../../utils/hooks/useVideoStates';
+import { fetchSearchVideos } from '../../utils/endpoints';
 
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
@@ -10,12 +11,14 @@ import VideoPlayer from '../../pages/VideoPlayer';
 import HeaderMenu from '../Header';
 
 function App() {
-  const { videoList, isLoading } = useVideList([]);
+  const { videoList, updateVideoList } = useVideList([]);
   const { video, updateVideoInfo } = useVideoInfo({});
 
-  const doSearch = (keyword) => {
-    console.log('DOSEARCH: ', keyword);
-    return keyword;
+  const doSearch = async (keyword) => {
+    updateVideoInfo({});
+    const search = await fetchSearchVideos(keyword);
+    updateVideoList(search.items);
+    return search;
   };
 
   const selectCard = (videoInfo) => {
@@ -38,11 +41,7 @@ function App() {
                   relatedVideos={videoList}
                 />
               ) : (
-                <HomePage
-                  videoList={videoList}
-                  selectCard={selectCard}
-                  isLoading={isLoading}
-                />
+                <HomePage videoList={videoList} selectCard={selectCard} />
               )}
             </Route>
             <Route exact path="/login">

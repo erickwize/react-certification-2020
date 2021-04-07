@@ -13,11 +13,22 @@ import {
 import { getUsefullData } from '../../utils/fns';
 
 function VideoPlayer({ video, selectCard, relatedVideos }) {
+  const isRelatedView = true;
   const cardClick = (vid) => {
     selectCard(vid);
   };
 
-  const isRelatedView = true;
+  const relatedVideoCards = (related) => {
+    return related.id.videoId !== video.videoId ? (
+      <VideoCard
+        key={related.etag}
+        videoData={getUsefullData(related)}
+        cardClick={cardClick}
+        isRelatedView={isRelatedView}
+      />
+    ) : null;
+  };
+
   return (
     <section data-testid="video-player" className="view-player">
       <HomeButton onClick={() => cardClick({})} type="button">
@@ -39,14 +50,7 @@ function VideoPlayer({ video, selectCard, relatedVideos }) {
         </VideoWrapper>
         <RelatedVideoWrapper>
           <PlayerTitle>Related Videos:</PlayerTitle>
-          {relatedVideos.map((related) => (
-            <VideoCard
-              key={related.etag}
-              videoData={getUsefullData(related)}
-              cardClick={cardClick}
-              isRelatedView={isRelatedView}
-            />
-          ))}
+          {relatedVideos.map((related) => relatedVideoCards(related))}
         </RelatedVideoWrapper>
       </PlayerGrid>
     </section>

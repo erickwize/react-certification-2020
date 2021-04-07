@@ -1,25 +1,10 @@
 import { useState, useEffect } from 'react';
 import youtubeVideoList from '../mock/youtube-videos-mock.json';
+import { fetchSearchVideos } from '../endpoints';
 
 export function useVideList() {
-  console.log('called useVideList sa...');
   const [videoList, setVideoList] = useState([]);
   const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const getList = async () => {
-      let listItems = [];
-
-      try {
-        listItems = await youtubeVideoList.items;
-      } catch (e) {
-        console.info('Error reading json file: youtubeVideoList');
-        setError(e);
-      }
-      setVideoList(listItems);
-    };
-    getList();
-  }, []);
 
   function updateVideoList(videos) {
     setVideoList(videos);
@@ -28,6 +13,23 @@ export function useVideList() {
   function setErrorMsg(errorMsg) {
     setError(errorMsg);
   }
+
+  useEffect(() => {
+    const getList = async () => {
+      let listItems = [];
+
+      try {
+        const initalSearch = await fetchSearchVideos('wizeline');
+        listItems = initalSearch.items;
+      } catch (e) {
+        console.info('Error getting inital video search... setting youtubeVideoList');
+        listItems = await youtubeVideoList.items;
+        setErrorMsg(e);
+      }
+      updateVideoList(listItems);
+    };
+    getList();
+  }, []);
 
   return { videoList, error, setErrorMsg, updateVideoList };
 }
