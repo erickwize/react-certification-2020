@@ -62,8 +62,6 @@ it('Return to Show related search video card view', () => {
     />
   );
   const videoCards = screen.getAllByTestId('yt-videocard');
-  expect(videoCards.length).toBe(25);
-  expect(videoCards[3]).toHaveTextContent(
-    'Wizeline hace sentir a empleados como en casaEl Economista TV| March 4, 2019'
-  );
+  expect(videoCards.length).toBe(24);
+  expect(videoCards[3]).toHaveTextContent('We Are WizelineWizeline| April 12, 2019');
 });
