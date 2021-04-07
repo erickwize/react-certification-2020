@@ -22,6 +22,4 @@ const VideosHome = ({ videos }) => (
   </div>
 );
 
-// {videos.map((item) => (
-
 export default VideosHome;
