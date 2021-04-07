@@ -9,7 +9,7 @@ import {
   HeaderToggleLabel,
   LoginMenu,
 } from './Header.styles';
-import { useHistory } from '../../utils/hooks/useHistory'
+import { useHistory } from '../../utils/hooks/useHistory';
 import MenuIcon from './img/icon_menu.png';
 import LoginIcon from './img/icon_login.png';
 

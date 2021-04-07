@@ -5,8 +5,8 @@ import VideoCard from '../../components/VideoCard';
 import { getReadableDate } from '../../utils/fns';
 
 function HomePage({ videoList, selectCard }) {
-
   const getUsefullData = (videoData) => {
+    const { videoId } = videoData.id;
     const {
       publishedAt,
       title,
@@ -22,6 +22,8 @@ function HomePage({ videoList, selectCard }) {
       description,
       channel: channelTitle,
       channelId,
+      videoId,
+      link: `https://www.youtube.com/embed/${videoId}`,
     };
   };
 

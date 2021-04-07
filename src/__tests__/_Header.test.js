@@ -1,12 +1,12 @@
 import React from 'react';
 import { screen, cleanup, render, fireEvent } from '@testing-library/react';
+import { renderHook } from '@testing-library/react-hooks';
 import HeaderMenu from '../components/Header';
-import { useHistory } from '../utils/hooks/useHistory.js'
-import { renderHook } from '@testing-library/react-hooks'
+import { useHistory } from '../utils/hooks/useHistory';
 
 afterEach(cleanup);
 
-const doSearch = jest.fn()
+const doSearch = jest.fn();
 
 it('Should render Header', () => {
   render(<HeaderMenu />);
@@ -37,19 +37,21 @@ test('Search History Hook', () => {
 });
 
 it('Search value change', () => {
-  const menu = render(<HeaderMenu doSearch={doSearch}/>);
+  render(<HeaderMenu doSearch={doSearch} />);
 
   const SearchInput = screen.getByPlaceholderText('Search...');
   expect(SearchInput).toBeInTheDocument();
-  SearchInput.focus()
-  fireEvent.change(
-    SearchInput,
-    { target: { value: 'wizeline' } }
-  );
+  SearchInput.focus();
+  fireEvent.change(SearchInput, { target: { value: 'wizeline' } });
   expect(SearchInput.value).toBe('wizeline');
 
-  fireEvent.keyDown(SearchInput, { key: 'Enter', code: 'Enter' })
-  setTimeout(function () {
-    expect(doSearch).toHaveBeenCalledWith('wizeline')
+  fireEvent.keyDown(SearchInput, { key: 'Enter', code: 'Enter' });
+  setTimeout(() => {
+    expect(doSearch).toHaveBeenCalledWith('wizeline');
+  }, 10);
+
+  fireEvent.blur(SearchInput, { key: 'Enter', code: 'Enter' });
+  setTimeout(() => {
+    expect(doSearch).toHaveBeenCalledWith('wizeline');
   }, 10);
 });

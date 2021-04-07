@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useVideList } from '../../utils/hooks/useVideoList';
 
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
 import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
-import Private from '../Private';
 import Layout from '../Layout';
-import VideoPlayer from '../VideoPlayer';
+import VideoPlayer from '../../pages/VideoPlayer';
 import HeaderMenu from '../Header';
 
-import { random } from '../../utils/fns';
-
 function App() {
+  const { videoList, isLoading } = useVideList([]);
+  const [video, setVideo] = useState({});
+
   const doSearch = (keyword) => {
     console.log('DOSEARCH: ', keyword);
+    return keyword;
+  };
+
+  const selectCard = (videoInfo) => {
+    setVideo(videoInfo);
+    window.history.replaceState({}, videoInfo.title, `?video=${videoInfo.videoId}`);
   };
 
   return (
@@ -23,18 +30,23 @@ function App() {
       <AuthProvider>
         <Layout>
           <Switch>
-            <Route exact path="/">
-              <HomePage />
+            <Route path="/">
+              {video.title ? (
+                <VideoPlayer video={video} />
+              ) : (
+                <HomePage
+                  videoList={videoList}
+                  selectCard={selectCard}
+                  isLoading={isLoading}
+                />
+              )}
             </Route>
             <Route exact path="/login">
               <LoginPage />
             </Route>
-            <Route exact path="/:videoId">
-              <VideoPlayer />
+            <Route path="/videoplayer">
+              <VideoPlayer video={video} />
             </Route>
-            <Private exact path="/secret">
-            HELLO
-            </Private>
             <Route path="*">
               <NotFound />
             </Route>

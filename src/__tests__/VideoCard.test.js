@@ -10,7 +10,7 @@ afterEach(() => {
 
 const MockVideoInfo = VideoMock.items[1].snippet;
 MockVideoInfo.uploadDate = getReadableDate(VideoMock.items[1].snippet.publishedAt);
-MockVideoInfo.thumbnail =  VideoMock.items[1].snippet.thumbnails.medium.url;
+MockVideoInfo.thumbnail = VideoMock.items[1].snippet.thumbnails.medium.url;
 MockVideoInfo.channel = VideoMock.items[1].snippet.channelTitle;
 
 it('Test Utils: getReadableDate', () => {
@@ -22,7 +22,7 @@ it('Test Utils: getReadableDate', () => {
 });
 
 it('Should render VideoCard Info', () => {
-  render(<VideoCard videoData={MockVideoInfo}/>);
+  render(<VideoCard videoData={MockVideoInfo} />);
   const videoCardComponent = screen.getByTestId('yt-videocard');
   expect(videoCardComponent).toBeInTheDocument();
   expect(videoCardComponent).toHaveTextContent(
@@ -31,10 +31,10 @@ it('Should render VideoCard Info', () => {
 });
 
 it('Handle videoCard click event', () => {
-  const cardClick = jest.fn()
-  render(<VideoCard videoData={MockVideoInfo} cardClick={cardClick}/>);
+  const cardClick = jest.fn();
+  render(<VideoCard videoData={MockVideoInfo} cardClick={cardClick} />);
   const videoCardComponent = screen.getByTestId('yt-videocard');
   expect(videoCardComponent).toBeInTheDocument();
   fireEvent.click(videoCardComponent);
-  expect(cardClick).toHaveBeenCalledWith(MockVideoInfo)
+  expect(cardClick).toHaveBeenCalledWith(MockVideoInfo);
 });
