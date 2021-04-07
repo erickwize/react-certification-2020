@@ -2,12 +2,22 @@ import React from 'react';
 import { screen, cleanup, render } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import AppLayout from '../components/App';
+import NotFound from '../pages/NotFound';
 import { useVideoInfo, useVideList } from '../utils/hooks/useVideoStates';
 import VideoMock from '../utils/mock/youtube-videos-mock.json';
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+});
 
 const MockVideoInfo = VideoMock.items[1].snippet;
+
+it('Should render NotFound', () => {
+  const notFoundPage = render(<NotFound />);
+  expect(notFoundPage).toMatchSnapshot();
+  // const notfound = screen.getByTestId('not-found');
+  // expect(notfound).toBeInTheDocument();
+});
 
 it('Should render App', () => {
   act(() => {

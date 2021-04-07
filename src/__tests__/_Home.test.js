@@ -13,7 +13,7 @@ const cleanVideoData = {
   channelId: 'UCPGzT4wecuWM0BH9mPiulXg',
   description:
     'Engineering a better tomorrow. Wizeline is a global software development company that helps its clients solve their biggest challenges with design and ...',
-  link: 'https://www.youtube.com/embed/7PtYNO6g7eI',
+  link: 'https://www.youtube.com/embed/7PtYNO6g7eI?autoplay=1&color=white',
   thumbnail: 'https://i.ytimg.com/vi/7PtYNO6g7eI/mqdefault.jpg',
   title: 'We Are Wizeline',
   uploadDate: 'April 12, 2019',
@@ -26,7 +26,7 @@ it('Map through videoData', () => {
   expect(videoCards.length).toBe(26);
 });
 
-it('Map through videoData', () => {
+it('Select video card', () => {
   render(<HomePage videoList={VideoMock.items} selectCard={selectCard} />);
   const videoCards = screen.getAllByTestId('yt-videocard');
   expect(videoCards.length).toBe(26);

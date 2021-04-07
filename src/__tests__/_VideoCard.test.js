@@ -17,7 +17,7 @@ it('Test Utils: getReadableDate', () => {
   expect(MockVideoInfo.uploadDate).toBe('September 30, 2019');
 });
 
-it('Test Utils: getReadableDate', () => {
+it('Test Utils: random', () => {
   expect(typeof random(10)).toBe('number');
 });
 
