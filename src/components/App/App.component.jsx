@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { useVideList } from '../../utils/hooks/useVideoList';
+import { useVideList, useVideoInfo } from '../../utils/hooks/useVideoStates';
 
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
-import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import Layout from '../Layout';
 import VideoPlayer from '../../pages/VideoPlayer';
@@ -12,7 +11,7 @@ import HeaderMenu from '../Header';
 
 function App() {
   const { videoList, isLoading } = useVideList([]);
-  const [video, setVideo] = useState({});
+  const { video, updateVideoInfo } = useVideoInfo({});
 
   const doSearch = (keyword) => {
     console.log('DOSEARCH: ', keyword);
@@ -20,19 +19,24 @@ function App() {
   };
 
   const selectCard = (videoInfo) => {
-    setVideo(videoInfo);
-    window.history.replaceState({}, videoInfo.title, `?video=${videoInfo.videoId}`);
+    updateVideoInfo(videoInfo);
+    const path = videoInfo.title ? `?video=${videoInfo.videoId}` : '/';
+    window.history.replaceState({}, videoInfo.title, path);
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter data-testid="app-layout">
       <HeaderMenu doSearch={doSearch} />
       <AuthProvider>
         <Layout>
           <Switch>
             <Route path="/">
               {video.title ? (
-                <VideoPlayer video={video} />
+                <VideoPlayer
+                  video={video}
+                  selectCard={selectCard}
+                  relatedVideos={videoList}
+                />
               ) : (
                 <HomePage
                   videoList={videoList}
@@ -42,7 +46,7 @@ function App() {
               )}
             </Route>
             <Route exact path="/login">
-              <LoginPage />
+              Login
             </Route>
             <Route path="/videoplayer">
               <VideoPlayer video={video} />

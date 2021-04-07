@@ -1,22 +1,54 @@
 import React from 'react';
+import VideoCard from '../../components/VideoCard';
+import {
+  HomeButton,
+  Player,
+  PlayerGrid,
+  PlayerTitle,
+  VideoWrapper,
+  PlayerInfo,
+  PlayerDesc,
+  RelatedVideoWrapper,
+} from './VideoPlayer.styles';
+import { getUsefullData } from '../../utils/fns';
 
-import './VideoPlayer.styles.css';
+function VideoPlayer({ video, selectCard, relatedVideos }) {
+  const cardClick = (vid) => {
+    selectCard(vid);
+  };
 
-function VideoPlayer({ video }) {
+  const isRelatedView = true;
   return (
-    <section className="view-player">
-      <h2>{video.title}</h2>
-      <h3>{video.description}</h3>
-
-      <iframe
-        width="560"
-        height="315"
-        src={video.link}
-        title={video.title}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
+    <section data-testid="video-player" className="view-player">
+      <HomeButton onClick={() => cardClick({})} type="button">
+        Home
+      </HomeButton>
+      <PlayerGrid>
+        <VideoWrapper>
+          <Player
+            src={video.link}
+            title={video.title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+          <PlayerTitle>{video.title}</PlayerTitle>
+          <PlayerInfo>{video.channel}</PlayerInfo>
+          <PlayerInfo>{video.uploadDate}</PlayerInfo>
+          <PlayerDesc>{video.description}</PlayerDesc>
+        </VideoWrapper>
+        <RelatedVideoWrapper>
+          <PlayerTitle>Related Videos:</PlayerTitle>
+          {relatedVideos.map((related) => (
+            <VideoCard
+              key={related.etag}
+              videoData={getUsefullData(related)}
+              cardClick={cardClick}
+              isRelatedView={isRelatedView}
+            />
+          ))}
+        </RelatedVideoWrapper>
+      </PlayerGrid>
     </section>
   );
 }

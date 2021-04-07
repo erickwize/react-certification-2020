@@ -10,9 +10,14 @@ import {
   VideoDescription,
 } from './VideoCard.styles';
 
-function VideoCard({ videoData, cardClick }) {
+function VideoCard({ videoData, cardClick, isRelatedView = false }) {
   return (
-    <VideoCardWrapper data-testid="yt-videocard" onClick={() => cardClick(videoData)}>
+    <VideoCardWrapper
+      data-testid="yt-videocard"
+      onClick={() => cardClick(videoData)}
+      width={isRelatedView ? '75%' : '350px'}
+      height={isRelatedView ? 'fit-content' : '345px'}
+    >
       <Thumbnail img={videoData.thumbnail} alt={videoData.title} />
       <VideoCardInfo>
         <VideoTitle>{videoData.title}</VideoTitle>
@@ -20,7 +25,7 @@ function VideoCard({ videoData, cardClick }) {
           {videoData.channel}
           <UploadDate>{`|  ${videoData.uploadDate}`} </UploadDate>
         </VideoChannel>
-        <VideoDescription>{videoData.description}</VideoDescription>
+        {!isRelatedView && <VideoDescription>{videoData.description}</VideoDescription>}
       </VideoCardInfo>
     </VideoCardWrapper>
   );

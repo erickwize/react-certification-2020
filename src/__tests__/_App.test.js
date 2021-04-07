@@ -11,9 +11,9 @@ const MockVideoInfo = VideoMock.items[1].snippet;
 
 it('Should render App', () => {
   act(() => {
-    render(<AppLayout />);
+    const app = render(<AppLayout />);
+    expect(app).toMatchSnapshot();
   });
-  jest.advanceTimersByTime(1000);
   const homePage = screen.getByTestId('yt-videocard');
   const headerMenu = screen.getByTestId('yt-header');
   expect(homePage).toBeInTheDocument();

@@ -4,16 +4,19 @@ import { renderHook } from '@testing-library/react-hooks';
 import HeaderMenu from '../components/Header';
 import { useHistory } from '../utils/hooks/useHistory';
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+});
 
 const doSearch = jest.fn();
 
 it('Should render Header', () => {
-  render(<HeaderMenu />);
+  const header = render(<HeaderMenu />);
   const headerComponent = screen.getByTestId('yt-header');
   expect(headerComponent).toBeInTheDocument();
   expect(headerComponent).toContainHTML('Dark mode');
   expect(headerComponent).toContainHTML('input');
+  expect(header).toMatchSnapshot();
 });
 
 it('Toggle Header Dark mode', () => {
