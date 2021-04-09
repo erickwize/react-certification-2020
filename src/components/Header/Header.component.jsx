@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 import {
   Header,
   HeaderWrapper,
-  Menu,
+  HomeButton,
   Search,
   HeaderToggleWrapper,
   HeaderToggle,
   HeaderToggleLabel,
   LoginMenu,
+  SearchWrapper,
+  SearchSpan,
 } from './Header.styles';
 import { useHistory } from '../../utils/hooks/useHistory';
-import MenuIcon from './img/icon_menu.png';
-import LoginIcon from './img/icon_login.png';
+import HomeIcon from './img/m_logo.png';
+import LoginIcon from './img/user_icon.png';
+import SearchIcon from './img/search_icon.png';
 
 function HeaderMenu({ doSearch }) {
   const [searchKeyword, setSearchKeyword] = useState('wizeline');
@@ -27,16 +30,21 @@ function HeaderMenu({ doSearch }) {
   return (
     <Header data-testid="yt-header">
       <HeaderWrapper>
-        <Menu img={MenuIcon} />
-        <Search
-          type="text"
-          id="name"
-          value={searchKeyword}
-          placeholder="Search..."
-          onChange={({ target }) => setSearchKeyword(target.value)}
-          onBlur={() => handleSearch({ key: 'Blur' })}
-          onKeyDown={handleSearch}
-        />
+        <a href="/">
+          <HomeButton img={HomeIcon} />
+        </a>
+        <SearchWrapper>
+          <Search
+            type="text"
+            id="name"
+            value={searchKeyword}
+            placeholder="Search..."
+            onChange={({ target }) => setSearchKeyword(target.value)}
+            onBlur={() => handleSearch({ key: 'Blur' })}
+            onKeyDown={handleSearch}
+          />
+          <SearchSpan img={SearchIcon} onClick={() => handleSearch({ key: 'Enter' })} />
+        </SearchWrapper>
       </HeaderWrapper>
       <HeaderWrapper>
         <HeaderToggleWrapper>
