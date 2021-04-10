@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Sun, Moon } from './ThemeButton.styled';
+// import useDarkMode from '../../utils/hooks/useDarkMode';
+import { useGlobalProvider } from '../../store/global/global.provider';
+import { switchTheme } from '../../store/global/GlobalAction';
 
 const ThemeButton = () => {
-  const [theme, setTheme] = useState('light');
+  const {
+    state: { themeValue },
+    dispatch,
+  } = useGlobalProvider();
 
   const handleTheme = () => {
-    return theme === 'light' ? setTheme('dark') : setTheme('light');
+    const value = themeValue === 'light' ? 'dark' : 'light';
+    switchTheme(dispatch, value);
   };
 
   return (
     <Button onClick={handleTheme}>
-      {theme === 'light' ? (
+      {themeValue === 'light' ? (
         <Moon
           title="MoonButton"
           xmlns="http://www.w3.org/2000/svg"

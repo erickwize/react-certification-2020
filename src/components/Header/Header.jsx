@@ -5,7 +5,7 @@ import { StyledHeader, NavStyle } from './Header.styled';
 import MenuButton from '../../styles/MenuButton';
 import { Search, ThemeButton } from '../index';
 
-function Header({ handleChange }) {
+function Header({ handleChange, darkMode }) {
   return (
     <StyledHeader>
       <div className="bar">
@@ -16,7 +16,7 @@ function Header({ handleChange }) {
         </MenuButton>
         <Search handleChange={handleChange} />
         <NavStyle>
-          <ThemeButton />
+          <ThemeButton darkMode={darkMode} />
           <Link to="/login" className="navButton">
             Sign in
           </Link>

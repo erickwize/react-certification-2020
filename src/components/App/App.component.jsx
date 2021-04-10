@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
@@ -12,32 +12,40 @@ import Private from '../Private';
 // import Fortune from '../Fortune';
 import Layout from '../Layout';
 import { Header } from '../index';
-import { random } from '../../utils/fns';
+// import { random } from '../../utils/fns';
 import GlobalStyle from '../../GlobalStyle';
+import { lightTheme, darkTheme } from '../../utils/themes';
+import { useGlobalProvider } from '../../store/global/global.provider';
 
 // change api call with context
 import useFetch from '../../utils/hooks/useFetch';
 
 function App() {
-  useLayoutEffect(() => {
-    const { body } = document;
+  // useLayoutEffect(() => {
+  //   const { body } = document;
 
-    function rotateBackground() {
-      const xPercent = random(100);
-      const yPercent = random(100);
-      body.style.setProperty('--bg-position', `${xPercent}% ${yPercent}%`);
-    }
+  //   function rotateBackground() {
+  //     const xPercent = random(100);
+  //     const yPercent = random(100);
+  //     body.style.setProperty('--bg-position', `${xPercent}% ${yPercent}%`);
+  //   }
 
-    const intervalId = setInterval(rotateBackground, 3000);
-    body.addEventListener('click', rotateBackground);
+  //   const intervalId = setInterval(rotateBackground, 3000);
+  //   body.addEventListener('click', rotateBackground);
 
-    return () => {
-      clearInterval(intervalId);
-      body.removeEventListener('click', rotateBackground);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(intervalId);
+  //     body.removeEventListener('click', rotateBackground);
+  //   };
+  // }, []);
 
-  // Make api call from Search component using context
+  // Dark Mode
+  const {
+    state: { themeValue },
+  } = useGlobalProvider();
+  console.log(themeValue);
+  const themeMode = themeValue === 'light' ? lightTheme : darkTheme;
+
   const [param, setParam] = useState('Wizeline');
   const { videoList, loading, error } = useFetch(param, true);
 
@@ -45,15 +53,9 @@ function App() {
     setParam(value);
   };
 
-  const theme = {
-    primaryDark: '#0D0C1D',
-    primaryLight: '#EFFFFA',
-    primaryHover: '#343078',
-    mobile: '576px',
-  };
-
   return (
-    <ThemeProvider theme={theme}>
+    // <GlobalProvider>
+    <ThemeProvider theme={themeMode}>
       <GlobalStyle />
       <BrowserRouter>
         <AuthProvider>
@@ -81,6 +83,7 @@ function App() {
         </AuthProvider>
       </BrowserRouter>
     </ThemeProvider>
+    // </GlobalProvider>
   );
 }
 
