@@ -13,7 +13,7 @@ const fontSize = {
   md: '14px',
   l: '18px',
   xxl: '20px',
-  xxxl: '30px,',
+  xxxl: '30px',
 };
 
 export { color, fontSize };

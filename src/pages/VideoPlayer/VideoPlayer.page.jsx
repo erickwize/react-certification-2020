@@ -44,8 +44,9 @@ function VideoPlayer({ video, selectCard, relatedVideos }) {
             allowFullScreen
           />
           <PlayerTitle>{video.title}</PlayerTitle>
-          <PlayerInfo>{video.channel}</PlayerInfo>
-          <PlayerInfo>{video.uploadDate}</PlayerInfo>
+          <PlayerInfo>
+            {video.channel} | {video.uploadDate}
+          </PlayerInfo>
           <PlayerDesc>{video.description}</PlayerDesc>
         </VideoWrapper>
         <RelatedVideoWrapper>

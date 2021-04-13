@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { color, fontSize } from '../../utils/globalStyle';
 
 export const HomeButton = styled.button`
   height: fit-content;
@@ -7,20 +8,16 @@ export const HomeButton = styled.button`
   margin: 15px 10px;
   color: white;
   padding: 8px 15px;
-  font-size: 18px;
+  font-size: ${fontSize.l};
   display: block;
-  background-color: #ff005d;
+  background-color: ${color.lightCoral};
   border: none;
 `;
 
 export const Player = styled.iframe`
   height: 423px;
   width: 100%;
-  border-radius: 10px;
-  margin: 15px 0;
-  padding: 5px;
   display: block;
-  background-color: #00b1bf;
 `;
 
 export const PlayerGrid = styled.section`
@@ -32,29 +29,39 @@ export const PlayerGrid = styled.section`
 export const VideoWrapper = styled.section`
   display: block;
   max-width: 60%;
+  background-color: ${color.lightCoral};
+  padding: 10px;
+  height: fit-content;
+  color: ${color.white};
 `;
 
 export const PlayerTitle = styled.h2`
   font-weight: normal;
-  font-size: 24px;
-  margin-bottom: 0;
-  color: #0085b6;
+  font-size: ${fontSize.xxxl};
+  margin: 10px 0 0;
+  line-height: normal;
+  color: ${color.white};
+  font-weight: bold;
 `;
 
 export const PlayerInfo = styled.span`
   font-weight: normal;
-  font-size: 18px;
+  font-size: ${fontSize.md};
   margin: 0 5px;
-  display: inline-flex;
+  text-align: right;
+  padding: 3px 10px 5px;
+  display: block;
+  color: ${color.oceanBlue};
 `;
 
 export const PlayerDesc = styled.p`
   font-weight: normal;
-  font-size: 20px;
-  margin: 5px 0;
+  font-size: ${fontSize.default};
+  margin: 5px 0 15px;
+  padding: 10px 15px 0;
   display: block;
   width: 100%;
-  border-top: 2px solid #fedf03;
+  border-top: 2px solid ${color.coralPink};
 `;
 
 export const RelatedVideoWrapper = styled.section`
@@ -64,4 +71,5 @@ export const RelatedVideoWrapper = styled.section`
   margin-left: 20px;
   max-height: 630px;
   overflow-x: overlay;
+  color: ${color.black};
 `;
