@@ -19,7 +19,7 @@ export const VideosGrid = ({data}) => {
   return <Container data-testid="videosGrid">
       {
           data.items.map(video =>
-            <Link key={video.etag} to={`/${video.id.videoId}`}>
+            <Link key={video.etag} to={`/video/${video.id.videoId}`}>
               <VideoGridItem key={video.etag}
               video={video}/>
             </Link>

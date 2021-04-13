@@ -8,7 +8,6 @@ import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
-// import Fortune from '../Fortune';
 import Layout from '../Layout';
 
 //Components
@@ -28,7 +27,7 @@ function App() {
             <Route exact path="/">
               <HomePage searchValue={searchValue}/>
             </Route>
-            <Route exact path="/:videoId">
+            <Route exact path="/video/:videoId">
               <VideoDetail/>
             </Route>
             <Route exact path="/login">
@@ -41,7 +40,6 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
-          {/* <Fortune /> */}
         </Layout>
       </AuthProvider>
     </BrowserRouter>

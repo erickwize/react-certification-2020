@@ -11,7 +11,7 @@ export const VideoDetail = () => {
     const { videos} = useFetchVideoInfo(videoId);
     const video = videos.items[0];
 
-    return <Container>
+    return <Container data-testid="video-detail">
         <Subcontainer>
             <LeftContainer>
                 <VideoFrame videoId={videoId}></VideoFrame>

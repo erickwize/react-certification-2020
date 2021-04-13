@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { VideoGridItem, parseDatetime } from './VideoGridItem.component';
+import { VideoGridItem } from './VideoGridItem.component';
+import { parseDatetime } from '../../../utils/parseDatetime';
 
 const mockData = {
     kind: "youtube#searchResult",

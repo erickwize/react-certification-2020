@@ -13,14 +13,14 @@ export const VideoInfo = ({video}) => {
     if(video){
         const {title, channelTitle, publishedAt, description} = video.snippet;
 
-        return <div>
+        return <div data-testid="video-info">
             <Title>{title}</Title>
             <ChannelAndDatePublished>{`${channelTitle} • ${parseDatetime(publishedAt)}`}</ChannelAndDatePublished>
             <Separator></Separator>
             <DescriptionContainer animate={isOpen ? "open":"closed"} variants={variants}>
                 <DescriptionText>{description}</DescriptionText>
             </DescriptionContainer>
-            <ShowLessMore onClick={()=>setIsOpen(!isOpen)}>Show {!isOpen && 'more'} {isOpen && 'less'}</ShowLessMore>
+            <ShowLessMore data-testid="info-toggle" onClick={()=>setIsOpen(!isOpen)}>Show {!isOpen && 'more'}{isOpen && 'less'}</ShowLessMore>
         </div>
     }
     return <></>

@@ -16,11 +16,11 @@ export const RelatedVideos = ({videoId}) => {
 
     const { videos} = useFetchRelatedVideos(videoId);
 
-    return <Container>
+    return <Container data-testid="related-videos">
         {   
             videos!==null && videos.items.length>0 &&
             videos.items.map(video =>                
-            <Link key={video.id.videoId} to={`/${video.id.videoId}`}>
+            <Link key={video.id.videoId} to={`/video/${video.id.videoId}`}>
                 <RelatedVideosItem 
                     key={video.id.videoId} 
                     video={video}/>
