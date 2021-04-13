@@ -17,10 +17,10 @@ const StyledHeader = styled.header`
   width: 100%;
 `;
 
-export const Header = () => {
+export const Header = ({setSearchValue}) => {
   return <StyledHeader>
       <MenuButton/>
-      <Searchbar/>
+      <Searchbar setSearchValue={setSearchValue}/>
       <DarkmodeButton/>
       <ProfileButton/>
   </StyledHeader>;
