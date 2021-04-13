@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoCard Test VideoCard is getting rendered 1`] = `
+<div
+  className="sc-bdfBwQ gTyMyW Video-Card"
+>
+  <button
+    className="sc-eCssSg foQmNZ"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="sc-gsTCUz KZrsn"
+    >
+      <img
+        alt="default"
+        className="sc-hKgILt cbCdcf"
+      />
+    </div>
+    <div
+      className="sc-dlfnbm liHOfl"
+    >
+      <h3>
+        Test
+      </h3>
+      <p>
+        Test Description
+      </p>
+    </div>
+  </button>
+</div>
+`;

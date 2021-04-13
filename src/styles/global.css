@@ -1,0 +1,220 @@
+html {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    background-size: 400% 400%;
+    background-position: var(--bg-position);
+    transition: background-position 2s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.separator::before {
+    content: '•';
+    color: white;
+    padding: 0.4rem;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+a:active {
+    color: blueviolet;
+}
+
+p {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.App {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.menuIcon {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+.MenuIconLabel,
+.AvatarLabel {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+.MenuIconContainer,
+.AvatarContainer {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    user-select: none;
+    outline: none;
+}
+
+.MenuIcon,
+.UserIcon {
+    width: 80%;
+    height: 80%;
+    display: inline-block;
+    user-select: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.UserIcon {
+    padding-top: 2px;
+}
+
+.DefaulUserIcon {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+
+/*siwtch button css*/
+
+.Switch-base {
+    top: 0;
+    left: 0;
+    color: #fafafa;
+    z-index: 1;
+    position: absolute;
+    transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    padding: 5px;
+    flex: 0 0 auto;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    vertical-align: middle;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.Switch-main {
+    width: 52px;
+    height: 30px;
+    display: inline-flex;
+    z-index: 0;
+    overflow: hidden;
+    padding: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
+.Switch-track {
+    width: 100%;
+    height: 100%;
+    opacity: 0.38;
+    z-index: -1;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 7px;
+    background-color: #000;
+}
+
+.Switch-input {
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: inherit;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    z-index: 1;
+    position: absolute;
+}
+
+.Switchinput-container {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+.Switch-bullet {
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.Video-Detail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Main-Video {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.Video-List .Video-Card {
+    width: 96%;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.Video-List .Video-Card div img {
+    width: 100%;
+}

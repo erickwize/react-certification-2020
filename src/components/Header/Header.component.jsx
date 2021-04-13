@@ -1,104 +1,60 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import Search from './Search';
+import Menu from './Menu';
+import LoginControl from './LoginControl';
+import SwitchControl from './SwitchControl';
 
 const StyledHeader = styled.header`
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(227 227 227);
     display: flex;
-    border-bottom: 1px solid rgb(236, 236, 236 ) !important;
+    border-bottom: 1px solid rgb(236, 236, 236);
     width: 100%;
-    flex-direction:column;
+    height: 60px;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
  `;
 
-const MenuContainer = styled.div`
-    display:flex;
-    width:auto;
-    position: relative;
-    align-items:center;
-    padding-left: 20px;
-    padding-right:20px;
-    min-height: 60px;
+const LeftSide = styled.div`
+    flex: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 `;
 
 const LeftMenu = styled.div`
-display: flex;
-`;
-
-const CenterMenu=styled.div`
-    display: flex;
-    flex:1;
-`;
-
-const RightMenu = styled.div`
-display: flex;
-`;
-
-const ToogleMenu =styled.div`
-width: 35px;
-height: 5px;
-background-color: black;
-margin: 6px 0;
-`;
-
-const SearchItem = styled.input`
-    width: 15em;
-    margin-left: 24px;
-`;
-
-
-const UserLogin  = styled.button`
-    width: 40px important!;
-    height: 40px important!;
+    display:flex;
+    max-height: 60px;
     align-items: center;
-    text-align: center;
-    border:none;
-    background: none;
+    justify-content: left;
 `;
 
-const Avatar = styled.div`
-border-radius: 50%;
-justify-content: center;
+
+
+const RightSide = styled.div`
+    flex: 50%;
+    display:flex;
+    align-items:center;
+    justify-content: flex-end;
 `;
 
-const LabelSwitch = styled.label`
-position: relative;
-display: inline-block;
-width: 60px;
-height: 34px;
-margin-right: 50px;
-`;
 
-function Header() {
+
+const Header = ({searchHandler}) =>{
 
   return (
     <StyledHeader>
-       <MenuContainer>
+        <LeftSide>
             <LeftMenu>
-                <div>
-                    <ToogleMenu/>
-                    <ToogleMenu/>
-                    <ToogleMenu/>
-                </div>
-                    <SearchItem/>
-                </LeftMenu>
-                <CenterMenu/>
-            <RightMenu>
-            <LabelSwitch>
-                <input id="none" type="checkbox" text="Dark Mode"/>
-                <span className="slider round"/>
-            </LabelSwitch>
-                <UserLogin>
-                    <span>
-                        <Avatar>
-                            <svg>
-                              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
-                        </Avatar>
-                    </span>
-                </UserLogin>
-            </RightMenu>
-       </MenuContainer>
+                <Menu/>
+                <Search searchHandler={searchHandler}/>
+            </LeftMenu>
+        </LeftSide>
+        <RightSide>
+            <SwitchControl/>
+            <LoginControl/>
+        </RightSide>
     </StyledHeader>
   );
-}
+};
 
 export default Header;
