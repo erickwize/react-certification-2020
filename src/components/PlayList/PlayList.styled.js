@@ -3,13 +3,15 @@ import styled from 'styled-components';
 const VideoContent = styled.div`
   display: flex;
   flex-direction: row;
-  border: 1px solid gray;
+  border: 1px solid ${({ theme }) => theme.toggleBorder};
   height: 94px;
 `;
 
 const VideoImagen = styled.img`
   width: 168px;
   height: 90px;
+  object-fit: cover;
+  object-position: center center;
 `;
 
 const VideoDetails = styled.div`
@@ -22,8 +24,8 @@ const VideoDetails = styled.div`
     padding: 0px;
   }
   p {
-    font-size: 10px;
-    color: black;
+    font-size: 12px;
+    color: ${({ theme }) => theme.cardText};
     margin: 0px 0px 0px 5px;
     padding: 0px;
   }

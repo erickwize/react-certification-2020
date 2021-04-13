@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button, Sun, Moon } from './ThemeButton.styled';
-// import useDarkMode from '../../utils/hooks/useDarkMode';
-import { useGlobalProvider } from '../../store/global/global.provider';
 import { switchTheme } from '../../store/global/GlobalAction';
+import { useGlobalProvider } from '../../store/global/Global.provider';
 
 const ThemeButton = () => {
   const {

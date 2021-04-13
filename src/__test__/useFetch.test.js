@@ -16,7 +16,7 @@ describe('Testing useFetch hooks', () => {
     const { response, promise } = promiseControl();
     global.fetch = jest.fn(() => promise);
 
-    const { result, waitForNextUpdate } = renderHook(() => useFetch('', true));
+    const { result, waitForNextUpdate } = renderHook(() => useFetch('CHzlSGRvWPs', true));
 
     expect(result.current.loading).toBe(true);
     response.resolve();
@@ -29,12 +29,12 @@ describe('Testing useFetch hooks', () => {
     const { response, promise } = promiseControl();
     global.fetch = jest.fn(() => promise);
 
-    const { result, waitForNextUpdate } = renderHook(() => useFetch('', true));
+    const { result, waitForNextUpdate } = renderHook(() => useFetch('CHzlSGRvWPs', true));
     const videos = mockVideos;
     response.resolve({ json: () => ({ data: videos }) });
 
     await waitForNextUpdate();
-    expect(result.current.videoList).toStrictEqual({ data: videos });
+    expect(result.current.videosRelated).toStrictEqual({ data: videos });
   });
 
   it('Getting an error during request', async () => {
@@ -45,7 +45,7 @@ describe('Testing useFetch hooks', () => {
       });
     });
 
-    const { result, waitForNextUpdate } = renderHook(() => useFetch('', true));
+    const { result, waitForNextUpdate } = renderHook(() => useFetch('CHzlSGRvWPs', true));
     await waitForNextUpdate();
     expect(result.current.error).toBe(true);
   });

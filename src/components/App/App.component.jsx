@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
@@ -15,10 +15,10 @@ import { Header } from '../index';
 // import { random } from '../../utils/fns';
 import GlobalStyle from '../../GlobalStyle';
 import { lightTheme, darkTheme } from '../../utils/themes';
-import { useGlobalProvider } from '../../store/global/global.provider';
+import { useGlobalProvider } from '../../store/global/Global.provider';
 
 // change api call with context
-import useFetch from '../../utils/hooks/useFetch';
+// import useFetch from '../../utils/hooks/useFetch';
 
 function App() {
   // useLayoutEffect(() => {
@@ -46,12 +46,12 @@ function App() {
   console.log(themeValue);
   const themeMode = themeValue === 'light' ? lightTheme : darkTheme;
 
-  const [param, setParam] = useState('Wizeline');
-  const { videoList, loading, error } = useFetch(param, true);
+  // const [param, setParam] = useState('Wizeline');
+  // const { videoList, loading, error } = useFetch(param, true);
 
-  const handleChange = (value) => {
-    setParam(value);
-  };
+  // const handleChange = (value) => {
+  //   setParam(value);
+  // };
 
   return (
     // <GlobalProvider>
@@ -60,10 +60,10 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <Layout>
-            <Header handleChange={handleChange} />
+            <Header />
             <Switch>
               <Route exact path="/">
-                <HomePage fetching={{ videoList, loading, error }} />
+                <HomePage />
               </Route>
               <Route exact path="/video/:id">
                 <Video />

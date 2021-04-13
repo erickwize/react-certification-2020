@@ -25,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     background-size: 400% 400%;
     background-position: var(--bg-position);
-    /* transition: background-position 2s ease; */
     transition: all 0.50s linear;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -40,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     a {
     text-decoration: none;
     font-weight: bold;
-    color: white;
+    color: ${({ theme }) => theme.text};
     }
 
     a:active {

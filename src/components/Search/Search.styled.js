@@ -16,6 +16,7 @@ const InputElement = styled.input`
   height: 30px;
   border-radius: 5px;
   margin-left: 10%;
+  padding-left: 1%;
 
   @media (max-width: 500px) {
     width: 200px;

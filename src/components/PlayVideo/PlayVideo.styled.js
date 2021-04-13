@@ -20,15 +20,18 @@ const Title = styled.h2`
 const Button = styled.button`
   border: 2px solid ${({ theme }) => theme.toggleBorder};
   border-radius: 5px;
-  width: 160px;
+  width: 175px;
   height: 30px;
-  background-color: transparent;
+  background-color: #c00;
+  color: #fff;
   margin-right: 5px;
   cursor: pointer;
   overflow: hidden;
   padding: 0px;
   position: relative;
   outline: none;
+  font-weight: bold;
+  font-size: small;
 `;
 
 const Paragraph = styled.p`

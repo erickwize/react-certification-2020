@@ -2,21 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { StyledHeader, NavStyle } from './Header.styled';
-import MenuButton from '../../styles/MenuButton';
-import { Search, ThemeButton } from '../index';
+import { Search, ThemeButton, MenuButton } from '../index';
 
-function Header({ handleChange, darkMode }) {
+function Header() {
   return (
     <StyledHeader>
       <div className="bar">
-        <MenuButton data-testid="MenuButton">
-          <span />
-          <span />
-          <span />
-        </MenuButton>
-        <Search handleChange={handleChange} />
+        <MenuButton />
+        <Search />
         <NavStyle>
-          <ThemeButton darkMode={darkMode} />
+          <ThemeButton />
           <Link to="/login" className="navButton">
             Sign in
           </Link>

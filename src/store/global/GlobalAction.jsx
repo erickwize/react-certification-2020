@@ -1,36 +1,46 @@
+// import { mockVideos } from '../../mockData';
+
 export const GLOBAL_ACTIONS = {
+  SWITCH_THEME: 'SWITCH_THEME',
+  UPDATE_SEARCH_VALUE: 'UPDATE_SEARCH_VALUE',
+  SELECT_VIDEO: 'SELECT_VIDEO',
+
   GET_VIDEOS_REQUEST: 'GET_VIDEOS_REQUEST',
   GET_VIDEOS_SUCCESS: 'GET_VIDEOS_SUCCESS',
   GET_VIDEOS_FAILURE: 'GET_VIDEOS_FAILURE',
-  SWITCH_THEME: 'SWITCH_THEME',
 };
 
 export const switchTheme = (dispatch, themeValue) => {
-  dispatch({
-    type: 'SWITCH_THEME',
-    payload: themeValue,
-  });
+  dispatch({ type: GLOBAL_ACTIONS.SWITCH_THEME, themeValue });
 };
 
-// const fetchData = useCallback(async () => {
-//   setLoading(true);
-//   if (fetching) {
-//     try {
-//       // const response = await fetch(
-//       //   `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${param}&type=video&key=${process.env.REACT_APP_API_KEY}`,
-//       //   {
-//       //     method: 'get',
-//       //     headers: { 'Content-Type': 'application/json' },
-//       //   }
-//       // );
-//       // const data = await response.json();
-//       const data = mockVideos;
-//       console.log('FETCHING');
-//       setVideoList(data);
-//     } catch (err) {
-//       setError(true);
-//     }
-//   }
+export const onChangeSearch = (dispatch, searchValue) => {
+  dispatch({ type: GLOBAL_ACTIONS.UPDATE_SEARCH_VALUE, searchValue });
+};
 
-//   setLoading(false);
-// }, [param, fetching]);
+export const fetchVideos = async (dispatch, searchValue, select) => {
+  dispatch({ type: GLOBAL_ACTIONS.GET_VIDEOS_REQUEST, searchValue });
+  try {
+    const response = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${searchValue}&type=video&key=${process.env.REACT_APP_API_KEY}`,
+      {
+        method: 'get',
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+    const videoList = await response.json();
+    // const videoList = mockVideos;
+    console.log('FETCHING');
+    dispatch({ type: GLOBAL_ACTIONS.GET_VIDEOS_SUCCESS, videoList });
+    if (select) {
+      const videoSelected = videoList.items[0];
+      dispatch({ type: GLOBAL_ACTIONS.SELECT_VIDEO, videoSelected });
+    }
+  } catch (error) {
+    dispatch({ type: GLOBAL_ACTIONS.GET_VIDEOS_FAILURE, error });
+  }
+};
+
+export const selectVideo = (dispatch, videoSelected) => {
+  dispatch({ type: GLOBAL_ACTIONS.SELECT_VIDEO, videoSelected });
+};

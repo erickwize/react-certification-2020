@@ -3,9 +3,14 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ThemeButton from '../components/ThemeButton/ThemeButton';
+import GlobalProvider from '../store/global/Global.provider';
 
 test('Test ThemeButton components', async () => {
-  render(<ThemeButton />);
+  render(
+    <GlobalProvider>
+      <ThemeButton />
+    </GlobalProvider>
+  );
 
   // Looking for elements
   const themeButton = screen.getByRole('button');
@@ -19,10 +24,10 @@ test('Test ThemeButton components', async () => {
   const onClickButton = jest.fn(() => userEvent.click(themeButton));
 
   onClickButton();
-  expect(await screen.getByTitle('SunButton')).toBeInTheDocument();
+  expect(await screen.findByTitle('SunButton')).toBeInTheDocument();
   expect(onClickButton).toHaveBeenCalledTimes(1);
   // returning default value
   onClickButton();
-  expect(await screen.getByTitle('MoonButton')).toBeInTheDocument();
+  expect(await screen.findByTitle('MoonButton')).toBeInTheDocument();
   expect(onClickButton).toHaveBeenCalledTimes(2);
 });

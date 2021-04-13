@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-  background-color: white;
-  height: 50px;
+  height: 60px;
   width: 100%;
+  border-bottom: 1px solid #a0aec0;
   .bar {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding: 10px;
+    padding: 15px 10px 10px 10px;
     @media (max-width: 400px) {
       justify-content: end;
     }
@@ -25,7 +25,7 @@ const NavStyle = styled.div`
     display: flex;
     justify-content: center;
     width: 100px;
-    color: inherit;
+    color: ${({ theme }) => theme.text};
     font-size: 17px;
     align-items: center;
   }

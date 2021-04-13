@@ -4,10 +4,13 @@ import React, { useRef } from 'react';
 // import { useAuth } from '../../providers/Auth';
 import { HomeSection, Title, VideoContainer } from './Home.styled';
 import { VideoCard } from '../../components';
+import { useGlobalProvider } from '../../store/global/Global.provider';
 
-function HomePage({ fetching }) {
-  const { videoList, loading, error } = fetching;
+function HomePage() {
   const sectionRef = useRef(null);
+  const {
+    state: { fetchingVideo, videoList, error },
+  } = useGlobalProvider();
   // const history = useHistory();
   // const { authenticated, logout } = useAuth();
 
@@ -17,7 +20,7 @@ function HomePage({ fetching }) {
   //   history.push('/');
   // }
 
-  if (loading) return <>Loading...</>;
+  if (fetchingVideo) return <>Loading...</>;
 
   if (error) return <>Network error</>;
 

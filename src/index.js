@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './components/App';
-import GlobalProvider from './store/global/global.provider';
+import GlobalProvider from './store/global/Global.provider';
 
 ReactDOM.render(
   <React.StrictMode>

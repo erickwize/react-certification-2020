@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import { VideoiFrame, VideoDetails, Title, Button, Paragraph } from './PlayVideo.styled';
 
-const PlayVideo = ({ videoId, videoDetail }) => {
-  const { title, description } = videoDetail;
+const PlayVideo = ({ videoSelected, videoId }) => {
+  const { title, description } = videoSelected.snippet;
   const [add, setAdd] = useState(false);
 
   const handleChange = () => {

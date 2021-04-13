@@ -1,29 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { VideoContent, VideoImagen, VideoDetails } from './PlayList.styled';
+import { selectVideo } from '../../store/global/GlobalAction';
+import useVideoList from '../../utils/hooks/useFetch';
 
-const PlayList = ({ listItems, handlePlayVideo }) => {
-  const onHandleVideo = ({ videoId, title, description, channelTitle }) => {
-    handlePlayVideo({ videoId, title, description, channelTitle });
+const PlayList = ({ videoId, dispatch }) => {
+  const { videosRelated, error } = useVideoList(videoId, true);
+
+  const onHandleVideo = (videoSelected) => {
+    selectVideo(dispatch, videoSelected);
   };
+
+  if (error) return <>Network error</>;
 
   return (
     <>
-      {listItems?.items &&
-        listItems.items.map((video) => {
+      {videosRelated?.items &&
+        videosRelated.items.map((video) => {
           const snippet = video?.snippet ? video.snippet : false;
           if (!snippet) return null;
 
-          const { title = '', channelTitle = '', description = '' } = snippet;
-          const sourceImg = snippet.thumbnails.default.url;
-          const { videoId } = video.id;
+          const { title = '', channelTitle = '' } = snippet;
+          const sourceImg = snippet.thumbnails.medium.url;
+          const { videoId: id } = video.id;
           return (
             <Link
-              key={videoId}
-              onClick={() => onHandleVideo({ videoId, title, description, channelTitle })}
+              key={id}
+              onClick={() => onHandleVideo(video)}
               to={{
-                pathname: `/video/${videoId}`,
-                data: { data: video, videoList: listItems },
+                pathname: `/video/${id}`,
+                data: { data: video, videoList: videosRelated },
               }}
             >
               <VideoContent>

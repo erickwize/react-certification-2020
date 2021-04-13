@@ -22,7 +22,7 @@ const MenuButton = styled.div`
   span {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ theme }) => theme.primaryLight};
+    background: ${({ theme }) => theme.toggleBorder};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
