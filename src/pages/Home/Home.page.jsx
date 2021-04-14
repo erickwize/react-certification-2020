@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Content, Footer } from './Home.styled';
 import Header from '../../components/Header';
@@ -9,8 +9,6 @@ import './Home.styles.css';
 
 function HomePage() {
   const history = useHistory();
-  const [query, setQuery] = useState('');
-  const [currVid, setCurrVid] = useState({});
   const sectionRef = useRef(null);
   const { authenticated, logout } = useAuth();
 
@@ -22,7 +20,7 @@ function HomePage() {
 
   return (
     <section className="homepage" ref={sectionRef}>
-      <Header query={query} setQuery={setQuery} />
+      <Header />
       {authenticated ? (
         <>
           <h2>Good to have you back</h2>
@@ -37,7 +35,7 @@ function HomePage() {
       ) : (
         <>
           <Content>
-            <VideoHome query={query} currVid={currVid} setCurrVid={setCurrVid} />
+            <VideoHome />
           </Content>
           <Footer>
             <Link to="/login">let me in →</Link>

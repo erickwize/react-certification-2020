@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Wrapper } from './VideoHome.styled';
 import { ytdata } from '../../ytdata';
+import { GlobalContext } from '../../context/GlobalContext';
 import VideoDetail from '../VideoDetail';
 import VideoList from '../VideoList';
 
-function VideoHome({ query, currVid, setCurrVid }) {
+function VideoHome() {
+  const globalContext = useContext(GlobalContext);
   const preprocessResults = (data, source) => {
     switch (source) {
       case 'youtube':
         return {};
       case 'mockdata':
+        console.log('VideoHome:search', globalContext.search);
         return data.items
           .filter((item) => item.id.kind === 'youtube#video')
           .filter((item) =>
             (item.snippet.title + item.snippet.description)
               .toLowerCase()
-              .includes(query.toLowerCase())
+              .includes(globalContext.search.query.toLowerCase())
           );
       default:
         return {};
@@ -27,8 +30,10 @@ function VideoHome({ query, currVid, setCurrVid }) {
 
   return (
     <Wrapper>
-      {hasItems(currVid) && <VideoDetail currVid={currVid} />}
-      <VideoList items={preprocessResults(ytdata, 'mockdata')} setCurrVid={setCurrVid} />
+      {hasItems(globalContext.video.currVid) && <VideoDetail />}
+      <VideoList items={preprocessResults(ytdata, 'mockdata')} />
+      <p>{globalContext.theme.colors.background}</p>
+      <p>{globalContext.theme.colors.text}</p>
     </Wrapper>
   );
 }

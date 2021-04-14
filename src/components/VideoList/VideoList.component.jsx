@@ -2,7 +2,7 @@ import React from 'react';
 import VideoItem from '../VideoItem';
 import { Wrapper } from './VideoList.styled';
 
-function VideoList({ items, setCurrVid }) {
+function VideoList({ items }) {
   const hasItems = (input) => {
     if (typeof input !== 'undefined' && input !== null && input !== 'undefined') {
       console.log(items);
@@ -17,7 +17,7 @@ function VideoList({ items, setCurrVid }) {
         {hasItems(items) && (
           <>
             {items.map((v) => (
-              <VideoItem item={v} key={v.etag} setCurrVid={setCurrVid} />
+              <VideoItem item={v} key={v.etag} />
             ))}
           </>
         )}

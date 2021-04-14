@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Wrapper, Title, Thumbnail } from './VideoItem.styled';
+import { GlobalContext } from '../../context/GlobalContext';
 
-function VideoItem({ item, setCurrVid }) {
+function VideoItem({ item }) {
+  const globalContext = useContext(GlobalContext);
   const text = item.snippet.title.replace(/&#39;/g, "'");
   const onClickHandler = () => {
-    setCurrVid(item);
+    globalContext.video.setCurrVid(item);
   };
   return (
     <Wrapper key={item.etag} onClick={onClickHandler}>

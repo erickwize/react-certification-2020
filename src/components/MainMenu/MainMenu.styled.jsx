@@ -13,5 +13,6 @@ export const HamLine = styled.div`
   height: 4px;
   margin-bottom: 5px;
   border-radius: 100px;
-  background-color: #409287;
+  background-color: ${(props) => props.theme.primary_shadow || 'red'};
+  transition: all 0.4s ease-in-out;
 `;

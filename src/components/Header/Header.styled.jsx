@@ -5,10 +5,11 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 15px 20px;
-  background-color: #70dbcd;
   height: 70px;
-  box-shadow: 0 0 10px #409287;
   margin-bottom: 20px;
+  background-color: ${(props) => props.theme.primary || 'red'};
+  box-shadow: 0 0 10px ${(props) => props.theme.primary_shadow || 'red'};
+  transition: all 0.4s ease-in-out;
 `;
 const Left = styled.div`
   display: flex;

@@ -12,10 +12,11 @@ const Switch = styled.div`
 `;
 const Track = styled.div`
   display: block;
-  width: 40px;
-  height: 10px;
-  background-color: #ffffff;
+  width: 50px;
+  height: 25px;
   border-radius: 100px;
+  background-color: ${(props) => props.theme.background || 'red'};
+  transition: all 0.4s ease-in-out;
 `;
 const Ball = styled.div`
   display: block;
@@ -25,15 +26,15 @@ const Ball = styled.div`
   border-radius: 100px;
   position: absolute;
   z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-`;
-const Label = styled.div`
-  font-size: 15px;
-  line-height: 40px;
-  display: inline-block;
-  @media (max-width: 500px) {
-    display: none;
+  top: calc(50% - 10px);
+  left: 5px;
+  transition: all 0.4s ease-in-out;
+  &.light {
+    background-color: #222222;
+  }
+  &.dark {
+    background-color: #dddddd;
+    left: calc(100% - 25px);
   }
 `;
 
@@ -41,4 +42,3 @@ export { Wrapper };
 export { Switch };
 export { Track };
 export { Ball };
-export { Label };
