@@ -5,6 +5,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Search from '@material-ui/icons/Search';
+
 import {
   AppBar,
   EndBar,
@@ -13,10 +14,12 @@ import {
   Toolbar,
   Switch,
 } from './Header.styled';
+import { useAppContext } from '../../state/AppProvider';
+import { themes } from '../../state/ThemeProvider';
 
 const Header = () => {
+  const { setTheme, theme } = useAppContext();
   const [anchorEl, setAnchorEl] = React.useState(null);
-
   const isMenuOpen = Boolean(anchorEl);
 
   const handleProfileMenuOpen = (event) => {
@@ -42,6 +45,11 @@ const Header = () => {
     </Menu>
   );
 
+  const handleDarkMode = () => {
+    if (theme === themes.light) setTheme(themes.dark);
+    else setTheme(themes.light);
+  };
+
   return (
     <>
       <AppBar position="static">
@@ -54,7 +62,7 @@ const Header = () => {
             <TextField label="Search..." defaultValue="Wizeline" />
           </SearchStyled>
           <EndBar>
-            <Switch />
+            <Switch onChange={handleDarkMode} />
             <p>Dark mode</p>
             <IconButton
               aria-label="account of current user"

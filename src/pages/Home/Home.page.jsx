@@ -33,7 +33,7 @@ function HomePage() {
       // setVideos(data);
       // setIsLoading(false);
     } catch (err) {
-      console.log(err);
+      console.log('info: ', err.message);
       setTimeout(() => {
         setVideos(mockVideos);
         setIsLoading(false);

@@ -1,9 +1,12 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-import Theme from './ThemeProvider';
+import Theme, { themes } from './ThemeProvider';
 
 const AppContext = createContext({
   searchValue: 'Wizeline',
+  // eslint-disable-next-line
+  setTheme: () => { },
+  theme: {},
 });
 
 function useAppContext() {
@@ -15,9 +18,11 @@ function useAppContext() {
 }
 
 function AppProvider({ children }) {
+  const [theme, setTheme] = useState(themes.dark);
+
   return (
-    <Theme>
-      <AppContext.Provider value={{ searchValue: 'Wizeline' }}>
+    <Theme theme={theme}>
+      <AppContext.Provider value={{ searchValue: 'Wizeline', setTheme, theme }}>
         {children}
       </AppContext.Provider>
     </Theme>

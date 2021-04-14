@@ -19,7 +19,7 @@ export const Switch = styled(MaterialSwitch)`
   }
 
   .MuiSwitch-colorSecondary.Mui-checked {
-    color: ${(props) => props.theme.text_color};
+    color: ${(props) => props.theme.bg_color};
   }
 
   .MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
