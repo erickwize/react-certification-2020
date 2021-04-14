@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 import Theme, { themes } from './ThemeProvider';
 
 const AppContext = createContext({
-  searchValue: 'Wizeline',
+  searchValue: '',
   // eslint-disable-next-line
   setTheme: () => { },
   theme: {},
@@ -19,10 +19,11 @@ function useAppContext() {
 
 function AppProvider({ children }) {
   const [theme, setTheme] = useState(themes.dark);
+  const [searchValue, setSearchValue] = useState('Wizeline');
 
   return (
     <Theme theme={theme}>
-      <AppContext.Provider value={{ searchValue: 'Wizeline', setTheme, theme }}>
+      <AppContext.Provider value={{ searchValue, setSearchValue, setTheme, theme }}>
         {children}
       </AppContext.Provider>
     </Theme>

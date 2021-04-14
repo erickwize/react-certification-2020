@@ -18,7 +18,7 @@ import { useAppContext } from '../../state/AppProvider';
 import { themes } from '../../state/ThemeProvider';
 
 const Header = () => {
-  const { setTheme, theme } = useAppContext();
+  const { setTheme, theme, searchValue, setSearchValue } = useAppContext();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const isMenuOpen = Boolean(anchorEl);
 
@@ -50,6 +50,12 @@ const Header = () => {
     else setTheme(themes.light);
   };
 
+  const handleSearch = (e) => {
+    if (e.key === 'Enter') {
+      setSearchValue(e.target.value);
+    }
+  };
+
   return (
     <>
       <AppBar position="static">
@@ -59,7 +65,11 @@ const Header = () => {
           </IconButton>
           <SearchStyled>
             <Search />
-            <TextField label="Search..." defaultValue="Wizeline" />
+            <TextField
+              label="Search..."
+              defaultValue={searchValue}
+              onKeyPress={handleSearch}
+            />
           </SearchStyled>
           <EndBar>
             <Switch onChange={handleDarkMode} />
