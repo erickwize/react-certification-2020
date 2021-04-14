@@ -24,7 +24,7 @@ it('Should render App', () => {
     const app = render(<AppLayout />);
     expect(app).toMatchSnapshot();
   });
-  const homePage = screen.getByTestId('yt-videocard');
+  const homePage = screen.getByTestId('yt-videocards');
   const headerMenu = screen.getByTestId('yt-header');
   expect(homePage).toBeInTheDocument();
   expect(headerMenu).toBeInTheDocument();

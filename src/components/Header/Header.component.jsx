@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Header,
   HeaderWrapper,
@@ -15,8 +15,10 @@ import { useHistory } from '../../utils/hooks/useHistory';
 import HomeIcon from './img/m_logo.png';
 import LoginIcon from './img/user_icon.png';
 import SearchIcon from './img/search_icon.png';
+import { StyleContext } from '../../utils/hooks/useContext';
 
-function HeaderMenu({ doSearch }) {
+function HeaderMenu({ doSearch, dispatch }) {
+  const { header } = useContext(StyleContext);
   const [searchKeyword, setSearchKeyword] = useState('wizeline');
   const { history, setHistoryVal } = useHistory('');
 
@@ -26,18 +28,13 @@ function HeaderMenu({ doSearch }) {
       doSearch(searchKeyword);
     }
   };
-
-  const styleSwitch = (l) => {
-    console.log('TEST', l);
-  };
-
   return (
-    <Header data-testid="yt-header">
+    <Header data-testid="yt-header" background={header.background}>
       <HeaderWrapper>
         <a href="/">
           <HomeButton img={HomeIcon} />
         </a>
-        <SearchWrapper>
+        <SearchWrapper background={header.input}>
           <Search
             type="text"
             id="name"
@@ -56,7 +53,7 @@ function HeaderMenu({ doSearch }) {
             type="checkbox"
             name="darkMode"
             id="darkMode"
-            onChange={({ target }) => styleSwitch(target.checked)}
+            onChange={({ target }) => dispatch(target.checked ? 'dark' : 'light')}
           />
           <HeaderToggleLabel htmlFor="darkMode">Dark mode</HeaderToggleLabel>
         </HeaderToggleWrapper>

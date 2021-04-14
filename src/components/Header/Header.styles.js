@@ -5,7 +5,7 @@ export const Header = styled.header`
   z-index: 500;
   width: 100vw;
   min-height: 60px;
-  background: ${color.oceanBlue};
+  background: ${(props) => props.background};
   padding: 15px 18px;
   color: ${color.white};
   display: flex;
@@ -29,7 +29,7 @@ export const HomeButton = styled.button`
 export const SearchWrapper = styled.div`
   display: flex;
   border-radius: 3px;
-  background: ${color.coralPink};
+  background: ${(props) => props.background};
   padding: 0 10px;
   justify-content: space-between;
 

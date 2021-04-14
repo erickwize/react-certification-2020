@@ -2,7 +2,7 @@ import { API_KEY, API_URL } from './constants';
 
 async function fetchSearchVideos(serach = 'wizeline', videoId) {
   try {
-    let queryParams = '?part=snippet&maxResults=20';
+    let queryParams = '?part=snippet&maxResults=21';
     queryParams = videoId
       ? `${queryParams}&relatedToVideoId=${videoId}&type=video`
       : `${queryParams}&q=${serach}`;

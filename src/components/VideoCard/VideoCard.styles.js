@@ -55,7 +55,7 @@ export const Thumbnail = styled.div`
   background-position: center;
 `;
 
-export const VideoDescription = styled.p`
+export const VideoDescription = styled.div`
   visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
   height: 135px;
   width: 335px;

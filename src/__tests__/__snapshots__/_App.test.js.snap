@@ -20,7 +20,7 @@ Object {
             />
           </a>
           <div
-            class="sc-fFubgz duHXkV"
+            class="sc-fFubgz jULViu"
           >
             <input
               class="sc-bkzZxe jPuJSt"
@@ -60,9 +60,10 @@ Object {
       </header>
       <main
         class="container"
+        style="background: rgb(255, 255, 255);"
       >
         <section
-          data-testid="yt-videocard"
+          data-testid="yt-videocards"
         >
           <h1
             class="sc-gsTCUz fNcPed"
@@ -92,7 +93,7 @@ Object {
           />
         </a>
         <div
-          class="sc-fFubgz duHXkV"
+          class="sc-fFubgz jULViu"
         >
           <input
             class="sc-bkzZxe jPuJSt"
@@ -132,9 +133,10 @@ Object {
     </header>
     <main
       class="container"
+      style="background: rgb(255, 255, 255);"
     >
       <section
-        data-testid="yt-videocard"
+        data-testid="yt-videocards"
       >
         <h1
           class="sc-gsTCUz fNcPed"
