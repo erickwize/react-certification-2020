@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import VideoItem from '../VideoItem';
 import { Wrapper } from './VideoListRelated.styled';
 import { useFetch } from '../../hooks/useFetch';
+import { GlobalContext } from '../../context/GlobalContext';
 
-function VideoListRelated({ currVid, setCurrVid }) {
-  const { url, state } = useFetch(currVid);
+function VideoListRelated() {
+  const globalContext = useContext(GlobalContext);
+  const { state } = useFetch(globalContext.video.currVid);
   const hasItems = (input) => {
     return typeof input !== 'undefined';
   };
@@ -16,7 +18,7 @@ function VideoListRelated({ currVid, setCurrVid }) {
           <>
             {console.log('StateData', state.data)}
             {state.data.map((v) => (
-              <VideoItem item={v} key={v.etag} setCurrVid={setCurrVid} />
+              <VideoItem item={v} key={v.etag} />
             ))}
           </>
         )}
@@ -26,3 +28,22 @@ function VideoListRelated({ currVid, setCurrVid }) {
 }
 
 export default VideoListRelated;
+
+import React, { useContext } from 'react';
+import VideoItem from '../VideoItem';
+import { Wrapper } from './VideoList.styled';
+import { GlobalContext } from '../../context/GlobalContext';
+
+function VideoList({ items }) {
+  const globalContext = useContext(GlobalContext);
+  
+  return (
+    <>
+      <Wrapper>
+        
+      </Wrapper>
+    </>
+  );
+}
+
+export default VideoList;
