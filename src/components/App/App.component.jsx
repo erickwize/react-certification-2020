@@ -1,58 +1,40 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
-import AuthProvider from '../../providers/Auth';
+import { GlobalStyles } from '../GlobalStyles.js/GlobalStyles';
+import { lightTheme, darkTheme } from '../../utils/themes';
 import HomePage from '../../pages/Home';
-import LoginPage from '../../pages/Login';
-import NotFound from '../../pages/NotFound';
-import SecretPage from '../../pages/Secret';
-import Private from '../Private';
-import Fortune from '../Fortune';
+import VideoDetails from '../../pages/VideoDetails/VideoDetails.component';
 import Layout from '../Layout';
-import { random } from '../../utils/fns';
+import { Context } from '../../utils/store/Store';
 
-function App() {
-  useLayoutEffect(() => {
-    const { body } = document;
+const App = () => {
+  const state = useContext(Context)[0];
 
-    function rotateBackground() {
-      const xPercent = random(100);
-      const yPercent = random(100);
-      body.style.setProperty('--bg-position', `${xPercent}% ${yPercent}%`);
-    }
-
-    const intervalId = setInterval(rotateBackground, 3000);
-    body.addEventListener('click', rotateBackground);
-
-    return () => {
-      clearInterval(intervalId);
-      body.removeEventListener('click', rotateBackground);
-    };
-  }, []);
+  const routes = (
+    <Switch>
+      <Route path="/" exact>
+        <HomePage />
+      </Route>
+      <Route path="/videoDetails/:videoId">
+        <VideoDetails />
+      </Route>
+    </Switch>
+  );
 
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <Layout>
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-          <Fortune />
-        </Layout>
-      </AuthProvider>
+      <ThemeProvider theme={state.isDarkTheme ? darkTheme : lightTheme}>
+        <>
+          <GlobalStyles />
+          <Layout>
+            <main>{routes}</main>
+          </Layout>
+        </>
+      </ThemeProvider>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
