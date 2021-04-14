@@ -1,32 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   VideoCardWrapper,
   Thumbnail,
   VideoTitle,
-  VideoChannel,
-  UploadDate,
-  VideoCardInfo,
+  VideoOverlay,
   VideoDescription,
+  VideoInfo,
 } from './VideoCard.styles';
 
-function VideoCard({ videoData, cardClick, isRelatedView = false }) {
+function VideoCard({ videoData, cardClick }) {
+  const [descVisible, setDescVisible] = useState(false);
+
   return (
-    <VideoCardWrapper
-      data-testid="yt-videocard"
-      onClick={() => cardClick(videoData)}
-      width={isRelatedView ? '75%' : '350px'}
-      height={isRelatedView ? 'fit-content' : '345px'}
-    >
-      <Thumbnail img={videoData.thumbnail} alt={videoData.title} />
-      <VideoCardInfo>
-        <VideoTitle>{videoData.title}</VideoTitle>
-        <VideoChannel>
-          {videoData.channel}
-          <UploadDate>{`|  ${videoData.uploadDate}`} </UploadDate>
-        </VideoChannel>
-        {!isRelatedView && <VideoDescription>{videoData.description}</VideoDescription>}
-      </VideoCardInfo>
+    <VideoCardWrapper data-testid="yt-videocard" onClick={() => cardClick(videoData)}>
+      <Thumbnail img={videoData.thumbnail} alt={videoData.title}>
+        <VideoOverlay
+          onMouseEnter={() => setDescVisible(true)}
+          onMouseLeave={() => setDescVisible(false)}
+        >
+          <VideoDescription visible={descVisible}>
+            {videoData.description || `Dale click para ver el video ${videoData.title}`}
+            <VideoInfo visible={descVisible}>
+              {videoData.channel} | {videoData.uploadDate}
+            </VideoInfo>
+          </VideoDescription>
+          <VideoTitle visible={descVisible}>
+            {videoData.title.length > 35 && !descVisible
+              ? `${videoData.title.substring(0, 34)}...`
+              : videoData.title}
+          </VideoTitle>
+        </VideoOverlay>
+      </Thumbnail>
     </VideoCardWrapper>
   );
 }

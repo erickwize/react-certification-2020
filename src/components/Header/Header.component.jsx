@@ -27,6 +27,10 @@ function HeaderMenu({ doSearch }) {
     }
   };
 
+  const styleSwitch = (l) => {
+    console.log('TEST', l);
+  };
+
   return (
     <Header data-testid="yt-header">
       <HeaderWrapper>
@@ -48,7 +52,12 @@ function HeaderMenu({ doSearch }) {
       </HeaderWrapper>
       <HeaderWrapper>
         <HeaderToggleWrapper>
-          <HeaderToggle type="checkbox" name="darkMode" id="darkMode" />
+          <HeaderToggle
+            type="checkbox"
+            name="darkMode"
+            id="darkMode"
+            onChange={({ target }) => styleSwitch(target.checked)}
+          />
           <HeaderToggleLabel htmlFor="darkMode">Dark mode</HeaderToggleLabel>
         </HeaderToggleWrapper>
         <LoginMenu img={LoginIcon} />

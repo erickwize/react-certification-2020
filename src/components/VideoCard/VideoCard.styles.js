@@ -1,34 +1,45 @@
 import styled from 'styled-components';
+import { color, fontSize } from '../../utils/globalStyle';
 
 export const VideoCardWrapper = styled.div`
   height: fit-content;
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+  width: 355px;
+  height: 240px;
   margin: auto;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  border-radius: 10px;
+  padding: 10px;
+  background: ${color.lightCoral};
+  box-shadow: rgba(249, 199, 174, 0.12) 0px 2px 4px 0px,
+    rgba(249, 199, 174, 0.32) 0px 2px 16px 0px;
   margin-bottom: 30px;
+  color: ${color.white};
 
-  &:hover {
-    box-shadow: rgba(254, 223, 3, 0.12) 0px 2px 4px 0px,
-      rgba(254, 223, 3) 0px 2px 16px 0px;
-  }
   @media screen and (max-width: 750px) {
     width: 95%;
-    max-width: 340px;
-    height: 365px;
+    height: 300px;
+  }
+`;
+
+export const VideoOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  :hover {
+    background: rgba(254, 167, 156, 0.8);
   }
 `;
 
 export const VideoTitle = styled.p`
-  font-size: 18px;
-  margin: 10px 0 8px;
-  font-weight: 500;
+  background: ${(props) => (props.visible ? 'transparent' : 'rgba(254, 167, 156, 0.8)')};
+  width: 335px;
+  font-size: ${fontSize.default};
+  margin: 0 0 8px;
+  font-weight: bolder;
+  padding: 8px;
+  text-align: right;
 `;
 
-export const VideoChannel = styled.p`
-  font-size: 11px;
+export const VideoInfo = styled.p`
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+  font-size: ${fontSize.sm};
   font-weight: bold;
   display: inline-flex;
   display: flex;
@@ -36,26 +47,21 @@ export const VideoChannel = styled.p`
   margin: 0;
 `;
 
-export const UploadDate = styled.span`
-  font-size: 11px;
-  font-weight: normal;
-  margin-left: 5px;
-`;
-
 export const Thumbnail = styled.div`
   background: url(${(props) => props.img}) no-repeat;
-  height: 150px;
+  height: 100%;
   display: block;
   background-size: cover;
   background-position: center;
-  border-radius: 10px 10px 0 0;
-`;
-
-export const VideoCardInfo = styled.div`
-  margin: 10px;
 `;
 
 export const VideoDescription = styled.p`
-  font-size: 14px;
-  margin-top: 8px;
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+  height: 135px;
+  width: 335px;
+  font-size: ${fontSize.md};
+  margin: 0 0 8px;
+  font-weight: normal;
+  padding: 10px 12px;
+  color: ${color.white};
 `;

@@ -18,6 +18,7 @@ export const Player = styled.iframe`
   height: 423px;
   width: 100%;
   display: block;
+  background-color: ${color.black};
 `;
 
 export const PlayerGrid = styled.section`
@@ -40,8 +41,8 @@ export const PlayerTitle = styled.h2`
   font-size: ${fontSize.xxxl};
   margin: 10px 0 0;
   line-height: normal;
-  color: ${color.white};
-  font-weight: bold;
+  color: ${color.oceanBlue};
+  font-weight: bolder;
 `;
 
 export const PlayerInfo = styled.span`
@@ -61,7 +62,6 @@ export const PlayerDesc = styled.p`
   padding: 10px 15px 0;
   display: block;
   width: 100%;
-  border-top: 2px solid ${color.coralPink};
 `;
 
 export const RelatedVideoWrapper = styled.section`

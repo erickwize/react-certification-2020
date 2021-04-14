@@ -63,5 +63,5 @@ it('Return to Show related search video card view', () => {
   );
   const videoCards = screen.getAllByTestId('yt-videocard');
   expect(videoCards.length).toBe(24);
-  expect(videoCards[3]).toHaveTextContent('We Are WizelineWizeline| April 12, 2019');
+  expect(videoCards[3]).toHaveTextContent('Engineering a better tomorrow. Wizeline is a global software development company that helps its clients solve their biggest challenges with design and ...Wizeline | April 12, 2019We Are Wizeline');
 });

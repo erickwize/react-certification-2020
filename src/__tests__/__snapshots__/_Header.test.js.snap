@@ -6,91 +6,113 @@ Object {
   "baseElement": <body>
     <div>
       <header
-        class="sc-bdfBwQ yJiqT"
+        class="sc-bdfBwQ hIHNKi"
         data-testid="yt-header"
       >
-        <section
+        <div
           class="sc-gsTCUz ywWHk"
         >
-          <button
-            class="sc-dlfnbm bYnZNQ"
-          />
-          <input
-            class="sc-hKgILt kumVcO"
-            id="name"
-            placeholder="Search..."
-            type="text"
-            value="wizeline"
-          />
-        </section>
-        <section
+          <a
+            href="/"
+          >
+            <button
+              class="sc-dlfnbm cOuLkH"
+            />
+          </a>
+          <div
+            class="sc-hKgILt jAUuay"
+          >
+            <input
+              class="sc-eCssSg iBGkVj"
+              id="name"
+              placeholder="Search..."
+              type="text"
+              value="wizeline"
+            />
+            <span
+              class="sc-jSgupP hcyBed"
+            />
+          </div>
+        </div>
+        <div
           class="sc-gsTCUz ywWHk"
         >
           <div
-            class="sc-eCssSg defBmz"
+            class="sc-gKsewC kjfNIn"
           >
             <input
-              class="sc-iBPRYJ bCyYBZ"
+              class="sc-pFZIQ gGzfcK"
               id="darkMode"
               name="darkMode"
               type="checkbox"
             />
             <label
-              class="sc-jSgupP bjQDAv"
+              class="sc-iBPRYJ cpTqSp"
               for="darkMode"
             >
               Dark mode
             </label>
           </div>
           <button
-            class="sc-gKsewC bclFPF"
+            class="sc-fubCfw iHeQum"
           />
-        </section>
+        </div>
       </header>
     </div>
   </body>,
   "container": <div>
     <header
-      class="sc-bdfBwQ yJiqT"
+      class="sc-bdfBwQ hIHNKi"
       data-testid="yt-header"
     >
-      <section
+      <div
         class="sc-gsTCUz ywWHk"
       >
-        <button
-          class="sc-dlfnbm bYnZNQ"
-        />
-        <input
-          class="sc-hKgILt kumVcO"
-          id="name"
-          placeholder="Search..."
-          type="text"
-          value="wizeline"
-        />
-      </section>
-      <section
+        <a
+          href="/"
+        >
+          <button
+            class="sc-dlfnbm cOuLkH"
+          />
+        </a>
+        <div
+          class="sc-hKgILt jAUuay"
+        >
+          <input
+            class="sc-eCssSg iBGkVj"
+            id="name"
+            placeholder="Search..."
+            type="text"
+            value="wizeline"
+          />
+          <span
+            class="sc-jSgupP hcyBed"
+          />
+        </div>
+      </div>
+      <div
         class="sc-gsTCUz ywWHk"
       >
         <div
-          class="sc-eCssSg defBmz"
+          class="sc-gKsewC kjfNIn"
         >
           <input
-            class="sc-iBPRYJ bCyYBZ"
+            class="sc-pFZIQ gGzfcK"
             id="darkMode"
             name="darkMode"
             type="checkbox"
           />
           <label
-            class="sc-jSgupP bjQDAv"
+            class="sc-iBPRYJ cpTqSp"
             for="darkMode"
           >
             Dark mode
           </label>
         </div>
         <button
-          class="sc-gKsewC bclFPF"
+          class="sc-fubCfw iHeQum"
         />
-      </section>
+      </div>
     </header>
   </div>,
   "debug": [Function],

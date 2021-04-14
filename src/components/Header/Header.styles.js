@@ -42,7 +42,7 @@ export const Search = styled.input`
   color: ${color.white};
   margin: 0.2em 0;
   font-size: ${fontSize.default};
-  background: ${color.coralPink};
+  background: transparent;
   border: none;
   height: 30px;
   width: 250px;
@@ -166,7 +166,7 @@ export const HeaderToggle = styled.input`
   }
 
   &:checked:after {
-    background-color: ${color.coralPink};
+    background-color: ${color.oceanBlue};
     animation: ${on} 0.7s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
     box-shadow: inset -5px -5px 4px rgba(53, 53, 53, 0.3);
     left: -29px;

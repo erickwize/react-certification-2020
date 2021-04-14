@@ -6,46 +6,57 @@ Object {
   "baseElement": <body>
     <div>
       <header
-        class="sc-hBEYos bmTCQB"
+        class="sc-kstrdz kgciWm"
         data-testid="yt-header"
       >
-        <section
-          class="sc-fodVxV cHUGkF"
+        <div
+          class="sc-hBEYos bRMCjK"
         >
-          <button
-            class="sc-fFubgz gPjEWJ"
-          />
-          <input
-            class="sc-bkzZxe jPiiJf"
-            id="name"
-            placeholder="Search..."
-            type="text"
-            value="wizeline"
-          />
-        </section>
-        <section
-          class="sc-fodVxV cHUGkF"
-        >
+          <a
+            href="/"
+          >
+            <button
+              class="sc-fodVxV GUHCJ"
+            />
+          </a>
           <div
-            class="sc-idOhPF jyhLvJ"
+            class="sc-fFubgz duHXkV"
           >
             <input
-              class="sc-dmlrTW bzebsP"
+              class="sc-bkzZxe jPuJSt"
+              id="name"
+              placeholder="Search..."
+              type="text"
+              value="wizeline"
+            />
+            <span
+              class="sc-idOhPF glGVqe"
+            />
+          </div>
+        </div>
+        <div
+          class="sc-hBEYos bRMCjK"
+        >
+          <div
+            class="sc-dIUggk gKMgRC"
+          >
+            <input
+              class="sc-kfzAmx beWIvh"
               id="darkMode"
               name="darkMode"
               type="checkbox"
             />
             <label
-              class="sc-dIUggk IdxaL"
+              class="sc-hHftDr jAMcvD"
               for="darkMode"
             >
               Dark mode
             </label>
           </div>
           <button
-            class="sc-hHftDr hEhnUH"
+            class="sc-dmlrTW eHmABp"
           />
-        </section>
+        </div>
       </header>
       <main
         class="container"
@@ -67,46 +78,57 @@ Object {
   </body>,
   "container": <div>
     <header
-      class="sc-hBEYos bmTCQB"
+      class="sc-kstrdz kgciWm"
       data-testid="yt-header"
     >
-      <section
-        class="sc-fodVxV cHUGkF"
+      <div
+        class="sc-hBEYos bRMCjK"
       >
-        <button
-          class="sc-fFubgz gPjEWJ"
-        />
-        <input
-          class="sc-bkzZxe jPiiJf"
-          id="name"
-          placeholder="Search..."
-          type="text"
-          value="wizeline"
-        />
-      </section>
-      <section
-        class="sc-fodVxV cHUGkF"
-      >
+        <a
+          href="/"
+        >
+          <button
+            class="sc-fodVxV GUHCJ"
+          />
+        </a>
         <div
-          class="sc-idOhPF jyhLvJ"
+          class="sc-fFubgz duHXkV"
         >
           <input
-            class="sc-dmlrTW bzebsP"
+            class="sc-bkzZxe jPuJSt"
+            id="name"
+            placeholder="Search..."
+            type="text"
+            value="wizeline"
+          />
+          <span
+            class="sc-idOhPF glGVqe"
+          />
+        </div>
+      </div>
+      <div
+        class="sc-hBEYos bRMCjK"
+      >
+        <div
+          class="sc-dIUggk gKMgRC"
+        >
+          <input
+            class="sc-kfzAmx beWIvh"
             id="darkMode"
             name="darkMode"
             type="checkbox"
           />
           <label
-            class="sc-dIUggk IdxaL"
+            class="sc-hHftDr jAMcvD"
             for="darkMode"
           >
             Dark mode
           </label>
         </div>
         <button
-          class="sc-hHftDr hEhnUH"
+          class="sc-dmlrTW eHmABp"
         />
-      </section>
+      </div>
     </header>
     <main
       class="container"
