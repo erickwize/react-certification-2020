@@ -22,16 +22,18 @@ function HomePage() {
   }
 
   // const YOUTUBE_SEARCH_ENDPOINT =
-  //   'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=';
+  //   'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=';
 
   const fetchVideos = async () => {
     try {
-      // const res = await fetch(
-      //   `${YOUTUBE_SEARCH_ENDPOINT}${q}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
-      // );
-      // const data = await res.json();
       console.log('Querying ', searchValue, '...');
       throw Error('Not using Youtube API for search');
+      // setIsLoading(true);
+      // const res = await fetch(
+      //   `${YOUTUBE_SEARCH_ENDPOINT}${searchValue}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+      // );
+      // if (!res.ok) throw Error('Youtube API response ', res.status);
+      // const data = await res.json();
       // setVideos(data);
       // setIsLoading(false);
     } catch (err) {
