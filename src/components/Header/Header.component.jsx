@@ -4,7 +4,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Search from '@material-ui/icons/Search';
 
 import {
   AppBar,
@@ -15,10 +14,9 @@ import {
   Switch,
 } from './Header.styled';
 import { useAppContext } from '../../state/AppProvider';
-import { themes } from '../../state/ThemeProvider';
 
 const Header = () => {
-  const { setTheme, theme, searchValue, setSearchValue } = useAppContext();
+  const { state, dispatch } = useAppContext();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const isMenuOpen = Boolean(anchorEl);
 
@@ -46,13 +44,12 @@ const Header = () => {
   );
 
   const handleDarkMode = () => {
-    if (theme === themes.light) setTheme(themes.dark);
-    else setTheme(themes.light);
+    dispatch({ type: 'CHANGE_THEME' });
   };
 
   const handleSearch = (e) => {
     if (e.key === 'Enter') {
-      setSearchValue(e.target.value);
+      dispatch({ type: 'SET_SEARCH_VALUE', payload: e.target.value });
     }
   };
 
@@ -64,10 +61,9 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <SearchStyled>
-            <Search />
             <TextField
               label="Search..."
-              defaultValue={searchValue}
+              defaultValue={state.searchValue}
               onKeyPress={handleSearch}
             />
           </SearchStyled>

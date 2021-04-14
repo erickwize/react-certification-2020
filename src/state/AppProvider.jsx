@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 
-import Theme, { themes } from './ThemeProvider';
+import Theme from './ThemeProvider';
+import { appInitialState, appReducer } from './AppReducer';
 
 const AppContext = createContext({
   searchValue: '',
@@ -18,14 +19,11 @@ function useAppContext() {
 }
 
 function AppProvider({ children }) {
-  const [theme, setTheme] = useState(themes.dark);
-  const [searchValue, setSearchValue] = useState('Wizeline');
+  const [state, dispatch] = useReducer(appReducer, appInitialState);
 
   return (
-    <Theme theme={theme}>
-      <AppContext.Provider value={{ searchValue, setSearchValue, setTheme, theme }}>
-        {children}
-      </AppContext.Provider>
+    <Theme theme={state.theme}>
+      <AppContext.Provider value={{ state, dispatch }}>{children}</AppContext.Provider>
     </Theme>
   );
 }

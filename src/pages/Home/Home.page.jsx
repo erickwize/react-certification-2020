@@ -13,7 +13,7 @@ function HomePage() {
   const { authenticated, logout } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
   const [videos, setVideos] = useState(true);
-  const { searchValue } = useAppContext();
+  const { state } = useAppContext();
 
   function deAuthenticate(event) {
     event.preventDefault();
@@ -26,11 +26,11 @@ function HomePage() {
 
   const fetchVideos = async () => {
     try {
-      console.log('Querying ', searchValue, '...');
+      console.log('Querying ', state.searchValue, '...');
       throw Error('Not using Youtube API for search');
       // setIsLoading(true);
       // const res = await fetch(
-      //   `${YOUTUBE_SEARCH_ENDPOINT}${searchValue}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+      //   `${YOUTUBE_SEARCH_ENDPOINT}${state.searchValue}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
       // );
       // if (!res.ok) throw Error('Youtube API response ', res.status);
       // const data = await res.json();
@@ -48,7 +48,7 @@ function HomePage() {
   useEffect(() => {
     fetchVideos();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchValue]);
+  }, [state.searchValue]);
 
   return (
     <section className="homepage" ref={sectionRef}>
