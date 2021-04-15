@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext, useReducer } from 'react';
 import { color } from '../../utils/globalStyle';
 import youtubeVideoList from '../../utils/mock/youtube-videos-mock.json';
-// import { fetchSearchVideos } from '../../utils/endpoints';
+import { fetchSearchVideos } from '../../utils/endpoints';
 
 const initalStyle = {
   header: {
@@ -83,9 +83,8 @@ export function useVideList() {
       let listItems = [];
       dispatch({ type: 'SET_HISTORY', payload: search });
       try {
-        listItems = await youtubeVideoList.items;
-        // const initalSearch = await fetchSearchVideos(context.search);
-        // listItems = initalSearch.items;
+        const initalSearch = await fetchSearchVideos(search);
+        listItems = initalSearch.items;
       } catch (e) {
         listItems = await youtubeVideoList.items;
         console.info('Error getting inital video search... setting youtubeVideoList');
