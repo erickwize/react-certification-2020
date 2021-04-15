@@ -111,25 +111,3 @@ export function useVideList() {
 
   return { videoList, updateVideoList, loading, setLoader };
 }
-
-// style Reducer
-export const styleReducer = (state, action) => {
-  switch (action) {
-    case 'light':
-      return initalStyle;
-    case 'dark':
-      return {
-        header: {
-          background: color.lightCoral,
-          input: color.oceanBlue,
-        },
-        card: {
-          background: color.seaTan,
-          textColor: color.oceanBlue,
-        },
-        background: color.oceanBlue,
-      };
-    default:
-      throw new Error('ACTION NOT RECOGNIZED');
-  }
-};
