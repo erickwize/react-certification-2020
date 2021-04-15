@@ -26,7 +26,6 @@ function App() {
     updateVideoInfo({});
     const search = await fetchSearchVideos(keyword);
     updateVideoList(search.items);
-    return search;
   };
 
   const selectCard = (videoInfo) => {

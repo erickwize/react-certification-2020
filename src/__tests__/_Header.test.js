@@ -30,6 +30,13 @@ it('Toggle Header Dark mode', () => {
     })
   );
   expect(switchInput.checked).toBe(true);
+  fireEvent(
+    switchInput,
+    new MouseEvent('click', {
+      checked: false,
+    })
+  );
+  expect(switchInput.checked).toBe(false);
 });
 
 it('Search value change', () => {
@@ -48,6 +55,8 @@ it('Search value change', () => {
 
   fireEvent.blur(SearchInput, { key: 'Enter', code: 'Enter' });
   setTimeout(() => {
-    expect(doSearch).toHaveBeenCalledWith('wizeline');
+    act(() => {
+      expect(doSearch).toHaveBeenCalledWith('wizeline');
+    });
   }, 10);
 });

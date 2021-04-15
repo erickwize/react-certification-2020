@@ -19,7 +19,7 @@ function VideoCard({ videoData, cardClick }) {
           onMouseEnter={() => setDescVisible(true)}
           onMouseLeave={() => setDescVisible(false)}
         >
-          <VideoDescription visible={descVisible}>
+          <VideoDescription data-testid="yt-videocard-description" visible={descVisible}>
             {videoData.description || `Dale click para ver el video ${videoData.title}`}
             <VideoInfo visible={descVisible}>
               {videoData.channel} | {videoData.uploadDate}

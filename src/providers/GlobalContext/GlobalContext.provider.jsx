@@ -64,11 +64,6 @@ export function reducer(state, action) {
         history: state.search,
         search: action.payload,
       };
-    case 'SET_VIDEO_LIST':
-      return {
-        ...state,
-        videoList: action.payload,
-      };
     default:
       throw new Error('ACTION NOT RECOGNIZED');
   }
@@ -78,18 +73,12 @@ export function useVideList() {
   const [state, dispatch] = useReducer(reducer, initalState);
   const { search, history } = state;
   const [videoList, setVideoList] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   function updateVideoList(videos) {
     setVideoList(videos);
   }
 
-  function setLoader(isLoading = true) {
-    setLoading(isLoading);
-  }
-
   useEffect(() => {
-    setLoader(true);
     const getList = async () => {
       let listItems = [];
       dispatch({ type: 'SET_HISTORY', payload: search });
@@ -102,12 +91,11 @@ export function useVideList() {
         console.info('Error getting inital video search... setting youtubeVideoList');
       }
       updateVideoList(listItems);
-      setLoader(false);
     };
     if (search !== history) {
       getList();
     }
   }, [search, history]);
 
-  return { videoList, updateVideoList, loading, setLoader };
+  return { videoList, updateVideoList };
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, cleanup, render } from '@testing-library/react';
+import { screen, cleanup, render, fireEvent } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import AppLayout from '../components/App';
 import NotFound from '../pages/NotFound';
@@ -28,6 +28,20 @@ it('Should render App', () => {
   const headerMenu = screen.getByTestId('yt-header');
   expect(homePage).toBeInTheDocument();
   expect(headerMenu).toBeInTheDocument();
+});
+
+it('Should render App Header', () => {
+  act(() => {
+    const app = render(<AppLayout />);
+  });
+  const headerMenu = screen.getByTestId('yt-header');
+  expect(headerMenu).toBeInTheDocument();
+  const SearchInput = screen.getByPlaceholderText('Search...');
+  expect(SearchInput).toBeInTheDocument();
+  SearchInput.focus();
+  fireEvent.change(SearchInput, { target: { value: 'rise against' } });
+  expect(SearchInput.value).toBe('rise against');
+  fireEvent.keyDown(SearchInput, { key: 'Enter', code: 'Enter' });
 });
 
 test('Test useVideoInfo Hook', () => {
@@ -67,7 +81,7 @@ test('Test useVideoInfo Hook', () => {
   });
 });
 
-test('Test useVideoInfo Hook', () => {
+test('Test useVideList Hook', () => {
   const { result } = renderHook(() => useVideList());
   expect(result.current.videoList).toEqual([]);
   expect(typeof result.current.updateVideoList).toBe('function');

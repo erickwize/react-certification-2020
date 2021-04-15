@@ -22,7 +22,8 @@ it('Test Utils: random', () => {
 });
 
 it('Should render VideoCard Info', () => {
-  render(<VideoCard videoData={MockVideoInfo} />);
+  const videoCard = render(<VideoCard videoData={MockVideoInfo} />);
+  expect(videoCard).toMatchSnapshot();
   const videoCardComponent = screen.getByTestId('yt-videocard');
   expect(videoCardComponent).toBeInTheDocument();
   expect(videoCardComponent).toHaveTextContent(
@@ -37,4 +38,13 @@ it('Handle videoCard click event', () => {
   expect(videoCardComponent).toBeInTheDocument();
   fireEvent.click(videoCardComponent);
   expect(cardClick).toHaveBeenCalledWith(MockVideoInfo);
+});
+
+it('Handle videoCard mouse event', () => {
+  const cardClick = jest.fn();
+  render(<VideoCard videoData={MockVideoInfo} cardClick={cardClick} />);
+  const videoCardComponent = screen.getByTestId('yt-videocard');
+  fireEvent.mouseEnter(videoCardComponent);
+  const videoCardComponentDes = screen.getByTestId('yt-videocard-description');
+  expect(videoCardComponentDes).toBeInTheDocument();
 });

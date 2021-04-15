@@ -21,7 +21,8 @@ const cleanVideoData = {
 };
 
 it('Map through videoData', () => {
-  render(<HomePage videoList={VideoMock.items} selectCard={selectCard} />);
+  const homePage = render(<HomePage videoList={VideoMock.items} selectCard={selectCard} />);
+  expect(homePage).toMatchSnapshot();
   const videoCards = screen.getAllByTestId('yt-videocard');
   expect(videoCards.length).toBe(25);
 });
