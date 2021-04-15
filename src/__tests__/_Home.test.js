@@ -23,14 +23,14 @@ const cleanVideoData = {
 it('Map through videoData', () => {
   render(<HomePage videoList={VideoMock.items} selectCard={selectCard} />);
   const videoCards = screen.getAllByTestId('yt-videocard');
-  expect(videoCards.length).toBe(26);
+  expect(videoCards.length).toBe(25);
 });
 
 it('Select video card', () => {
   render(<HomePage videoList={VideoMock.items} selectCard={selectCard} />);
   const videoCards = screen.getAllByTestId('yt-videocard');
-  expect(videoCards.length).toBe(26);
+  expect(videoCards.length).toBe(25);
 
-  fireEvent.click(videoCards[5]);
+  fireEvent.click(videoCards[4]);
   expect(selectCard).toHaveBeenCalledWith(cleanVideoData);
 });

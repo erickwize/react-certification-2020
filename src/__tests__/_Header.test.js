@@ -2,7 +2,6 @@ import React from 'react';
 import { screen, cleanup, render, fireEvent } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import HeaderMenu from '../components/Header';
-import { useHistory } from '../utils/hooks/useHistory';
 
 afterEach(() => {
   cleanup();
@@ -31,12 +30,6 @@ it('Toggle Header Dark mode', () => {
     })
   );
   expect(switchInput.checked).toBe(true);
-});
-
-test('Search History Hook', () => {
-  const { result } = renderHook(() => useHistory());
-  expect(result.current.history).toBe('');
-  expect(typeof result.current.setHistoryVal).toBe('function');
 });
 
 it('Search value change', () => {

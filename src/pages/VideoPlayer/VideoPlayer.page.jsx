@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import VideoCard from '../../components/VideoCard';
 import {
   HomeButton,
@@ -11,10 +11,8 @@ import {
   RelatedVideoWrapper,
 } from './VideoPlayer.styles';
 import { getUsefullData } from '../../utils/fns';
-import { VideoListContext } from '../../utils/hooks/useContext';
 
-function VideoPlayer({ video, selectCard }) {
-  const relatedVideos = useContext(VideoListContext);
+function VideoPlayer({ video, selectCard, relatedVideos }) {
   const isRelatedView = true;
   const cardClick = (vid) => {
     selectCard(vid);

@@ -3,7 +3,7 @@ import { screen, cleanup, render } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import AppLayout from '../components/App';
 import NotFound from '../pages/NotFound';
-import { useVideoInfo, useVideList } from '../utils/hooks/useVideoStates';
+import { useVideoInfo, useVideList } from '../providers/GlobalContext';
 import VideoMock from '../utils/mock/youtube-videos-mock.json';
 
 afterEach(() => {
@@ -71,8 +71,6 @@ test('Test useVideoInfo Hook', () => {
   const { result } = renderHook(() => useVideList());
   expect(result.current.videoList).toEqual([]);
   expect(typeof result.current.updateVideoList).toBe('function');
-  expect(result.current.error).toEqual(null);
-  expect(typeof result.current.setErrorMsg).toBe('function');
   act(() => {
     result.current.updateVideoList([
       VideoMock.items[0],

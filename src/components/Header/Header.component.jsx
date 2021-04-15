@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import {
   Header,
   HeaderWrapper,
@@ -11,21 +11,16 @@ import {
   SearchWrapper,
   SearchSpan,
 } from './Header.styles';
-import { useHistory } from '../../utils/hooks/useHistory';
 import HomeIcon from './img/m_logo.png';
 import LoginIcon from './img/user_icon.png';
 import SearchIcon from './img/search_icon.png';
-import { StyleContext } from '../../utils/hooks/useContext';
+import { GlobalContext } from '../../providers/GlobalContext';
 
 function HeaderMenu({ doSearch, dispatch }) {
-  const { header } = useContext(StyleContext);
-  const [searchKeyword, setSearchKeyword] = useState('wizeline');
-  const { history, setHistoryVal } = useHistory('');
-
+  const { header, history, search } = useContext(GlobalContext);
   const handleSearch = (ev) => {
-    if (/Enter|Blur/i.test(ev.key) && searchKeyword !== history) {
-      setHistoryVal(searchKeyword);
-      doSearch(searchKeyword);
+    if (/Enter|Blur/i.test(ev.key) && search !== history) {
+      doSearch(search);
     }
   };
   return (
@@ -38,9 +33,11 @@ function HeaderMenu({ doSearch, dispatch }) {
           <Search
             type="text"
             id="name"
-            value={searchKeyword}
+            value={search}
             placeholder="Search..."
-            onChange={({ target }) => setSearchKeyword(target.value)}
+            onChange={({ target }) =>
+              dispatch({ type: 'SET_SEARCH_KEYWORD', payload: target.value })
+            }
             onBlur={() => handleSearch({ key: 'Blur' })}
             onKeyDown={handleSearch}
           />
@@ -53,7 +50,9 @@ function HeaderMenu({ doSearch, dispatch }) {
             type="checkbox"
             name="darkMode"
             id="darkMode"
-            onChange={({ target }) => dispatch(target.checked ? 'dark' : 'light')}
+            onChange={({ target }) =>
+              dispatch({ type: `SET_${target.checked ? 'DARK' : 'LIGHT'}_MODE` })
+            }
           />
           <HeaderToggleLabel htmlFor="darkMode">Dark mode</HeaderToggleLabel>
         </HeaderToggleWrapper>
