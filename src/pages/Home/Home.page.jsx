@@ -19,7 +19,7 @@ function HomePage() {
   //   logout();
   //   history.push('/');
   // }
-
+  //
   if (fetchingVideo) return <>Loading...</>;
 
   if (error) return <>Network error</>;

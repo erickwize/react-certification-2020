@@ -1,15 +1,29 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 
+import GlobalProvider from '../store/global/Global.provider';
 import PlayVideo from '../components/PlayVideo/PlayVideo';
 import { mockVideos } from '../mockData';
 
 const { videoId } = mockVideos.items[1].id;
-const { title, description } = mockVideos.items[1].snippet;
+const videoSelected = mockVideos.items[1];
 
-test('Test header components', async () => {
-  render(<PlayVideo videoId={videoId} videoDetail={{ title, description }} />);
+const history = createMemoryHistory();
+const allProviders = ({ children }) => {
+  return (
+    <GlobalProvider>
+      <Router history={history}>{children}</Router>
+    </GlobalProvider>
+  );
+};
+
+test('Test PlayVideo component', async () => {
+  render(<PlayVideo videoId={videoId} videoSelected={videoSelected} />, {
+    wrapper: allProviders,
+  });
 
   // Looking for elements
   const iFrame = screen.getByTitle('playVideo');
@@ -29,10 +43,10 @@ test('Test header components', async () => {
 
   // Add video
   onClickButton();
-  expect(await screen.getByText('ELIMINAR DE FAVORITOS')).toBeInTheDocument();
+  expect(await screen.findByText('ELIMINAR DE FAVORITOS')).toBeInTheDocument();
   expect(onClickButton).toHaveBeenCalledTimes(1);
   // After delete video
   onClickButton();
-  expect(await screen.getByText('AÑADIR A FAVORITOS')).toBeInTheDocument();
+  expect(await screen.findByText('AÑADIR A FAVORITOS')).toBeInTheDocument();
   expect(onClickButton).toHaveBeenCalledTimes(2);
 });

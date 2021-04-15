@@ -7,7 +7,7 @@ const GlobalContext = createContext();
 const useGlobalProvider = () => {
   const context = useContext(GlobalContext);
   if (!context) {
-    throw new Error(`Can't use "useGlobal" without an TodoProvider!`);
+    throw new Error(`Can't use "useGlobal" without an GlobalProvider!`);
   }
   return context;
 };
@@ -26,5 +26,5 @@ function GlobalProvider({ children }) {
   );
 }
 
-export { useGlobalProvider };
+export { useGlobalProvider, GlobalContext };
 export default GlobalProvider;

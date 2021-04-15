@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { VideoContent, VideoImagen, VideoDetails } from './PlayList.styled';
 import { selectVideo } from '../../store/global/GlobalAction';
 import useVideoList from '../../utils/hooks/useFetch';
+import { useGlobalProvider } from '../../store/global/Global.provider';
 
-const PlayList = ({ videoId, dispatch }) => {
+const PlayList = ({ videoId }) => {
   const { videosRelated, error } = useVideoList(videoId, true);
+  const { dispatch } = useGlobalProvider();
 
   const onHandleVideo = (videoSelected) => {
     selectVideo(dispatch, videoSelected);

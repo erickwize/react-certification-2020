@@ -21,7 +21,7 @@ test('Test MenuButton components', async () => {
   onClickButton();
   expect(await screen.findByTitle('CloseButton')).toBeInTheDocument();
   expect(onClickButton).toHaveBeenCalledTimes(1);
-  // returning default value
+  // returning default values
   onClickButton();
   expect(await screen.findByTitle('MenuBurguer')).toBeInTheDocument();
   expect(onClickButton).toHaveBeenCalledTimes(2);

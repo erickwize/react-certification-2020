@@ -1,21 +1,32 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 
 import Header from '../components/Header/Header';
+import GlobalProvider from '../store/global/Global.provider';
+
+const history = createMemoryHistory();
+const allProviders = ({ children }) => {
+  return (
+    <GlobalProvider>
+      <Router history={history}>{children}</Router>
+    </GlobalProvider>
+  );
+};
 
 test('Test header components', async () => {
-  render(<Header />, { wrapper: MemoryRouter });
+  render(<Header />, { wrapper: allProviders });
 
   // Looking for elements
-  const menuButton = screen.getByTestId('MenuButton');
+  const menuButton = screen.getByTitle('MenuBurguer');
   expect(menuButton).toBeInTheDocument();
 
   const search = screen.getByPlaceholderText('Buscar contenido');
   expect(search).toBeInTheDocument();
 
-  const themeButton = screen.getByRole('button');
-  expect(themeButton).toBeInTheDocument();
+  const themeButton = screen.getAllByRole('button');
+  expect(themeButton.length).toBe(2);
 
   const iconTheme = screen.getByTitle('MoonButton');
   expect(iconTheme).toBeInTheDocument();

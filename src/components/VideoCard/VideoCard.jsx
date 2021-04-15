@@ -5,7 +5,7 @@ import VideoBox from './VideoCard.styled';
 import { selectVideo } from '../../store/global/GlobalAction';
 import { useGlobalProvider } from '../../store/global/Global.provider';
 
-function VideoCard({ data, videoList }) {
+function VideoCard({ data }) {
   const { title, description } = data?.snippet;
   const source = data?.snippet.thumbnails.medium.url;
   const videoId = data?.id?.videoId;
@@ -21,7 +21,6 @@ function VideoCard({ data, videoList }) {
       <Link
         to={{
           pathname: `/video/${videoId}`,
-          data: { data, videoList },
         }}
         onClick={selectingVideo}
       >

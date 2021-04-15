@@ -32,7 +32,7 @@ const Video = () => {
           <PlayVideo videoSelected={videoSelected} videoId={videoId} />
         </VideoContainer>
         <ListContainer>
-          <PlayList videoId={videoId} dispatch={dispatch} />
+          <PlayList videoId={videoId} />
         </ListContainer>
       </VideoSection>
     </>
