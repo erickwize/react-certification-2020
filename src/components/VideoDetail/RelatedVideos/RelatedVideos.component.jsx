@@ -10,6 +10,10 @@ const Container = styled.div`
     a{
         color:black;
     }
+
+    @media(max-width: 1024px){
+        padding:0;
+    }
 `;
 
 export const RelatedVideos = ({videoId}) => {

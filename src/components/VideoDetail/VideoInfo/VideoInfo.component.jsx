@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { parseDatetime } from '../../../utils/parseDatetime';
 import {Title, ChannelAndDatePublished, Separator, DescriptionContainer, DescriptionText, ShowLessMore } from './VideoInfo.styles';
-// const mockVideoData = require('../../../mock-data/youtube-video-api.json').items[0];
+import { useGlobal } from '../../../providers/Global.provider';
 
 const variants = {
     open: {height: "auto"},
@@ -10,18 +10,16 @@ const variants = {
 
 export const VideoInfo = ({video}) => {
     const [isOpen, setIsOpen] = useState(false);
-    if(video){
-        const {title, channelTitle, publishedAt, description} = video.snippet;
+    const {title, channelTitle, publishedAt, description} = video.snippet;
+    const { state } = useGlobal();
 
-        return <div data-testid="video-info">
-            <Title>{title}</Title>
-            <ChannelAndDatePublished>{`${channelTitle} • ${parseDatetime(publishedAt)}`}</ChannelAndDatePublished>
-            <Separator></Separator>
-            <DescriptionContainer animate={isOpen ? "open":"closed"} variants={variants}>
-                <DescriptionText>{description}</DescriptionText>
-            </DescriptionContainer>
-            <ShowLessMore data-testid="info-toggle" onClick={()=>setIsOpen(!isOpen)}>Show {!isOpen && 'more'}{isOpen && 'less'}</ShowLessMore>
-        </div>
-    }
-    return <></>
+    return <div data-testid="video-info">
+        <Title theme={state.theme}>{title}</Title>
+        <ChannelAndDatePublished theme={state.theme}>{`${channelTitle} • ${parseDatetime(publishedAt)}`}</ChannelAndDatePublished>
+        <Separator theme={state.theme}></Separator>
+        <DescriptionContainer animate={isOpen ? "open":"closed"} variants={variants}>
+            <DescriptionText theme={state.theme}>{description}</DescriptionText>
+        </DescriptionContainer>
+        <ShowLessMore theme={state.theme} data-testid="info-toggle" onClick={()=>setIsOpen(!isOpen)}>Show {!isOpen && 'more'}{isOpen && 'less'}</ShowLessMore>
+    </div>
 }

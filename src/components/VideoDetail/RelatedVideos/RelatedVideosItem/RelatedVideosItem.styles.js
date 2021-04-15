@@ -25,10 +25,11 @@ export const Title = styled.p`
     margin: 0px;
     max-height: 50px;
     overflow: hidden;
+    color: ${props => props.theme.videoDetail.relatedVideos.color};
 `;
 
 export const ChannelAndDatePublished = styled.p`
     font-size: 13px;
     margin: 5px 0 0 0;
-    color: #525252;
+    color: ${props => props.theme.videoDetail.relatedVideos.colorDate};
 `;

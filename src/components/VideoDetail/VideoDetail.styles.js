@@ -7,15 +7,24 @@ export const Container = styled.div`
 `;
 
 export const Subcontainer = styled.div`
-    width: 70%;
+    width: 95%;
 `;
 
 export const LeftContainer = styled.div`
     float: left;
     width: 75%;
+
+    @media(max-width: 1024px){
+        width: 100%;
+    }
 `;
 
 export const RightContainer = styled.div`
     float: left;
     width: 25%;
+
+    @media(max-width: 1024px){
+        margin-top: 1rem;
+        width: 100%;
+    }
 `;
