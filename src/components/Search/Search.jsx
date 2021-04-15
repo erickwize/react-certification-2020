@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { SearchDiv, InputElement } from './Search.styled';
 import { fetchVideos, onChangeSearch } from '../../store/global/GlobalAction';
-import { useGlobalProvider } from '../../store/global/Global.provider';
+import { useGlobalProvider } from '../../store/global/global.provider';
 
 const Search = () => {
   const history = useHistory();

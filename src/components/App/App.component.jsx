@@ -13,7 +13,7 @@ import Layout from '../Layout';
 import { Header } from '../index';
 import GlobalStyle from '../../GlobalStyle';
 import { lightTheme, darkTheme } from '../../utils/themes';
-import { useGlobalProvider } from '../../store/global/Global.provider';
+import { useGlobalProvider } from '../../store/global/global.provider';
 
 function App() {
   const {

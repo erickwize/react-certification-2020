@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { VideoContent, VideoImagen, VideoDetails } from './PlayList.styled';
 import { selectVideo } from '../../store/global/GlobalAction';
 import useVideoList from '../../utils/hooks/useFetch';
-import { useGlobalProvider } from '../../store/global/Global.provider';
+import { useGlobalProvider } from '../../store/global/global.provider';
 
 const PlayList = ({ videoId }) => {
   const { videosRelated, error } = useVideoList(videoId, true);

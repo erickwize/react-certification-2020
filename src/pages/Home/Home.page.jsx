@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 // import { useAuth } from '../../providers/Auth';
 import { HomeSection, Title, VideoContainer } from './Home.styled';
 import { VideoCard } from '../../components';
-import { useGlobalProvider } from '../../store/global/Global.provider';
+import { useGlobalProvider } from '../../store/global/global.provider';
 
 function HomePage() {
   const sectionRef = useRef(null);

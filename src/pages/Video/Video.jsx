@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import PlayVideo from '../../components/PlayVideo';
 import PlayList from '../../components/PlayList';
 import { VideoSection, VideoContainer, ListContainer } from './Video.styled';
-import { useGlobalProvider } from '../../store/global/Global.provider';
+import { useGlobalProvider } from '../../store/global/global.provider';
 import { fetchVideos } from '../../store/global/GlobalAction';
 
 const Video = () => {
