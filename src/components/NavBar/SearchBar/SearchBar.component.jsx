@@ -1,26 +1,31 @@
 import React, { useContext, useState } from 'react';
-import { VideoContext } from '../../../providers/Videos/VideoContext';
-import { SectionContext } from '../../../providers/Section/SectionContext';
+import { useDispatch } from '../../../store/StoreProvider';
+import { types } from '../../../store/StoreReducer';
+
+import key from '../../../mockFiles/key.json';
 import './SearchBar.styles.css';
 
 export default function SearchBar(){
+    const dispatch = useDispatch();
     const [value, setValue] = useState('wizeline');
-    const [, setSection] = useContext(SectionContext);
-    const [, setVideos] = useContext(VideoContext);
 
     const updateValue = e => { setValue(e.target.value)}
 
     function updateVideos (){
-        fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyCGgacaXWGPF-AGRR2HVyIccNQGk92O9oo&type=video&part=snippet&maxResults=10&q=${value}`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${key.key}&type=video&part=snippet&maxResults=10&q=${value}`)
         .then(resp => resp.json())
-        .then(response => {
-            setVideos(() => response.items)
-        })
+        .then(response => dispatch({
+            type: types.setVideos,
+            payload: {
+                videos: response.items
+            }
+        }))
         .catch(error => console.log(error))
     }
 
     const updateSection = () => {
-        setSection({main: true, videoId: ""});
+        dispatch({ type: types.setSectionToMain });
+        
     }
 
     const onSubmitHandle = e =>{

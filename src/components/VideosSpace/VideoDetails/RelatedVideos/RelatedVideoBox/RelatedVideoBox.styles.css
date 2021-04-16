@@ -2,6 +2,8 @@
     display: block;
     position: relative;
     height: 94px;
+    max-width: 415px;
+    min-width: 400px;
     margin-bottom: 10px;
     cursor: pointer;
 }

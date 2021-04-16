@@ -3,9 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../providers/Auth';
 import NavBar from '../../components/NavBar/Navbar';
 import VideosSpace from '../../components/VideosSpace/VideosSpace';
-import { VideoProvider } from '../../providers/Videos/VideoContext';
-import { SectionProvider } from '../../providers/Section/SectionContext';
-import { RelatedVideoProvider } from '../../providers/Videos/RelatedVideoContext' ;
 import './Home.styles.css';
 
 function HomePage() {
@@ -20,15 +17,9 @@ function HomePage() {
   }
 
   return (
-    <section className="homepage" ref={sectionRef}>
-      <VideoProvider>
-        <SectionProvider>
-          <NavBar/>
-          <RelatedVideoProvider>
-            <VideosSpace/>
-          </RelatedVideoProvider>
-        </SectionProvider>
-      </VideoProvider>
+    <section className="homepage" ref={sectionRef}>  
+      <NavBar/>
+      <VideosSpace/>
       {authenticated ? (
         <>
           <h2>Good to have you back</h2>

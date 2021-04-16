@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
+import { useStore } from '../../../store/StoreProvider';
 import VideoBox from './VideoBox/VideoBox.component';
-import { VideoContext } from '../../../providers/Videos/VideoContext';
 import './VideoGrid.styles.css';
 
 export default function VideoGrid(){
-    const [videos,] = useContext(VideoContext);
+    const { videos } = useStore();
+    
     return(
         <span className="videoGrid">
             {

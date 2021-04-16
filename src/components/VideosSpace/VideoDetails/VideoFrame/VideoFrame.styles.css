@@ -1,30 +1,26 @@
-.videoFrame{
-    display: inline-block;
-    position: absolute;
-    left: 30px;
-    margin-top: 30px;
-    width: 60%;
-    height: 65vh;
+.videoDetailsContainer{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2% 64% 2% 30% 2%;
+  grid-template-rows: 3vh 68vh 2vh 28vh 2vh; 
 }
 
-@media only screen and (max-width: 1250px) {
-    .videoFrame {
-      width: 55%;
-      height: 50vh;
-    }
-  }
+.videoFrame{
+  justify-self: stretch;
+  align-self: stretch;
+  width: 100%;
+  height: 100%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
 
-  @media only screen and (max-width: 1000px) {
-    .videoFrame {
-        left: 20%;
-    }
+@media screen and (max-width: 1000px) {
+  .videoDetailsContainer{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2% 50% 2% 44% 2%;
+    grid-template-rows: 3vh 55vh 2vh 28vh 2vh; 
   }
-
-  @media only screen and (max-width: 750px) {
-    .videoFrame {
-        left: 5%;
-        margin-top: 20px;
-        width: 90%;
-        height: 58vh;
-    }
-  }
+}

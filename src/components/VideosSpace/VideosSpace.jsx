@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useStore } from '../../store/StoreProvider';
 import VideoGrid from './VideoGrid/VideoGrid';
 import VideoDetails from './VideoDetails/VideoDetails';
-import { SectionContext } from '../../providers/Section/SectionContext';
-import { DetailsVideoProvider } from '../../providers/Videos/DetailsVideoContext';
+
 
 const VideosSpace = () => {
-    const [section,] = useContext(SectionContext);
+    const {section} = useStore();
     const {main, videoId} = section;
     return(
         <div>
         {
             main 
-            ? <DetailsVideoProvider> <VideoGrid/> </DetailsVideoProvider> 
-            : <DetailsVideoProvider> <VideoDetails videoId={videoId}/> </DetailsVideoProvider>
+            ? <VideoGrid/>
+            : <VideoDetails videoId={videoId}/>
         }
         </div>
     );
