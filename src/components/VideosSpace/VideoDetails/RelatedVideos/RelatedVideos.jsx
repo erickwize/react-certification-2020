@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { useStore } from '../../../../store/StoreProvider';
 import RelatedVideoBox from './RelatedVideoBox/RelatedVideoBox';
 import './RelatedVideos.styles.css';

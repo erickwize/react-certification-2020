@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useStore } from '../../../../store/StoreProvider';
 import Comment from './Comment/Comment';
 import './CommentsSection.styles.css';
@@ -8,7 +8,7 @@ const CommentsSection = () => {
     return(
         <span className="commentsSection">
             {
-                comments?comments.length == 0?<h3>There are no comments</h3>:
+                comments?comments.length === 0?<h3>There are no comments</h3>:
                 comments.map(element => 
                   <Comment 
                     text = {element.snippet.topLevelComment.snippet.textOriginal}

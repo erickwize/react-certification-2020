@@ -5,10 +5,7 @@ import './Comment.styles.css';
 
 const Comment = (props) => {
     const [showComment, setShowComment] = useState(false);
-    const [screenSize, setScreenSize] = useState(window.screen.width);
     const { theme } = useStore();
-
-    
 
     const showFullComment = (e) => {
         console.log(window);
@@ -20,8 +17,6 @@ const Comment = (props) => {
             setShowComment(true);
             e.target.parentElement.parentElement.parentElement.style.height = `${totalHeight}px`;
         }
-        
-        // console.log(e.target.parentElement);
     }
 
     return(

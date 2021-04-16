@@ -9,13 +9,13 @@ export default function ToggleSwitch(){
 
     function saludar(e){
         console.log(store);
-        if(store.theme == "light"){
+        if(store.theme === "light"){
             dispatch({type: types.setThemeDark});
         }else{
             dispatch({type: types.setThemeLight});
         }
         
-        document.body.style.backgroundColor = store.theme == "light"?"black":"#cec7bd";
+        document.body.style.backgroundColor = store.theme === "light"?"black":"#cec7bd";
         
 
     }

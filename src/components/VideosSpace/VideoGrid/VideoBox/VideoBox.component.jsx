@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { useDispatch, useStore } from '../../../../store/StoreProvider';
 import { types } from '../../../../store/StoreReducer';
 import key from '../../../../mockFiles/key.json';

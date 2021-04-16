@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from '../../../store/StoreProvider';
 import { types } from '../../../store/StoreReducer';
 
