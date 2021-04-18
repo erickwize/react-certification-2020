@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -13,35 +13,35 @@ import Layout from '../Layout';
 //Components
 import { Header } from '../../components/Header/Header.component';
 import { VideoDetail } from '../../components/VideoDetail/VideoDetail.component';
+import GlobalProvider from '../../providers/Global.provider';
 
 function App() {
-
-  const [searchValue, setSearchValue] = useState('doggos');
-
   return (  
     <BrowserRouter>
-      <Header setSearchValue={setSearchValue}/>
-      <AuthProvider>
-        <Layout>
-          <Switch>
-            <Route exact path="/">
-              <HomePage searchValue={searchValue}/>
-            </Route>
-            <Route exact path="/video/:videoId">
-              <VideoDetail/>
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-        </Layout>
-      </AuthProvider>
+      <GlobalProvider>
+        <Header/>
+        <AuthProvider>
+            <Layout>
+              <Switch>
+                <Route exact path="/">
+                  <HomePage/>
+                </Route>
+                <Route exact path="/video/:videoId">
+                  <VideoDetail/>
+                </Route>
+                <Route exact path="/login">
+                  <LoginPage />
+                </Route>
+                <Private exact path="/secret">
+                  <SecretPage />
+                </Private>
+                <Route path="*">
+                  <NotFound />
+                </Route>
+              </Switch>
+            </Layout>
+        </AuthProvider>
+      </GlobalProvider>
     </BrowserRouter>
   );
 }

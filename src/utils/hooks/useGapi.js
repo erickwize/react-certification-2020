@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 export const useGapi = () => {
     const [gapi ,setGapi] = useState(null);
 
-    const initGapi = async(param) =>{
-        console.log(param);
+    const initGapi = async() =>{
         try{
             await window.gapi.client.setApiKey('AIzaSyCZyIjniq9EpuwZQ_Ic04ukuhEpXQvmyX8');
             await window.gapi.client.load('https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest');

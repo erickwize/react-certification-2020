@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Searchbar } from './Searchbar.component';
+import GlobalProvider from '../../../providers/Global.provider';
 
 const mockHistoryPush = jest.fn();
 
@@ -11,7 +12,6 @@ jest.mock('react-router-dom', () => ({
     }),
 }));
 
-
 describe('Searchbar component', ()=>{
 
     beforeEach(() => {
@@ -19,7 +19,11 @@ describe('Searchbar component', ()=>{
     });
 
     it("should correctly render an input with placeholder and include an sgv", ()=>{
-        const { container } = render(<Searchbar/>)
+        const { container } = render(
+            <GlobalProvider>
+                <Searchbar/>
+            </GlobalProvider>
+        );
         const input = container.querySelector('input');
         const placeholder = screen.getByPlaceholderText(/Search/);
         const svg = screen.getByTestId("searchbarIcon");
@@ -28,9 +32,10 @@ describe('Searchbar component', ()=>{
         expect(svg).toBeInTheDocument();
     });
 
-    it('should handle the type, handle the submit, call the setSearchValue() state setter and redirect to "/"', () => {
-        const setSearchValue = jest.fn();
-        render(<Searchbar setSearchValue={setSearchValue} history={history}/>);
+    it('should handle the type, handle the submit and redirect to "/"', () => {
+        render(<GlobalProvider>
+            <Searchbar/>
+        </GlobalProvider>);
         const form = screen.getByTestId('form');
         const input = screen.getByPlaceholderText(/Search/);
 
@@ -43,13 +48,13 @@ describe('Searchbar component', ()=>{
         expect(input).toBeInTheDocument();
         expect(input.value).toBe('test');
         expect(isDefaultPrevented).toBe(false);
-        expect(setSearchValue.mock.calls[0][0]).toBe('test');
         expect(mockHistoryPush).toHaveBeenCalledWith('/');
     });
 
-    it('should handle the type, handle the svg click, call the setSearchValue() state setter and redirect to "/"', () => {
-        const setSearchValue = jest.fn();
-        render(<Searchbar setSearchValue={setSearchValue}/>);
+    it('should handle the type, handle the svg click and redirect to "/"', () => {
+        render(<GlobalProvider>
+            <Searchbar/>
+        </GlobalProvider>);
         const input = screen.getByPlaceholderText(/Search/);
         const svg = screen.getByTestId("searchbarIcon");
 
@@ -59,7 +64,6 @@ describe('Searchbar component', ()=>{
 
         expect(input).toBeInTheDocument();
         expect(input.value).toBe('test');
-        expect(setSearchValue.mock.calls[0][0]).toBe('test');
         expect(mockHistoryPush).toHaveBeenCalledWith('/');
     });
 });

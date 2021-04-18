@@ -5,10 +5,17 @@ import { useFetchVideos } from '../../utils/hooks/useFetchVideos';
 
 import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
+import styled from 'styled-components';
+import { useGlobal } from '../../providers/Global.provider';
 
-function HomePage({searchValue, setSelectedVideo}) {
+const IconsInfoContainer = styled.div`
+  color: ${props => props.theme.iconsInfoContainer.color};
+`;
 
-  const {videos: data, loading} = useFetchVideos(searchValue);
+function HomePage({setSelectedVideo}) {
+
+  const { state } = useGlobal();
+  const {videos: data, loading} = useFetchVideos(state.search);
 
   const history = useHistory();
   const sectionRef = useRef(null);
@@ -39,10 +46,10 @@ function HomePage({searchValue, setSelectedVideo}) {
         </>
       ) : (
         <Link to="/login">let me in →</Link>
-      )}
+      )}    
       
-    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
-    <div>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <IconsInfoContainer theme={state.theme}>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></IconsInfoContainer>
+    <IconsInfoContainer theme={state.theme}>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></IconsInfoContainer>
     </section>
   );
 }
