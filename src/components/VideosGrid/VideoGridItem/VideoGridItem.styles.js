@@ -6,16 +6,24 @@ export const CardContainer = styled(motion.div)`
     display: flex;
     flex-direction: column;
     margin: 10px;
-    max-width: 340px;
-    min-width: 340px;
+    max-width: 320px;
+    min-width: 320px;
     max-height: 280px;
     min-height: 280px;
     text-align: left;
+
+    @media(max-width:320px){
+        padding: 10px;
+    }
 `;
 
 export const VideoThumbnail = styled.img`
     max-height: 180px;
     object-fit: cover;
+
+    @media(max-width:320px){
+        max-height: 165px;
+    }
 `;
 
 export const VideoInfo = styled.div`

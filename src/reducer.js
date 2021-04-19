@@ -11,6 +11,12 @@ export const reducer = (state, action) => {
             return {...state, theme };
         case 'search':
             return {...state, search: action.value}
+        case 'login':
+            storage.set('user', JSON.stringify(action.value));
+            return {...state, user: action.value}
+        case 'logout':
+            storage.remove('user');
+            return {...state, user: {authenticated:false}}
         default:
             return new Error(`Unhandled action ${action.type} in reducer was found`);
     }

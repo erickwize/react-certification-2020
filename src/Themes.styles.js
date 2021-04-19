@@ -31,6 +31,13 @@ export const dark = {
             color: 'white',
             colorDate: '#797979'
         }
+    },
+    login:{
+        backgroundColor: '#1b2429',
+        inputBackgroundColor: '#263842',
+        svgColor: '#cd76dc',
+        color: 'white',
+        boxShadow: 'none'
     }
 };
 
@@ -40,6 +47,7 @@ export const light = {
         backgroundColor: "white",
         boxShadow: 'none',
         borderBottom: '1px solid #dcdcdc',
+        svgColor: '#b400d2'
     },
     body:{
         backgroundColor: "white",
@@ -66,5 +74,10 @@ export const light = {
             color: 'black',
             colorDate: '#525252'
         }
+    },
+    login:{
+        boxShadow: '0px 0px 8px -2px rgba(0,0,0,0.5)',
+        inputBackgroundColor: '#e4e4e4',
+        svgColor: '#cd76dc'
     }
 }

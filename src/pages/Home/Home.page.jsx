@@ -2,8 +2,6 @@ import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { VideosGrid } from '../../components/VideosGrid/VideosGrid.component';
 import { useFetchVideos } from '../../utils/hooks/useFetchVideos';
-
-import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
 import styled from 'styled-components';
 import { useGlobal } from '../../providers/Global.provider';
@@ -14,16 +12,16 @@ const IconsInfoContainer = styled.div`
 
 function HomePage({setSelectedVideo}) {
 
-  const { state } = useGlobal();
+  const { state, dispatch } = useGlobal();
+  console.log(state);
   const {videos: data, loading} = useFetchVideos(state.search);
 
   const history = useHistory();
   const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
 
   function deAuthenticate(event) {
     event.preventDefault();
-    logout();
+    dispatch({type:'logout'});
     history.push('/');
   }
 
@@ -33,7 +31,7 @@ function HomePage({setSelectedVideo}) {
       {!loading && <VideosGrid data={data} setSelectedVideo={setSelectedVideo}/>}
       
       <h1>Hello stranger!</h1>
-      {authenticated ? (
+      {state.user.authenticated ? (
         <>
           <h2>Good to have you back</h2>
           <span>
@@ -48,8 +46,8 @@ function HomePage({setSelectedVideo}) {
         <Link to="/login">let me in →</Link>
       )}    
       
-    <IconsInfoContainer theme={state.theme}>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></IconsInfoContainer>
-    <IconsInfoContainer theme={state.theme}>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></IconsInfoContainer>
+    <IconsInfoContainer theme={state.theme}>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></IconsInfoContainer>
+    <IconsInfoContainer theme={state.theme}>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a></IconsInfoContainer>
     </section>
   );
 }

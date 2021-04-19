@@ -14,7 +14,7 @@ function SecretPage() {
         allowFullScreen
         frameBorder="0"
         title="rick roll"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&autoplay=1"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&autoplay=0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       />
     </section>
