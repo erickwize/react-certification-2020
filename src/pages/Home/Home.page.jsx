@@ -13,7 +13,6 @@ const IconsInfoContainer = styled.div`
 function HomePage({setSelectedVideo}) {
 
   const { state, dispatch } = useGlobal();
-  console.log(state);
   const {videos: data, loading} = useFetchVideos(state.search);
 
   const history = useHistory();

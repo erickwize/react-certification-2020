@@ -14,6 +14,7 @@ import { Header } from '../../components/Header/Header.component';
 import { VideoDetail } from '../../components/VideoDetail/VideoDetail.component';
 import GlobalProvider from '../../providers/Global.provider';
 import { FavoriteVideos } from '../FavoriteVideos/FavoriteVideos.component';
+import { FavoriteVideoDetail } from '../FavoriteVideoDetail/FavoriteVideoDetail.component';
 
 function App() {
 
@@ -37,6 +38,9 @@ function App() {
                 </Private>
                 <Private exact path="/favorites">
                   <FavoriteVideos />
+                </Private>
+                <Private exact path="/favorites/:videoId">
+                  <FavoriteVideoDetail />
                 </Private>
                 <Route path="*">
                   <NotFound />
