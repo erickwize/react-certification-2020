@@ -15,7 +15,6 @@ const StyledHeader = styled.header`
   display: flex;
   padding: 15px;
   position: fixed;
-  top: 0;
   width: 100%;
   z-index: 1;
 

@@ -39,6 +39,14 @@ export const dark = {
         svgColor: '#cd76dc',
         color: 'white',
         boxShadow: 'none'
+    },
+    favoritesView:{
+        titleColor: 'white'
+    },
+    profileCard:{
+        backgroundColor: '#1b2429',
+        boxShadow: 'none',
+        separatorColor: '#919191'
     }
 };
 
@@ -81,5 +89,13 @@ export const light = {
         boxShadow: '0px 0px 8px -2px rgba(0,0,0,0.5)',
         inputBackgroundColor: '#e4e4e4',
         svgColor: '#cd76dc'
+    },
+    favoritesView:{
+        titleColor: 'black'
+    },
+    profileCard:{
+        backgroundColor: 'white',
+        boxShadow: '0px 0px 8px -2px rgba(0,0,0,0.5)',
+        separatorColor: '#e4e4e4'
     }
 }

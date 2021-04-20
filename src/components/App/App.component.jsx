@@ -13,6 +13,7 @@ import Layout from '../Layout';
 import { Header } from '../../components/Header/Header.component';
 import { VideoDetail } from '../../components/VideoDetail/VideoDetail.component';
 import GlobalProvider from '../../providers/Global.provider';
+import { FavoriteVideos } from '../FavoriteVideos/FavoriteVideos.component';
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
                 </Route>
                 <Private exact path="/secret">
                   <SecretPage />
+                </Private>
+                <Private exact path="/favorites">
+                  <FavoriteVideos />
                 </Private>
                 <Route path="*">
                   <NotFound />

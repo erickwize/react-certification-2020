@@ -15,6 +15,14 @@ export const CardContainer = styled(motion.div)`
     @media(max-width:320px){
         padding: 10px;
     }
+
+    @media(max-width:280px){
+        max-width: 280px;
+        min-width: 280px;
+        max-height: 240px;
+        min-height: 240px;
+        padding: 10px;
+    }
 `;
 
 export const VideoThumbnail = styled.img`
@@ -23,6 +31,10 @@ export const VideoThumbnail = styled.img`
 
     @media(max-width:320px){
         max-height: 165px;
+    }
+
+    @media(max-width:280px){
+        max-height: 145px;
     }
 `;
 
