@@ -23,6 +23,7 @@ export const dark = {
         colorDate: '#797979',
         colorDescription: 'white',
         colorSeparator: '#303030',
+        svgColor: '#E553FF',
         descButton:{
             backgroundColor: '#383838',
             color: 'white'
@@ -66,6 +67,7 @@ export const light = {
         colorDate: '#797979',
         colorDescription: 'black',
         colorSeparator: '#dcdcdc',
+        svgColor: '#b400d2',
         descButton:{
             backgroundColor: '#dcdcdc',
             color: 'black'

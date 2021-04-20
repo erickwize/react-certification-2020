@@ -3,6 +3,7 @@ import { dark, light } from './Themes.styles';
 import { storage } from './utils/storage';
 export const reducer = (state, action) => {    
     let { theme } = state;
+    let { favorites } = state;
 
     switch(action.type){
         case 'theme':
@@ -17,6 +18,14 @@ export const reducer = (state, action) => {
         case 'logout':
             storage.remove('user');
             return {...state, user: {authenticated:false}}
+        case 'addFavorite':
+            const newFavs = [...favorites, action.value];
+            storage.set('favorites', newFavs);
+            return {...state, favorites:newFavs}
+        case 'removeFavorite':
+            let rmFavs = favorites.filter(item=>item.id !== action.value.id);
+            storage.set('favorites', rmFavs);
+            return {...state, favorites:rmFavs}
         default:
             return new Error(`Unhandled action ${action.type} in reducer was found`);
     }
