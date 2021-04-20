@@ -5,23 +5,38 @@ import PlayVideo from '../../components/PlayVideo';
 import PlayList from '../../components/PlayList';
 import { VideoSection, VideoContainer, ListContainer } from './Video.styled';
 import { useGlobalProvider } from '../../store/global/global.provider';
-import { fetchVideos } from '../../store/global/GlobalAction';
+import { fetchVideos, addVideo, removeVideo } from '../../store/global/GlobalAction';
+import useIsFavorite from '../../utils/hooks/useIsFavorite';
 
 const Video = () => {
   const matchParams = useParams();
-
   const {
-    state: { videoList, videoSelected },
+    state: { videoList, videoSelected, favoriteVideos, user },
     dispatch,
   } = useGlobalProvider();
 
-  const videoId = videoSelected ? videoSelected.id.videoId : null;
+  const favorite = useIsFavorite(matchParams.videoId, favoriteVideos);
 
+  const { videoId } = matchParams;
+
+  /* eslint-disable */
   useEffect(() => {
     if (!videoList?.items) {
-      fetchVideos(dispatch, matchParams.id, true);
+      fetchVideos(dispatch, videoId, true);
     }
   }, []);
+  /* eslint-disable */
+
+  const addFavorite = (newVideo) => {
+    const newFavorites = [...favoriteVideos];
+    newFavorites.push(newVideo);
+    addVideo(dispatch, newFavorites);
+  };
+
+  const removeFavorite = (videoId) => {
+    const newFavorites = favoriteVideos.filter((video) => video.videoId !== videoId);
+    removeVideo(dispatch, newFavorites);
+  };
 
   if (!videoSelected) return <>Loading...</>;
 
@@ -29,7 +44,15 @@ const Video = () => {
     <>
       <VideoSection>
         <VideoContainer>
-          <PlayVideo videoSelected={videoSelected} videoId={videoId} />
+          <PlayVideo
+            video={{
+              user,
+              videoSelected,
+              favorite,
+              addFavorite,
+              removeFavorite,
+            }}
+          />
         </VideoContainer>
         <ListContainer>
           <PlayList videoId={videoId} />

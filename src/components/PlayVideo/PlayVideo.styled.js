@@ -32,10 +32,16 @@ const Button = styled.button`
   outline: none;
   font-weight: bold;
   font-size: small;
+  visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
 `;
 
 const Paragraph = styled.p`
   padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `;
 
 export { VideoiFrame, VideoDetails, Title, Button, Paragraph };

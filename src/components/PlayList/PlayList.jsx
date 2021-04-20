@@ -9,7 +9,7 @@ const PlayList = ({ videoId }) => {
   const { videosRelated, error } = useVideoList(videoId, true);
   const { dispatch } = useGlobalProvider();
 
-  const onHandleVideo = (videoSelected) => {
+  const onSelectVideo = (videoSelected) => {
     selectVideo(dispatch, videoSelected);
   };
 
@@ -22,20 +22,21 @@ const PlayList = ({ videoId }) => {
           const snippet = video?.snippet ? video.snippet : false;
           if (!snippet) return null;
 
-          const { title = '', channelTitle = '' } = snippet;
-          const sourceImg = snippet.thumbnails.medium.url;
+          const { title, channelTitle, description } = snippet;
+          const { url } = snippet.thumbnails.medium;
           const { videoId: id } = video.id;
           return (
             <Link
               key={id}
-              onClick={() => onHandleVideo(video)}
+              onClick={() =>
+                onSelectVideo({ title, channelTitle, description, url, videoId: id })
+              }
               to={{
                 pathname: `/video/${id}`,
-                data: { data: video, videoList: videosRelated },
               }}
             >
               <VideoContent>
-                <VideoImagen src={sourceImg} />
+                <VideoImagen src={url} />
                 <VideoDetails>
                   <h5>{title}</h5>
                   <p>{channelTitle}</p>

@@ -1,13 +1,18 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, useLocation } from 'react-router-dom';
 
-import { useAuth } from '../../providers/Auth';
+import { useGlobalProvider } from '../../store/global/global.provider';
 
-function Private({ children, ...rest }) {
-  const { authenticated } = useAuth();
+function Private(props) {
+  const location = useLocation();
+  const {
+    state: { user },
+  } = useGlobalProvider();
 
-  return (
-    <Route {...rest} render={() => (authenticated ? children : <Redirect to="/" />)} />
+  return user ? (
+    <Route {...props} />
+  ) : (
+    <Redirect to={{ pathname: '/login', state: { background: location } }} />
   );
 }
 

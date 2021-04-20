@@ -1,26 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { VideoiFrame, VideoDetails, Title, Button, Paragraph } from './PlayVideo.styled';
 
-const PlayVideo = ({ videoSelected, videoId }) => {
-  const { title, description } = videoSelected.snippet;
-  const [add, setAdd] = useState(false);
+const PlayVideo = ({
+  video: { user, videoSelected, favorite, addFavorite, removeFavorite },
+}) => {
+  const { title, description, videoId, channelTitle, url } = videoSelected;
 
-  const handleChange = () => {
-    setAdd(!add);
+  const add = () => {
+    const newVideo = { videoId, title, description, channelTitle, url };
+    addFavorite(newVideo);
   };
 
-  const buttonLayer = !add ? 'AÑADIR A FAVORITOS' : 'ELIMINAR DE FAVORITOS';
-  const vDescription = description ? description.split('.')[0] : null;
+  const remove = () => {
+    removeFavorite(videoId);
+  };
 
   return (
     <>
       <VideoiFrame title="playVideo" src={`https://www.youtube.com/embed/${videoId}`} />
       <VideoDetails>
         <Title>{title}</Title>
-        <Button onClick={handleChange}>{buttonLayer} </Button>
+        {!favorite ? (
+          <Button onClick={add} show={user}>
+            AÑADIR A FAVORITOS{' '}
+          </Button>
+        ) : (
+          <Button onClick={remove} show={user}>
+            ELIMINAR DE FAVORITOS
+          </Button>
+        )}
       </VideoDetails>
-      <Paragraph data-testid="paragraph">{vDescription}</Paragraph>
+      <Paragraph data-testid="paragraph">{description}</Paragraph>
     </>
   );
 };

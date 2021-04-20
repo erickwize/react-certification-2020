@@ -11,23 +11,16 @@ const Button = styled.button`
   padding: 0px;
   position: relative;
   width: 50px;
-  height: 30px;
+  height: 100%;
   outline: none;
   background: transparent;
+  z-index: 1000;
 `;
 
-const Burguer = styled.svg`
-  height: 90%;
+const Icon = styled.svg`
+  height: ${(props) => props.height};
   width: auto;
-  transition: all 0.7s linear;
-  fill: ${({ theme }) => theme.text};
+  fill: ${({ theme, title }) => (title === 'CloseButton' ? '#363537' : theme.text)};
 `;
 
-const Close = styled.svg`
-  height: 75%;
-  width: auto;
-  transition: all 0.7s linear;
-  fill: ${({ theme }) => theme.text};
-`;
-
-export { Button, Burguer, Close };
+export { Button, Icon };

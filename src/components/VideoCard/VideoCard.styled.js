@@ -26,6 +26,11 @@ const VideoBox = styled.div`
     font-size: 13px;
     text-align: start;
     padding: 0px 5px 0px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
   }
 `;
 

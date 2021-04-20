@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 import { initialState, globalReducer } from './GlobalReducer';
+import { AUTH_STORAGE_KEY, THEME_STORAGE, VIDEOS_STORAGE } from '../../utils/constants';
 
 const GlobalContext = createContext();
 
@@ -14,10 +15,23 @@ const useGlobalProvider = () => {
 
 function GlobalProvider({ children }) {
   const [state, dispatch] = useReducer(globalReducer, initialState);
+  const { user, themeValue, favoriteVideos } = state;
 
   useEffect(() => {
-    window.localStorage.setItem('theme', state.themeValue);
-  }, [state.themeValue]);
+    window.localStorage.setItem(THEME_STORAGE, themeValue);
+  }, [themeValue]);
+
+  useEffect(() => {
+    if (user) {
+      window.localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user));
+    } else {
+      window.localStorage.removeItem(AUTH_STORAGE_KEY);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    window.localStorage.setItem(VIDEOS_STORAGE, JSON.stringify(favoriteVideos));
+  }, [favoriteVideos]);
 
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>

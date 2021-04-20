@@ -5,10 +5,11 @@ const StyledHeader = styled.header`
   width: 100%;
   border-bottom: 1px solid #a0aec0;
   .bar {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding: 15px 10px 10px 10px;
+    padding: 11px 10px;
     @media (max-width: 400px) {
       justify-content: end;
     }

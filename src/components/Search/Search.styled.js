@@ -13,10 +13,13 @@ const SearchDiv = styled.div`
 
 const InputElement = styled.input`
   width: 60%;
-  height: 30px;
+  height: 100%;
   border-radius: 5px;
   margin-left: 10%;
   padding-left: 1%;
+  & ::placeholder {
+    color: #dedede;
+  }
 
   @media (max-width: 500px) {
     width: 200px;
