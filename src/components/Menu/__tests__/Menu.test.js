@@ -1,8 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, waitFor } from '@testing-library/react'
-
 import { Context } from '../../../context/context'
+import { Context, initialState } from '../../../context/context'
 import Menu from '../Menu'
 
 const jsonFile = require('../../../utils/assets/youtube-videos-mock.json')
