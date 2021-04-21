@@ -8,7 +8,7 @@ export const DarkmodeButton = () => {
     const { dispatch } = useGlobal();
 
     return <Container data-testid="darkmodeButton" onClick={()=> dispatch({type:'theme'})}>
-       <StyledButton whileTap={buttonPressedStyle}>
+       <StyledButton whileTap={buttonPressedStyle} onClick={()=> dispatch({type:'closeMenu'})}>
            <DarkmodeSVG/>
         </StyledButton>
     </Container>;

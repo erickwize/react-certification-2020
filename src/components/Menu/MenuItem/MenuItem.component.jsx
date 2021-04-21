@@ -22,9 +22,10 @@ const variants = {
 
 export const MenuItem = ({item}) => {
 
-    const { theme } = useGlobal().state;
+    const { state, dispatch } = useGlobal();
+    const { theme } = state;
     
-    return <Link to={item.location}>
+    return <Link to={item.location} onClick={() => dispatch({type:'closeMenu'})}>
             <ListItem theme={theme} variants={variants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <IconContainer theme={theme}>
                 {item.icon}

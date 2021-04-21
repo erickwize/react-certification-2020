@@ -5,9 +5,9 @@ import { useGlobal } from '../../../../providers/Global.provider';
 
 export const RelatedVideosItem = ({video}) => {
 
-    const { state } = useGlobal();
+    const { state, dispatch } = useGlobal();
 
-    return <VideoRelated>
+    return <VideoRelated onClick={()=>dispatch({type:'closeMenu'})}>
         {
             video.hasOwnProperty("snippet") &&
             <>

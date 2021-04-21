@@ -35,7 +35,7 @@ const variants = {
 export const UnorderedList = styled(motion.ul)`
 `;
 
-export const MenuList = () => {
+export const MenuList = ({setIsOpen}) => {
 
     const { user } = useGlobal().state;
     
@@ -43,10 +43,10 @@ export const MenuList = () => {
         {itemIds.map(item => {
             if(item.private){
                 if(user.authenticated){
-                    return (<MenuItem item={item} key={item.id} />)
+                    return (<MenuItem item={item} key={item.id}/>)
                 }
             }else{
-                return (<MenuItem item={item} key={item.id} />)
+                return (<MenuItem item={item} key={item.id}/>)
             }
             return (<></>)
         })}

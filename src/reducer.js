@@ -2,8 +2,7 @@
 import { dark, light } from './Themes.styles';
 import { storage } from './utils/storage';
 export const reducer = (state, action) => {    
-    let { theme } = state;
-    let { favorites } = state;
+    let { theme, favorites, isMenuOpen } = state;
 
     switch(action.type){
         case 'theme':
@@ -26,6 +25,12 @@ export const reducer = (state, action) => {
             let rmFavs = favorites.filter(item=>item.id !== action.value.id);
             storage.set('favorites', rmFavs);
             return {...state, favorites:rmFavs}
+        case 'menu':
+            return {...state, isMenuOpen:!isMenuOpen}
+        case 'openMenu':
+            return {...state, isMenuOpen:true}
+        case 'closeMenu':
+            return {...state, isMenuOpen:false}
         default:
             return new Error(`Unhandled action ${action.type} in reducer was found`);
     }
