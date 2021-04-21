@@ -1,8 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks'
 import { useFetch } from '../../utils/hooks/useFetch'
 
-// const jsonFile = require('../../utils/assets/youtube-videos-mock.json')
-
 const REACT_APP_API_URL =
   'https://www.googleapis.com/youtube/v3/search?key=AIzaSyADs3mjNx1AMBHhmVTHr30XvnG-iZ-cNF4&type=video&part=snippet&maxResults=10&q='
 

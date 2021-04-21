@@ -1,40 +1,8 @@
-// import Dexie from 'dexie'
 import React, { useEffect, createContext, useReducer, memo } from 'react'
 import { useFetch } from '../utils/hooks/useFetch'
+import { ContextReducer } from './reducer'
 
 export const Context = createContext(null)
-
-export const ContextReducer = (state, action) => {
-  switch (action.type) {
-    case 'TOGGLE_THEME':
-      return {
-        ...state,
-        theme: !state.theme,
-      }
-    case 'OPEN_MENU':
-      return {
-        ...state,
-        menu: action.payload,
-      }
-    case 'GET_DATA':
-      return {
-        ...state,
-        data: action.payload,
-      }
-    case 'SET_VIEW':
-      return {
-        ...state,
-        view: action.payload,
-      }
-    case 'SET_TARGET':
-      return {
-        ...state,
-        target: action.payload,
-      }
-    default:
-      return state
-  }
-}
 
 export const initialState = {
   target: 'Wizeline',

@@ -4,26 +4,26 @@ import StyledMenu from './Menu.styled'
 
 const Menu = React.memo(() => {
   const { state, dispatch } = useContext(Context)
-  const changeToHome = (e) => {
-    e.preventDefault()
-    dispatch({ type: 'SET_VIEW', payload: 'home' })
-    dispatch({ type: 'OPEN_MENU', payload: false })
-    dispatch({ type: 'SET_TARGET', payload: 'Wizeline' })
-  }
 
-  const changeToFavorites = (e) => {
+  const handleChange = (e) => {
     e.preventDefault()
-    dispatch({ type: 'SET_VIEW', payload: 'favorites' })
-    dispatch({ type: 'OPEN_MENU', payload: false })
-    dispatch({ type: 'SET_TARGET', payload: '' })
+    if (e.target.innerText === 'Home') {
+      dispatch({ type: 'SET_VIEW', payload: 'home' })
+      dispatch({ type: 'OPEN_MENU', payload: false })
+      dispatch({ type: 'SET_TARGET', payload: 'Wizeline' })
+    } else {
+      dispatch({ type: 'SET_VIEW', payload: 'favorites' })
+      dispatch({ type: 'OPEN_MENU', payload: false })
+      dispatch({ type: 'SET_TARGET', payload: '' })
+    }
   }
 
   return (
     <StyledMenu toggle={state.menu}>
-      <a href="/" onClick={changeToHome}>
+      <a href="/" onClick={handleChange}>
         Home
       </a>
-      <a href="/" onClick={changeToFavorites}>
+      <a href="/" onClick={handleChange}>
         Favorites
       </a>
     </StyledMenu>
