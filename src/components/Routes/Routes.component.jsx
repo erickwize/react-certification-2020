@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import HomePage from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
@@ -13,7 +13,6 @@ export default function Routes({ selectCard, videoList, video }) {
     <>
       <Switch>
         <Route exact path="/">
-          <Link to="/login">test</Link>
           {loading ? (
             <h3>
               <br />
