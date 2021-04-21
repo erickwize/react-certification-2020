@@ -5,6 +5,12 @@ export const dark = {
         boxShadow: '2px 2px 50px 1px rgba(0, 0, 0, 0.2)',
         borderBottom: 'none',
         svgColor: '#E553FF',
+        menu:{
+            backgroundColorOpen: '#fff',
+            backgroundColorClosed: '#1b2429',
+            itemBorder: '#E553FF',
+            itemColor: 'black'
+        }
     },
     body:{
         backgroundColor: "#12181b",
@@ -56,7 +62,13 @@ export const light = {
         backgroundColor: "white",
         boxShadow: 'none',
         borderBottom: '1px solid #dcdcdc',
-        svgColor: '#b400d2'
+        svgColor: '#b400d2',
+        menu:{
+            backgroundColorOpen: '#1b2429',
+            backgroundColorClosed: '#fff',
+            itemBorder: '#b400d2',
+            itemColor: 'white'
+        }
     },
     body:{
         backgroundColor: "white",
@@ -97,5 +109,5 @@ export const light = {
         backgroundColor: 'white',
         boxShadow: '0px 0px 8px -2px rgba(0,0,0,0.5)',
         separatorColor: '#e4e4e4'
-    }
+    },
 }

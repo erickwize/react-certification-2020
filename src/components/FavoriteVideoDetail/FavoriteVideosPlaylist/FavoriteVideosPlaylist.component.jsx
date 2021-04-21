@@ -19,7 +19,6 @@ const Container = styled.div`
 export const FavoriteVideosPlaylist = () => {
     
     const { favorites } = useGlobal().state;
-    console.log(favorites);
 
     return <Container data-testid="related-videos">
         {   

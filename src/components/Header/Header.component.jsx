@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { MenuButton } from './MenuButton/MenuButton.component';
 import { DarkmodeButton } from './DarkmodeButton/DarkmodeButton.component';
 import { ProfileButton } from './ProfileButton/ProfileButton.component';
 import { Searchbar } from './Searchbar/Searchbar.component';
@@ -28,7 +27,6 @@ export const Header = () => {
   const { state } = useGlobal();
 
   return <StyledHeader theme={state.theme}>
-      <MenuButton/>
       <Searchbar/>
       <DarkmodeButton/>
       <ProfileButton/>

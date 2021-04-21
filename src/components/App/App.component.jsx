@@ -15,12 +15,15 @@ import { VideoDetail } from '../../components/VideoDetail/VideoDetail.component'
 import GlobalProvider from '../../providers/Global.provider';
 import { FavoriteVideos } from '../FavoriteVideos/FavoriteVideos.component';
 import { FavoriteVideoDetail } from '../FavoriteVideoDetail/FavoriteVideoDetail.component';
+import { Modal } from '../Modal/Modal.component';
+import { Menu } from '../Menu/Menu.component';
 
 function App() {
 
   return (
     <BrowserRouter>
       <GlobalProvider>
+        <Menu/>
         <Header/>
             <Layout>
               <Switch>
@@ -31,7 +34,10 @@ function App() {
                   <VideoDetail/>
                 </Route>
                 <Route exact path="/login">
-                  <LoginPage />
+                  <Modal >
+                    <LoginPage/>
+                  </Modal>
+                  {/* <LoginPage /> */}
                 </Route>
                 <Private exact path="/secret">
                   <SecretPage />
