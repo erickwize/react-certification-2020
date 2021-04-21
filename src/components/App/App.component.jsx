@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { fetchSearchVideos } from '../../utils/endpoints';
 import {
   initalState,
@@ -10,11 +10,9 @@ import {
 } from '../../providers/GlobalContext';
 
 import AuthProvider from '../../providers/Auth';
-import HomePage from '../../pages/Home';
-import NotFound from '../../pages/NotFound';
-import Layout from '../Layout';
-import VideoPlayer from '../../pages/VideoPlayer';
 import HeaderMenu from '../Header';
+import Layout from '../Layout';
+import Routes from '../Routes';
 
 function App() {
   const { videoList, updateVideoList } = useVideList([]);
@@ -40,28 +38,7 @@ function App() {
         <HeaderMenu doSearch={doSearch} dispatch={dispatch} />
         <AuthProvider>
           <Layout>
-            <Switch>
-              <Route path="/">
-                {video.title ? (
-                  <VideoPlayer
-                    video={video}
-                    selectCard={selectCard}
-                    relatedVideos={videoList}
-                  />
-                ) : (
-                  <HomePage selectCard={selectCard} videoList={videoList} />
-                )}
-              </Route>
-              <Route exact path="/login">
-                Login
-              </Route>
-              <Route path="/videoplayer">
-                <VideoPlayer video={video} />
-              </Route>
-              <Route path="*">
-                <NotFound />
-              </Route>
-            </Switch>
+            <Routes video={video} selectCard={selectCard} videoList={videoList} />
           </Layout>
         </AuthProvider>
       </GlobalContext.Provider>

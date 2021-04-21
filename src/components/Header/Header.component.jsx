@@ -1,4 +1,11 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import HomeIcon from './img/m_logo.png';
+import LoginIcon from './img/user_icon.png';
+import SearchIcon from './img/search_icon.png';
+import { GlobalContext } from '../../providers/GlobalContext';
+
+// styling
 import {
   Header,
   HeaderWrapper,
@@ -11,10 +18,6 @@ import {
   SearchWrapper,
   SearchSpan,
 } from './Header.styles';
-import HomeIcon from './img/m_logo.png';
-import LoginIcon from './img/user_icon.png';
-import SearchIcon from './img/search_icon.png';
-import { GlobalContext } from '../../providers/GlobalContext';
 
 function HeaderMenu({ doSearch, dispatch }) {
   const { header, history, search } = useContext(GlobalContext);
@@ -26,9 +29,9 @@ function HeaderMenu({ doSearch, dispatch }) {
   return (
     <Header data-testid="yt-header" background={header.background}>
       <HeaderWrapper>
-        <a href="/">
+        <Link to="/">
           <HomeButton img={HomeIcon} />
-        </a>
+        </Link>
         <SearchWrapper background={header.input}>
           <Search
             type="text"
@@ -56,7 +59,9 @@ function HeaderMenu({ doSearch, dispatch }) {
           />
           <HeaderToggleLabel htmlFor="darkMode">Dark mode</HeaderToggleLabel>
         </HeaderToggleWrapper>
-        <LoginMenu img={LoginIcon} />
+        <Link to="/login">
+          <LoginMenu img={LoginIcon} />
+        </Link>
       </HeaderWrapper>
     </Header>
   );
