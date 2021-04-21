@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Videodetailes component Renders Videodetailes without crashing 1`] = `
+<div
+  className="sc-bdvvaa gqXjVR viewdetailes"
+>
+  <iframe
+    className="iframe"
+    height="500"
+    src="https://www.youtube.com/embed/undefined"
+    width="100%"
+  />
+  <div
+    className="iframeTitle"
+  />
+  <div
+    className="iframeDescription"
+  />
+</div>
+`;
