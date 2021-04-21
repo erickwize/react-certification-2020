@@ -1,8 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import renderer from 'react-test-renderer'
-import { fireEvent } from '@testing-library/svelte'
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import { Context, initialState } from '../../../context/context'
 import Menu from '../Menu'
 
