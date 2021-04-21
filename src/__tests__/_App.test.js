@@ -32,7 +32,7 @@ it('Should render App', () => {
 
 it('Should render App Header', () => {
   act(() => {
-    const app = render(<AppLayout />);
+    render(<AppLayout />);
   });
   const headerMenu = screen.getByTestId('yt-header');
   expect(headerMenu).toBeInTheDocument();

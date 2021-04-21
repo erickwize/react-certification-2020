@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, cleanup, render, fireEvent } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { act } from '@testing-library/react-hooks';
 import HeaderMenu from '../components/Header';
 
 afterEach(() => {

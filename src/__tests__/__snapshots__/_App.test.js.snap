@@ -6,157 +6,139 @@ Object {
   "baseElement": <body>
     <div>
       <header
-        class="sc-kstrdz kgciWm"
+        class="sc-bdfBwQ hIHNKi"
         data-testid="yt-header"
       >
         <div
-          class="sc-hBEYos bRMCjK"
+          class="sc-gsTCUz ywWHk"
         >
           <a
             href="/"
           >
             <button
-              class="sc-fodVxV GUHCJ"
+              class="sc-dlfnbm cOuLkH"
             />
           </a>
           <div
-            class="sc-fFubgz jULViu"
+            class="sc-hKgILt ljSDGR"
           >
             <input
-              class="sc-bkzZxe jPuJSt"
+              class="sc-eCssSg iBGkVj"
               id="name"
               placeholder="Search..."
               type="text"
               value="wizeline"
             />
             <span
-              class="sc-idOhPF glGVqe"
+              class="sc-jSgupP hcyBed"
             />
           </div>
         </div>
         <div
-          class="sc-hBEYos bRMCjK"
+          class="sc-gsTCUz ywWHk"
         >
           <div
-            class="sc-dIUggk gKMgRC"
+            class="sc-gKsewC kjfNIn"
           >
             <input
-              class="sc-kfzAmx beWIvh"
+              class="sc-pFZIQ gGzfcK"
               id="darkMode"
               name="darkMode"
               type="checkbox"
             />
             <label
-              class="sc-hHftDr jAMcvD"
+              class="sc-iBPRYJ cpTqSp"
               for="darkMode"
             >
               Dark mode
             </label>
           </div>
-          <button
-            class="sc-dmlrTW eHmABp"
-          />
+          <a
+            href="/login"
+          >
+            <button
+              class="sc-fubCfw iHeQum"
+            />
+          </a>
         </div>
       </header>
       <main
         class="container"
         style="background: rgb(255, 255, 255);"
       >
-        <section
-          data-testid="yt-videocards"
-        >
-          <h1
-            class="sc-gsTCUz fNcPed"
-          >
-            Welcome y’all!
-          </h1>
-          <p>
-            Search result total: 
-            0
-             videos
-          </p>
-          <section
-            class="sc-bdfBwQ fGsqqP"
-          />
-        </section>
+        <h3>
+          <br />
+          Loading...
+        </h3>
       </main>
     </div>
   </body>,
   "container": <div>
     <header
-      class="sc-kstrdz kgciWm"
+      class="sc-bdfBwQ hIHNKi"
       data-testid="yt-header"
     >
       <div
-        class="sc-hBEYos bRMCjK"
+        class="sc-gsTCUz ywWHk"
       >
         <a
           href="/"
         >
           <button
-            class="sc-fodVxV GUHCJ"
+            class="sc-dlfnbm cOuLkH"
           />
         </a>
         <div
-          class="sc-fFubgz jULViu"
+          class="sc-hKgILt ljSDGR"
         >
           <input
-            class="sc-bkzZxe jPuJSt"
+            class="sc-eCssSg iBGkVj"
             id="name"
             placeholder="Search..."
             type="text"
             value="wizeline"
           />
           <span
-            class="sc-idOhPF glGVqe"
+            class="sc-jSgupP hcyBed"
           />
         </div>
       </div>
       <div
-        class="sc-hBEYos bRMCjK"
+        class="sc-gsTCUz ywWHk"
       >
         <div
-          class="sc-dIUggk gKMgRC"
+          class="sc-gKsewC kjfNIn"
         >
           <input
-            class="sc-kfzAmx beWIvh"
+            class="sc-pFZIQ gGzfcK"
             id="darkMode"
             name="darkMode"
             type="checkbox"
           />
           <label
-            class="sc-hHftDr jAMcvD"
+            class="sc-iBPRYJ cpTqSp"
             for="darkMode"
           >
             Dark mode
           </label>
         </div>
-        <button
-          class="sc-dmlrTW eHmABp"
-        />
+        <a
+          href="/login"
+        >
+          <button
+            class="sc-fubCfw iHeQum"
+          />
+        </a>
       </div>
     </header>
     <main
       class="container"
       style="background: rgb(255, 255, 255);"
     >
-      <section
-        data-testid="yt-videocards"
-      >
-        <h1
-          class="sc-gsTCUz fNcPed"
-        >
-          Welcome y’all!
-        </h1>
-        <p>
-          Search result total: 
-          0
-           videos
-        </p>
-        <section
-          class="sc-bdfBwQ fGsqqP"
-        />
-      </section>
+      <h3>
+        <br />
+        Loading...
+      </h3>
     </main>
   </div>,
   "debug": [Function],
