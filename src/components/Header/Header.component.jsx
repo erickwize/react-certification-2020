@@ -9,7 +9,7 @@ import { GlobalContext } from '../../context/GlobalContext';
 function Header() {
   const globalContext = useContext(GlobalContext);
   return (
-    <HeaderWrapper theme={globalContext.theme.colors}>
+    <HeaderWrapper theme={globalContext.colors}>
       <Left>
         <MainMenu />
         <Search />

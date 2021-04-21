@@ -5,14 +5,14 @@ import { GlobalContext } from '../../context/GlobalContext';
 function DarkMode({ children }) {
   const globalContext = useContext(GlobalContext);
   const onClickHandler = () => {
-    globalContext.theme.toggleTheme();
+    globalContext.toggleTheme();
   };
-  console.log(globalContext.theme.colors);
+  // console.log(globalContext.colors);
   return (
     <Wrapper>
       <Switch onClick={onClickHandler}>
-        <Track theme={globalContext.theme.colors} />
-        <Ball className={globalContext.theme.themeId} />
+        <Track theme={globalContext.colors} />
+        <Ball className={globalContext.themeId} />
       </Switch>
       {children}
     </Wrapper>

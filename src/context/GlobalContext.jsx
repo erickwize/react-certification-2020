@@ -16,28 +16,22 @@ const themes = {
 };
 
 export const GlobalContext = React.createContext({
-  search: {
-    query: '',
-    setQuery: () => {},
-  },
-  theme: {
-    themeId: '',
-    setThemeId: () => {},
-    colors: {},
-  },
-  video: {
-    vidId: '',
-    setVidId: () => {},
-    vidObject: {},
-    setVidObject: () => {},
-  },
+  query: '',
+  setQuery: () => {},
+  themeId: '',
+  setThemeId: () => {},
+  colors: {},
+  vidId: '',
+  setVidId: () => {},
+  vidObject: {},
+  setVidObject: () => {},
 });
 
 const GlobalContextProvider = (props) => {
-  const [theQuery, setTheQuery] = useState('');
-  const setQueryHandler = (query) => {
-    console.log(query);
-    setTheQuery(query);
+  const [query, setQuery] = useState('');
+  const setQueryHandler = (q) => {
+    console.log('GlobalContext:setQueryHandler', q);
+    setQuery(q);
   };
   const [themeId, setThemeId] = useState('light');
   const [colors, setColors] = useState(themes.light);
@@ -50,20 +44,30 @@ const GlobalContextProvider = (props) => {
       setColors(themes.light);
     }
   };
-  const [cVideo, setCVideo] = useState('');
-  const setCVideoHandler = (vid) => {
-    console.log('GlobalContext', vid);
-    setCVideo(vid);
+  const [vidId, setVidId] = useState('');
+  const [vidObject, setVidObject] = useState('');
+  const setVidIdHandler = (vi) => {
+    console.log('GlobalContext:setVidIdHandler', vi);
+    setVidId(vi);
   };
-  const searchObject = { query: theQuery, setQuery: setQueryHandler };
-  const themeObject = { themeId, toggleTheme, colors };
-  const videoObject = {
-    currVid: cVideo,
-    setCurrVid: setCVideoHandler,
+  const setVidObjectHandler = (vo) => {
+    console.log('GlobalContext:setVidObjectHandler', vo);
+    setVidObject(vo);
   };
   return (
     <GlobalContext.Provider
-      value={{ search: searchObject, theme: themeObject, video: videoObject }}
+      value={{
+        query,
+        setQuery: setQueryHandler,
+        themeId,
+        setThemeId,
+        toggleTheme,
+        colors,
+        vidId,
+        setVidId: setVidIdHandler,
+        vidObject,
+        setVidObject: setVidObjectHandler,
+      }}
     >
       {props.children}
     </GlobalContext.Provider>

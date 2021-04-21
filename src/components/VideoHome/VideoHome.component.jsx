@@ -12,28 +12,25 @@ function VideoHome() {
       case 'youtube':
         return {};
       case 'mockdata':
-        console.log('VideoHome:search', globalContext.search);
+        // console.log('VideoHome:search', globalContext);
         return data.items
           .filter((item) => item.id.kind === 'youtube#video')
           .filter((item) =>
             (item.snippet.title + item.snippet.description)
               .toLowerCase()
-              .includes(globalContext.search.query.toLowerCase())
+              .includes(globalContext.query.toLowerCase())
           );
       default:
         return {};
     }
   };
-  const hasItems = (input) => {
-    return typeof input.id !== 'undefined';
-  };
 
   return (
     <Wrapper>
-      {hasItems(globalContext.video.currVid) && <VideoDetail />}
+      {globalContext.vidId && <VideoDetail />}
       <VideoList items={preprocessResults(ytdata, 'mockdata')} />
-      <p>{globalContext.theme.colors.background}</p>
-      <p>{globalContext.theme.colors.text}</p>
+      <p>{globalContext.colors.background}</p>
+      <p>{globalContext.colors.text}</p>
     </Wrapper>
   );
 }

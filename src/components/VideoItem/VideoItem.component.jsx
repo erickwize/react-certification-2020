@@ -6,7 +6,9 @@ function VideoItem({ item }) {
   const globalContext = useContext(GlobalContext);
   const text = item.snippet.title.replace(/&#39;/g, "'");
   const onClickHandler = () => {
-    globalContext.video.setCurrVid(item);
+    console.log('VideoItem:onClickHandler', item);
+    globalContext.setVidObject(item);
+    globalContext.setVidId(item.id.videoId);
   };
   return (
     <Wrapper key={item.etag} onClick={onClickHandler}>

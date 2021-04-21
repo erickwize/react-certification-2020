@@ -5,24 +5,15 @@ import { Wrapper } from './VideoList.styled';
 function VideoList({ items }) {
   const hasItems = (input) => {
     if (typeof input !== 'undefined' && input !== null && input !== 'undefined') {
-      console.log(items);
+      console.log('VideoList:hasItems\n', items);
       return true;
     }
     return false;
   };
   return (
-    <>
-      <Wrapper>
-        {!hasItems(items) && <p>No items found</p>}
-        {hasItems(items) && (
-          <>
-            {items.map((v) => (
-              <VideoItem item={v} key={v.etag} />
-            ))}
-          </>
-        )}
-      </Wrapper>
-    </>
+    <Wrapper>
+      {hasItems(items) && items.map((v) => <VideoItem item={v} key={v.etag} />)}
+    </Wrapper>
   );
 }
 

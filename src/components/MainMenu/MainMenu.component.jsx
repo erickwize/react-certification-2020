@@ -7,9 +7,9 @@ function MainMenu() {
   return (
     <Wrapper>
       <HamButton>
-        <HamLine theme={globalContext.theme.colors} />
-        <HamLine theme={globalContext.theme.colors} />
-        <HamLine theme={globalContext.theme.colors} />
+        <HamLine theme={globalContext.colors} />
+        <HamLine theme={globalContext.colors} />
+        <HamLine theme={globalContext.colors} />
       </HamButton>
     </Wrapper>
   );
