@@ -4,6 +4,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import HomePage from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
 import VideoPlayer from '../../pages/VideoPlayer';
+import UserLogin from '../../pages/Login';
 
 export default function Routes({ selectCard, videoList, video }) {
   const loading = !videoList.length;
@@ -23,7 +24,7 @@ export default function Routes({ selectCard, videoList, video }) {
           )}
         </Route>
         <Route exact path="/login">
-          Login
+          <UserLogin />
         </Route>
         <Route path="/player/:videoId">
           <VideoPlayer video={video} selectCard={selectCard} relatedVideos={videoList} />
