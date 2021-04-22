@@ -6,7 +6,7 @@ import useVideoList from '../../utils/hooks/useFetch';
 import { useGlobalProvider } from '../../store/global/global.provider';
 
 const PlayList = ({ videoId }) => {
-  const { videosRelated, error } = useVideoList(videoId, true);
+  const { videosRelated, error } = useVideoList(videoId);
   const { dispatch } = useGlobalProvider();
 
   const onSelectVideo = (videoSelected) => {

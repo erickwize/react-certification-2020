@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ThemeButton from '../components/ThemeButton/ThemeButton';
-import GlobalProvider from '../store/global/Global.provider';
+import GlobalProvider from '../store/global/global.provider';
 
 test('Test ThemeButton components', async () => {
   render(

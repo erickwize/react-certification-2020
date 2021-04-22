@@ -1915,3 +1915,54 @@ export const mockSearch = {
     },
   ],
 };
+
+export const mockFavorites = [
+  {
+    videoId: 'YuW0CE_8i1I',
+    title: 'Wizeline Thrives in Mexico City',
+    description:
+      'Our vibrant Mexico City office is home to agile software engineers, talented UX designers, and brilliant data scientists. Learn about the rich history of Mexico City.',
+    channelTitle: 'Wizeline',
+    url: 'https://i.ytimg.com/vi/YuW0CE_8i1I/mqdefault.jpg',
+  },
+  {
+    videoId: '7PtYNO6g7eI',
+    title: 'We Are Wizeline',
+    description:
+      'Engineering a better tomorrow. Wizeline is a global software development company that helps its clients solve their biggest challenges with design and ...',
+    channelTitle: 'Wizeline',
+    url: 'https://i.ytimg.com/vi/7PtYNO6g7eI/mqdefault.jpg',
+  },
+  {
+    videoId: 'nmXMgqjQzls',
+    title: 'Video Tour | Welcome to Wizeline Guadalajara',
+    description:
+      'Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office. In 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, ...',
+    channelTitle: 'Wizeline',
+    url: 'https://i.ytimg.com/vi/nmXMgqjQzls/mqdefault.jpg',
+  },
+  {
+    videoId: 'vlDzYIIOYmM',
+    title: 'GoPro HERO5 + Karma: The Launch in 4K',
+    description:
+      'More than a drone: Karma is an aerial, hand-held and mountable stabilization solution. And yes, it includes a drone! Hollywood in a backpack for $799.',
+    channelTitle: 'GoPro',
+    url: 'https://i.ytimg.com/vi/vlDzYIIOYmM/mqdefault.jpg',
+  },
+  {
+    videoId: 'gsNY7TV4r1M',
+    title: 'GoPro: Karma On The Road',
+    description:
+      'Ride along with Morgan, Jared and Hadlie as they cruise the West Coast in their vintage VW Microbus. From urban cityscapes to untouched natural vistas. Captured with GoPro Karma on the ground and in the air.  Follow along by following @MorganBrechler and @JaredMarvel\n\nShot 100% on the HERO5® camera from http://GoPro.com. Enjoy hands-free control of GoPro Hero5 using simple voice commands in 7 different languages. \n\nGet stoked and subscribe: http://goo.gl/HgVXpQ\n\nTo license clips from this video go to https://licensing.gopro.com \n\nMusic\n"Rebels in the Light (Ana-Tole Remix)" by Manicanparty\n\nManicanParty\nSpotify: https://goo.gl/INDlLu \nFacebook: https://www.facebook.com/Manicanparty\nSoundCloud: https://soundcloud.com/manicanparty\n\nAna-Tole\nSpotify: https://goo.gl/Hgi3aQ\nFacebook: https://www.facebook.com/iamanatole\nSoundCloud: https://soundcloud.com/ana-tole\n\nFor more from GoPro, follow us:\nFacebook: https://www.facebook.com/gopro\nTwitter: https://twitter.com/gopro\nInstagram: https://instagram.com/gopro\nTumblr: http://gopro.tumblr.com/\nPinterest: http://www.pinterest.com/gopro \nVine: https://goo.gl/m3nQz7',
+    channelTitle: 'GoPro',
+    url: 'https://i.ytimg.com/vi/gsNY7TV4r1M/mqdefault.jpg',
+  },
+  {
+    videoId: 'Uw-_l57N3RM',
+    title: 'Pinturas rupestres en México | Baja trip #7 Alan por el mundo',
+    description:
+      'En este video visitamos cataviñá, su impresionante desierto y sus pinturas rupestres con más de 3000 años de antigüedad. Llegamos a Bahía de los ángeles ...',
+    channelTitle: 'alanxelmundo',
+    url: 'https://i.ytimg.com/vi/Uw-_l57N3RM/mqdefault.jpg',
+  },
+];

@@ -23,7 +23,7 @@ const PlayVideo = ({
         <Title>{title}</Title>
         {!favorite ? (
           <Button onClick={add} show={user}>
-            AÑADIR A FAVORITOS{' '}
+            AÑADIR A FAVORITOS
           </Button>
         ) : (
           <Button onClick={remove} show={user}>

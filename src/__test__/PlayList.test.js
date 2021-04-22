@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import GlobalProvider from '../store/global/Global.provider';
+import GlobalProvider from '../store/global/global.provider';
 import PlayList from '../components/PlayList/PlayList';
 import { mockVideos } from '../mockData';
 

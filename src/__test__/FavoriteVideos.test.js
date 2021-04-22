@@ -1,25 +1,20 @@
 import React, { useReducer } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
 import { Route, Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-// import GlobalProvider from '../store/global/global.provider';
-import Video from '../pages/Video/Video';
-import { mockVideos } from '../mockData';
+import FavoriteVideo from '../pages/FavoriteVideo/FavoriteVideo.page';
+import { mockFavorites } from '../mockData';
 import { GlobalContext } from '../store/global/global.provider';
 import { globalReducer } from '../store/global/GlobalReducer';
 
 describe('Testing Video Component', () => {
   const history = createMemoryHistory();
-
   const initialState = {
-    videoList: [],
-    favoriteVideos: [],
+    favoriteVideos: mockFavorites,
     user: { name: 'Wizeline' },
-    videoSelected: null,
+    videoSelected: mockFavorites[1],
   };
 
   function GlobalProvider({ children }) {
@@ -36,7 +31,7 @@ describe('Testing Video Component', () => {
     return (
       <GlobalProvider>
         <Router history={history}>
-          <Route path="/video/:videoId">{children}</Route>
+          <Route path="/favorites/:videoId">{children}</Route>
         </Router>
       </GlobalProvider>
     );
@@ -50,35 +45,25 @@ describe('Testing Video Component', () => {
     return render(ui, { wrapper: allProviders });
   };
 
-  const server = setupServer(
-    rest.get('https://youtube.googleapis.com/youtube/v3/search', (req, res, ctx) => {
-      return res(ctx.json(mockVideos));
-    })
-  );
-
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
-
   it('landing on a wrong page', async () => {
-    renderWithRouter(<Video />, { videoRoute: '/noVideo' });
+    renderWithRouter(<FavoriteVideo />, { videoRoute: '/someRoute' });
 
-    expect(history.location.pathname).not.toBe('/video/nmXMgqjQzls');
+    expect(history.location.pathname).not.toBe('/favorites/7PtYNO6g7eI');
   });
 
   it('Full Video Component rendered ', async () => {
-    renderWithRouter(<Video />, { videoRoute: '/video/nmXMgqjQzls' });
+    renderWithRouter(<FavoriteVideo />, { videoRoute: '/favorites/7PtYNO6g7eI' });
 
-    expect(history.location.pathname).toBe('/video/nmXMgqjQzls');
+    expect(history.location.pathname).toBe('/favorites/7PtYNO6g7eI');
     // Looking for PlayList elements
     const images = await screen.findAllByRole('img');
-    expect(images.length).toBe(24);
+    expect(images.length).toBe(6);
 
     const heading = await screen.findAllByRole('heading', { level: 5 });
-    expect(heading.length).toBe(24);
+    expect(heading.length).toBe(6);
 
     const cardLink = await screen.findAllByRole('link');
-    expect(cardLink.length).toBe(24);
+    expect(cardLink.length).toBe(6);
 
     // Looking for PlayVideo elements
     const iFrame = await screen.findByTitle('playVideo');
@@ -87,39 +72,47 @@ describe('Testing Video Component', () => {
     const headingVideo = await screen.findByRole('heading', { level: 2 });
     expect(headingVideo).toBeInTheDocument();
 
-    // Button only visible for users
-    expect(await screen.findByText('AÑADIR A FAVORITOS')).toBeInTheDocument();
+    const button = await screen.findByRole('button');
+    expect(button).toBeInTheDocument();
+    expect(await screen.findByText('ELIMINAR DE FAVORITOS')).toBeInTheDocument();
 
     const paragraph = await screen.findByTestId('paragraph');
     expect(paragraph).toBeInTheDocument();
 
     // Rendering selected video
     const paragraphVideo = await screen.findByText(
-      'Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office. In 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, ...'
+      'Engineering a better tomorrow. Wizeline is a global software development company that helps its clients solve their biggest challenges with design and ...'
     );
     expect(paragraphVideo).toBeInTheDocument();
 
     // Show title twice (selected video and list container)
-    const title = await screen.findAllByText(
-      'Video Tour | Welcome to Wizeline Guadalajara'
-    );
+    const title = await screen.findAllByText('We Are Wizeline');
     expect(title.length).toBe(2);
   });
 
-  it('Adding favorite video and changind selected video', async () => {
-    renderWithRouter(<Video />, { videoRoute: '/video/nmXMgqjQzls' });
+  it('Changind selected video', async () => {
+    renderWithRouter(<FavoriteVideo />, { videoRoute: '/favorites/7PtYNO6g7eI' });
 
-    const button = await screen.findByText('AÑADIR A FAVORITOS');
-    userEvent.click(button);
-    expect(await screen.findByText('ELIMINAR DE FAVORITOS')).toBeInTheDocument();
-
-    expect(history.location.pathname).toBe('/video/nmXMgqjQzls');
+    expect(history.location.pathname).toBe('/favorites/7PtYNO6g7eI');
 
     const cardLink = await screen.findAllByRole('link');
-    expect(cardLink.length).toBe(24);
+    expect(cardLink.length).toBe(6);
 
     // Changing selected video
     userEvent.click(cardLink[2]);
-    expect(history.location.pathname).toBe('/video/Po3VwR_NNGk');
+    expect(history.location.pathname).toBe('/favorites/nmXMgqjQzls');
+  });
+
+  it('Removing a favorite video', async () => {
+    renderWithRouter(<FavoriteVideo />, { videoRoute: '/favorites/7PtYNO6g7eI' });
+
+    expect((await screen.findAllByRole('link')).length).toBe(6);
+
+    // Removing a video
+    const button = await screen.findByText('ELIMINAR DE FAVORITOS');
+    userEvent.click(button);
+    expect((await screen.findAllByRole('link')).length).toBe(5);
+    expect(await screen.findByText('AÑADIR A FAVORITOS')).toBeInTheDocument();
+    // const cardLink = await screen.findAllByRole('link');
   });
 });

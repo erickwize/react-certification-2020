@@ -5,7 +5,7 @@ import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
 import Search from '../components/Search/Search';
-import GlobalProvider from '../store/global/Global.provider';
+import GlobalProvider from '../store/global/global.provider';
 
 const history = createMemoryHistory();
 const allProviders = ({ children }) => {
@@ -48,5 +48,3 @@ describe('ThemeButton test', () => {
     expect(history.location.pathname).toBe('/');
   });
 });
-
-// SIMULATE API CALL HERE

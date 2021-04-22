@@ -4,9 +4,9 @@ import userEvent from '@testing-library/user-event';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import GlobalProvider from '../store/global/Global.provider';
+import GlobalProvider from '../store/global/global.provider';
 import VideoCard from '../components/VideoCard/VideoCard';
-import { mockVideos } from '../mockData';
+import { mockFavorites } from '../mockData';
 
 const history = createMemoryHistory();
 const allProviders = ({ children }) => {
@@ -18,7 +18,7 @@ const allProviders = ({ children }) => {
 };
 
 test('render videoCard component', async () => {
-  const firstElement = mockVideos?.items[1];
+  const firstElement = mockFavorites[1];
   render(<VideoCard data={firstElement} />, { wrapper: allProviders });
 
   // Looking for elements
@@ -36,8 +36,10 @@ test('render videoCard component', async () => {
 
   // User events
   userEvent.click(cardLink);
-  expect(history.location.pathname).toBe('/video/HYyRZiwBWc8');
+  expect(history.location.pathname).toBe('video/7PtYNO6g7eI');
   expect(
-    await screen.findByText('Wizeline Guadalajara | Bringing Silicon Valley to Mexico')
+    await screen.findByText(
+      'Engineering a better tomorrow. Wizeline is a global software development company that helps its clients solve their biggest challenges with design and ...'
+    )
   ).toBeInTheDocument();
 });

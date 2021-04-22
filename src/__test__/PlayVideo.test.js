@@ -6,10 +6,13 @@ import { createMemoryHistory } from 'history';
 
 import GlobalProvider from '../store/global/Global.provider';
 import PlayVideo from '../components/PlayVideo/PlayVideo';
-import { mockVideos } from '../mockData';
+import { mockFavorites } from '../mockData';
 
-const { videoId } = mockVideos.items[1].id;
-const videoSelected = mockVideos.items[1];
+const user = { name: 'Wizeline' };
+const videoSelected = mockFavorites[1];
+const favorite = true;
+const addFavorite = jest.fn();
+const removeFavorite = jest.fn();
 
 const history = createMemoryHistory();
 const allProviders = ({ children }) => {
@@ -21,9 +24,12 @@ const allProviders = ({ children }) => {
 };
 
 test('Test PlayVideo component', async () => {
-  render(<PlayVideo videoId={videoId} videoSelected={videoSelected} />, {
-    wrapper: allProviders,
-  });
+  render(
+    <PlayVideo video={{ user, videoSelected, favorite, addFavorite, removeFavorite }} />,
+    {
+      wrapper: allProviders,
+    }
+  );
 
   // Looking for elements
   const iFrame = screen.getByTitle('playVideo');
@@ -46,7 +52,4 @@ test('Test PlayVideo component', async () => {
   expect(await screen.findByText('ELIMINAR DE FAVORITOS')).toBeInTheDocument();
   expect(onClickButton).toHaveBeenCalledTimes(1);
   // After delete video
-  onClickButton();
-  expect(await screen.findByText('AÑADIR A FAVORITOS')).toBeInTheDocument();
-  expect(onClickButton).toHaveBeenCalledTimes(2);
 });

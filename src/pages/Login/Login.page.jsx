@@ -26,6 +26,7 @@ function LoginPage() {
   const [password, setPassword] = useState('');
 
   const { background } = location.state || { background: { pathname: '/' } };
+
   const authenticate = async (event) => {
     event.preventDefault();
     const authenticated = await loginUser(dispatch, userName, password);

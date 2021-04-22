@@ -66,15 +66,9 @@
   "jest": {
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "/src/pages/Login/",
-      "/src/pages/NotFound/",
-      "/src/pages/Secret/",
-      "/src/GlobalStyle.js",
       "/src/components/Fortune/",
       "/src/components/Layout/",
-      "/src/components/Private/",
-      "/src/providers/Auth/",
-      "/src/utils/",
+      "/src/utils/storage.js",
       "/src/MockLogo"
     ],
     "coverageThreshold": {

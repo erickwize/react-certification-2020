@@ -21,7 +21,11 @@ const LoginButton = () => {
 
   const value = user ? <>Log out</> : <>Sign in</>;
 
-  return <Button onClick={handleButton}>{value}</Button>;
+  return (
+    <Button title="singInButton" onClick={handleButton}>
+      {value}
+    </Button>
+  );
 };
 
 export default LoginButton;

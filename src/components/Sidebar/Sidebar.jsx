@@ -15,7 +15,7 @@ const Sidebar = ({ menu, setMenu }) => {
   return (
     <Container show={menu ? 1 : 0}>
       <Menu>
-        <h3>Wizeline</h3>
+        <h3>{user && user.name}</h3>
         <Link to="/" onClick={handleSidebar}>
           Home
         </Link>

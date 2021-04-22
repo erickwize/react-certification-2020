@@ -9,7 +9,7 @@ import { setupServer } from 'msw/node';
 import App from '../components/App/App.component';
 import { mockVideos, mockSearch } from '../mockData';
 import { globalReducer } from '../store/global/GlobalReducer';
-import { GlobalContext } from '../store/global/Global.provider';
+import { GlobalContext } from '../store/global/global.provider';
 
 describe('Testing App component ', () => {
   const history = createMemoryHistory();
@@ -40,7 +40,6 @@ describe('Testing App component ', () => {
   const server = setupServer(
     rest.get('https://youtube.googleapis.com/youtube/v3/search', (req, res, ctx) => {
       const search = req.url.searchParams.get('q');
-      console.log(search);
 
       if (search === 'Wizeline') return res(ctx.json(mockVideos));
 
@@ -67,12 +66,12 @@ describe('Testing App component ', () => {
     expect(search).toBeInTheDocument();
 
     const themeButton = screen.getAllByRole('button');
-    expect(themeButton.length).toBe(2);
+    expect(themeButton.length).toBe(3);
 
     const iconTheme = screen.getByTitle('MoonButton');
     expect(iconTheme).toBeInTheDocument();
 
-    const singIn = screen.getByRole('link', { name: /Sign in/i });
+    const singIn = screen.getByText('Sign in');
     expect(singIn).toBeInTheDocument();
 
     // Looking for home elements
@@ -87,7 +86,7 @@ describe('Testing App component ', () => {
     expect(imagen.length).toBe(24);
 
     const heading = screen.getAllByRole('heading', { level: 3 });
-    expect(heading.length).toBe(24);
+    expect(heading.length).toBe(25);
 
     const description = screen.getAllByTestId('paragraph');
     expect(description.length).toBe(24);

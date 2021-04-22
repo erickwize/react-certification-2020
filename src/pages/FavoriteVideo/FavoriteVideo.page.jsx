@@ -29,8 +29,7 @@ const FavoriteVideo = () => {
   /* eslint-disable */
 
   const addFavorite = (newVideo) => {
-    const newFavorites = [...favoriteVideos];
-    newFavorites.push(newVideo);
+    const newFavorites = [...favoriteVideos, newVideo];
     addVideo(dispatch, newFavorites);
   };
 
