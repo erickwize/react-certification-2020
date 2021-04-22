@@ -1,7 +1,5 @@
-import { useEffect } from "react"
 import CardList from "../components/CardList/CardList"
-import Layout from "../components/Layout/Layout"
-import DataProvider, { useData } from "../state/DataProvider"
+// challenge 5
 
 const Index = () => {
       
