@@ -56,3 +56,15 @@ export const VideoThumbnailInfo = styled.p`
     color: #919191;
     margin: 10px 0 0 0px;
 `;
+
+export const AddToFavoritesButton = styled(motion.div)`
+    height: 42px;
+    margin: -260px 0 0 270px;
+    width: 42px;
+    svg{
+        cursor: pointer;
+        fill: ${props => props.theme.videoDetail.svgColor};
+        float: right;
+        z-index: 1;
+    }
+`;

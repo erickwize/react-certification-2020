@@ -30,7 +30,7 @@ export const FavoriteVideos = () => {
                     data.map(video =>
                         <Link key={video.etag} to={`/favorites/${video.id}`}>
                         <VideoGridItem key={video.etag}
-                        video={video}/>
+                        video={video} renderedFromFavorites={true}/>
                         </Link>
                     )
                 }
