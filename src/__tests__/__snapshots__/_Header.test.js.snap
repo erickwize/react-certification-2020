@@ -12,13 +12,9 @@ Object {
         <div
           class="sc-gsTCUz ywWHk"
         >
-          <a
-            href="/"
-          >
-            <button
-              class="sc-dlfnbm cOuLkH"
-            />
-          </a>
+          <button
+            class="sc-dlfnbm cOuLkH"
+          />
           <div
             class="sc-hKgILt ljSDGR"
           >
@@ -54,7 +50,7 @@ Object {
             </label>
           </div>
           <button
-            class="sc-fubCfw iHeQum"
+            class="sc-fubCfw dDcTFR"
           />
         </div>
       </header>
@@ -68,13 +64,9 @@ Object {
       <div
         class="sc-gsTCUz ywWHk"
       >
-        <a
-          href="/"
-        >
-          <button
-            class="sc-dlfnbm cOuLkH"
-          />
-        </a>
+        <button
+          class="sc-dlfnbm cOuLkH"
+        />
         <div
           class="sc-hKgILt ljSDGR"
         >
@@ -110,7 +102,7 @@ Object {
           </label>
         </div>
         <button
-          class="sc-fubCfw iHeQum"
+          class="sc-fubCfw dDcTFR"
         />
       </div>
     </header>

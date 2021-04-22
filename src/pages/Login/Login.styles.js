@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { color, fontSize } from '../../utils/globalStyle';
 
-export const LoginView = styled.form`
+export const LoginView = styled.div`
   height: 100vh;
 `;
 export const LoginForm = styled.form`

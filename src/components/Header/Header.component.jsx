@@ -32,15 +32,25 @@ function HeaderMenu({ doSearch, dispatch }) {
     }
   };
 
-  const updatePage = (url) => {
+  const updatePage = (page) => {
+    const urls = {
+      login: '/login',
+      logout: '/',
+      home: '/',
+      favorites: `/user/${user.id || 'sweetie'}`,
+    };
+    if (page === 'logout') {
+      dispatch({ type: 'REMOVE_USER_INFO', payload: {} });
+      dispatch({ type: 'SET_FAVS_LIST', payload: {} });
+    }
     setMenuVisibility(false);
-    urlHistory.push(url);
+    urlHistory.push(urls[page]);
   };
 
   return (
     <Header data-testid="yt-header" background={header.background}>
       <HeaderWrapper>
-        <HomeButton img={HomeIcon} onClick={() => updatePage('/')} />
+        <HomeButton img={HomeIcon} onClick={() => updatePage('home')} />
         <SearchWrapper background={header.input}>
           <Search
             type="text"
@@ -68,13 +78,16 @@ function HeaderMenu({ doSearch, dispatch }) {
           />
           <HeaderToggleLabel htmlFor="darkMode">Dark mode</HeaderToggleLabel>
         </HeaderToggleWrapper>
-        <LoginMenu img={LoginIcon} onClick={() => setMenuVisibility(!showMenu)} />
+        <LoginMenu
+          img={user.id ? user.avatarUrl : LoginIcon}
+          onClick={() => setMenuVisibility(!showMenu)}
+        />
         {showMenu ? (
           <HeaderMenuWrapper>
-            <HeaderMenuLink onClick={() => updatePage('/login')}>
+            <HeaderMenuLink onClick={() => updatePage(user.id ? 'logout' : 'login')}>
               {user.id ? 'Log out' : 'Log in'}
             </HeaderMenuLink>
-            <HeaderMenuLink onClick={() => updatePage('/user/favorites')}>
+            <HeaderMenuLink onClick={() => updatePage('favorites')}>
               Favorites
             </HeaderMenuLink>
           </HeaderMenuWrapper>

@@ -23,7 +23,7 @@ export default function Routes({ selectCard, videoList, video, dispatch }) {
           )}
         </Route>
         <Route exact path="/login">
-          <UserLogin />
+          <UserLogin dispatch={dispatch} />
         </Route>
         <Route path="/player/:videoId">
           <VideoPlayer video={video} selectCard={selectCard} relatedVideos={videoList} />

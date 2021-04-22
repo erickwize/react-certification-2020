@@ -50,18 +50,8 @@ Object {
             </label>
           </div>
           <button
-            class="sc-fubCfw iHeQum"
+            class="sc-fubCfw dDcTFR"
           />
-          <a
-            href="/login"
-          >
-            Log in
-          </a>
-          <a
-            href="/user/favs"
-          >
-            Favorites
-          </a>
         </div>
       </header>
       <main
@@ -121,18 +111,8 @@ Object {
           </label>
         </div>
         <button
-          class="sc-fubCfw iHeQum"
+          class="sc-fubCfw dDcTFR"
         />
-        <a
-          href="/login"
-        >
-          Log in
-        </a>
-        <a
-          href="/user/favs"
-        >
-          Favorites
-        </a>
       </div>
     </header>
     <main
