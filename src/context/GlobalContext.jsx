@@ -25,6 +25,10 @@ export const GlobalContext = React.createContext({
   setVidId: () => {},
   vidObject: {},
   setVidObject: () => {},
+  sessionData: null,
+  setSessionData: () => {},
+  favorites: [],
+  setFavorites: () => {},
 });
 
 const GlobalContextProvider = (props) => {
@@ -54,6 +58,9 @@ const GlobalContextProvider = (props) => {
     console.log('GlobalContext:setVidObjectHandler', vo);
     setVidObject(vo);
   };
+  const [sessionData, setSessionData] = useState({
+    loggedIn: false,
+  });
   return (
     <GlobalContext.Provider
       value={{
@@ -67,6 +74,8 @@ const GlobalContextProvider = (props) => {
         setVidId: setVidIdHandler,
         vidObject,
         setVidObject: setVidObjectHandler,
+        sessionData,
+        setSessionData,
       }}
     >
       {props.children}

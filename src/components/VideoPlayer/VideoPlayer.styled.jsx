@@ -8,9 +8,15 @@ export const Wrapper = styled.div`
     width: 100%;
   }
 `;
-export const Title = styled.p`
-  font-size: 13px;
-  margin-top: 0;
+export const InfoWrapper = styled.div`
+  display: flex;
+  width: 100%;
+`;
+export const Title = styled.div`
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 18px;
 `;
 export const Thumbnail = styled.img`
   border-radius: 15px;
@@ -27,5 +33,16 @@ export const Iframe = styled.iframe`
   object-fit: cover;
   @media (max-width: 500px) {
     max-height: 140px;
+  }
+`;
+export const Favorite = styled.div`
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  &:after {
+    content: '★';
+    font-size: 35px;
+    color: ${(props) => (props.active === true ? 'yellow' : 'grey')};
   }
 `;

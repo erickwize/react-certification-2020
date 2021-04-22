@@ -6,10 +6,11 @@ import './NotFound.styles.css';
 function NotFoundPage() {
   return (
     <section className="not-found">
+      <p>Wow! we couldn´t find what you were looking for.</p>
+      <p>Try again</p>
       <Link to="/" className="home-link">
-        home
+        Go to Home
       </Link>
-      <img src="404.gif" alt="page not found" />
     </section>
   );
 }

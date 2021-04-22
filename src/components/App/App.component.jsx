@@ -8,6 +8,8 @@ import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
 import Layout from '../Layout';
+import VideoDetailPage from '../../pages/VideoDetail';
+import FavoritePage from '../../pages/Favorite';
 
 function App() {
   return (
@@ -17,6 +19,15 @@ function App() {
           <Switch>
             <Route exact path="/">
               <HomePage />
+            </Route>
+            <Route exact path="/detail">
+              <VideoDetailPage />
+            </Route>
+            <Route exact path="/favorites">
+              <FavoritePage />
+            </Route>
+            <Route exact path="/favoritedetail">
+              <VideoDetailPage favorite />
             </Route>
             <Route exact path="/login">
               <LoginPage />

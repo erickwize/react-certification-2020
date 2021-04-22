@@ -10,6 +10,27 @@ const Avatar = styled.div`
   border-radius: 100px;
   background-color: #409287;
   box-shadow: 0 0 10px #ffffff;
+  cursor: pointer;
+  &.logged {
+    &:after {
+      content: '🧑🏻';
+      font-size: 35px;
+      border-radius: 100px;
+      text-align: center;
+      width: 100%;
+      display: block;
+    }
+  }
+  &.notlogged {
+    &:after {
+      content: '👤';
+      font-size: 35px;
+      border-radius: 100px;
+      text-align: center;
+      width: 100%;
+      display: block;
+    }
+  }
 `;
 
 export { Wrapper, Avatar };

@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 10px;
   cursor: pointer;
+  width: ${(props) => (typeof props.related === 'undefined' ? '25%' : '100%')};
   @media (max-width: 500px) {
     width: 100%;
   }

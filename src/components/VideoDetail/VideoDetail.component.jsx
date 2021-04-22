@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import VideoList from '../VideoList';
 import VideoPlayer from '../VideoPlayer';
-import { Wrapper } from './VideoDetail.styled';
+import { Wrapper, Related } from './VideoDetail.styled';
 import { useFetch } from '../../hooks/useFetch';
 import { GlobalContext } from '../../context/GlobalContext';
 
 function VideoDetail() {
+  const history = useHistory();
   const globalContext = useContext(GlobalContext);
-  // const { url } = useFetch(globalContext.vidId);
-  // console.log('VideoDetail:url', url);
+  if (globalContext.vidId === '') {
+    history.push('/');
+  }
   const demoData = () => {
     const data = {
       kind: 'youtube#searchListResponse',
@@ -252,21 +255,22 @@ function VideoDetail() {
     return { data, error, loading };
   };
   console.log('VideoDetail', globalContext.vidId);
+  // Switch comments to enable API calls. Done this to save calls while testing
   const { data, error, loading } = useFetch(globalContext.vidId);
   // const { data, error, loading } = demoData();
   console.log('VideoDetail:demoData', data, error, loading);
 
   if (loading) return <h1>Cargando...</h1>;
-  if (error) return <h1>Hola Error{JSON.stringify(error)}</h1>;
+  if (error) return <h1>Hola Error {JSON.stringify(error)}</h1>;
 
   return (
     <Wrapper>
       <VideoPlayer />
       {data && (
-        <div>
+        <Related>
           <h3>Related videos</h3>
-          {data.items && <VideoList items={data.items} />}
-        </div>
+          {data.items && <VideoList items={data.items} related />}
+        </Related>
       )}
     </Wrapper>
   );

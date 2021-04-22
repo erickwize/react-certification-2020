@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
+import { GlobalContext } from '../../context/GlobalContext';
 
 import { useAuth } from '../../providers/Auth';
 import './Login.styles.css';
@@ -7,16 +8,18 @@ import './Login.styles.css';
 function LoginPage() {
   const { login } = useAuth();
   const history = useHistory();
+  const globalContext = useContext(GlobalContext);
 
   function authenticate(event) {
     event.preventDefault();
+    globalContext.setSessionData({ loggedIn: true });
     login();
-    history.push('/secret');
+    history.push('/favorites');
   }
 
   return (
     <section className="login">
-      <h1>Welcome back!</h1>
+      <h1>Welcome, please login.</h1>
       <form onSubmit={authenticate} className="login-form">
         <div className="form-group">
           <label htmlFor="username">
@@ -30,7 +33,7 @@ function LoginPage() {
             <input required type="password" id="password" />
           </label>
         </div>
-        <button type="submit">login</button>
+        <button type="submit">Login</button>
       </form>
     </section>
   );

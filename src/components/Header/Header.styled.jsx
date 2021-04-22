@@ -19,5 +19,12 @@ const Right = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+const Favorite = styled.div`
+  display: inline-block;
+  font-size: 30px;
+  text-align: center;
+  padding: 5px;
+  transform: translateY(-10px);
+`;
 
-export { HeaderWrapper, Left, Right };
+export { HeaderWrapper, Left, Right, Favorite };
