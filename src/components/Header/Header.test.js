@@ -1,10 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Header } from './Header.component';
+import GlobalProvider from '../../providers/Global.provider';
 
 describe('Header component', ()=>{
     it('should render correctly', ()=>{
-        render(<Header />);
+        render(<GlobalProvider>
+                <Header />
+            </GlobalProvider>);
         const menuButton = screen.getByTestId('menuButton');
         const searchbar = screen.getByTestId('searchbar');
         const darkmodeButton = screen.getByTestId('darkmodeButton');

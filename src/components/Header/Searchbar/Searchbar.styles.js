@@ -16,8 +16,12 @@ export const InnerContainer = styled(motion.form)`
 `;
 
 export const StyledSearchbar = styled(motion.input)`
-    border: 1px solid #b3b3b3;
-    height: 32px;
+    border: 1px solid ${props => props.theme.searchbar.borderColor};
+    background-color: ${props => props.theme.searchbar.backgroundColor};
+    color: ${props => props.theme.searchbar.color};
+    font-size: 18px;
+    height: 45px;
+    padding-left: 20px;
     width: 100%;
 
     &:focus{
