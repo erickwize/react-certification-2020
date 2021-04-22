@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 
-import { createGlobalStyle } from 'styled-components';
 import { useGlobal } from '../../providers/Global.provider';
-import { Container, LoginCard, Form, FormInput, Label, InfoContainer, Button } from './Login.styles.js';
+import { Container, LoginCard, CardTitle, CloseButton, Form, FormInput, Label, InfoContainer, Button } from './Login.styles.js';
 import { ProfileSVG } from '../../svg/Profile';
 import { PasswordSVG } from '../../svg/Password';
 import loginApi from '../../providers/login.api';
 
-const GlobalStyle = createGlobalStyle`
-  body{
-    background-color: ${props => props.theme.body.backgroundColor};
-  }
-`;
-
-function LoginPage() {
+export const Login = () =>{
   const history = useHistory();
   const [loginData, setLoginData] = useState({username:'', password:''});
   const [loginProcess, setLoginProcess] = useState({loading:false, error:''});
@@ -27,7 +20,7 @@ function LoginPage() {
     loginApi(username, password).then((response)=>{
       const data = {...response, authenticated: true}
       dispatch({type:'login', value:data})
-      history.push("/");
+      history.goBack();
       setLoginProcess({...loginProcess, loading:false});
     }, (error)=>{
       setLoginProcess({loading: false, error:error.message});
@@ -41,15 +34,18 @@ function LoginPage() {
   const handlePassChange = (e) =>{
     setLoginData({...loginData, password:e.target.value});
   }
+
+  const goBack = () => {
+    history.goBack();
+  };
   
   return (
     <Container>
-      {/* This line works to change the background of the app
-      dinamically with the theme, cause the container doesn't
-      cover the entire screen responsively */}
-      <GlobalStyle theme={state.theme}/>
       <LoginCard theme={state.theme}>
-        <h1>Welcome back!</h1>
+        <div>
+          <CloseButton onClick={goBack}>&times;</CloseButton>
+          <CardTitle><h1>Welcome back!</h1></CardTitle>
+        </div>
         <Form onSubmit={authenticate} className="login-form">
           <Label theme={state.theme}>
             <ProfileSVG/>
@@ -70,6 +66,4 @@ function LoginPage() {
       </LoginCard>
     </Container>
   );
-}
-
-export default LoginPage;
+};

@@ -1,21 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MenuItem } from '../MenuItem/MenuItem.component';
-import styled from 'styled-components';
 import { FavoriteSVG } from '../../../svg/Favorite';
 import { HomeSVG } from '../../../svg/Home';
 import { useGlobal } from '../../../providers/Global.provider';
 
 const itemIds = [
     {
-        id:0,
+        id:'home',
         name: 'Home',
         icon: <HomeSVG/>,
         location: '/',
         private: false
     },
     {
-        id:1,
+        id:'favorites',
         name: 'Favorites',
         icon: <FavoriteSVG filled={true} heightAndWidth={32}/>,
         location: '/favorites',
@@ -32,23 +31,19 @@ const variants = {
     }
 };
 
-export const UnorderedList = styled(motion.ul)`
-`;
-
-export const MenuList = ({setIsOpen}) => {
+export const MenuList = () => {
 
     const { user } = useGlobal().state;
+
+    let menuItemsToShow = itemIds;
+
+    if(!user.authenticated){
+        menuItemsToShow = itemIds.filter(item=>!item.private);
+    }
     
-    return <UnorderedList variants={variants}>
-        {itemIds.map(item => {
-            if(item.private){
-                if(user.authenticated){
-                    return (<MenuItem item={item} key={item.id}/>)
-                }
-            }else{
-                return (<MenuItem item={item} key={item.id}/>)
-            }
-            return (<></>)
+    return <motion.ul variants={variants}>
+        {menuItemsToShow.map(item => {
+            return (<MenuItem item={item} key={item.id}/>);
         })}
-    </UnorderedList>
+    </motion.ul>
 }

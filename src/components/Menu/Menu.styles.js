@@ -5,7 +5,7 @@ export const NavContainer =  styled(motion.nav)`
   position:fixed;
   height: 100%;
   width: 10%;
-  z-index: 2;
+  z-index: 3;
 
   @media(min-width:280px) and (max-width:414px){
     width: 100%;

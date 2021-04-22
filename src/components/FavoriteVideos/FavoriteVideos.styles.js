@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
@@ -17,6 +18,19 @@ export const LeftContainer = styled.div`
 
     @media(min-width: 280px) and (max-width:1024px){
         width: 90%;
+    }
+`;
+
+
+export const LogoutContainer = styled(motion.div)`
+    button{
+        background-color: #444;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        height: 32px;
+        outline: none;
+        width: 80px;
     }
 `;
 

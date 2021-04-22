@@ -67,7 +67,7 @@ export const light = {
             backgroundColorOpen: '#1b2429',
             backgroundColorClosed: '#fff',
             itemBorder: '#b400d2',
-            itemColor: 'white'
+            itemColor: '#fff'
         }
     },
     body:{
@@ -98,6 +98,7 @@ export const light = {
         }
     },
     login:{
+        backgroundColor: '#fff',
         boxShadow: '0px 0px 8px -2px rgba(0,0,0,0.5)',
         inputBackgroundColor: '#e4e4e4',
         svgColor: '#cd76dc'

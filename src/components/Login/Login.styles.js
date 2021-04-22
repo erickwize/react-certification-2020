@@ -2,8 +2,15 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.div`
+    background-color: rgba(0,0,0,0.5);
     display: grid;
+    height: 100%;
+    left: 0;
     place-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 
     @media(max-width:320px){
         margin-left: 5%;
@@ -19,6 +26,28 @@ export const LoginCard = styled.div`
     display: grid;
     padding: 2rem;
     place-items: center;
+`;
+
+export const CloseButton = styled.div`
+    color: #aaa;
+    display: flex;
+    float: right;    
+    font-size: 40px;
+    font-weight: bold;
+    margin: -25px;
+    line-height: 25px;
+    justify-content: flex-end;
+    width: 100%;
+
+    &:hover, &:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer
+    }
+`;
+
+export const CardTitle = styled.div`
+    width: 100%;
 `;
 
 export const Form = styled.form`

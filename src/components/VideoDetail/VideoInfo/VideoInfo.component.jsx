@@ -29,11 +29,13 @@ export const VideoInfo = ({video}) => {
         <Subcontainer>
             <Title theme={state.theme}>{title}</Title>
             <ChannelAndDatePublished theme={state.theme}>{`${channelTitle} • ${parseDatetime(publishedAt)}`}</ChannelAndDatePublished>
-            <AddToFavoritesContainer>
-                <AddToFavoritesButton theme={state.theme} title="Add to favorites" whileTap={{scale:1.5}} onClick={handleClick}>
-                    <FavoriteSVG filled={isFav}/>
-                </AddToFavoritesButton>
-            </AddToFavoritesContainer>
+            { state.user.authenticated &&
+                <AddToFavoritesContainer>
+                    <AddToFavoritesButton theme={state.theme} title="Add to favorites" whileTap={{scale:1.5}} onClick={handleClick}>
+                        <FavoriteSVG filled={isFav}/>
+                    </AddToFavoritesButton>
+                </AddToFavoritesContainer>
+            }
         </Subcontainer>
         <Separator theme={state.theme}></Separator>
         <DescriptionContainer animate={isOpen ? "open":"closed"} variants={variants}>

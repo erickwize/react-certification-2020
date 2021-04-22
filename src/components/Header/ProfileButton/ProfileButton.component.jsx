@@ -1,16 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
 import { useGlobal } from '../../../providers/Global.provider';
 import { ProfileSVG } from '../../../svg/Profile';
 import {Container, StyledButton, buttonPressedStyle} from '../HeaderIconStyles';
 
-export const ProfileButton = () => {
-    const { dispatch } = useGlobal();
+const Avatar = styled.img`
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+`;
 
-    return <Link to="/favorites" onClick={()=> dispatch({type:'closeMenu'})}>
+export const ProfileButton = () => {
+    const location = useLocation();
+    const {state, dispatch } = useGlobal();
+
+    let redirectTo = {
+        pathname:"/login",
+        state:{ background: location }
+    };
+    if(state.user.authenticated){
+        redirectTo="/favorites"
+    }
+    return <Link to={redirectTo} onClick={()=> dispatch({type:'closeMenu'})}>
         <Container data-testid="profileButton">
             <StyledButton whileTap={buttonPressedStyle}>            
-                <ProfileSVG/>
+                {state.user.authenticated?<Avatar src={state.user.avatarUrl}></Avatar>:<ProfileSVG/>}
             </StyledButton>
         </Container>
     </Link>;
