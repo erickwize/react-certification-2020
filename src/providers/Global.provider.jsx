@@ -4,6 +4,8 @@ import { storage } from '../utils/storage';
 import { dark } from '../Themes.styles';
 
 const theme = JSON.parse(storage.get('theme')) || dark;
+const user = JSON.parse(storage.get('user')) || {authenticated:false};
+const favorites = storage.get('favorites') || [];
 
 const GlobalContext = React.createContext(null);
 
@@ -16,7 +18,8 @@ function useGlobal() {
 }
 
 function GlobalProvider({children}) {
-  const [state, dispatch] = useReducer(reducer, {theme, search:'doggos'});
+
+  const [state, dispatch] = useReducer(reducer, {theme, search:'doggos', user, favorites, isMenuOpen:false});
 
   return (
     <GlobalContext.Provider value={{state, dispatch}}>

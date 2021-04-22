@@ -1,16 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+import { useGlobal } from '../../providers/Global.provider';
 
-import './NotFound.styles.css';
+export const GlobalStyle = createGlobalStyle`
+    body{
+        background-color: ${props => props.theme.body.backgroundColor};
+        color: ${props => props.theme.body.color}
+    }
+`;
+
+export const Container = styled.section`
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+`;
+
+export const TitleLink = styled.h1`
+  text-decoration: underline;
+`;
+
+export const ImgContainer = styled.div`
+    width: 100%;
+    img{
+      border-radius: 50%;
+    }
+`;
 
 function NotFoundPage() {
+  const { state } = useGlobal();
+
   return (
-    <section className="not-found">
+    <Container>
+      <GlobalStyle theme={state.theme}/>
+      <h1>There's nothing to see here</h1>
       <Link to="/" className="home-link">
-        home
+        <TitleLink>Go home! &#x27A1;</TitleLink>
       </Link>
-      <img src="404.gif" alt="page not found" />
-    </section>
+      <ImgContainer>      
+        <img src="404.gif" alt="page not found" />
+      </ImgContainer>
+    </Container>
   );
 }
 

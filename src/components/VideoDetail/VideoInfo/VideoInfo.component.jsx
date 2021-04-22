@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
 import { parseDatetime } from '../../../utils/parseDatetime';
-import {Title, ChannelAndDatePublished, Separator, DescriptionContainer, DescriptionText, ShowLessMore } from './VideoInfo.styles';
+import { Subcontainer, Title, ChannelAndDatePublished, Separator, DescriptionContainer, DescriptionText, ShowLessMore, AddToFavoritesContainer, AddToFavoritesButton } from './VideoInfo.styles';
 import { useGlobal } from '../../../providers/Global.provider';
+import { FavoriteSVG } from '../../../svg/Favorite';
 
 const variants = {
     open: {height: "auto"},
@@ -9,13 +11,34 @@ const variants = {
 }
 
 export const VideoInfo = ({video}) => {
+    const { isAuthenticated } = useAuth0();
     const [isOpen, setIsOpen] = useState(false);
-    const {title, channelTitle, publishedAt, description} = video.snippet;
-    const { state } = useGlobal();
+    const { title, channelTitle, publishedAt, description} = video.snippet;
+    const { state , dispatch } = useGlobal();
+    const [isFav, setIsFav] = useState(false);
+
+    const handleClick = () =>{
+        if(!isFav) dispatch({type:'addFavorite', value: video});
+        else dispatch({type:'removeFavorite', value: video})
+    }
+
+    useEffect(()=>{
+        const exists = state.favorites.filter(item=>item.id === video.id).length > 0;
+        setIsFav(exists);
+    }, [state,video]);
 
     return <div data-testid="video-info">
-        <Title theme={state.theme}>{title}</Title>
-        <ChannelAndDatePublished theme={state.theme}>{`${channelTitle} • ${parseDatetime(publishedAt)}`}</ChannelAndDatePublished>
+        <Subcontainer>
+            <Title theme={state.theme}>{title}</Title>
+            <ChannelAndDatePublished theme={state.theme}>{`${channelTitle} • ${parseDatetime(publishedAt)}`}</ChannelAndDatePublished>
+            { (state.user.authenticated || isAuthenticated ) &&
+                <AddToFavoritesContainer>
+                    <AddToFavoritesButton theme={state.theme} title="Add to favorites" whileTap={{scale:1.5}} onClick={handleClick}>
+                        <FavoriteSVG filled={isFav}/>
+                    </AddToFavoritesButton>
+                </AddToFavoritesContainer>
+            }
+        </Subcontainer>
         <Separator theme={state.theme}></Separator>
         <DescriptionContainer animate={isOpen ? "open":"closed"} variants={variants}>
             <DescriptionText theme={state.theme}>{description}</DescriptionText>
