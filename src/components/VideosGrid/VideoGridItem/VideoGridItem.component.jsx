@@ -12,11 +12,6 @@ export const VideoGridItem = ({video, renderedFromFavorites}) => {
   const { isAuthenticated } = useAuth0();
   const [isFav, setIsFav] = useState(false);
 
-  const handleClick = () =>{
-      if(!isFav) dispatch({type:'addFavorite', value: video});
-      else dispatch({type:'removeFavorite', value: video})
-  }
-
   useEffect(()=>{
       const exists = state.favorites.filter(item=>item.id === video.id.videoId).length > 0;
       setIsFav(exists);
@@ -30,7 +25,7 @@ export const VideoGridItem = ({video, renderedFromFavorites}) => {
             <VideoThumbnailInfo>{`${video.snippet.channelTitle} • ${parseDatetime(video.snippet.publishedAt)}`}</VideoThumbnailInfo>
         </VideoInfo>
         { (state.user.authenticated || isAuthenticated ) &&
-            <AddToFavoritesButton theme={state.theme} title="Add to favorites" whileTap={{scale:1.5}} onClick={handleClick}>
+            <AddToFavoritesButton theme={state.theme} title="Add to favorites" whileTap={{scale:1.5}}>
                 {!renderedFromFavorites && <FavoriteSVG filled={isFav}/>}
             </AddToFavoritesButton>
         }
