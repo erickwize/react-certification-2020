@@ -17,7 +17,11 @@ export const VideoGridItem = ({video, renderedFromFavorites}) => {
       setIsFav(exists);
   }, [state,video]);
 
-  return <Link key={video.etag} to={`/video/${video.id.videoId}`}>
+  let redirecTo = `/video/${video.id.videoId}`;
+  if(renderedFromFavorites) redirecTo = `/favorites/${video.id}`;
+
+
+  return <Link key={video.etag} to={redirecTo}>
     <CardContainer whileTap={{scale:0.9}} whileHover={{scale:1.05}} onClick={()=>dispatch({type:'closeMenu'})}>
         <VideoThumbnail alt="thumbnail" src={video.snippet.thumbnails.high.url}/>
         <VideoInfo>
