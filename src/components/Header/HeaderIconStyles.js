@@ -21,10 +21,6 @@ export const StyledButton = styled(motion.button)`
         }
 `;
 
-export const StyledSvg = styled.svg`
-    fill: #b400d2;
-`;
-
 export const buttonPressedStyle = {
     scale:0.8,
     backgroundColor: "#b3b3b3",

@@ -2,6 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { VideoGridItem } from './VideoGridItem.component';
 import { parseDatetime } from '../../../utils/parseDatetime';
+import GlobalProvider from '../../../providers/Global.provider';
+import { BrowserRouter } from 'react-router-dom';
 
 const mockData = {
     kind: "youtube#searchResult",
@@ -34,7 +36,11 @@ const mockData = {
 
 describe('VideoGridItem', ()=>{
     it('Should render the component correctly', ()=>{
-        render(<VideoGridItem video={mockData}/>);
+        render(<GlobalProvider>
+            <BrowserRouter>
+              <VideoGridItem video={mockData}/>
+            </BrowserRouter>
+          </GlobalProvider>);
         const title = screen.getByText(/mock video title/i);
         const info = screen.getByText(/mock channel title • 27 sept. 2014/i);
         expect(title).toBeInTheDocument();

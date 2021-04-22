@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import {motion} from 'framer-motion';
 
 export const Container = styled(motion.div)`
-    align-items: center;
     background-color: transparent;
     display: flex;
     width: 100%;
@@ -13,6 +12,10 @@ export const InnerContainer = styled(motion.form)`
     display: flex;
     margin: auto;
     width: 50%;
+
+    @media(min-width: 280px) and (max-width:320px){
+        margin: 0 0 0 64px;
+    }
 `;
 
 export const StyledSearchbar = styled(motion.input)`
