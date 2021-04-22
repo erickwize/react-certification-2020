@@ -76,4 +76,5 @@ export const FavoriteSelect = styled.button`
   display: inline-block;
   margin: 1px;
   z-index: 100;
+  cursor: pointer;
 `;

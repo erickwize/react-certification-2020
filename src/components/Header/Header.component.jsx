@@ -26,25 +26,43 @@ function HeaderMenu({ doSearch, dispatch }) {
   const [showMenu, setMenuVisibility] = useState(false);
   const urlHistory = useHistory();
 
-  const handleSearch = (ev) => {
-    if (/Enter|Blur/i.test(ev.key) && search !== history) {
-      doSearch(search);
-    }
-  };
-
   const updatePage = (page) => {
     const urls = {
       login: '/login',
       logout: '/',
       home: '/',
-      favorites: `/user/${user.id || 'sweetie'}`,
+      favorites: `/user/${user.id}`,
     };
     if (page === 'logout') {
       dispatch({ type: 'REMOVE_USER_INFO', payload: {} });
-      dispatch({ type: 'SET_FAVS_LIST', payload: {} });
     }
     setMenuVisibility(false);
     urlHistory.push(urls[page]);
+  };
+
+  const handleSearch = (ev) => {
+    if (/Enter|Blur/i.test(ev.key) && search !== history) {
+      doSearch(search);
+      updatePage('home');
+    }
+  };
+
+  const menuItems = () => {
+    if (user.id) {
+      return (
+        <>
+          <HeaderMenuLink onClick={() => updatePage('logout')}>Log out</HeaderMenuLink>
+          <HeaderMenuLink onClick={() => updatePage('favorites')}>
+            Favorites
+          </HeaderMenuLink>
+        </>
+      );
+    }
+    return (
+      <>
+        <HeaderMenuLink onClick={() => updatePage('login')}>Log in</HeaderMenuLink>
+      </>
+    );
   };
 
   return (
@@ -82,16 +100,7 @@ function HeaderMenu({ doSearch, dispatch }) {
           img={user.id ? user.avatarUrl : LoginIcon}
           onClick={() => setMenuVisibility(!showMenu)}
         />
-        {showMenu ? (
-          <HeaderMenuWrapper>
-            <HeaderMenuLink onClick={() => updatePage(user.id ? 'logout' : 'login')}>
-              {user.id ? 'Log out' : 'Log in'}
-            </HeaderMenuLink>
-            <HeaderMenuLink onClick={() => updatePage('favorites')}>
-              Favorites
-            </HeaderMenuLink>
-          </HeaderMenuWrapper>
-        ) : null}
+        {showMenu ? <HeaderMenuWrapper>{menuItems()}</HeaderMenuWrapper> : null}
       </HeaderWrapper>
     </Header>
   );

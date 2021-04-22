@@ -8,8 +8,6 @@ import {
   useVideoInfo,
   reducer,
 } from '../../providers/GlobalContext';
-
-import AuthProvider from '../../providers/Auth';
 import HeaderMenu from '../Header';
 import Layout from '../Layout';
 import Routes from '../Routes';
@@ -28,24 +26,21 @@ function App() {
 
   const selectCard = (videoInfo) => {
     updateVideoInfo(videoInfo);
-    const path = videoInfo.title ? `?video=${videoInfo.videoId}` : '/';
-    window.history.replaceState({}, videoInfo.title, path);
   };
 
   return (
     <BrowserRouter data-testid="app-layout">
       <GlobalContext.Provider value={state}>
         <HeaderMenu doSearch={doSearch} dispatch={dispatch} />
-        <AuthProvider>
-          <Layout>
-            <Routes
-              video={video}
-              selectCard={selectCard}
-              videoList={videoList}
-              dispatch={dispatch}
-            />
-          </Layout>
-        </AuthProvider>
+        <Layout>
+          <Routes
+            video={video}
+            selectCard={selectCard}
+            videoList={videoList}
+            dispatch={dispatch}
+            favorites={state.favoritesList}
+          />
+        </Layout>
       </GlobalContext.Provider>
     </BrowserRouter>
   );

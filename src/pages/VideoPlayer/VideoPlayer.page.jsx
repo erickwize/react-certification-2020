@@ -11,19 +11,24 @@ import {
 } from './VideoPlayer.styles';
 import { getUsefullData } from '../../utils/fns';
 
-function VideoPlayer({ video, selectCard, relatedVideos }) {
+function VideoPlayer({ video, selectCard, relatedVideos, dispatch }) {
   const isRelatedView = true;
   const cardClick = (vid) => {
     selectCard(vid);
   };
 
   const relatedVideoCards = (related) => {
-    return related.id.videoId !== video.videoId ? (
+    const videoData = related.id ? getUsefullData(related) : related;
+    const hideCard = related.id
+      ? related.id.videoId !== video.videoId
+      : video.videoId !== related.videoId;
+    return hideCard ? (
       <VideoCard
         key={related.etag}
-        videoData={getUsefullData(related)}
+        videoData={videoData}
         cardClick={cardClick}
         isRelatedView={isRelatedView}
+        dispatch={dispatch}
       />
     ) : null;
   };

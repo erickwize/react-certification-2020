@@ -11,7 +11,7 @@ function UserFavorites({ selectCard, dispatch }) {
   const history = useHistory();
 
   const cardClick = (video) => {
-    history.push(`/player/${video.videoId}`);
+    history.push(`/user/player/${video.videoId}`);
     selectCard(video);
   };
 

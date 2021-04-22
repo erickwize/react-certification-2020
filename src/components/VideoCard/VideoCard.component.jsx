@@ -1,6 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../../providers/GlobalContext';
 
+import { storage } from '../../utils/storage';
+import { AUTH_STORAGE_KEY } from '../../utils/constants';
+
 import {
   VideoCardWrapper,
   Thumbnail,
@@ -24,7 +27,7 @@ function VideoCard({ videoData, cardClick, dispatch }) {
   };
 
   const isFavorite = () => {
-    if (favoritesList[videoData.videoId]) {
+    if (storage.get(AUTH_STORAGE_KEY) && favoritesList[videoData.videoId]) {
       return FavIcon;
     }
     return StarIcon;
@@ -33,9 +36,10 @@ function VideoCard({ videoData, cardClick, dispatch }) {
   const addFav = (event, video) => {
     event.stopPropagation();
     const favVideos = favoritesList;
-    favVideos[video.videoId] = video;
-    if (favoritesList[videoData.videoId]) {
+    if (favVideos[videoData.videoId]) {
       delete favVideos[video.videoId];
+    } else {
+      favVideos[video.videoId] = video;
     }
     dispatch({ type: 'SET_FAVS_LIST', payload: favVideos });
   };
