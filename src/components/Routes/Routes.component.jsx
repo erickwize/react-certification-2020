@@ -5,7 +5,6 @@ import {Switch, Route, useLocation } from 'react-router-dom';
 //Pages
 import HomePage from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
-import SecretPage from '../../pages/Secret';
 import Private from '../Private';
 
 //Components
@@ -25,7 +24,6 @@ export const Routes = () =>{
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/video/:videoId" component={VideoDetail}/>
             <Route exact path="/login" component={Login}/>
-            <Private exact path="/secret"><SecretPage/></Private>
             <Private exact path="/favorites"><FavoriteVideos/></Private>
             <Private exact path="/favorites/:videoId"><FavoriteVideoDetail/></Private>
             <Route path="*" component={NotFound}/>

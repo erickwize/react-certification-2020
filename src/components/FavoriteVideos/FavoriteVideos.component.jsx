@@ -7,11 +7,11 @@ import { ProfileCard } from '../ProfileCard/ProfileCard.component';
 import { ProfileCardAuth0 } from '../ProfileCardAuth0/ProfileCardAuth0.component';
 import { Container, LeftContainer, LogoutContainer, RightContainer, Title, VideosContainer, GlobalStyle } from './FavoriteVideos.styles';
 
-export const FavoriteVideos = () => {
+export const FavoriteVideos = ({testData}) => {
 
     const { isAuthenticated, logout } = useAuth0();
     const { state, dispatch } = useGlobal();
-    const data = state.favorites;
+    const data = state.favorites || testData;
 
     function deAuthenticate(event) {
         event.preventDefault();
