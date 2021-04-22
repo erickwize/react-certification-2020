@@ -53,6 +53,7 @@ function VideoCard({ videoData, cardClick, dispatch }) {
         >
           <VideoDescription data-testid="yt-videocard-description" visible={descVisible}>
             <FavoriteSelect
+              data-testid="wa-favorite-button"
               img={isFavorite()}
               onClick={(event) => addFav(event, videoData)}
             />

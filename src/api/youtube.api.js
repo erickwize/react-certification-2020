@@ -1,11 +1,9 @@
 import { API_KEY, API_URL } from '../utils/constants';
 
-async function fetchSearchVideos(serach = 'wizeline', videoId) {
+async function fetchSearchVideos(serach = 'wizeline') {
   try {
     let queryParams = '?part=snippet&maxResults=21';
-    queryParams = videoId
-      ? `${queryParams}&relatedToVideoId=${videoId}&type=video`
-      : `${queryParams}&q=${serach}`;
+    queryParams = `${queryParams}&q=${serach}`;
 
     const response = await fetch(`${API_URL}search${queryParams}&key=${API_KEY}`, {
       method: 'get',

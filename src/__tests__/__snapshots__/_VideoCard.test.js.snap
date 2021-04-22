@@ -22,6 +22,7 @@ Object {
             >
               <button
                 class="sc-gKsewC kkHtUm"
+                data-testid="wa-favorite-button"
               />
               
               <p
@@ -60,6 +61,7 @@ Object {
           >
             <button
               class="sc-gKsewC kkHtUm"
+              data-testid="wa-favorite-button"
             />
             
             <p

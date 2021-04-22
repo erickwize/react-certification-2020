@@ -16,9 +16,9 @@ function UserFavorites({ selectCard, dispatch }) {
   };
 
   return (
-    <section data-testid="yt-videocards">
-      <HomeTitle>User</HomeTitle>
-      <p>Cuentas con {videoList.length} videos guardados</p>
+    <section data-testid="favorites-view">
+      <HomeTitle>Your favorites</HomeTitle>
+      <p>{videoList.length} favorite videos</p>
       <VideoList>
         {videoList.map((video) => (
           <VideoCard

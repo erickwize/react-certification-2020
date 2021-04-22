@@ -2,6 +2,8 @@ import React from 'react';
 import { screen, cleanup, render, fireEvent } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import AppLayout from '../components/App';
+import Favorites from '../pages/Favs';
+
 import NotFound from '../pages/NotFound';
 import { useVideoInfo, useVideList } from '../providers/GlobalContext';
 import VideoMock from '../utils/mock/youtube-videos-mock.json';
@@ -19,14 +21,19 @@ it('Should render NotFound', () => {
   // expect(notfound).toBeInTheDocument();
 });
 
+it('Should render Favorites', () => {
+  const favorites = render(<Favorites />);
+  expect(favorites).toMatchSnapshot();
+});
+
 it('Should render App', () => {
   act(() => {
     const app = render(<AppLayout />);
     expect(app).toMatchSnapshot();
   });
-  const homePage = screen.getByTestId('yt-videocards');
+  const LoginView = screen.getByTestId('user-login');
   const headerMenu = screen.getByTestId('yt-header');
-  expect(homePage).toBeInTheDocument();
+  expect(LoginView).toBeInTheDocument();
   expect(headerMenu).toBeInTheDocument();
 });
 

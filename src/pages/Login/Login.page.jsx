@@ -22,7 +22,7 @@ function UserLogin({ dispatch }) {
       type: 'SET_USER_INFO',
       payload: await loginApi(username.value, password.value),
     });
-
+    /* istanbul ignore next */
     history.push('/');
   };
 
@@ -41,7 +41,9 @@ function UserLogin({ dispatch }) {
             <Inputs required type="password" id="password" />
           </LabelWrapper>
         </div>
-        <Submit type="submit">Log in</Submit>
+        <Submit data-testid="user-login-button" type="submit">
+          Log in
+        </Submit>
       </LoginForm>
     </LoginView>
   );

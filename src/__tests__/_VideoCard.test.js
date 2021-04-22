@@ -48,3 +48,51 @@ it('Handle videoCard mouse event', () => {
   const videoCardComponentDes = screen.getByTestId('yt-videocard-description');
   expect(videoCardComponentDes).toBeInTheDocument();
 });
+
+it('Handle favorites button', () => {
+  const cardClick = jest.fn();
+  const dispatchEvent = jest.fn();
+  render(
+    <VideoCard videoData={MockVideoInfo} cardClick={cardClick} dispatch={dispatchEvent} />
+  );
+  const videoCardComponent = screen.getByTestId('yt-videocard');
+  fireEvent.mouseEnter(videoCardComponent);
+  const favoriteButton = screen.getByTestId('wa-favorite-button');
+  expect(favoriteButton).toBeInTheDocument();
+  fireEvent.click(favoriteButton);
+  expect(dispatchEvent).toHaveBeenCalledWith({
+    payload: {
+      undefined: {
+        channel: 'Wizeline',
+        channelId: 'UCPGzT4wecuWM0BH9mPiulXg',
+        channelTitle: 'Wizeline',
+        description:
+          'Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office. In 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, ...',
+        liveBroadcastContent: 'none',
+        publishTime: '2019-09-30T23:54:32Z',
+        publishedAt: '2019-09-30T23:54:32Z',
+        thumbnail: 'https://i.ytimg.com/vi/nmXMgqjQzls/mqdefault.jpg',
+        thumbnails: {
+          default: {
+            height: 90,
+            url: 'https://i.ytimg.com/vi/nmXMgqjQzls/default.jpg',
+            width: 120,
+          },
+          high: {
+            height: 360,
+            url: 'https://i.ytimg.com/vi/nmXMgqjQzls/hqdefault.jpg',
+            width: 480,
+          },
+          medium: {
+            height: 180,
+            url: 'https://i.ytimg.com/vi/nmXMgqjQzls/mqdefault.jpg',
+            width: 320,
+          },
+        },
+        title: 'Video Tour | Welcome to Wizeline Guadalajara',
+        uploadDate: 'September 30, 2019',
+      },
+    },
+    type: 'SET_FAVS_LIST',
+  });
+});

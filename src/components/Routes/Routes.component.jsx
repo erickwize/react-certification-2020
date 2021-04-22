@@ -23,7 +23,7 @@ export default function Routes({ selectCard, videoList, video, dispatch, favorit
       <Switch>
         <Route exact path="/">
           {loading ? (
-            <h3>
+            <h3 data-testid="loading">
               <br />
               Loading...
             </h3>
