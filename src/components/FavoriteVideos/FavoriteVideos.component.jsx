@@ -1,12 +1,15 @@
 import React from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
 import { useGlobal } from '../../providers/Global.provider';
 import { VideoGridItem } from '../VideosGrid/VideoGridItem/VideoGridItem.component';
 import { ProfileCard } from '../ProfileCard/ProfileCard.component';
+import { ProfileCardAuth0 } from '../ProfileCardAuth0/ProfileCardAuth0.component';
 import { Container, LeftContainer, LogoutContainer, RightContainer, Title, VideosContainer, GlobalStyle } from './FavoriteVideos.styles';
 
 export const FavoriteVideos = () => {
 
+    const { isAuthenticated, logout } = useAuth0();
     const { state, dispatch } = useGlobal();
     const data = state.favorites;
 
@@ -18,7 +21,7 @@ export const FavoriteVideos = () => {
     return <Container>
         <GlobalStyle theme={state.theme}/>
         <LeftContainer>
-            <ProfileCard/>
+            {isAuthenticated?<ProfileCardAuth0/>:<ProfileCard/>}
         </LeftContainer>
         <RightContainer>
             <Title theme={state.theme}>Favorite videos</Title>
@@ -35,7 +38,7 @@ export const FavoriteVideos = () => {
         </RightContainer>
         <LogoutContainer>
             <Link to="/" onClick={deAuthenticate}>
-                <button>    
+                <button onClick={() => logout({ returnTo: window.location.origin })}>    
                     Logout
                 </button>
             </Link>

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { MenuItem } from '../MenuItem/MenuItem.component';
 import { FavoriteSVG } from '../../../svg/Favorite';
 import { HomeSVG } from '../../../svg/Home';
-import { useGlobal } from '../../../providers/Global.provider';
 
 const itemIds = [
     {
@@ -33,13 +32,7 @@ const variants = {
 
 export const MenuList = () => {
 
-    const { user } = useGlobal().state;
-
     let menuItemsToShow = itemIds;
-
-    if(!user.authenticated){
-        menuItemsToShow = itemIds.filter(item=>!item.private);
-    }
     
     return <motion.ul variants={variants}>
         {menuItemsToShow.map(item => {
