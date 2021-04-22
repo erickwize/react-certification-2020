@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import HomeIcon from './img/m_logo.png';
 import LoginIcon from './img/user_icon.png';
 import SearchIcon from './img/search_icon.png';
@@ -21,17 +21,18 @@ import {
 
 function HeaderMenu({ doSearch, dispatch }) {
   const { header, history, search } = useContext(GlobalContext);
+  const urlHistory = useHistory();
+
   const handleSearch = (ev) => {
     if (/Enter|Blur/i.test(ev.key) && search !== history) {
       doSearch(search);
     }
   };
+
   return (
     <Header data-testid="yt-header" background={header.background}>
       <HeaderWrapper>
-        <Link to="/">
-          <HomeButton img={HomeIcon} />
-        </Link>
+        <HomeButton img={HomeIcon} onClick={() => urlHistory.push('/')} />
         <SearchWrapper background={header.input}>
           <Search
             type="text"
@@ -59,9 +60,9 @@ function HeaderMenu({ doSearch, dispatch }) {
           />
           <HeaderToggleLabel htmlFor="darkMode">Dark mode</HeaderToggleLabel>
         </HeaderToggleWrapper>
-        <Link to="/login">
-          <LoginMenu img={LoginIcon} />
-        </Link>
+        <LoginMenu img={LoginIcon} />
+        <Link to="/login">Log in</Link>
+        <Link to="/user/favs">Favorites</Link>
       </HeaderWrapper>
     </Header>
   );

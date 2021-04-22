@@ -17,10 +17,13 @@ Object {
             class="sc-gsTCUz jZgBUQ"
           >
             <div
-              class="sc-jSgupP hlsFfD"
+              class="sc-jSgupP jETHJP"
               data-testid="yt-videocard-description"
             >
-              Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office. In 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, ...
+              <button
+                class="sc-gKsewC jelCIg"
+              />
+              
               <p
                 class="sc-hKgILt femupW"
               >
@@ -52,10 +55,13 @@ Object {
           class="sc-gsTCUz jZgBUQ"
         >
           <div
-            class="sc-jSgupP hlsFfD"
+            class="sc-jSgupP jETHJP"
             data-testid="yt-videocard-description"
           >
-            Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office. In 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, ...
+            <button
+              class="sc-gKsewC jelCIg"
+            />
+            
             <p
               class="sc-hKgILt femupW"
             >

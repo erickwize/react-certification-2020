@@ -12,13 +12,9 @@ Object {
         <div
           class="sc-gsTCUz ywWHk"
         >
-          <a
-            href="/"
-          >
-            <button
-              class="sc-dlfnbm cOuLkH"
-            />
-          </a>
+          <button
+            class="sc-dlfnbm cOuLkH"
+          />
           <div
             class="sc-hKgILt ljSDGR"
           >
@@ -53,12 +49,18 @@ Object {
               Dark mode
             </label>
           </div>
+          <button
+            class="sc-fubCfw iHeQum"
+          />
           <a
             href="/login"
           >
-            <button
-              class="sc-fubCfw iHeQum"
-            />
+            Log in
+          </a>
+          <a
+            href="/user/favs"
+          >
+            Favorites
           </a>
         </div>
       </header>
@@ -81,13 +83,9 @@ Object {
       <div
         class="sc-gsTCUz ywWHk"
       >
-        <a
-          href="/"
-        >
-          <button
-            class="sc-dlfnbm cOuLkH"
-          />
-        </a>
+        <button
+          class="sc-dlfnbm cOuLkH"
+        />
         <div
           class="sc-hKgILt ljSDGR"
         >
@@ -122,12 +120,18 @@ Object {
             Dark mode
           </label>
         </div>
+        <button
+          class="sc-fubCfw iHeQum"
+        />
         <a
           href="/login"
         >
-          <button
-            class="sc-fubCfw iHeQum"
-          />
+          Log in
+        </a>
+        <a
+          href="/user/favs"
+        >
+          Favorites
         </a>
       </div>
     </header>

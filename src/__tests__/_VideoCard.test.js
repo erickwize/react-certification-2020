@@ -27,7 +27,7 @@ it('Should render VideoCard Info', () => {
   const videoCardComponent = screen.getByTestId('yt-videocard');
   expect(videoCardComponent).toBeInTheDocument();
   expect(videoCardComponent).toHaveTextContent(
-    'Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office. In 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, ...Wizeline | September 30, 2019Video Tour | Welcome to Wizeline G...'
+    'Wizeline | September 30, 2019Video Tour | Welcome to Wizeline G...'
   );
 });
 

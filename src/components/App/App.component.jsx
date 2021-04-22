@@ -38,7 +38,12 @@ function App() {
         <HeaderMenu doSearch={doSearch} dispatch={dispatch} />
         <AuthProvider>
           <Layout>
-            <Routes video={video} selectCard={selectCard} videoList={videoList} />
+            <Routes
+              video={video}
+              selectCard={selectCard}
+              videoList={videoList}
+              dispatch={dispatch}
+            />
           </Layout>
         </AuthProvider>
       </GlobalContext.Provider>

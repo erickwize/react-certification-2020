@@ -5,10 +5,10 @@ import HomePage from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
 import VideoPlayer from '../../pages/VideoPlayer';
 import UserLogin from '../../pages/Login';
+import UserFavorites from '../../pages/Favs';
 
-export default function Routes({ selectCard, videoList, video }) {
+export default function Routes({ selectCard, videoList, video, dispatch }) {
   const loading = !videoList.length;
-
   return (
     <>
       <Switch>
@@ -19,7 +19,7 @@ export default function Routes({ selectCard, videoList, video }) {
               Loading...
             </h3>
           ) : (
-            <HomePage selectCard={selectCard} videoList={videoList} />
+            <HomePage selectCard={selectCard} videoList={videoList} dispatch={dispatch} />
           )}
         </Route>
         <Route exact path="/login">
@@ -27,6 +27,9 @@ export default function Routes({ selectCard, videoList, video }) {
         </Route>
         <Route path="/player/:videoId">
           <VideoPlayer video={video} selectCard={selectCard} relatedVideos={videoList} />
+        </Route>
+        <Route exact path="/user/:account">
+          <UserFavorites selectCard={selectCard} videoList={videoList} />
         </Route>
         <Route path="*">
           <NotFound />

@@ -56,7 +56,6 @@ export const Thumbnail = styled.div`
 `;
 
 export const VideoDescription = styled.div`
-  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
   height: 135px;
   width: 335px;
   font-size: ${fontSize.md};
@@ -64,4 +63,16 @@ export const VideoDescription = styled.div`
   font-weight: normal;
   padding: 10px 12px;
   color: ${color.white};
+`;
+
+export const FavoriteSelect = styled.button`
+  background: url(${(props) => props.img}) no-repeat;
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  display: inline-block;
+  margin: 1px;
+  z-index: 100;
 `;

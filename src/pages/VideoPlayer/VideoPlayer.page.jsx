@@ -1,7 +1,6 @@
 import React from 'react';
 import VideoCard from '../../components/VideoCard';
 import {
-  HomeButton,
   Player,
   PlayerGrid,
   PlayerTitle,
@@ -31,9 +30,6 @@ function VideoPlayer({ video, selectCard, relatedVideos }) {
 
   return (
     <section data-testid="video-player" className="view-player">
-      <HomeButton onClick={() => cardClick({})} type="button">
-        Home
-      </HomeButton>
       <PlayerGrid>
         <VideoWrapper>
           <Player

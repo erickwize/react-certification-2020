@@ -39,20 +39,6 @@ it('Should render VideoPlayer Info', () => {
   expect(videoCardComponent).toHaveTextContent(videoData.description);
 });
 
-it('Return to Home', () => {
-  render(
-    <VideoPlayer
-      video={videoData}
-      selectCard={selectCard}
-      relatedVideos={VideoMock.items}
-    />
-  );
-  const homeButton = screen.getByText('Home');
-  expect(homeButton).toBeInTheDocument();
-  fireEvent.click(homeButton);
-  expect(selectCard).toHaveBeenCalledWith({});
-});
-
 it('Return to Show related search video card view', () => {
   render(
     <VideoPlayer
@@ -64,6 +50,6 @@ it('Return to Show related search video card view', () => {
   const videoCards = screen.getAllByTestId('yt-videocard');
   expect(videoCards.length).toBe(24);
   expect(videoCards[3]).toHaveTextContent(
-    'Engineering a better tomorrow. Wizeline is a global software development company that helps its clients solve their biggest challenges with design and ...Wizeline | April 12, 2019We Are Wizeline'
+    'Wizeline | April 12, 2019We Are Wizeline'
   );
 });

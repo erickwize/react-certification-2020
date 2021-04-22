@@ -2,6 +2,8 @@ import { useState, useEffect, createContext, useReducer } from 'react';
 import { color } from '../../utils/globalStyle';
 import youtubeVideoList from '../../utils/mock/youtube-videos-mock.json';
 import { fetchSearchVideos } from '../../utils/endpoints';
+import { storage } from '../../utils/storage';
+import { FAVORITE_VIDEOS_KEY } from '../../utils/constants';
 
 const initalStyle = {
   header: {
@@ -16,8 +18,10 @@ const initalStyle = {
 };
 
 export const initalState = {
+  user: {},
   search: 'wizeline',
   history: '',
+  favoritesList: storage.get(FAVORITE_VIDEOS_KEY) || {},
   ...initalStyle,
 };
 
@@ -63,6 +67,12 @@ export function reducer(state, action) {
         ...state,
         history: state.search,
         search: action.payload,
+      };
+    case 'SET_FAVS_LIST':
+      storage.set(FAVORITE_VIDEOS_KEY, action.payload);
+      return {
+        ...state,
+        favoritesList: action.payload,
       };
     default:
       throw new Error('ACTION NOT RECOGNIZED');

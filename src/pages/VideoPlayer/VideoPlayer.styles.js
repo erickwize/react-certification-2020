@@ -1,19 +1,6 @@
 import styled from 'styled-components';
 import { color, fontSize } from '../../utils/globalStyle';
 
-export const HomeButton = styled.button`
-  height: fit-content;
-  width: fit-content;
-  border-radius: 4px;
-  margin: 15px 10px;
-  color: white;
-  padding: 8px 15px;
-  font-size: ${fontSize.l};
-  display: block;
-  background-color: ${color.lightCoral};
-  border: none;
-`;
-
 export const Player = styled.iframe`
   height: 423px;
   width: 100%;
