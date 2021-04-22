@@ -1,9 +1,9 @@
 import { useState, useEffect, createContext, useReducer } from 'react';
 import { color } from '../../utils/globalStyle';
 import youtubeVideoList from '../../utils/mock/youtube-videos-mock.json';
-import { fetchSearchVideos } from '../../utils/endpoints';
+// import { fetchSearchVideos } from '../../api';
 import { storage } from '../../utils/storage';
-import { FAVORITE_VIDEOS_KEY } from '../../utils/constants';
+import { FAVORITE_VIDEOS_KEY, AUTH_STORAGE_KEY } from '../../utils/constants';
 
 const initalStyle = {
   header: {
@@ -74,6 +74,18 @@ export function reducer(state, action) {
         ...state,
         favoritesList: action.payload,
       };
+    case 'SET_USER_INFO':
+      storage.set(AUTH_STORAGE_KEY, true);
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case 'REMOVE_USER_INFO':
+      storage.set(AUTH_STORAGE_KEY, false);
+      return {
+        ...state,
+        user: {},
+      };
     default:
       throw new Error('ACTION NOT RECOGNIZED');
   }
@@ -93,8 +105,8 @@ export function useVideList() {
       let listItems = [];
       dispatch({ type: 'SET_HISTORY', payload: search });
       try {
-        const initalSearch = await fetchSearchVideos(search);
-        listItems = initalSearch.items;
+        // const initalSearch = await fetchSearchVideos(search);
+        listItems = await youtubeVideoList.items; // initalSearch.items;
       } catch (e) {
         listItems = await youtubeVideoList.items;
         console.info('Error getting inital video search... setting youtubeVideoList');

@@ -34,6 +34,9 @@ function VideoCard({ videoData, cardClick, dispatch }) {
     event.stopPropagation();
     const favVideos = favoritesList;
     favVideos[video.videoId] = video;
+    if (favoritesList[videoData.videoId]) {
+      delete favVideos[video.videoId];
+    }
     dispatch({ type: 'SET_FAVS_LIST', payload: favVideos });
   };
 

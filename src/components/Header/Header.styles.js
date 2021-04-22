@@ -88,7 +88,7 @@ export const LoginMenu = styled.button`
   display: block;
   background-size: 35px;
   border: none;
-  cursor: not-allowed;
+  cursor: pointer;
 `;
 
 const off = keyframes`
@@ -170,5 +170,38 @@ export const HeaderToggle = styled.input`
     animation: ${on} 0.7s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
     box-shadow: inset -5px -5px 4px rgba(53, 53, 53, 0.3);
     left: -29px;
+  }
+`;
+
+export const HeaderMenuWrapper = styled.div`
+  background: ${color.seaTan};
+  top: 60px;
+  position: absolute;
+  width: fit-content;
+  min-width: 145px;
+  padding: 15px 25px;
+  right: 5px;
+  border-radius: 3px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 75%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent ${color.seaTan} transparent;
+  }
+`;
+
+export const HeaderMenuLink = styled.span`
+  margin: 0 auto 3px;
+  color: ${color.oceanBlue};
+  display: block;
+  font-size: ${fontSize.m};
+  font-weight: normal;
+  :hover {
+    font-weight: bold;
   }
 `;

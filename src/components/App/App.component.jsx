@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { fetchSearchVideos } from '../../utils/endpoints';
+import { fetchSearchVideos } from '../../api';
 import {
   initalState,
   GlobalContext,

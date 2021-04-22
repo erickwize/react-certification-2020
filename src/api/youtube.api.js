@@ -1,4 +1,4 @@
-import { API_KEY, API_URL } from './constants';
+import { API_KEY, API_URL } from '../utils/constants';
 
 async function fetchSearchVideos(serach = 'wizeline', videoId) {
   try {

@@ -56,6 +56,7 @@ export const Thumbnail = styled.div`
 `;
 
 export const VideoDescription = styled.div`
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
   height: 135px;
   width: 335px;
   font-size: ${fontSize.md};

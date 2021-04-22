@@ -29,7 +29,11 @@ export default function Routes({ selectCard, videoList, video, dispatch }) {
           <VideoPlayer video={video} selectCard={selectCard} relatedVideos={videoList} />
         </Route>
         <Route exact path="/user/:account">
-          <UserFavorites selectCard={selectCard} videoList={videoList} />
+          <UserFavorites
+            selectCard={selectCard}
+            videoList={videoList}
+            dispatch={dispatch}
+          />
         </Route>
         <Route path="*">
           <NotFound />

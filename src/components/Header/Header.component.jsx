@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import HomeIcon from './img/m_logo.png';
 import LoginIcon from './img/user_icon.png';
 import SearchIcon from './img/search_icon.png';
@@ -17,10 +17,13 @@ import {
   LoginMenu,
   SearchWrapper,
   SearchSpan,
+  HeaderMenuWrapper,
+  HeaderMenuLink,
 } from './Header.styles';
 
 function HeaderMenu({ doSearch, dispatch }) {
-  const { header, history, search } = useContext(GlobalContext);
+  const { header, history, search, user } = useContext(GlobalContext);
+  const [showMenu, setMenuVisibility] = useState(false);
   const urlHistory = useHistory();
 
   const handleSearch = (ev) => {
@@ -29,10 +32,15 @@ function HeaderMenu({ doSearch, dispatch }) {
     }
   };
 
+  const updatePage = (url) => {
+    setMenuVisibility(false);
+    urlHistory.push(url);
+  };
+
   return (
     <Header data-testid="yt-header" background={header.background}>
       <HeaderWrapper>
-        <HomeButton img={HomeIcon} onClick={() => urlHistory.push('/')} />
+        <HomeButton img={HomeIcon} onClick={() => updatePage('/')} />
         <SearchWrapper background={header.input}>
           <Search
             type="text"
@@ -60,9 +68,17 @@ function HeaderMenu({ doSearch, dispatch }) {
           />
           <HeaderToggleLabel htmlFor="darkMode">Dark mode</HeaderToggleLabel>
         </HeaderToggleWrapper>
-        <LoginMenu img={LoginIcon} />
-        <Link to="/login">Log in</Link>
-        <Link to="/user/favs">Favorites</Link>
+        <LoginMenu img={LoginIcon} onClick={() => setMenuVisibility(!showMenu)} />
+        {showMenu ? (
+          <HeaderMenuWrapper>
+            <HeaderMenuLink onClick={() => updatePage('/login')}>
+              {user.id ? 'Log out' : 'Log in'}
+            </HeaderMenuLink>
+            <HeaderMenuLink onClick={() => updatePage('/user/favorites')}>
+              Favorites
+            </HeaderMenuLink>
+          </HeaderMenuWrapper>
+        ) : null}
       </HeaderWrapper>
     </Header>
   );

@@ -8,7 +8,8 @@ export const VideoList = styled.section`
   max-width: 800px;
 
   @media screen and (min-width: 1025px) {
-    max-width: 1200px;
+    max-width: 100%;
+    min-width: 1150px;
   }
 
   @media screen and (max-width: 750px) {
