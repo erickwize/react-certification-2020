@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useContext, useCallback,  createContext} from 'react';
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  useCallback,
+  createContext,
+} from 'react';
 
 import Config from '../../utils/constants';
 import { storage } from '../../utils/storage';
@@ -16,7 +22,7 @@ function useApp() {
 }
 
 function AppProvider({ children }) {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('wizeline');
   return (
     <AppContext.Provider value={{ search, setSearch }}>{children}</AppContext.Provider>
   );

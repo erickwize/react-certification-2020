@@ -1,13 +1,20 @@
-import React, { useState }from 'react';
+import React, { useState } from 'react';
 import VideoCard from '../../components/VideoCard';
 import { Container, Title, VideoGrid } from './Home.styles';
 import './Home.styles.js';
 import useFetch from './../../utils/hooks/useFetch';
-import Config from './../../utils/constants';
+import Config from '../../utils/constants';
+import { useApp } from '../../providers/App/AppProvider';
 
 function HomePage() {
+  const context = useApp();
+  const { search } = context;
+  console.log(search);
+  const { REACT_APP_API_URL, REACT_APP_API_KEY } = Config;
 
-  const { videos, loading } = useFetch(  `${Config.API_URL}search?maxResults=50&part=snippet&q=${'wizeline'}&key=${Config.API_KEY}`);
+  const { videos, loading } = useFetch(
+    `${REACT_APP_API_URL}search?maxResults=50&part=snippet&q=${search}&key=${REACT_APP_API_KEY}`
+  );
   const videoList = videos.map((video) => {
     const {
       etag,
@@ -19,21 +26,22 @@ function HomePage() {
         },
       },
     } = video;
-    return <VideoCard key={etag}
-      title={title}
-      description={description}
-      image={url}
-      width={width}
-      height={height}
-    />;
+    return (
+      <VideoCard
+        key={etag}
+        title={title}
+        description={description}
+        image={url}
+        width={width}
+        height={height}
+      />
+    );
   });
 
   return (
     <Container>
       <Title>Welcome!</Title>
-      <VideoGrid>
-        {loading ? <p>loading</p> : videoList}
-      </VideoGrid>
+      <VideoGrid>{loading ? <p>loading</p> : videoList}</VideoGrid>
     </Container>
   );
 }

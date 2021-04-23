@@ -12,7 +12,6 @@ import { random } from '../../utils/fns';
 import Header from '../Header';
 
 function App() {
-
   useLayoutEffect(() => {
     const { body } = document;
 
@@ -30,30 +29,29 @@ function App() {
       body.removeEventListener('click', rotateBackground);
     };
   }, []);
-  
 
   return (
     <BrowserRouter>
       <AuthProvider>
         <AppProvider>
-        <Header />
-        <Layout>
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
+          <Header />
+          <Layout>
+            <Switch>
+              <Route exact path="/">
+                <HomePage />
+              </Route>
+              <Route exact path="/login">
+                <LoginPage />
+              </Route>
+              <Private exact path="/secret">
+                <SecretPage />
+              </Private>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
           </Layout>
-          </AppProvider>
+        </AppProvider>
       </AuthProvider>
     </BrowserRouter>
   );
