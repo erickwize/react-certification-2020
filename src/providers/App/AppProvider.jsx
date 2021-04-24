@@ -12,6 +12,8 @@ import { storage } from '../../utils/storage';
 const AppContext = createContext({
   setSearch: () => {},
   search: '',
+  isDark: false,
+  setDark: () => {},
 });
 function useApp() {
   const context = useContext(AppContext);
@@ -23,8 +25,11 @@ function useApp() {
 
 function AppProvider({ children }) {
   const [search, setSearch] = useState('wizeline');
+  const [isDark, setDark] = useState(false);
   return (
-    <AppContext.Provider value={{ search, setSearch }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ search, setSearch, isDark, setDark }}>
+      {children}
+    </AppContext.Provider>
   );
 }
 export { useApp, AppContext };

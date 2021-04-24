@@ -5,6 +5,7 @@ import { useApp } from '../../providers/App/AppProvider';
 
 function Search() {
   const context = useApp();
+  const { isDark } = context;
 
   const submit = () => {
     context.setSearch(value);
@@ -13,7 +14,7 @@ function Search() {
   const [value, handleInputChange, handleSubmit] = useInput(submit);
 
   return (
-    <InputContainer onSubmit={handleSubmit}>
+    <InputContainer onSubmit={handleSubmit} isDark={isDark}>
       <Icon />
       <Input value={value} onChange={handleInputChange} type="text" />
     </InputContainer>

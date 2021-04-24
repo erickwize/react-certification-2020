@@ -9,7 +9,6 @@ import { useApp } from '../../providers/App/AppProvider';
 function HomePage() {
   const context = useApp();
   const { search } = context;
-  console.log(search);
   const { REACT_APP_API_URL, REACT_APP_API_KEY } = Config;
 
   const { videos, loading } = useFetch(

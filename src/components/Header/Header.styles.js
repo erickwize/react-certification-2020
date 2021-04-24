@@ -8,7 +8,7 @@ export const HeaderStyle = styled.header`
   flex-shrink: 0;
   flex-direction: row;
   color: #fff;
-  background-color: #1c5476;
+  background-color: ${(props) => (props.isDark ? '#4a0039' : '#ff6868')};
   box-sizing: border-box;
   align-items: center;
   padding: 1em;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { SearchAlt } from '@styled-icons/boxicons-regular/SearchAlt';
 
 export const InputContainer = styled.form`
-  background-color: #3a7da7;
+  background-color: ${(props) => (props.isDark ? '#8c6599' : '#ff8f8f')};
   padding: 3px;
   border-radius: 3px;
   margin-left: 16px;
