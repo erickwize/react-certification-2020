@@ -14,14 +14,12 @@ const Sidebar = ({ menu, setMenu }) => {
     setMenu(!menu);
   };
 
-  const userName = user?.email.split('@')[0];
-
   return (
     <>
       <Background show={menu} onClick={handleSidebar} />
       <Container show={menu}>
         <Menu>
-          <UserName>{user ? userName : 'Welcome'}</UserName>
+          <UserName>Welcome</UserName>
           <Link to="/" onClick={handleSidebar}>
             <Item>
               <Icon viewBox="0 0 24 24" icon="home" color="black" />
