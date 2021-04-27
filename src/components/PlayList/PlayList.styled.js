@@ -5,6 +5,11 @@ const VideoContent = styled.div`
   flex-direction: row;
   border: 1px solid ${({ theme }) => theme.toggleBorder};
   height: 94px;
+  transform: none;
+
+  :hover {
+    transform: scale(1.03) translateZ(0px);
+  }
 `;
 
 const VideoImagen = styled.img`

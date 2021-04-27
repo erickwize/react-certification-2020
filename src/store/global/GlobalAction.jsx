@@ -1,10 +1,11 @@
 // import { mockVideos } from '../../mockData';
-import loginApi from '../../utils/login.api';
+import { auth } from '../../firebase';
 
 export const GLOBAL_ACTIONS = {
   UPDATE_SEARCH_VALUE: 'UPDATE_SEARCH_VALUE',
   SELECT_VIDEO: 'SELECT_VIDEO',
   SWITCH_THEME: 'SWITCH_THEME',
+  SHOW_MODAL: 'SHOW_MODAL',
 
   ADD_FAVORITE_VIDEO: 'ADD_FAVORITE_VIDEO',
   REMOVE_FAVORITE_VIDEO: 'REMOVE_FAVORITE_VIDEO',
@@ -16,7 +17,10 @@ export const GLOBAL_ACTIONS = {
   LOGIN_REQUEST: 'LOGIN_REQUEST',
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAILURE: 'LOGIN_FAILURE',
-  LOGOUT: 'LOGOUT',
+
+  LOGOUT_REQUEST: 'LOGOUT_REQUEST',
+  LOGOUT_SUCCESS: 'LOGOUT_SUCCESS',
+  LOGOUT_FAILURE: 'LOGOUT_FAILURE',
 };
 
 export const switchTheme = (dispatch, themeValue) => {
@@ -58,10 +62,14 @@ export const selectVideo = (dispatch, videoSelected) => {
   dispatch({ type: GLOBAL_ACTIONS.SELECT_VIDEO, videoSelected });
 };
 
+export const showModal = (dispatch, showModalLogin) => {
+  dispatch({ type: GLOBAL_ACTIONS.SHOW_MODAL, showModalLogin });
+};
+
 export const loginUser = async (dispatch, username, password) => {
   dispatch({ type: GLOBAL_ACTIONS.LOGIN_REQUEST });
   try {
-    const user = await loginApi(username, password);
+    const { user } = await auth.signInWithEmailAndPassword(username, password);
     dispatch({ type: GLOBAL_ACTIONS.LOGIN_SUCCESS, user });
     return user;
   } catch (error) {
@@ -71,8 +79,16 @@ export const loginUser = async (dispatch, username, password) => {
   }
 };
 
-export const logOut = (dispatch) => {
-  dispatch({ type: GLOBAL_ACTIONS.LOGOUT });
+export const logOut = async (dispatch) => {
+  dispatch({ type: GLOBAL_ACTIONS.LOGOUT_REQUEST });
+  try {
+    await auth.signOut();
+    dispatch({ type: GLOBAL_ACTIONS.LOGOUT_SUCCESS });
+  } catch (error) {
+    console.log(error);
+    const errorAuth = error.message;
+    dispatch({ type: GLOBAL_ACTIONS.LOGOUT_FAILURE, errorAuth });
+  }
 };
 
 export const addVideo = (dispatch, favoriteVideos) => {

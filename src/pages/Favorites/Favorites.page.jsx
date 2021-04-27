@@ -1,13 +1,25 @@
 import React from 'react';
 
 import { HomeSection, Title, VideoContainer } from '../Home/Home.styled';
-import { VideoCard } from '../../components';
+import { VideoCard, Tooltip } from '../../components';
 import { useGlobalProvider } from '../../store/global/global.provider';
+import { addVideo, removeVideo } from '../../store/global/GlobalAction';
 
 const Favorites = () => {
   const {
-    state: { favoriteVideos },
+    state: { favoriteVideos, user },
+    dispatch,
   } = useGlobalProvider();
+
+  const addFavorite = (newVideo) => {
+    const newFavorites = [...favoriteVideos, newVideo];
+    addVideo(dispatch, newFavorites);
+  };
+
+  const removeFavorite = (videoId) => {
+    const newFavorites = favoriteVideos.filter((video) => video.videoId !== videoId);
+    removeVideo(dispatch, newFavorites);
+  };
 
   if (favoriteVideos.length === 0)
     return (
@@ -25,9 +37,19 @@ const Favorites = () => {
           <h1>Welcome to your favorite list!</h1>
         </Title>
         <VideoContainer>
-          {favoriteVideos.map((video) => (
-            <VideoCard key={video.videoId} data={video} />
-          ))}
+          {favoriteVideos.map((video) => {
+            return (
+              <Tooltip key={video.videoId}>
+                {(props) => (
+                  <VideoCard
+                    {...props}
+                    data={{ ...video, favoriteVideos, user }}
+                    handlers={{ addFavorite, removeFavorite }}
+                  />
+                )}
+              </Tooltip>
+            );
+          })}
         </VideoContainer>
       </HomeSection>
     </>

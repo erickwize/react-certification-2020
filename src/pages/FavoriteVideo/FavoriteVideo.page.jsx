@@ -18,7 +18,7 @@ const FavoriteVideo = () => {
     state: { videoSelected, favoriteVideos, user },
     dispatch,
   } = useGlobalProvider();
-  const favorite = useIsFavorite(matchParams.videoId, favoriteVideos);
+  const favorite = useIsFavorite(matchParams.videoId, favoriteVideos, user);
 
   /* eslint-disable */
   useEffect(() => {

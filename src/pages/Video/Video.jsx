@@ -15,7 +15,7 @@ const Video = () => {
     dispatch,
   } = useGlobalProvider();
 
-  const favorite = useIsFavorite(matchParams.videoId, favoriteVideos);
+  const favorite = useIsFavorite(matchParams.videoId, favoriteVideos, user);
 
   const { videoId } = matchParams;
 

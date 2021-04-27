@@ -14,34 +14,50 @@ const Container = styled.div`
   transition: all 0.3s ease-in-out;
 `;
 
+const Background = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  visibility: ${(props) => (!props.show ? 'hidden' : 'visible')};
+`;
+
 const Menu = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+`;
 
-  h3 {
-    display: flex;
-    justify-content: center;
-    line-height: 0rem;
-    text-transform: uppercase;
-    color: black;
-    margin: 0px;
-    padding: 30px;
-    border-bottom: 1px solid ${({ theme }) => theme.toggleBorder};
-  }
+const UserName = styled.h3`
+  display: flex;
+  justify-content: center;
+  line-height: 0rem;
+  text-transform: uppercase;
+  color: black;
+  margin: 0px;
+  padding: 30px;
+  border-bottom: 1px solid ${({ theme }) => theme.toggleBorder};
+`;
 
-  a {
-    border-bottom: 1px solid ${({ theme }) => theme.toggleBorder};
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-
-    :hover {
-      background-color: #e4e4e4;
-    }
+const Item = styled.div`
+  border-bottom: 1px solid ${({ theme }) => theme.toggleBorder};
+  height: 55px;
+  display: flex;
+  margin: 0px;
+  padding: 0px 60px;
+  justify-content: start;
+  align-items: center;
+  :hover {
+    background-color: #e4e4e4;
   }
 `;
 
-export { Container, Menu };
+const Title = styled.div`
+  color: black;
+  margin-left: 25px;
+`;
+
+export { Container, Menu, UserName, Item, Title, Background };

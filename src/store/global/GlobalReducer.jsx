@@ -20,6 +20,7 @@ export const initialState = {
   videoSelected: null,
   themeValue: localTheme || 'light',
   favoriteVideos: favorites,
+  showModalLogin: false,
 
   fetchingAuth: false,
   user: authenticated,
@@ -34,6 +35,8 @@ export function globalReducer(state, action) {
       return { ...state, videoSelected: action.videoSelected };
     case GLOBAL_ACTIONS.SWITCH_THEME:
       return { ...state, themeValue: action.themeValue };
+    case GLOBAL_ACTIONS.SHOW_MODAL:
+      return { ...state, showModalLogin: action.showModalLogin };
 
     case GLOBAL_ACTIONS.ADD_FAVORITE_VIDEO:
       return { ...state, favoriteVideos: action.favoriteVideos };
@@ -53,8 +56,13 @@ export function globalReducer(state, action) {
       return { ...state, fetchingAuth: false, user: action.user, errorAuth: null };
     case GLOBAL_ACTIONS.LOGIN_FAILURE:
       return { ...state, fetchingAuth: false, errorAuth: action.errorAuth, user: null };
-    case GLOBAL_ACTIONS.LOGOUT:
-      return { ...state, user: null };
+
+    case GLOBAL_ACTIONS.LOGOUT_REQUEST:
+      return { ...state, fetchingAuth: true };
+    case GLOBAL_ACTIONS.LOGOUT_SUCCESS:
+      return { ...state, fetchingAuth: false, user: null };
+    case GLOBAL_ACTIONS.LOGOUT_FAILURE:
+      return { ...state, fetchingAuth: false, errorAuth: action.errorAuth };
     default:
       throw new Error('Unkown action');
   }

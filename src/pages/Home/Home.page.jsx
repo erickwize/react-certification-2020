@@ -1,13 +1,25 @@
 import React from 'react';
 
 import { HomeSection, Title, VideoContainer } from './Home.styled';
-import { VideoCard } from '../../components';
+import { VideoCard, Tooltip } from '../../components';
 import { useGlobalProvider } from '../../store/global/global.provider';
+import { addVideo, removeVideo } from '../../store/global/GlobalAction';
 
 function HomePage() {
   const {
-    state: { fetchingVideo, videoList, error },
+    state: { fetchingVideo, videoList, error, favoriteVideos, user },
+    dispatch,
   } = useGlobalProvider();
+
+  const addFavorite = (newVideo) => {
+    const newFavorites = [...favoriteVideos, newVideo];
+    addVideo(dispatch, newFavorites);
+  };
+
+  const removeFavorite = (videoId) => {
+    const newFavorites = favoriteVideos.filter((video) => video.videoId !== videoId);
+    removeVideo(dispatch, newFavorites);
+  };
 
   if (fetchingVideo) return <>Loading...</>;
 
@@ -25,11 +37,17 @@ function HomePage() {
               const { title, description, channelTitle } = video?.snippet;
               const { url } = video?.snippet.thumbnails.medium;
               const videoId = video?.id?.videoId;
+              const data = { title, description, videoId, channelTitle, url };
               return (
-                <VideoCard
-                  key={video.etag}
-                  data={{ title, description, videoId, channelTitle, url }}
-                />
+                <Tooltip key={videoId}>
+                  {(props) => (
+                    <VideoCard
+                      {...props}
+                      data={{ ...data, favoriteVideos, user }}
+                      handlers={{ addFavorite, removeFavorite }}
+                    />
+                  )}
+                </Tooltip>
               );
             })}
         </VideoContainer>
