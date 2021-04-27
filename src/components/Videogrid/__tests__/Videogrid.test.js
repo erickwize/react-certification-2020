@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import Videogrid from '../Videogrid'
 import Card from '../../Card/Card'
-import { Context } from '../../../context/context'
+import { Context } from '../../../providers/Context/context'
 
 const props2 = {
   id: 'selected_Card2',

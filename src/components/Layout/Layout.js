@@ -3,8 +3,7 @@ import Header from '../Header/Header'
 import Menu from '../Menu/Menu'
 import Container from '../Container/Container'
 import { GlobalStyles } from '../../global'
-import { Context } from '../../context/context'
-
+import { Context } from '../../providers/Context/context'
 import StyledLayout from './Layout.styled'
 
 const Layout = React.memo(({ children }) => {

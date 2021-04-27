@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import Container from '../Container'
 import Homepage from '../../../pages/Home/Home.page'
-import { Context } from '../../../context/context'
+import { Context } from '../../../providers/Context/context'
 
 const jsonFile = require('../../../utils/assets/youtube-videos-mock.json')
 
@@ -15,7 +15,7 @@ const state = {
 describe('Testing Container component', () => {
   test('display Class container', async () => {
     const { container } = render(
-      <Container {...state.tehem}>
+      <Container {...state.theme}>
         <Context.Provider value={{ state }}>
           <Homepage />
         </Context.Provider>

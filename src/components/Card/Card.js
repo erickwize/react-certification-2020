@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import StyledCard from './Card.styled'
 import StyledStandardCard from './CardStandard.styled'
-import { Context } from '../../context/context'
+import { Context } from '../../providers/Context/context'
 
 const Card = React.memo((props) => {
   const { state } = useContext(Context)
-
   const adjustTitle = (str) => {
     const arr = str.split(' ')
     return arr.length > 5 ? `${arr.slice(0, 5).join(' ')}...` : `${arr.join(' ')}...`
@@ -17,8 +16,8 @@ const Card = React.memo((props) => {
         className="imageInside"
         src={props.link}
         alt={props.title}
-        width={props.width}
-        height={props.height}
+        width={props.w}
+        height={props.h}
       />
     </div>
   )

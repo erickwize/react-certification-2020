@@ -1,32 +1,45 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { render, fireEvent, waitFor } from '@testing-library/react'
-import { Context } from '../../../context/context'
-import { Context, initialState } from '../../../context/context'
+import { MemoryRouter } from 'react-router-dom'
+import { Context } from '../../../providers/Context/context'
+import { AuthContext } from '../../../providers/Auth/auth'
 import Menu from '../Menu'
 
 const jsonFile = require('../../../utils/assets/youtube-videos-mock.json')
 
+const login = null
+const logout = null
+
+let state = {
+  target: 'Wizeline',
+  theme: false,
+  data: jsonFile,
+  user: { id: 0, name: '', avatarUrl: '' },
+  favorites: [],
+}
+
+let authenticated = false
+
 describe('Testing Menu component', () => {
   test('Renders Menu without crashing', async () => {
-    const state = {
-      view: 'home',
-      data: jsonFile,
-    }
     const rendered = renderer.create(
-      <Context.Provider value={{ state }}>
-        <Menu />
-      </Context.Provider>
+      <AuthContext.Provider value={{ authenticated, login, logout }}>
+        <Context.Provider value={{ state }}>
+          <MemoryRouter>
+            <Menu />
+          </MemoryRouter>
+        </Context.Provider>
+      </AuthContext.Provider>
     )
     expect(rendered).toMatchSnapshot()
   })
 
   test('Favorites view changed when button menu clicked', async () => {
     const e = { target: { innerText: 'Favorites' } }
-
-    const state = {
+    authenticated = true
+    state = {
       view: 'home',
-      data: jsonFile,
     }
 
     const payload = { payload: 'favorites', type: 'SET_VIEW' }
@@ -36,7 +49,11 @@ describe('Testing Menu component', () => {
 
     const { getByText } = render(
       <Context.Provider value={{ state, dispatch }}>
-        <Menu handleChange={handleChange} />
+        <MemoryRouter>
+          <AuthContext.Provider value={{ authenticated, login, logout }}>
+            <Menu handleChange={handleChange} />
+          </AuthContext.Provider>
+        </MemoryRouter>
       </Context.Provider>
     )
 
@@ -50,20 +67,19 @@ describe('Testing Menu component', () => {
   test('Home view changed when button menu clicked', async () => {
     const e = { target: { innerText: 'Home' } }
 
-    const state = {
-      view: 'favorite',
-      data: jsonFile,
-    }
-
     const payload = { payload: 'home', type: 'SET_VIEW' }
 
     const handleChange = jest.fn()
     const dispatch = jest.fn()
 
     const { getByText } = render(
-      <Context.Provider value={{ state, dispatch }}>
-        <Menu handleChange={handleChange} />
-      </Context.Provider>
+      <AuthContext.Provider value={{ authenticated, login, logout }}>
+        <Context.Provider value={{ state, dispatch }}>
+          <MemoryRouter>
+            <Menu handleChange={handleChange} />
+          </MemoryRouter>
+        </Context.Provider>
+      </AuthContext.Provider>
     )
 
     const container = await waitFor(() => getByText('Home'))

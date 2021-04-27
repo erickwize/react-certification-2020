@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Context } from '../../../context/context'
+import { Context } from '../../../providers/Context/context'
 import Card from '../Card'
 
 const state = {

@@ -1,5 +1,5 @@
 import React, { useRef, useContext, useEffect, useState } from 'react'
-import { Context } from '../../context/context'
+import { Context } from '../../providers/Context/context'
 import Card from '../../components/Card/Card'
 import StyledHome from './Home.styled'
 import StyledHomeDetails from './HomeDetails.styled'
@@ -7,7 +7,7 @@ import Viewdetailes from '../../components/Viewdetailes/Viewdetailes'
 import Videogrid from '../../components/Videogrid/Videogrid'
 
 const HomePage = React.memo(() => {
-  const { state, dispatch } = useContext(Context)
+  const { state } = useContext(Context)
   const [view, setView] = useState(null)
   const [arrCards, setArrCards] = useState([])
   const [selectedCard, setSelectedCard] = useState(null)
@@ -18,9 +18,9 @@ const HomePage = React.memo(() => {
     cardObj.id = element.id.videoId
     cardObj.title = element.snippet.title
     cardObj.description = element.snippet.description
-    cardObj.url = element.snippet.thumbnails.medium.url
-    cardObj.width = element.snippet.thumbnails.medium.width
-    cardObj.height = element.snippet.thumbnails.medium.height
+    cardObj.link = element.snippet.thumbnails.medium.url
+    cardObj.w = element.snippet.thumbnails.medium.width
+    cardObj.h = element.snippet.thumbnails.medium.height
     return cardObj
   }
 
@@ -34,15 +34,19 @@ const HomePage = React.memo(() => {
             key={`details_${selectedCard.id}`}
             title={selectedCard.title}
             description={selectedCard.description}
+            link={selectedCard.link}
+            w={setArrCards.w}
+            h={setArrCards.h}
           />
           <Videogrid id={selectedCard.id} key={`grid_${selectedCard.id}`}>
             {arrCards}
           </Videogrid>
         </StyledHomeDetails>
       )
-      dispatch({ type: 'SET_VIEW', payload: 'homeDetails' })
+
       setView(defRows)
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCard])
 
@@ -60,9 +64,9 @@ const HomePage = React.memo(() => {
             key={updElement.id}
             title={updElement.title}
             description={updElement.description}
-            link={updElement.url}
-            w={updElement.width}
-            h={updElement.height}
+            link={updElement.link}
+            w={updElement.w}
+            h={updElement.h}
             customClickEvent={() => {
               setSelectedCard(updElement)
             }}
@@ -78,12 +82,14 @@ const HomePage = React.memo(() => {
       setView(defRows)
       setArrCards(rows)
     }
-    const getFavorites = () => setView(<div />)
+
     if (state.data.length) {
-      if (state.view === 'home') getHome()
-      if (state.view === 'favorites') getFavorites()
+      getHome()
     }
-  }, [state.data, state.view])
+    return () => {
+      setSelectedCard(null)
+    }
+  }, [state.data, state.view, state.target])
 
   return <>{view}</>
 })

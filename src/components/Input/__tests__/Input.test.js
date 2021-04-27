@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import { fireEvent, screen } from '@testing-library/dom'
 import StyledInput from '../Input.styled'
-import { Context } from '../../../context/context'
+import { Context } from '../../../providers/Context/context'
 
 const state = {
   target: 'Wizeline',

@@ -25,6 +25,17 @@ export const ContextReducer = (state, action) => {
         ...state,
         target: action.payload,
       }
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.payload,
+      }
+    case 'SET_FAVORITES':
+      return {
+        ...state,
+        favorites: action.payload,
+      }
+
     default:
       return state
   }

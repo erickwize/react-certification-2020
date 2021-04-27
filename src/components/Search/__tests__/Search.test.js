@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { Context } from '../../../context/context'
+import { Context } from '../../../providers/Context/context'
 import Search from '../Search'
 
 const state = {
