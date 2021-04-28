@@ -8,6 +8,8 @@ import GlobalProvider from '../store/global/global.provider';
 import VideoCard from '../components/VideoCard/VideoCard';
 import { mockFavorites } from '../mockData';
 
+jest.mock('../firebase');
+
 const history = createMemoryHistory();
 const allProviders = ({ children }) => {
   return (
@@ -17,9 +19,20 @@ const allProviders = ({ children }) => {
   );
 };
 
+const addFavorite = jest.fn();
+const removeFavorite = jest.fn();
+const show = true;
+
 test('render videoCard component', async () => {
   const firstElement = mockFavorites[1];
-  render(<VideoCard data={firstElement} />, { wrapper: allProviders });
+  render(
+    <VideoCard
+      data={firstElement}
+      show={show}
+      handlers={{ addFavorite, removeFavorite }}
+    />,
+    { wrapper: allProviders }
+  );
 
   // Looking for elements
   const cardLink = screen.getByRole('link');

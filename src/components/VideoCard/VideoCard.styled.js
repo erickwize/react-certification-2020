@@ -9,6 +9,7 @@ const VideoBox = styled.div`
   cursor: pointer;
   position: relative;
   transform: none;
+  background: ${({ theme }) => theme.cardTheme};
 
   :hover {
     transform: scale(1.03) translateZ(0px);

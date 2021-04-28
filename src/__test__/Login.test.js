@@ -7,7 +7,13 @@ import { createMemoryHistory } from 'history';
 import Login from '../pages/Login/Login.page';
 import GlobalProvider from '../store/global/global.provider';
 
+jest.mock('../firebase');
+
 describe('Testing Login form ', () => {
+  const modalRoot = document.createElement('div');
+  modalRoot.setAttribute('id', 'portal');
+  document.body.appendChild(modalRoot);
+
   const history = createMemoryHistory();
   const allProviders = ({ children }) => {
     return (
@@ -64,7 +70,7 @@ describe('Testing Login form ', () => {
   it('Typing correct user and password', async () => {
     render(<Login />, { wrapper: allProviders });
 
-    userEvent.type(screen.getByLabelText('User'), 'wizeline');
+    userEvent.type(screen.getByLabelText('User'), 'wizeline@wizeline.com');
     userEvent.type(screen.getByLabelText('Password'), 'Rocks!');
     userEvent.click(screen.getByRole('button', { name: /Log In/i }));
     expect(history.location.pathname).toBe('/');

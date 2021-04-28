@@ -16,6 +16,8 @@ const allProviders = ({ children }) => {
   );
 };
 
+jest.mock('../firebase');
+
 describe('ThemeButton test', () => {
   it('Looking for elements', () => {
     render(

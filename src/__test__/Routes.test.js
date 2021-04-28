@@ -9,7 +9,13 @@ import { mockFavorites } from '../mockData';
 import { GlobalContext } from '../store/global/global.provider';
 import { globalReducer } from '../store/global/GlobalReducer';
 
+jest.mock('../firebase');
+
 describe('Testing React App´s routes', () => {
+  const modalRoot = document.createElement('div');
+  modalRoot.setAttribute('id', 'portal');
+  document.body.appendChild(modalRoot);
+
   const history = createMemoryHistory();
 
   const initialState = {
@@ -38,6 +44,7 @@ describe('Testing React App´s routes', () => {
 
   const renderWithRouter = (ui, { route = '/' } = {}) => {
     history.push(route);
+
     return render(ui, { wrapper: allProviders });
   };
 
@@ -52,7 +59,7 @@ describe('Testing React App´s routes', () => {
     renderWithRouter(<Routes />, { route: '/login' });
     const title = screen.getByRole('heading', { level: 1 });
     expect(title).toBeInTheDocument();
-    expect(screen.getByText('Welcome Back!')).toBeInTheDocument();
+    expect(history.location.pathname).not.toBe('/login'); // user is logged in, it returns home
   });
 
   it('Rendering favorites videos page ', () => {

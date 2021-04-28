@@ -9,6 +9,8 @@ import { mockFavorites } from '../mockData';
 import { GlobalContext } from '../store/global/global.provider';
 import { globalReducer } from '../store/global/GlobalReducer';
 
+jest.mock('../firebase');
+
 describe('Testing Video Component', () => {
   const history = createMemoryHistory();
   const initialState = {
@@ -74,7 +76,7 @@ describe('Testing Video Component', () => {
 
     const button = await screen.findByRole('button');
     expect(button).toBeInTheDocument();
-    expect(await screen.findByText('ELIMINAR DE FAVORITOS')).toBeInTheDocument();
+    expect(await screen.findByText('Remove')).toBeInTheDocument();
 
     const paragraph = await screen.findByTestId('paragraph');
     expect(paragraph).toBeInTheDocument();
@@ -109,10 +111,10 @@ describe('Testing Video Component', () => {
     expect((await screen.findAllByRole('link')).length).toBe(6);
 
     // Removing a video
-    const button = await screen.findByText('ELIMINAR DE FAVORITOS');
+    const button = await screen.findByText('Remove');
     userEvent.click(button);
     expect((await screen.findAllByRole('link')).length).toBe(5);
-    expect(await screen.findByText('AÑADIR A FAVORITOS')).toBeInTheDocument();
+    expect(await screen.findByText('Add')).toBeInTheDocument();
     // const cardLink = await screen.findAllByRole('link');
   });
 });

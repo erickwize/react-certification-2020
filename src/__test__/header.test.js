@@ -8,6 +8,8 @@ import Header from '../components/Header/Header';
 import { globalReducer } from '../store/global/GlobalReducer';
 import { GlobalContext } from '../store/global/global.provider';
 
+jest.mock('../firebase');
+
 const history = createMemoryHistory();
 
 const initialState = {

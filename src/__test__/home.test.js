@@ -9,6 +9,8 @@ import HomePage from '../pages/Home/Home.page';
 import { mockVideos } from '../mockData';
 import { globalReducer } from '../store/global/GlobalReducer';
 
+jest.mock('../firebase');
+
 describe('Testing Home page', () => {
   const history = createMemoryHistory();
 

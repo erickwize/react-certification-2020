@@ -7,6 +7,8 @@ import { createMemoryHistory } from 'history';
 import Sidebar from '../components/Sidebar';
 import GlobalProvider from '../store/global/global.provider';
 
+jest.mock('../firebase');
+
 test('Testing Sidebar components', async () => {
   const history = createMemoryHistory();
 

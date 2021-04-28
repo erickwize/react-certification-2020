@@ -7,6 +7,8 @@ import { createMemoryHistory } from 'history';
 import LoginButton from '../components/LoginButton';
 import GlobalProvider from '../store/global/global.provider';
 
+jest.mock('../firebase');
+
 test('Test LoginButton components', async () => {
   const history = createMemoryHistory();
 

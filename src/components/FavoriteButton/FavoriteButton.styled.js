@@ -26,16 +26,45 @@ const Button = styled.button`
   :hover {
     background: #eb4943;
   }
+
+  @media (max-width: 750px) {
+    width: 140px;
+    height: 30px;
+    margin: 0px;
+  }
+
+  @media (max-width: 450px) {
+    width: 110px;
+    height: 25px;
+    font-size: 14px;
+  }
 `;
 
 const Icon = styled.svg`
   height: 60%;
   width: auto;
   margin-left: ${(props) => (props.container === 'card' ? '5px' : '35px')};
+
+  @media (max-width: 750px) {
+    margin-left: 5px;
+  }
+
+  @media (max-width: 450px) {
+    margin-left: 5px;
+  }
 `;
 
 const Label = styled.span`
   margin-left: ${(props) => (props.container === 'card' ? '5px' : '8px')};
+  @media (max-width: 750px) {
+    margin-left: 5px;
+    margin-bottom: 2px;
+  }
+
+  @media (max-width: 450px) {
+    margin-left: 5px;
+    margin-bottom: 2px;
+  }
 `;
 
 export { Button, Icon, Label };

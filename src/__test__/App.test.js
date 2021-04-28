@@ -11,6 +11,8 @@ import { mockVideos, mockSearch } from '../mockData';
 import { globalReducer } from '../store/global/GlobalReducer';
 import { GlobalContext } from '../store/global/global.provider';
 
+jest.mock('../firebase');
+
 describe('Testing App component ', () => {
   const history = createMemoryHistory();
 

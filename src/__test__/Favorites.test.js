@@ -9,6 +9,8 @@ import { globalReducer } from '../store/global/GlobalReducer';
 import Favorites from '../pages/Favorites/Favorites.page';
 import { mockFavorites } from '../mockData';
 
+jest.mock('../firebase');
+
 describe('Testing Home page', () => {
   const history = createMemoryHistory();
   history.push('/favorites');

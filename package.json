@@ -70,7 +70,9 @@
       "/src/components/Fortune/",
       "/src/components/Layout/",
       "/src/utils/storage.js",
-      "/src/MockLogo"
+      "/src/MockLogo",
+      "/src/utils/login.api.js",
+      "/src/firebase.js"
     ],
     "coverageThreshold": {
       "global": {

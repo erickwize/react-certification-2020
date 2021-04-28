@@ -8,6 +8,8 @@ import GlobalProvider from '../store/global/Global.provider';
 import PlayVideo from '../components/PlayVideo/PlayVideo';
 import { mockFavorites } from '../mockData';
 
+jest.mock('../firebase');
+
 const user = { name: 'Wizeline' };
 const videoSelected = mockFavorites[1];
 const favorite = true;
@@ -49,7 +51,7 @@ test('Test PlayVideo component', async () => {
 
   // Add video
   onClickButton();
-  expect(await screen.findByText('ELIMINAR DE FAVORITOS')).toBeInTheDocument();
+  expect(await screen.findByText('Remove')).toBeInTheDocument();
   expect(onClickButton).toHaveBeenCalledTimes(1);
   // After delete video
 });

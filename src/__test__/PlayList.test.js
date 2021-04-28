@@ -11,6 +11,8 @@ import GlobalProvider from '../store/global/global.provider';
 import PlayList from '../components/PlayList/PlayList';
 import { mockVideos } from '../mockData';
 
+jest.mock('../firebase');
+
 const { videoId } = mockVideos.items[1].id;
 
 const history = createMemoryHistory();

@@ -5,6 +5,8 @@ import userEvent from '@testing-library/user-event';
 import ThemeButton from '../components/ThemeButton/ThemeButton';
 import GlobalProvider from '../store/global/global.provider';
 
+jest.mock('../firebase');
+
 test('Test ThemeButton components', async () => {
   render(
     <GlobalProvider>

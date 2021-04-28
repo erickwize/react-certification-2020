@@ -12,6 +12,8 @@ import { mockVideos } from '../mockData';
 import { GlobalContext } from '../store/global/global.provider';
 import { globalReducer } from '../store/global/GlobalReducer';
 
+jest.mock('../firebase');
+
 describe('Testing Video Component', () => {
   const history = createMemoryHistory();
 
@@ -88,7 +90,7 @@ describe('Testing Video Component', () => {
     expect(headingVideo).toBeInTheDocument();
 
     // Button only visible for users
-    expect(await screen.findByText('AÑADIR A FAVORITOS')).toBeInTheDocument();
+    expect(await screen.findByText('Add')).toBeInTheDocument();
 
     const paragraph = await screen.findByTestId('paragraph');
     expect(paragraph).toBeInTheDocument();
@@ -109,9 +111,9 @@ describe('Testing Video Component', () => {
   it('Adding favorite video and changind selected video', async () => {
     renderWithRouter(<Video />, { videoRoute: '/video/nmXMgqjQzls' });
 
-    const button = await screen.findByText('AÑADIR A FAVORITOS');
+    const button = await screen.findByText('Add');
     userEvent.click(button);
-    expect(await screen.findByText('ELIMINAR DE FAVORITOS')).toBeInTheDocument();
+    expect(await screen.findByText('Remove')).toBeInTheDocument();
 
     expect(history.location.pathname).toBe('/video/nmXMgqjQzls');
 
