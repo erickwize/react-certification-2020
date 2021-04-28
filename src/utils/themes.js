@@ -2,7 +2,7 @@ export const lightTheme = {
   body: '#ebeef2',
   text: '#363537',
   cardText: '#575656',
-  cardTheme: '#f5f0f0',
+  cardTheme: '#ffffff',
   toggleBorder: '#a0aec0',
   background: 'linear-gradient(#39598A, #79D7ED)',
 };

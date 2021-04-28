@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const HomeSection = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Title = styled.div`
@@ -21,9 +22,9 @@ const VideoContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 auto;
   padding: 20px;
-  width: 400px;
+  width: 330px;
 
-  @media (min-width: 900px) {
+  @media (min-width: 750px) {
     width: 760px;
   }
   @media (min-width: 1250px) {

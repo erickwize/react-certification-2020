@@ -4,6 +4,7 @@ const StyledHeader = styled.header`
   height: 60px;
   width: 100%;
   border-bottom: 1px solid #a0aec0;
+  background: ${({ theme }) => theme.cardTheme};
   .bar {
     height: 100%;
     display: flex;

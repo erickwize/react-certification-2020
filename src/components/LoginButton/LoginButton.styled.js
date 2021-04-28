@@ -17,8 +17,9 @@ const Button = styled.button`
   color: ${({ theme }) => theme.text};
 
   @media (max-width: 800px) {
-    visibility: hidden;
-    width: 0px;
+    width: 60px;
+    font-size: 12px;
+    margin: 0px;
   }
 `;
 
