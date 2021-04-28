@@ -7,7 +7,7 @@ import Viewdetailes from '../../components/Viewdetailes/Viewdetailes'
 import Videogrid from '../../components/Videogrid/Videogrid'
 
 const HomePage = React.memo(() => {
-  const { state } = useContext(Context)
+  const { state, dispatch } = useContext(Context)
   const [view, setView] = useState(null)
   const [arrCards, setArrCards] = useState([])
   const [selectedCard, setSelectedCard] = useState(null)
@@ -26,7 +26,7 @@ const HomePage = React.memo(() => {
 
   useEffect(() => {
     const defRows = []
-    if (selectedCard) {
+    if (selectedCard && state.view === 'homeDetails') {
       defRows.push(
         <StyledHomeDetails key="homeDetails">
           <Viewdetailes
@@ -46,9 +46,7 @@ const HomePage = React.memo(() => {
 
       setView(defRows)
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCard])
+  }, [arrCards, selectedCard, state.view])
 
   useEffect(() => {
     const getHome = () => {
@@ -69,6 +67,7 @@ const HomePage = React.memo(() => {
             h={updElement.h}
             customClickEvent={() => {
               setSelectedCard(updElement)
+              dispatch({ type: 'SET_VIEW', payload: 'homeDetails' })
             }}
           />
         )
@@ -86,10 +85,7 @@ const HomePage = React.memo(() => {
     if (state.data.length) {
       getHome()
     }
-    return () => {
-      setSelectedCard(null)
-    }
-  }, [state.data, state.view, state.target])
+  }, [state.data, state.view, state.target, dispatch])
 
   return <>{view}</>
 })
