@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Wrapper, Switch, Track, Ball } from './DarkMode.styled';
 import { GlobalContext } from '../../context/GlobalContext';
 
-function DarkMode({ children }) {
+function DarkMode() {
   const globalContext = useContext(GlobalContext);
 
   const onClickHandler = () => {
@@ -10,11 +10,10 @@ function DarkMode({ children }) {
   };
   return (
     <Wrapper>
-      <Switch onClick={onClickHandler}>
+      <Switch onClick={onClickHandler} data-testid="darkmode-switch">
         <Track theme={globalContext.colors} />
         <Ball className={globalContext.themeId} />
       </Switch>
-      {children}
     </Wrapper>
   );
 }
