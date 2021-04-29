@@ -39,7 +39,6 @@ export default function Routes({ selectCard, videoList, video, dispatch, favorit
         <Route exact path="/user/:account">
           <Private>
             <UserFavorites selectCard={selectCard} dispatch={dispatch} />
-            <UserLogin dispatch={dispatch} />
           </Private>
         </Route>
         <Route exact path="/user/player/:videoId">
@@ -50,7 +49,6 @@ export default function Routes({ selectCard, videoList, video, dispatch, favorit
               relatedVideos={Object.values(favorites)}
               dispatch={dispatch}
             />
-            <UserLogin dispatch={dispatch} />
           </Private>
         </Route>
         <Route path="*">

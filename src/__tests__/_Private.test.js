@@ -14,15 +14,6 @@ afterEach(() => {
   cleanup();
 });
 
-it('Private: Not auth', () => {
-  render(
-    <Private>
-      <UserFavorites selectCard={selectCard} dispatch={dispatch} />
-      <UserLogin dispatch={dispatch} />
-    </Private>
-  );
-});
-
 it('Render Private', () => {
   storage.set(AUTH_STORAGE_KEY, true);
   render(
