@@ -1,0 +1,452 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "PWsKQoalp7TF4BMpHyB7r8w1g0w",
+  "nextPageToken": "CAUQAA",
+  "regionCode": "MX",
+  "pageInfo": {
+    "totalResults": 99,
+    "resultsPerPage": 5
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "66C4zzFhmxTqqtJpWdh0PiQuWas",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "OrJMUNEyZsE"
+      },
+      "snippet": {
+        "publishedAt": "2018-09-13T16:33:31Z",
+        "channelId": "UCYK1TyKyMxyDQU8c6zF8ltg",
+        "title": "Funniest Videos for Pets to Watch Compilation | Funny Pet Videos",
+        "description": "Do you like just putting on the TV and leave something for your pets to watch? Why not put on this 2 hour compilation of the funniest and cutest animals to leave your pets some company.\n\nWe love to bring you the best videos on the internet! Everything from Funny Videos, Fails, Fail Videos, Funny Baby Videos, TNTL Challenge, Si Te Ries Pierdes, Win Fail Fun, Funny Dogs, Makeup Tutorials and MORE! \n\nCheck out the ULTIMATE PLAYLIST here►https://www.youtube.com/playlist?list=PLnEgJF0UIKFC_ddIfDYI94vtY5cuWqDFk\n\nFunny Pet Videos brings you the best cute animal compilations, try not to laugh challenges, fails, wins, and hilarious viral videos.  We feature dogs, cats, horses, pigs, lions, lizards, rodents, bugs, spiders, tigers, kittens, puppies, squirrels, foxes, and more in the best new dank memes, funny clips, and you laugh you lose challenges and create collective of funny pets, life awesome moments, and epic wins.  \n\nNot content with only one platform, we’re committed to montages from Vine, Twitter, Instagram, Facebook, Snapchat, and Musically.  Sit back and enjoy a veritable fail army: kids fails, animal fails, girl fails, trampoline fails, car fails, on the job fails, old people fails, school fails, water fails, prank fails and pranks gone wrong, and more!  \n\nNot convinced? Check out some of our greatest hits below!\n\nFunniest Pet Reactions & Bloopers of January 2018 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=Gc4OXzPY0Gg\n\nUltimate FUNNY DOG Compilation of 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=lIBQTZBRoC0\n\nFunniest Pet Reactions & Bloopers of November 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=8criqdtLGVI\n\nUltimate Cute Pets vs. Epic Kids Fails Compilation | Funny Pet Videos February 2018\nhttps://www.youtube.com/watch?v=CjMVtGsFULk\n\nTry Not To Laugh At This Ultimate Funny Dog Video Compilation | Funny Pet Videos\nhttps://www.youtube.com/watch?v=AcL0MeVZIxM\n\nBEST ANIMALS OF 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=34NjK6pRFiM\n\nTRY NOT TO LAUGH at FUNNY PET FAILS 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=A6hrw6KGdtM\n\nUltimate Try Not to Aww Compilation of 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=4WiXPFBwx7M\n\nFunniest Pet Reactions & Bloopers of August 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=Nz7eX19isF4\n\nFunniest Animals Scaring People Reactions of 2018 Weekly Compilation | Funny Pet Videos\nhttps://www.youtube.com/watch?v=8fspq-Ow-A8\n\nOur channel features content from: America’s Funniest Home Videos, Storyful, Launch Pad Entertainment LPE, VVUK, People Doing Things, and more!\n\nCheck out our partners! \n\nDumb Genius\nhttps://www.youtube.com/user/TheBestVines\n\nMusically Compilations\nhttps://www.youtube.com/channel/UC7SK2sk4YhfbJs57vBg3UbQ\n\nFunny Vines\nhttps://www.youtube.com/user/VineAholic\n\nThe Best Fails\nhttps://www.youtube.com/channel/UCuunebfqIi8uCzAs_fO1D6Q\n\nTry Not to Laugh Challenge\nhttps://www.youtube.com/channel/UCIDaoGGZ0VL_lWajKts4bww\n\nMas Supreme\nhttps://www.youtube.com/channel/UCrSB37ax8L3rZY3WtDMMitg\n\nLife Awesome\n\nTiger Productions / Tiger Funny Works\n\nCoVines / CoViners\n\n#funnypetvideos #funnydogs #animals #cutecats",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Funny Pet Videos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-09-13T16:33:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zErNV3TsqMyP4j4vHd8VbVBhd9Y",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "B1CPE6WWsAQ"
+      },
+      "snippet": {
+        "publishedAt": "2020-03-28T08:32:51Z",
+        "channelId": "UCerazDNo8vEcVTbBajMAoFQ",
+        "title": "Cute baby animals Videos Compilation cutest moment of the animals - Cutest Puppies #2",
+        "description": "▶ Watch more cute Puppies  compilations! https://youtube.com/playlist?list=PLDQIMVfdTGXxPPkxdmVjdkVPAtWr1Mw4D\n\n🔔 Subscribe to Cutest Puppies City to see the worlds cutest animals and babies! https://youtube.com/c/CutestPuppiesCity\n\nNote: Clips featured in our compilations are used with permission from the original creators. If you've got an adorable video you want to see featured in our next compilation, please send us your video! More details in the \"About\" section of our channel 👆\n\n#Animals #Cute #Dogs #Cats #Babies #Adorable",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Cutest Puppies City",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-03-28T08:32:51Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "1s7aQUXE4q8bgewNDGPLddQ8z4M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "j9lTuw4J00o"
+      },
+      "snippet": {
+        "publishedAt": "2020-12-28T02:43:35Z",
+        "channelId": "UCT-kcE7DDILCX-44rfl5hzQ",
+        "title": "Dankest Doggo Memes - Try Not To Laugh #4",
+        "description": "Dankest Doggo Memes #4 - Try Not To Laugh\n\nWatch our new selection of some of the dankest doggo memes ever. dog memes try not to laugh while you'll watching\n\nShare with friends & Family. Give us the help & Enjoy\n\n\ndog memes, dog memes clean, dog memes try not to laugh,\ndankest doggo, dog memes clean funny, dog memes clean 2020,\ndank memes 2020,dankest doggo memes, dog MEMES COMPILATION, dank memes,\nDoggo Memes\n---------------------------------------------------------------------------\nCOPYRIGHT ISSUES:\nOur purpose, when making COMPILATIONS, is NOT to steal other people's videos, but to share those in quality compilation with other people.\nOne of our videos was shared by the owner and allowed for use or we purchased. Some videos we have not contacted the owner. If any owner of clips, used in our compilation, has a copyright issue, feel free to contact us by [ http://bit.ly/2Kn8Id4 ] . We will remove the clip, video or come to an agreement. Thank you.\nUsing or sharing our compilations is allowed, so feel free to share it anywhere, but it would be nice, to use direct link of video, not of copies. Thanks.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Dogs Meme",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-12-28T02:43:35Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "7fB4QOvbcN4Kx8rKcgEleHmJdVw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "E4cMs6srxR8"
+      },
+      "snippet": {
+        "publishedAt": "2020-02-12T00:48:56Z",
+        "channelId": "UCYK1TyKyMxyDQU8c6zF8ltg",
+        "title": "Cute and Funny German Shepherds! | Funny Pet Videos",
+        "description": "Funny Pet Videos brings you the best animal videos around the internet! We feature dogs, cats, horses, pigs, lions, lizards, rodents, bugs, spiders, tigers, kittens, puppies, squirrels, foxes and many more! Check out our Pet Guide where we compare different breeds educating you their Physical Characteristics, personality, training and general care to keep them smiling and wagging their tails.\r\n\r\nSubscribe: \r\nhttps://www.youtube.com/channel/UCYK1TyKyMxyDQU8c6zF8ltg?sub_confirmation=1\r\n\r\n----------------------------------------------------------------------------------------------------------\r\n\r\nOur channel features content from: America’s Funniest Home Videos, AnimalsDT, Launch Pad Entertainment LPE, VVUK, People Doing Things, and more!\r\n\r\nAll content is used with appropriate licenses from CollabDRM and Vin Di Bona Productions.  For more information, or to license anything contained in this video please email licensing@collabdrm.com\r\n\r\n\r\nCheck out our partners! \r\n\r\nFunny Vines\r\nhttps://www.youtube.com/user/VineAholic\r\n\r\nDumb Genius\r\nhttps://www.youtube.com/user/TheBestVines\r\n\r\nWin Fail Fun\r\nhttps://www.youtube.com/user/WinFailFun\r\n\r\nRufus\r\nhttps://www.youtube.com/channel/UCzn2gx8zzhF0A4Utk8TEDNQ\r\n\r\nThe Best Fails\r\nhttps://www.youtube.com/channel/UCuunebfqIi8uCzAs_fO1D6Q\r\n\r\nCollab Clips\r\nhttps://www.youtube.com/channel/UC7SK2sk4YhfbJs57vBg3UbQ\r\n\r\nTop Ten Daily\r\nhttps://www.youtube.com/channel/UCRtQDkL_op8jPzM2K9aT0Vw\r\n\r\n\r\n#funnypetvideos #animals #pets #dogs #cats",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Funny Pet Videos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-02-12T00:48:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zrNw66AC2YuCRHqVU9-0YTEs5bE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "EtH9Yllzjcc"
+      },
+      "snippet": {
+        "publishedAt": "2017-11-18T19:06:48Z",
+        "channelId": "UC3rrzHpFzshYjIMk8YFc52w",
+        "title": "Try Not To Laugh Challenge - Funny Cat & Dog Vines compilation 2017",
+        "description": "Try Not To Laugh or Grin While Watching Funny Dogs & Cats Vines compilation 2017 IMPOSSIBLE CHALLENGE!\n\nSubscribe to CooL Vines ► http://goo.gl/AO95W6",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "CooL Vines",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-11-18T19:06:48Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "66C4zzFhmxTqqtJpWdh0PiQuWas",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "OrJMUNEyZsE2"
+      },
+      "snippet": {
+        "publishedAt": "2018-09-13T16:33:31Z",
+        "channelId": "UCYK1TyKyMxyDQU8c6zF8ltg",
+        "title": "Funniest Videos for Pets to Watch Compilation | Funny Pet Videos",
+        "description": "Do you like just putting on the TV and leave something for your pets to watch? Why not put on this 2 hour compilation of the funniest and cutest animals to leave your pets some company.\n\nWe love to bring you the best videos on the internet! Everything from Funny Videos, Fails, Fail Videos, Funny Baby Videos, TNTL Challenge, Si Te Ries Pierdes, Win Fail Fun, Funny Dogs, Makeup Tutorials and MORE! \n\nCheck out the ULTIMATE PLAYLIST here►https://www.youtube.com/playlist?list=PLnEgJF0UIKFC_ddIfDYI94vtY5cuWqDFk\n\nFunny Pet Videos brings you the best cute animal compilations, try not to laugh challenges, fails, wins, and hilarious viral videos.  We feature dogs, cats, horses, pigs, lions, lizards, rodents, bugs, spiders, tigers, kittens, puppies, squirrels, foxes, and more in the best new dank memes, funny clips, and you laugh you lose challenges and create collective of funny pets, life awesome moments, and epic wins.  \n\nNot content with only one platform, we’re committed to montages from Vine, Twitter, Instagram, Facebook, Snapchat, and Musically.  Sit back and enjoy a veritable fail army: kids fails, animal fails, girl fails, trampoline fails, car fails, on the job fails, old people fails, school fails, water fails, prank fails and pranks gone wrong, and more!  \n\nNot convinced? Check out some of our greatest hits below!\n\nFunniest Pet Reactions & Bloopers of January 2018 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=Gc4OXzPY0Gg\n\nUltimate FUNNY DOG Compilation of 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=lIBQTZBRoC0\n\nFunniest Pet Reactions & Bloopers of November 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=8criqdtLGVI\n\nUltimate Cute Pets vs. Epic Kids Fails Compilation | Funny Pet Videos February 2018\nhttps://www.youtube.com/watch?v=CjMVtGsFULk\n\nTry Not To Laugh At This Ultimate Funny Dog Video Compilation | Funny Pet Videos\nhttps://www.youtube.com/watch?v=AcL0MeVZIxM\n\nBEST ANIMALS OF 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=34NjK6pRFiM\n\nTRY NOT TO LAUGH at FUNNY PET FAILS 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=A6hrw6KGdtM\n\nUltimate Try Not to Aww Compilation of 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=4WiXPFBwx7M\n\nFunniest Pet Reactions & Bloopers of August 2017 | Funny Pet Videos\nhttps://www.youtube.com/watch?v=Nz7eX19isF4\n\nFunniest Animals Scaring People Reactions of 2018 Weekly Compilation | Funny Pet Videos\nhttps://www.youtube.com/watch?v=8fspq-Ow-A8\n\nOur channel features content from: America’s Funniest Home Videos, Storyful, Launch Pad Entertainment LPE, VVUK, People Doing Things, and more!\n\nCheck out our partners! \n\nDumb Genius\nhttps://www.youtube.com/user/TheBestVines\n\nMusically Compilations\nhttps://www.youtube.com/channel/UC7SK2sk4YhfbJs57vBg3UbQ\n\nFunny Vines\nhttps://www.youtube.com/user/VineAholic\n\nThe Best Fails\nhttps://www.youtube.com/channel/UCuunebfqIi8uCzAs_fO1D6Q\n\nTry Not to Laugh Challenge\nhttps://www.youtube.com/channel/UCIDaoGGZ0VL_lWajKts4bww\n\nMas Supreme\nhttps://www.youtube.com/channel/UCrSB37ax8L3rZY3WtDMMitg\n\nLife Awesome\n\nTiger Productions / Tiger Funny Works\n\nCoVines / CoViners\n\n#funnypetvideos #funnydogs #animals #cutecats",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/OrJMUNEyZsE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Funny Pet Videos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-09-13T16:33:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zErNV3TsqMyP4j4vHd8VbVBhd9Y",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "B1CPE6WWsAQ2"
+      },
+      "snippet": {
+        "publishedAt": "2020-03-28T08:32:51Z",
+        "channelId": "UCerazDNo8vEcVTbBajMAoFQ",
+        "title": "Cute baby animals Videos Compilation cutest moment of the animals - Cutest Puppies #2",
+        "description": "▶ Watch more cute Puppies  compilations! https://youtube.com/playlist?list=PLDQIMVfdTGXxPPkxdmVjdkVPAtWr1Mw4D\n\n🔔 Subscribe to Cutest Puppies City to see the worlds cutest animals and babies! https://youtube.com/c/CutestPuppiesCity\n\nNote: Clips featured in our compilations are used with permission from the original creators. If you've got an adorable video you want to see featured in our next compilation, please send us your video! More details in the \"About\" section of our channel 👆\n\n#Animals #Cute #Dogs #Cats #Babies #Adorable",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/B1CPE6WWsAQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Cutest Puppies City",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-03-28T08:32:51Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "1s7aQUXE4q8bgewNDGPLddQ8z4M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "j9lTuw4J00o2"
+      },
+      "snippet": {
+        "publishedAt": "2020-12-28T02:43:35Z",
+        "channelId": "UCT-kcE7DDILCX-44rfl5hzQ",
+        "title": "Dankest Doggo Memes - Try Not To Laugh #4",
+        "description": "Dankest Doggo Memes #4 - Try Not To Laugh\n\nWatch our new selection of some of the dankest doggo memes ever. dog memes try not to laugh while you'll watching\n\nShare with friends & Family. Give us the help & Enjoy\n\n\ndog memes, dog memes clean, dog memes try not to laugh,\ndankest doggo, dog memes clean funny, dog memes clean 2020,\ndank memes 2020,dankest doggo memes, dog MEMES COMPILATION, dank memes,\nDoggo Memes\n---------------------------------------------------------------------------\nCOPYRIGHT ISSUES:\nOur purpose, when making COMPILATIONS, is NOT to steal other people's videos, but to share those in quality compilation with other people.\nOne of our videos was shared by the owner and allowed for use or we purchased. Some videos we have not contacted the owner. If any owner of clips, used in our compilation, has a copyright issue, feel free to contact us by [ http://bit.ly/2Kn8Id4 ] . We will remove the clip, video or come to an agreement. Thank you.\nUsing or sharing our compilations is allowed, so feel free to share it anywhere, but it would be nice, to use direct link of video, not of copies. Thanks.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/j9lTuw4J00o/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Dogs Meme",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-12-28T02:43:35Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "7fB4QOvbcN4Kx8rKcgEleHmJdVw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "E4cMs6srxR82"
+      },
+      "snippet": {
+        "publishedAt": "2020-02-12T00:48:56Z",
+        "channelId": "UCYK1TyKyMxyDQU8c6zF8ltg",
+        "title": "Cute and Funny German Shepherds! | Funny Pet Videos",
+        "description": "Funny Pet Videos brings you the best animal videos around the internet! We feature dogs, cats, horses, pigs, lions, lizards, rodents, bugs, spiders, tigers, kittens, puppies, squirrels, foxes and many more! Check out our Pet Guide where we compare different breeds educating you their Physical Characteristics, personality, training and general care to keep them smiling and wagging their tails.\r\n\r\nSubscribe: \r\nhttps://www.youtube.com/channel/UCYK1TyKyMxyDQU8c6zF8ltg?sub_confirmation=1\r\n\r\n----------------------------------------------------------------------------------------------------------\r\n\r\nOur channel features content from: America’s Funniest Home Videos, AnimalsDT, Launch Pad Entertainment LPE, VVUK, People Doing Things, and more!\r\n\r\nAll content is used with appropriate licenses from CollabDRM and Vin Di Bona Productions.  For more information, or to license anything contained in this video please email licensing@collabdrm.com\r\n\r\n\r\nCheck out our partners! \r\n\r\nFunny Vines\r\nhttps://www.youtube.com/user/VineAholic\r\n\r\nDumb Genius\r\nhttps://www.youtube.com/user/TheBestVines\r\n\r\nWin Fail Fun\r\nhttps://www.youtube.com/user/WinFailFun\r\n\r\nRufus\r\nhttps://www.youtube.com/channel/UCzn2gx8zzhF0A4Utk8TEDNQ\r\n\r\nThe Best Fails\r\nhttps://www.youtube.com/channel/UCuunebfqIi8uCzAs_fO1D6Q\r\n\r\nCollab Clips\r\nhttps://www.youtube.com/channel/UC7SK2sk4YhfbJs57vBg3UbQ\r\n\r\nTop Ten Daily\r\nhttps://www.youtube.com/channel/UCRtQDkL_op8jPzM2K9aT0Vw\r\n\r\n\r\n#funnypetvideos #animals #pets #dogs #cats",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/E4cMs6srxR8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Funny Pet Videos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-02-12T00:48:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "zrNw66AC2YuCRHqVU9-0YTEs5bE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "EtH9Yllzjcc2"
+      },
+      "snippet": {
+        "publishedAt": "2017-11-18T19:06:48Z",
+        "channelId": "UC3rrzHpFzshYjIMk8YFc52w",
+        "title": "Try Not To Laugh Challenge - Funny Cat & Dog Vines compilation 2017",
+        "description": "Try Not To Laugh or Grin While Watching Funny Dogs & Cats Vines compilation 2017 IMPOSSIBLE CHALLENGE!\n\nSubscribe to CooL Vines ► http://goo.gl/AO95W6",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/EtH9Yllzjcc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "CooL Vines",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-11-18T19:06:48Z"
+      }
+    }
+  ]
+}

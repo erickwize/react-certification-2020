@@ -1,9 +1,15 @@
 import React from 'react';
+import { useGlobal } from '../../providers/Global.provider.jsx';
 
-import './Layout.styles.css';
+import { Container } from'./Layout.styles.js';
 
 function Layout({ children }) {
-  return <main className="container">{children}</main>;
+
+  const { state } = useGlobal();
+
+  return <Container theme={state.theme}>
+      {children}
+    </Container>;
 }
 
 export default Layout;
