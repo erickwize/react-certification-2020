@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '../../providers/GlobalContext';
 
 import './Layout.styles.css';
 
 function Layout({ children }) {
-  return <main className="container">{children}</main>;
+  const { background } = useContext(GlobalContext);
+  return (
+    <main className="container" style={{ background }}>
+      {children}
+    </main>
+  );
 }
 
 export default Layout;

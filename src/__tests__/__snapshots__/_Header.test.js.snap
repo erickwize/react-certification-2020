@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Header 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="sc-bdfBwQ hIHNKi"
+        data-testid="yt-header"
+      >
+        <div
+          class="sc-gsTCUz ywWHk"
+        >
+          <button
+            class="sc-dlfnbm cOuLkH"
+          />
+          <div
+            class="sc-hKgILt ljSDGR"
+          >
+            <input
+              class="sc-eCssSg iBGkVj"
+              id="name"
+              placeholder="Search..."
+              type="text"
+              value="wizeline"
+            />
+            <span
+              class="sc-jSgupP hcyBed"
+            />
+          </div>
+        </div>
+        <div
+          class="sc-gsTCUz ywWHk"
+        >
+          <div
+            class="sc-gKsewC kjfNIn"
+          >
+            <input
+              class="sc-pFZIQ gGzfcK"
+              id="darkMode"
+              name="darkMode"
+              type="checkbox"
+            />
+            <label
+              class="sc-iBPRYJ cpTqSp"
+              for="darkMode"
+            >
+              Dark mode
+            </label>
+          </div>
+          <button
+            class="sc-fubCfw dDcTFR"
+          />
+        </div>
+      </header>
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="sc-bdfBwQ hIHNKi"
+      data-testid="yt-header"
+    >
+      <div
+        class="sc-gsTCUz ywWHk"
+      >
+        <button
+          class="sc-dlfnbm cOuLkH"
+        />
+        <div
+          class="sc-hKgILt ljSDGR"
+        >
+          <input
+            class="sc-eCssSg iBGkVj"
+            id="name"
+            placeholder="Search..."
+            type="text"
+            value="wizeline"
+          />
+          <span
+            class="sc-jSgupP hcyBed"
+          />
+        </div>
+      </div>
+      <div
+        class="sc-gsTCUz ywWHk"
+      >
+        <div
+          class="sc-gKsewC kjfNIn"
+        >
+          <input
+            class="sc-pFZIQ gGzfcK"
+            id="darkMode"
+            name="darkMode"
+            type="checkbox"
+          />
+          <label
+            class="sc-iBPRYJ cpTqSp"
+            for="darkMode"
+          >
+            Dark mode
+          </label>
+        </div>
+        <button
+          class="sc-fubCfw dDcTFR"
+        />
+      </div>
+    </header>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

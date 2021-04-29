@@ -1,0 +1,62 @@
+-----------------------------|---------|----------|---------|---------|--------------------
+File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-----------------------------|---------|----------|---------|---------|--------------------
+All files                    |   87.27 |    71.01 |   80.88 |   87.27 |
+ api                         |   76.92 |       80 |     100 |   76.92 |
+  index.js                   |       0 |        0 |       0 |       0 |
+  login.api.js               |     100 |      100 |     100 |     100 |
+  youtube.api.js             |   57.14 |        0 |     100 |   57.14 | 12-15
+ components/App              |   71.43 |        0 |   66.67 |   71.43 |
+  App.component.jsx          |   71.43 |        0 |   66.67 |   71.43 | 24-27,32
+  index.js                   |       0 |        0 |       0 |       0 |
+ components/Header           |   76.09 |    42.86 |   55.56 |   76.09 |
+  Header.component.jsx       |   59.26 |    42.86 |   38.46 |   59.26 | 37,51-63,71,84-101
+  Header.styles.js           |     100 |      100 |     100 |     100 |
+  index.js                   |       0 |        0 |       0 |       0 |
+ components/Layout           |     100 |      100 |     100 |     100 |
+  Layout.component.jsx       |     100 |      100 |     100 |     100 |
+  index.js                   |       0 |        0 |       0 |       0 |
+ components/Private          |     100 |       50 |     100 |     100 |
+  Private.component.jsx      |     100 |       50 |     100 |     100 | 11
+  index.js                   |       0 |        0 |       0 |       0 |
+ components/Routes           |     100 |       75 |     100 |     100 |
+  Routes.component.jsx       |     100 |       75 |     100 |     100 | 14
+  index.js                   |       0 |        0 |       0 |       0 |
+ components/VideoCard        |   90.91 |       75 |   84.62 |   90.91 |
+  VideoCard.component.jsx    |   85.71 |    85.71 |      75 |   85.71 | 40,51-52
+  VideoCard.styles.js        |     100 |       50 |     100 |     100 | 31-59
+  index.js                   |       0 |        0 |       0 |       0 |
+ pages/Favs                  |      80 |      100 |   66.67 |      80 |
+  Favs.page.jsx              |      75 |      100 |   66.67 |      75 | 14-15
+  Favs.styles.js             |     100 |      100 |     100 |     100 |
+  index.js                   |       0 |        0 |       0 |       0 |
+ pages/Home                  |     100 |      100 |     100 |     100 |
+  Home.page.jsx              |     100 |      100 |     100 |     100 |
+  Home.styles.js             |     100 |      100 |     100 |     100 |
+  index.js                   |       0 |        0 |       0 |       0 |
+ pages/Login                 |     100 |      100 |     100 |     100 |
+  Login.page.jsx             |     100 |      100 |     100 |     100 |
+  Login.styles.js            |     100 |      100 |     100 |     100 |
+  index.js                   |       0 |        0 |       0 |       0 |
+ pages/NotFound              |     100 |      100 |     100 |     100 |
+  NotFound.page.jsx          |     100 |      100 |     100 |     100 |
+  index.js                   |       0 |        0 |       0 |       0 |
+ pages/VideoPlayer           |   93.75 |    66.67 |      75 |   93.75 |
+  VideoPlayer.page.jsx       |   88.89 |    66.67 |      75 |   88.89 | 17
+  VideoPlayer.styles.js      |     100 |      100 |     100 |     100 |
+  index.js                   |       0 |        0 |       0 |       0 |
+ providers/GlobalContext     |   94.29 |      100 |     100 |   94.29 |
+  GlobalContext.provider.jsx |   94.29 |      100 |     100 |   94.29 | 111-112
+  index.js                   |       0 |        0 |       0 |       0 |
+ utils                       |      90 |      100 |     100 |      90 |
+  constants.js               |     100 |      100 |     100 |     100 |
+  fns.js                     |     100 |      100 |     100 |     100 |
+  globalStyle.js             |     100 |      100 |     100 |     100 |
+  storage.js                 |   71.43 |      100 |     100 |   71.43 | 7-8
+-----------------------------|---------|----------|---------|---------|--------------------
+
+Test Suites: 8 passed, 8 total
+Tests:       29 passed, 29 total
+Snapshots:   8 passed, 8 total
+Time:        4.789 s
+Ran all test suites.

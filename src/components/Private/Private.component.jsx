@@ -1,14 +1,12 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-import { useAuth } from '../../providers/Auth';
+import { storage } from '../../utils/storage';
+import { AUTH_STORAGE_KEY } from '../../utils/constants';
 
-function Private({ children, ...rest }) {
-  const { authenticated } = useAuth();
+export default function Private({ children }) {
+  const urlHistory = useHistory();
+  const isUserAuthenticated = storage.get(AUTH_STORAGE_KEY);
 
-  return (
-    <Route {...rest} render={() => (authenticated ? children : <Redirect to="/" />)} />
-  );
+  return isUserAuthenticated ? <> {children} </> : urlHistory.push('/login');
 }
-
-export default Private;

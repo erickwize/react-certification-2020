@@ -1,37 +1,31 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-import { useAuth } from '../../providers/Auth';
-import './Home.styles.css';
+import { VideoList, HomeTitle } from './Home.styles';
+import VideoCard from '../../components/VideoCard';
+import { getUsefullData } from '../../utils/fns';
 
-function HomePage() {
+function HomePage({ selectCard, videoList, dispatch }) {
   const history = useHistory();
-  const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
-
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
+  const cardClick = (video) => {
+    selectCard(video);
+    history.push(`/player/${video.videoId}`);
+  };
 
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
+    <section data-testid="yt-videocards">
+      <HomeTitle>Welcome y&#8217;all!</HomeTitle>
+      <p>Search result total: {videoList.length} videos</p>
+      <VideoList>
+        {videoList.map((video) => (
+          <VideoCard
+            key={video.etag}
+            videoData={getUsefullData(video)}
+            cardClick={cardClick}
+            dispatch={dispatch}
+          />
+        ))}
+      </VideoList>
     </section>
   );
 }

@@ -1,39 +1,67 @@
-import React from 'react';
-import { useHistory } from 'react-router';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { loginApi } from '../../api';
 
-import { useAuth } from '../../providers/Auth';
-import './Login.styles.css';
+import {
+  LoginView,
+  LoginForm,
+  Submit,
+  Inputs,
+  Label,
+  LabelWrapper,
+} from './Login.styles';
 
-function LoginPage() {
-  const { login } = useAuth();
+function UserLogin({ dispatch }) {
   const history = useHistory();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  function authenticate(event) {
+  const authenticateUser = async (event) => {
     event.preventDefault();
-    login();
-    history.push('/secret');
-  }
+    if (username && password) {
+      dispatch({
+        type: 'SET_USER_INFO',
+        payload: await loginApi(username, password),
+      });
+      history.push('/');
+    }
+  };
 
   return (
-    <section className="login">
-      <h1>Welcome back!</h1>
-      <form onSubmit={authenticate} className="login-form">
+    <LoginView data-testid="user-login">
+      <LoginForm onSubmit={authenticateUser}>
         <div className="form-group">
-          <label htmlFor="username">
-            <strong>username </strong>
-            <input required type="text" id="username" />
-          </label>
+          <LabelWrapper htmlFor="username">
+            <Label>Username</Label>
+            <Inputs
+              required
+              type="text"
+              id="username"
+              placeholder="username"
+              value={username}
+              onChange={({ target }) => setUsername(target.value)}
+            />
+          </LabelWrapper>
         </div>
         <div className="form-group">
-          <label htmlFor="password">
-            <strong>password </strong>
-            <input required type="password" id="password" />
-          </label>
+          <LabelWrapper htmlFor="password">
+            <Label>Password</Label>
+            <Inputs
+              required
+              type="password"
+              id="password"
+              placeholder="password"
+              value={password}
+              onChange={({ target }) => setPassword(target.value)}
+            />
+          </LabelWrapper>
         </div>
-        <button type="submit">login</button>
-      </form>
-    </section>
+        <Submit data-testid="user-login-button" type="submit">
+          Log in
+        </Submit>
+      </LoginForm>
+    </LoginView>
   );
 }
 
-export default LoginPage;
+export default UserLogin;
