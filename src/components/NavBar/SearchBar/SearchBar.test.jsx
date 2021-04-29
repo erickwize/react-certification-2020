@@ -1,12 +1,36 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import SearchBar from './SearchBar.component';
+import StoreProvider from '../../../store/StoreProvider';
 
-describe('SearchBar', () => {
-  render(<SearchBar />);
+describe('Search Bar', () => {
+    it('renders', () => {
+        render(
+            <StoreProvider>
+                <SearchBar/>
+            </StoreProvider>
+        )
+        const searchBar = screen.getByPlaceholderText("Search")
+        expect(searchBar).toBeInTheDocument();
+    });
 
-  test('Present', () => {
-    const i = screen.getByPlaceholderText(/Search/i);
-    expect(i).toBeInTheDocument();
-  });
-});
+    it('starts with wizeline value', () => {
+        render(
+            <StoreProvider>
+                <SearchBar/>
+            </StoreProvider>
+        )
+        const searchBar = screen.getByPlaceholderText("Search")
+        expect(searchBar.value).toBe("wizeline");
+    });
+
+    it('matches snapshot', () => {
+        render(
+            <StoreProvider>
+                <SearchBar/>
+            </StoreProvider>
+        )
+        const searchBar = screen.getByPlaceholderText("Search")
+        expect(searchBar).toMatchSnapshot();
+    });
+})

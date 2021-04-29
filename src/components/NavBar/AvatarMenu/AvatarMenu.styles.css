@@ -3,12 +3,16 @@
     color: rgba(255, 255, 255, 0.4);
     margin-left: 10px;
     margin-right: 10px;
+    border-radius: 50%;
+    width: 40px;
 }
 
 @media only screen and (max-width: 650px) {
     .avatarMenu{
         position: absolute;
         right: 8px;
+        top: 4px;
+        width: 35px;
     }
 }
 

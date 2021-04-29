@@ -1,13 +1,47 @@
-.home-link {
-  font-size: 1rem;
-  text-decoration: none;
+.not-found h4{
+  color: red;
+  font-size: 100px;
   display: block;
-  text-align: right;
-  padding: 0.2rem 0.3rem;
+  margin: auto;
+  text-align: center;
+}
+.not-found h5{
+  color: black;
+  display: block;
+  margin: auto;
+  font-size: 25px;
+  text-align: center;
 }
 
-.home-link::before {
+.not-found .home-link {
+  color: black;
+  display: block;
+  margin: auto;
+  font-size: 25px;
+  text-align: center;
+}
+
+.not-found .home-link::before {
   content: '←';
   padding-right: 0.2rem;
   display: inline-block;
+}
+
+.not-found .image404 img{
+  display: block;
+  margin: auto;
+  width: 200px;
+  margin-top: 40px;
+}
+
+.dark404 h5{
+  color: rgb(220, 220, 220);
+}
+
+.dark404 .home-link {
+  color: rgb(220, 220, 220);
+}
+
+.dark404 .home-link::before {
+  color: rgb(220, 220, 220);
 }

@@ -47,11 +47,11 @@ hr {
 
 
 .colorWhite{
-  color: white;
+  color: white ;
 }
 
 .colorGray{
-  color: gray;
+  color: gray !important;
 }
 
 .colorBlack{
@@ -71,7 +71,7 @@ hr {
 }
 
 .colorSemiGray{
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   border: none;
-  box-shadow: none;
+  box-shadow: #cec7bd;
 }

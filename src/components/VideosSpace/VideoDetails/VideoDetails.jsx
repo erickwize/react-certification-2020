@@ -10,7 +10,7 @@ const VideoDetails = props => {
             <VideoFrame videoId={props.videoId}/>
             <RelatedVideos videoId={props.videoId}/>
             <div className="belowSection">
-                <FooterVideo videoId={props.videoId}/>
+                <FooterVideo videoId={props.videoId} imageUrl={props.imageUrl}/>
                 <CommentsSection/>
             </div>
         </div>

@@ -12,8 +12,17 @@
 .videoDetailsHolder{
     display: block;
     margin-bottom: 20px;
-
 }
+
+.videoDetailsHolder button{
+    float: right;
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid gray;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .FVTitle{
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
@@ -27,10 +36,11 @@
 .FVheading{
     display: flex;
     justify-content: space-between;
+    width: 99%;
 }
 .FVPublished{
     display: inline-block;
-    right: 0;
+    right: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 15px;
@@ -53,3 +63,18 @@
 .FVSeeMore{
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 1000px) {
+    .belowSection{
+        justify-self: stretch;
+        align-self: stretch;
+        width: 100%;
+        height: 100%;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+    
+  }

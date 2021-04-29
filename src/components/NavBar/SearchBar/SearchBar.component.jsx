@@ -1,35 +1,24 @@
 import React, { useState } from 'react';
 import { useDispatch } from '../../../store/StoreProvider';
 import { types } from '../../../store/StoreReducer';
-
-import key from '../../../mockFiles/key.json';
+import { getVideosByQuery } from '../../../store/dispatchCalls';
+import {useHistory} from 'react-router';
 import './SearchBar.styles.css';
 
 export default function SearchBar(){
+    const history = useHistory();
     const dispatch = useDispatch();
     const [value, setValue] = useState('wizeline');
 
     const updateValue = e => { setValue(e.target.value)}
 
-    function updateVideos (){
-        fetch(`https://www.googleapis.com/youtube/v3/search?key=${key.key}&type=video&part=snippet&maxResults=10&q=${value}`)
-        .then(resp => resp.json())
-        .then(response => dispatch({
-            type: types.setVideos,
-            payload: {
-                videos: response.items
-            }
-        }))
-        .catch(error => console.log(error))
-    }
+    const updateVideos = () => getVideosByQuery(value, dispatch);
 
-    const updateSection = () => {
-        dispatch({ type: types.setSectionToMain });
-        
-    }
+    const updateSection = () => dispatch({ type: types.setSectionToMain });
 
     const onSubmitHandle = e =>{
         e.preventDefault();
+        history.push('/');
         updateVideos();
         updateSection();
     }

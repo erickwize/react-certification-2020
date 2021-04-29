@@ -6,13 +6,13 @@ import VideoDetails from './VideoDetails/VideoDetails';
 
 const VideosSpace = () => {
     const {section} = useStore();
-    const {main, videoId} = section;
+    const {main, videoId, imageUrl} = section;
     return(
         <div>
         {
             main 
             ? <VideoGrid/>
-            : <VideoDetails videoId={videoId}/>
+            : <VideoDetails videoId={videoId} imageUrl={imageUrl}/>
         }
         </div>
     );

@@ -8,7 +8,6 @@ export default function ToggleSwitch(){
     const dispatch = useDispatch();
 
     function saludar(e){
-        console.log(store);
         if(store.theme === "light"){
             dispatch({type: types.setThemeDark});
         }else{

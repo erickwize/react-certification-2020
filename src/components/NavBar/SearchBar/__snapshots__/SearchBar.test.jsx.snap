@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Bar matches snapshot 1`] = `
+<input
+  class="searchTxt"
+  placeholder="Search"
+  type="text"
+  value="wizeline"
+/>
+`;

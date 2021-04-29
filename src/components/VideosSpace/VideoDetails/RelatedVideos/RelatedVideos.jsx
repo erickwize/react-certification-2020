@@ -10,7 +10,7 @@ const RelatedVideos = props => {
         <span className="relatedVideos">
             {relatedVideos.map(element => 
                 element ? element.snippet ? <RelatedVideoBox
-                image={element.snippet.thumbnails.medium.url}
+                imageUrl={element.snippet.thumbnails.medium.url}
                 videoTitle={element.snippet.title}
                 channelTitle={element.snippet.channelTitle}
                 altProp={element.id.videoId}

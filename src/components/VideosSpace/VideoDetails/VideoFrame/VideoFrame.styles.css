@@ -16,11 +16,21 @@
   grid-row-end: 3;
 }
 
+@media screen and (max-width: 1250px) {
+  .videoDetailsContainer{
+    grid-template-columns: 2% 60% 2% 34% 2%; 
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .videoDetailsContainer{
+    grid-template-columns: 2% 56% 2% 38% 2%;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .videoDetailsContainer{
-    display: grid;
-    width: 100%;
-    grid-template-columns: 2% 50% 2% 44% 2%;
-    grid-template-rows: 3vh 55vh 2vh 28vh 2vh; 
+    grid-template-columns: 2% 94% 2%;
+    grid-template-rows: 3vh 55vh 2vh auto 2vh 1fr; 
   }
 }

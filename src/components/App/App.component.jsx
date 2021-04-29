@@ -26,7 +26,7 @@ function App() {
                 <LoginPage />
               </Route>
               <Private exact path="/secret">
-                <SecretPage />
+                <SecretPage/>
               </Private>
               <Route path="*">
                 <NotFound />

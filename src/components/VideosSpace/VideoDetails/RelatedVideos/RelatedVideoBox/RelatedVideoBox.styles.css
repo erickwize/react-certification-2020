@@ -35,6 +35,11 @@
     font-weight: bold;
 }
 
+@media only screen and (max-width: 1100px) {
+.RVBchannelTitle{
+    top: 70px;
+}
+}
 @media only screen and (max-width: 1070px) {
     .relatedVideos{
         width: 350px;
@@ -42,7 +47,7 @@
 }
 
 @media only screen and (max-width: 1000px) {
-    .relatedVideos{
-        width: 450px;
+    .relatedVideoBox{
+        display: inline-block;
     }
 }
