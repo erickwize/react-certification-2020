@@ -1,7 +1,15 @@
 import React from 'react';
 import { screen, cleanup, render, fireEvent } from '@testing-library/react';
 import { act } from '@testing-library/react-hooks';
+import { useHistory } from 'react-router-dom';
+
 import HeaderMenu from '../components/Header';
+
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: jest.fn(),
+  }),
+}));
 
 afterEach(() => {
   cleanup();

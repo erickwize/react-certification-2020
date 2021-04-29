@@ -1,7 +1,15 @@
 import React from 'react';
 import { screen, cleanup, render, fireEvent } from '@testing-library/react';
+import { useHistory } from 'react-router-dom';
+
 import HomePage from '../pages/Home';
 import VideoMock from '../utils/mock/youtube-videos-mock.json';
+
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: jest.fn(),
+  }),
+}));
 
 afterEach(() => {
   cleanup();

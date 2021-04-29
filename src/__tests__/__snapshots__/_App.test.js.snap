@@ -80,8 +80,10 @@ Object {
                 <input
                   class="sc-lmoMRL fKJZfF"
                   id="username"
+                  placeholder="username"
                   required=""
                   type="text"
+                  value=""
                 />
               </label>
             </div>
@@ -100,8 +102,10 @@ Object {
                 <input
                   class="sc-lmoMRL fKJZfF"
                   id="password"
+                  placeholder="password"
                   required=""
                   type="password"
+                  value=""
                 />
               </label>
             </div>
@@ -193,8 +197,10 @@ Object {
               <input
                 class="sc-lmoMRL fKJZfF"
                 id="username"
+                placeholder="username"
                 required=""
                 type="text"
+                value=""
               />
             </label>
           </div>
@@ -213,8 +219,10 @@ Object {
               <input
                 class="sc-lmoMRL fKJZfF"
                 id="password"
+                placeholder="password"
                 required=""
                 type="password"
+                value=""
               />
             </label>
           </div>

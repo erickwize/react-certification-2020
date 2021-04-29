@@ -1,6 +1,20 @@
 import React from 'react';
 import { cleanup, render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { useHistory } from 'react-router-dom';
 import Login from '../pages/Login';
+
+const dispatch = jest.fn();
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: jest.fn(),
+  }),
+}));
+
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: jest.fn(),
+  }),
+}));
 
 afterEach(() => {
   cleanup();
@@ -15,8 +29,7 @@ it('Should render Login', () => {
 });
 
 it('Login api not called', () => {
-  const dispatch = jest.fn();
-  const login = render(<Login dispatch={dispatch} />);
+  render(<Login dispatch={dispatch} />);
 
   const userLoginButton = screen.getByTestId('user-login-button');
   expect(userLoginButton).toBeInTheDocument();
@@ -25,8 +38,8 @@ it('Login api not called', () => {
 });
 
 it('Do login', async () => {
-  const dispatch = jest.fn();
-  const login = render(<Login dispatch={dispatch} />);
+  const spy = jest.spyOn(document, 'getElementById');
+  render(<Login dispatch={dispatch} />);
 
   const username = screen.getByLabelText('Username');
   fireEvent.change(username, { target: { value: 'wizeline' } });
@@ -36,15 +49,4 @@ it('Do login', async () => {
   expect(password.value).toBe('Rocks!');
   const userLoginButton = screen.getByTestId('user-login-button');
   fireEvent.click(userLoginButton);
-  await waitFor(() =>
-    expect(dispatch).toHaveBeenCalledWith({
-      payload: {
-        avatarUrl:
-          'https://media.glassdoor.com/sqll/868055/wizeline-squarelogo-1473976610815.png',
-        id: '123',
-        name: 'Wizeline',
-      },
-      type: 'SET_USER_INFO',
-    })
-  );
-});
+})
