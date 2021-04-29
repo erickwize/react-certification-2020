@@ -1,5 +1,5 @@
-import React from 'react';
-import { useHistory } from 'react-router';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { loginApi } from '../../api';
 
 import {
@@ -13,17 +13,18 @@ import {
 
 function UserLogin({ dispatch }) {
   const history = useHistory();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const authenticateUser = async (event) => {
     event.preventDefault();
-    const username = document.getElementById('username');
-    const password = document.getElementById('password');
-    dispatch({
-      type: 'SET_USER_INFO',
-      payload: await loginApi(username.value, password.value),
-    });
-    /* istanbul ignore next */
-    history.push('/');
+    if (username && password) {
+      dispatch({
+        type: 'SET_USER_INFO',
+        payload: await loginApi(username, password),
+      });
+      history.push('/');
+    }
   };
 
   return (
@@ -32,13 +33,27 @@ function UserLogin({ dispatch }) {
         <div className="form-group">
           <LabelWrapper htmlFor="username">
             <Label>Username</Label>
-            <Inputs required type="text" id="username" />
+            <Inputs
+              required
+              type="text"
+              id="username"
+              placeholder="username"
+              value={username}
+              onChange={({ target }) => setUsername(target.value)}
+            />
           </LabelWrapper>
         </div>
         <div className="form-group">
           <LabelWrapper htmlFor="password">
             <Label>Password</Label>
-            <Inputs required type="password" id="password" />
+            <Inputs
+              required
+              type="password"
+              id="password"
+              placeholder="password"
+              value={password}
+              onChange={({ target }) => setPassword(target.value)}
+            />
           </LabelWrapper>
         </div>
         <Submit data-testid="user-login-button" type="submit">
