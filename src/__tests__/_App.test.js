@@ -76,7 +76,7 @@ it('Should render App Header', () => {
   fireEvent.keyDown(SearchInput, { key: 'Enter', code: 'Enter' });
 });
 
-test('Test useVideoInfo Hook', () => {
+it('Test useVideoInfo Hook', () => {
   const { result } = renderHook(() => useVideoInfo());
   expect(result.current.video).toEqual({});
   expect(typeof result.current.updateVideoInfo).toBe('function');
@@ -87,7 +87,7 @@ test('Test useVideoInfo Hook', () => {
   expect(result.current.video).toEqual(videoDataMock);
 });
 
-test('Test useVideList Hook', () => {
+it('Test useVideList Hook', () => {
   const { result } = renderHook(() => useVideList());
   expect(result.current.videoList).toEqual([]);
   expect(typeof result.current.updateVideoList).toBe('function');
@@ -102,7 +102,7 @@ test('Test useVideList Hook', () => {
   expect(result.current.videoList).toEqual(videoList);
 });
 
-test('Test Reducer function', () => {
+it('Test Reducer function', () => {
   expect(reducer(initalState, {type: 'SET_HISTORY', payload: 'Shinee' })).toEqual({
     ...initalState,
     history: 'Shinee',
@@ -137,6 +137,12 @@ test('Test Reducer function', () => {
         'https://media.glassdoor.com/sqll/868055/wizeline-squarelogo-1473976610815.png',
     }
   });
+})
 
-  expect(reducer(initalState, { type: 'UNKOWN_ACTION' }));
+it('Test Reducer: unkown action', () => {
+  try {
+    expect(reducer(initalState, { type: 'UNKOWN_ACTION' }));
+  } catch (e) {
+    expect(e.message).toBe('ACTION NOT RECOGNIZED');
+  }
 })

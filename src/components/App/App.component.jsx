@@ -16,12 +16,16 @@ function App() {
   const { videoList, updateVideoList } = useVideList([]);
   const { video, updateVideoInfo } = useVideoInfo({});
   const [state, dispatch] = useReducer(reducer, initalState);
-
   const doSearch = async (keyword) => {
     dispatch({ type: 'SET_SEARCH_KEYWORD', payload: keyword });
     updateVideoInfo({});
-    const search = await fetchSearchVideos(keyword);
-    updateVideoList(search.items);
+    try {
+      const search = await fetchSearchVideos(keyword);
+      updateVideoList(search ? search.items : []);
+    } catch (e) {
+      updateVideoList([]);
+      console.info('stuff', videoList);
+    }
   };
 
   const selectCard = (videoInfo) => {
