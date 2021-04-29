@@ -14,7 +14,7 @@ function VideoFavoriteDetail() {
   let favObject = [];
   const favStorage = window.localStorage;
   favObject = JSON.parse(favStorage.getItem('favorites')) || [];
-  console.log('favorites', favObject);
+  // console.log('favorites', favObject);
 
   return (
     <Wrapper>

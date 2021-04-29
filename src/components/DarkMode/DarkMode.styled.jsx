@@ -9,6 +9,8 @@ const Switch = styled.div`
   display: inline-block;
   position: relative;
   margin: 0 20px;
+  transform: translateY(-50%);
+  top: 50%;
 `;
 const Track = styled.div`
   display: block;

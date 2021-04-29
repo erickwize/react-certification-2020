@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  width: 100%;
+  justify-content: center;
   padding: 10px;
   @media (max-width: 500px) {
     width: 100%;
@@ -15,7 +15,7 @@ export const Title = styled.p`
 export const Thumbnail = styled.img`
   border-radius: 15px;
   width: 100%;
-  max-height: 99px;
+  max-height: 50%;
   object-fit: cover;
   @media (max-width: 500px) {
     max-height: 140px;
@@ -28,4 +28,8 @@ export const Related = styled.div`
   @media (max-width: 500px) {
     width: 100%;
   }
+`;
+export const MainTitle = styled.h3`
+  padding-left: 20px;
+  color: ${(props) => props.theme.text || 'red'};
 `;

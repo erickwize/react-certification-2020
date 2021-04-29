@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  width: 100%;
+  justify-content: center;
   padding: 10px;
   @media (max-width: 500px) {
     width: 100%;

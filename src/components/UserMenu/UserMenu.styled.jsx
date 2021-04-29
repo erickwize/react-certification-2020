@@ -8,7 +8,7 @@ const Avatar = styled.div`
   height: 40px;
   width: 40px;
   border-radius: 100px;
-  background-color: #409287;
+  background-color: ${(props) => props.theme.contrast || 'red'};
   box-shadow: 0 0 10px #ffffff;
   cursor: pointer;
   &.logged {

@@ -26,6 +26,7 @@ function UserMenu() {
     <Wrapper>
       <Avatar
         className={`${authenticated ? 'logged' : 'notlogged'}`}
+        theme={globalContext.colors}
         onClick={onClickHandler}
       />
     </Wrapper>

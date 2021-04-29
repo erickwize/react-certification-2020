@@ -1,17 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Wrapper, Title, Iframe, Favorite, InfoWrapper } from './VideoPlayer.styled';
+import {
+  Wrapper,
+  Title,
+  Text,
+  Iframe,
+  Favorite,
+  InfoWrapper,
+} from './VideoPlayer.styled';
 import { GlobalContext } from '../../context/GlobalContext';
 import { useAuth } from '../../providers/Auth';
 
 function VideoPlayer() {
   const globalContext = useContext(GlobalContext);
   const { authenticated } = useAuth();
-  console.log('VideoPlayer', `https://www.youtube.com/embed/${globalContext.vidId}`);
+  // console.log('VideoPlayer', `https://www.youtube.com/embed/${globalContext.vidId}`);
   let text = '';
   let image = '';
+  let descr = '';
   if (typeof globalContext.vidObject.snippet !== 'undefined') {
     text = globalContext.vidObject.snippet.title.replace(/&#39;/g, "'");
     image = globalContext.vidObject.snippet.thumbnails.high;
+    descr = globalContext.vidObject.snippet.description;
   }
 
   let favObject = [];
@@ -27,7 +36,7 @@ function VideoPlayer() {
 
   const favStorage = window.localStorage;
   favObject = JSON.parse(favStorage.getItem('favorites')) || [];
-  console.log('favorites', favObject);
+  // console.log('favorites', favObject);
   const [isFav, setIsFav] = useState(false);
   useEffect(() => {
     if (favObject) {
@@ -39,7 +48,7 @@ function VideoPlayer() {
   }, [globalContext.vidId]);
 
   const onClickStarHandler = () => {
-    console.log(favObject);
+    // console.log(favObject);
     if (isFav) {
       removeFavorite(globalContext.vidId);
       favStorage.setItem('favorites', JSON.stringify(favObject));
@@ -65,7 +74,10 @@ function VideoPlayer() {
           />
           <InfoWrapper>
             {authenticated && <Favorite onClick={onClickStarHandler} active={isFav} />}
-            <Title>{text}</Title>
+            <Title theme={globalContext.colors}>{text}</Title>
+          </InfoWrapper>
+          <InfoWrapper>
+            <Text theme={globalContext.colors}>{descr}</Text>
           </InfoWrapper>
         </>
       )}

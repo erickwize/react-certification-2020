@@ -27,8 +27,14 @@ function Search() {
         value={localQuery}
         onChange={onChangeHandler}
         onKeyPress={onKeyPressHandler}
+        theme={globalContext.colors}
+        placeholder="Search"
       />
-      <Button onClick={onClickHandler}>🔍</Button>
+      <Button onClick={onClickHandler}>
+        <span role="img" aria-label="search emoji">
+          🔍
+        </span>
+      </Button>
     </Wrapper>
   );
 }

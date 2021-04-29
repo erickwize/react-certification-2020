@@ -9,15 +9,25 @@ function FavoritesHome() {
   favObject = JSON.parse(favStorage.getItem('favorites'));
 
   const items = favObject;
-  console.log('FavoritesHome', items);
+  // console.log('FavoritesHome', items);
   return (
     <Wrapper>
       {!items && (
         <>
-          <Title>Ooooops! seems like this list is empty 🤭</Title>
+          <Title>
+            Ooooops! seems like this list is empty{' '}
+            <span role="img" aria-label="oops emoji">
+              🤭
+            </span>
+          </Title>
 
           <Title>
-            <Link to="/">Go watch some videos 📺</Link>
+            <Link to="/">
+              Go watch some videos{' '}
+              <span role="img" aria-label="tv emoji">
+                📺
+              </span>
+            </Link>
           </Title>
         </>
       )}

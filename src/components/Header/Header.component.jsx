@@ -4,7 +4,7 @@ import Search from '../Search';
 // import MainMenu from '../MainMenu';
 import DarkMode from '../DarkMode';
 import UserMenu from '../UserMenu';
-import { HeaderWrapper, Left, Right, Favorite } from './Header.styled';
+import { HeaderWrapper, Left, Right, LinkText } from './Header.styled';
 import { GlobalContext } from '../../context/GlobalContext';
 import { useAuth } from '../../providers/Auth';
 
@@ -16,11 +16,11 @@ function Header() {
     <HeaderWrapper theme={globalContext.colors}>
       <Left>
         <Link to="/">
-          <span>🏠</span>
+          <LinkText>Home</LinkText>
         </Link>
         {authenticated && (
           <Link to="/favorites">
-            <Favorite>⭐</Favorite>
+            <LinkText>Favorites</LinkText>
           </Link>
         )}
         <Search />
