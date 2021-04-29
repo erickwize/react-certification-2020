@@ -1,0 +1,42 @@
+.searchBar{
+    display: block;
+    position: relative;
+    background-color: rgba(255,255,255,0.25);
+    min-width: 20%;
+    height: 4.5vh;
+    border-radius: 8px;
+    left: 6px;
+}
+
+.searchLogo{
+    display: inline-flex;
+    justify-content: center;
+    height: 4.5vh;
+    line-height: 4.5vh;
+    width: 30px;
+}
+.searchIcon{
+    display: block;
+    position: relative;
+    line-height: 30px;
+    top: 5px;
+    left: 2px;
+    color: #f0efef;
+
+}
+
+.searchTxt{
+    height: 4.5vh;
+    border: none;
+    outline: none;
+    background: none;
+    color: #f0efef;
+    line-height: 3.5vh;
+}
+
+@media only screen and (max-width: 850px) {
+    .searchBar{
+        min-width: 45%;
+        height: 34px;
+    }
+}

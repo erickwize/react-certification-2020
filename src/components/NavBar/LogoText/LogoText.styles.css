@@ -1,0 +1,25 @@
+.logoBox{
+    width: 20%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.logoBox h3{
+    color: #f0efef;
+    line-height: 7vh;
+    font-size: 33px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.logoBox img{
+    width: 50px;
+    margin-left: 3px;
+}
+
+@media only screen and (max-width: 650px) {
+    .logoBox{
+        display: none;
+    }
+}

@@ -1,0 +1,59 @@
+.burgerMenu{
+    margin: 12px;
+}
+.burgerMenu .line{
+    align-self: flex-start;
+    width: 25px;
+    height: 3px;
+    background-color: #f0efef;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.xForm .line1{
+    transform: translate(0px, 4px) rotate(45deg);
+}
+
+.xForm .line2{
+    display: none;
+}
+
+.xForm .line3{
+    transform: translate(0px, -4px) rotate(-45deg);
+}
+
+.sideBar{
+    display: block;
+    background-color: #522b43;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 250px;
+    z-index: 5;
+    height: calc(100vh - 45px);
+    transition: 0.4s;
+}
+
+.hiddenSideBar{
+    left: -250px;
+}
+
+.sideBar span{
+    color: white;
+    display: block;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin: auto;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sideBar span:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}

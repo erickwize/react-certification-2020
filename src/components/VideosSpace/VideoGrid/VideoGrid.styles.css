@@ -1,0 +1,10 @@
+.videoGrid{
+    max-width: 1350px;
+    margin: auto;
+    display: flex;
+    flex: 1 1 0%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-around;
+
+}

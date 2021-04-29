@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Text renders correctly 1`] = `
+<h3>
+  Wize
+</h3>
+`;
+
+exports[`Logo Text renders correctly 2`] = `
+<img
+  alt="imagen"
+  src="tube.png"
+/>
+`;

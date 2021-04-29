@@ -1,0 +1,21 @@
+.relatedVideos{
+    justify-self: stretch;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+@media screen and (max-width: 1000px) {
+    .relatedVideos{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 6;
+        grid-row-end: 7;
+        display: inline-block;
+    }
+    
+  }
