@@ -58,66 +58,12 @@ Object {
         class="container"
         style="background: rgb(255, 255, 255);"
       >
-        <div
-          class="sc-iwyYcG eTwARz"
-          data-testid="user-login"
+        <h3
+          data-testid="loading"
         >
-          <form
-            class="sc-cxFLnm jYsNLu"
-          >
-            <div
-              class="form-group"
-            >
-              <label
-                class="sc-iJuUWI fYFISK"
-                for="username"
-              >
-                <p
-                  class="sc-giIncl jxdTZO"
-                >
-                  Username
-                </p>
-                <input
-                  class="sc-lmoMRL fKJZfF"
-                  id="username"
-                  placeholder="username"
-                  required=""
-                  type="text"
-                  value=""
-                />
-              </label>
-            </div>
-            <div
-              class="form-group"
-            >
-              <label
-                class="sc-iJuUWI fYFISK"
-                for="password"
-              >
-                <p
-                  class="sc-giIncl jxdTZO"
-                >
-                  Password
-                </p>
-                <input
-                  class="sc-lmoMRL fKJZfF"
-                  id="password"
-                  placeholder="password"
-                  required=""
-                  type="password"
-                  value=""
-                />
-              </label>
-            </div>
-            <button
-              class="sc-ezrdKe cgZrpU"
-              data-testid="user-login-button"
-              type="submit"
-            >
-              Log in
-            </button>
-          </form>
-        </div>
+          <br />
+          Loading...
+        </h3>
       </main>
     </div>
   </body>,
@@ -175,66 +121,12 @@ Object {
       class="container"
       style="background: rgb(255, 255, 255);"
     >
-      <div
-        class="sc-iwyYcG eTwARz"
-        data-testid="user-login"
+      <h3
+        data-testid="loading"
       >
-        <form
-          class="sc-cxFLnm jYsNLu"
-        >
-          <div
-            class="form-group"
-          >
-            <label
-              class="sc-iJuUWI fYFISK"
-              for="username"
-            >
-              <p
-                class="sc-giIncl jxdTZO"
-              >
-                Username
-              </p>
-              <input
-                class="sc-lmoMRL fKJZfF"
-                id="username"
-                placeholder="username"
-                required=""
-                type="text"
-                value=""
-              />
-            </label>
-          </div>
-          <div
-            class="form-group"
-          >
-            <label
-              class="sc-iJuUWI fYFISK"
-              for="password"
-            >
-              <p
-                class="sc-giIncl jxdTZO"
-              >
-                Password
-              </p>
-              <input
-                class="sc-lmoMRL fKJZfF"
-                id="password"
-                placeholder="password"
-                required=""
-                type="password"
-                value=""
-              />
-            </label>
-          </div>
-          <button
-            class="sc-ezrdKe cgZrpU"
-            data-testid="user-login-button"
-            type="submit"
-          >
-            Log in
-          </button>
-        </form>
-      </div>
+        <br />
+        Loading...
+      </h3>
     </main>
   </div>,
   "debug": [Function],

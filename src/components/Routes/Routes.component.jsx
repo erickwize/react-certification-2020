@@ -1,8 +1,5 @@
 import React from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
-
-import { storage } from '../../utils/storage';
-import { AUTH_STORAGE_KEY } from '../../utils/constants';
+import { Switch, Route } from 'react-router-dom';
 
 import HomePage from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
@@ -10,14 +7,11 @@ import VideoPlayer from '../../pages/VideoPlayer';
 import UserLogin from '../../pages/Login';
 import UserFavorites from '../../pages/Favs';
 
+import Private from '../Private';
+// import VideoComments from '../VideoComments';
+
 export default function Routes({ selectCard, videoList, video, dispatch, favorites }) {
-  const loading = !videoList.length;
-  const history = useHistory();
-
-  const isUserAuthenticated = (component) => {
-    return storage.get(AUTH_STORAGE_KEY) ? <> {component} </> : history.push(`/login`);
-  };
-
+  const loading = videoList ? !videoList.length : true;
   return (
     <>
       <Switch>
@@ -43,19 +37,19 @@ export default function Routes({ selectCard, videoList, video, dispatch, favorit
           />
         </Route>
         <Route exact path="/user/:account">
-          {isUserAuthenticated(
+          <Private>
             <UserFavorites selectCard={selectCard} dispatch={dispatch} />
-          )}
+          </Private>
         </Route>
         <Route exact path="/user/player/:videoId">
-          {isUserAuthenticated(
+          <Private>
             <VideoPlayer
               video={video}
               selectCard={selectCard}
               relatedVideos={Object.values(favorites)}
               dispatch={dispatch}
             />
-          )}
+          </Private>
         </Route>
         <Route path="*">
           <NotFound />s
