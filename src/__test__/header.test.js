@@ -100,12 +100,11 @@ describe('Test header components', () => {
     expect(history.location.pathname).toBe('/favorites');
   });
 
-  //   it('Clicking Log out', async () => {
-  //     render(<Header />, { wrapper: allProviders });
+  it('Clicking Log out', async () => {
+    render(<Header />, { wrapper: allProviders });
 
-  //     expect(screen.getByText('Log out'));
-  //     const logOut = screen.getByTitle('singInButton');
-  //     userEvent.click(logOut);
-  //     expect(await screen.findByText('Sign in'));
-  //   });
+    const logOut = screen.getByTitle('singInButton');
+    userEvent.click(logOut);
+    expect(await screen.findByText('Sign in'));
+  });
 });

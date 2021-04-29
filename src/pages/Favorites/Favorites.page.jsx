@@ -3,18 +3,13 @@ import React from 'react';
 import { HomeSection, Title, VideoContainer } from '../Home/Home.styled';
 import { VideoCard, Tooltip } from '../../components';
 import { useGlobalProvider } from '../../store/global/global.provider';
-import { addVideo, removeVideo } from '../../store/global/GlobalAction';
+import { removeVideo } from '../../store/global/GlobalAction';
 
 const Favorites = () => {
   const {
     state: { favoriteVideos, user },
     dispatch,
   } = useGlobalProvider();
-
-  const addFavorite = (newVideo) => {
-    const newFavorites = [...favoriteVideos, newVideo];
-    addVideo(dispatch, newFavorites);
-  };
 
   const removeFavorite = (videoId) => {
     const newFavorites = favoriteVideos.filter((video) => video.videoId !== videoId);
@@ -44,7 +39,7 @@ const Favorites = () => {
                   <VideoCard
                     {...props}
                     data={{ ...video, favoriteVideos, user }}
-                    handlers={{ addFavorite, removeFavorite }}
+                    handlers={{ removeFavorite }}
                   />
                 )}
               </Tooltip>

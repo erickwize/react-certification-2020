@@ -18,7 +18,7 @@ const useVideoList = (videoId) => {
       );
       const data = await response.json();
       // const data = mockVideos;
-      console.log('FETCHING');
+      // console.log('FETCHING');
       setVideosRelated(data);
     } catch (err) {
       setError(true);

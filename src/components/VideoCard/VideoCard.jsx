@@ -24,9 +24,9 @@ function VideoCard({ data, show, handlers, ...props }) {
     if (!user) {
       return history.push({ pathname: '/login', state: { background: location } });
     }
-
     const newVideo = { videoId, title, description, channelTitle, url };
-    const { addFavorite, removeFavorite } = handlers;
+    const { addFavorite = () => {}, removeFavorite } = handlers;
+
     if (favorite) return removeFavorite(videoId);
     addFavorite(newVideo);
   };

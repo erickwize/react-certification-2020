@@ -15,6 +15,8 @@ describe('Testing Home page', () => {
   const history = createMemoryHistory();
 
   const initialState = {
+    favoriteVideos: [],
+    user: { name: 'Wizeline' },
     fetchingVideo: false,
     videoList: mockVideos,
     error: false,
@@ -66,5 +68,31 @@ describe('Testing Home page', () => {
     expect(
       await screen.findByText('Wizeline Guadalajara | Bringing Silicon Valley to Mexico')
     ).toBeInTheDocument();
+  });
+
+  it('Testing visibility favorite button', async () => {
+    render(<HomePage />, {
+      wrapper: allProviders,
+    });
+
+    const iconButtons = screen.queryAllByTitle('FavoriteButton');
+    expect(iconButtons.length).toBe(24);
+
+    const selectedCard = iconButtons[0];
+    expect(selectedCard).not.toBeVisible();
+    // visible
+    userEvent.hover(selectedCard);
+    expect(await screen.queryAllByTitle('FavoriteButton')[0]).toBeVisible();
+    // Adding a video
+    userEvent.click(selectedCard);
+    expect((await screen.findAllByText('Remove')).length).toBe(1);
+
+    // Remove a video
+    userEvent.click(selectedCard);
+    expect((await screen.findAllByText('Add')).length).toBe(24);
+
+    // invisible
+    userEvent.unhover(selectedCard);
+    expect(await screen.queryAllByTitle('FavoriteButton')[0]).not.toBeVisible();
   });
 });

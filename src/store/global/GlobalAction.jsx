@@ -43,7 +43,7 @@ export const fetchVideos = async (dispatch, searchValue, select) => {
     );
     const videoList = await response.json();
     // const videoList = mockVideos;
-    console.log('FETCHING');
+    // console.log('FETCHING');
     dispatch({ type: GLOBAL_ACTIONS.GET_VIDEOS_SUCCESS, videoList });
     if (select) {
       const video = videoList.items[0];

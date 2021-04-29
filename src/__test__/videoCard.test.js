@@ -47,6 +47,9 @@ test('render videoCard component', async () => {
   const description = screen.getByTestId('paragraph');
   expect(description).toBeInTheDocument();
 
+  const iconButton = screen.queryByTitle('FavoriteButton');
+  expect(iconButton).toHaveStyle({ visibility: 'visible' });
+
   // User events
   userEvent.click(cardLink);
   expect(history.location.pathname).toBe('video/7PtYNO6g7eI');

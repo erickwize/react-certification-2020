@@ -67,4 +67,27 @@ describe('Testing Home page', () => {
       )
     ).toBeInTheDocument();
   });
+
+  it('Testing visibility favorite button', async () => {
+    render(<Favorites />, {
+      wrapper: allProviders,
+    });
+
+    // All iconButtons should say 'remove'
+    const iconButtons = screen.queryAllByText('Remove');
+    expect(iconButtons.length).toBe(6);
+
+    const selectedCard = iconButtons[0];
+    expect(selectedCard).not.toBeVisible();
+    // visible
+    userEvent.hover(selectedCard);
+    expect(await screen.queryAllByTitle('FavoriteButton')[0]).toBeVisible();
+    // Deleting a video
+    userEvent.click(selectedCard);
+    expect((await screen.findAllByText('Remove')).length).toBe(5);
+
+    // invisible
+    userEvent.unhover(selectedCard);
+    expect(await screen.queryAllByTitle('FavoriteButton')[0]).not.toBeVisible();
+  });
 });

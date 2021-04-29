@@ -73,6 +73,7 @@ describe('Testing Login form ', () => {
     userEvent.type(screen.getByLabelText('User'), 'wizeline@wizeline.com');
     userEvent.type(screen.getByLabelText('Password'), 'Rocks!');
     userEvent.click(screen.getByRole('button', { name: /Log In/i }));
+    expect(screen.queryByText('Username or password invalid')).not.toBeInTheDocument();
     expect(history.location.pathname).toBe('/');
   });
 });
