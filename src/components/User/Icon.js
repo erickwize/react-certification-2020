@@ -38,6 +38,7 @@ const Icon = React.memo(() => {
         updateLogin()
         setOn(true)
       }
+      dispatch({ type: 'OPEN_MENU', payload: false })
     }
     if (!state.user.id) {
       setIconUser(
