@@ -1,5 +1,5 @@
 import React, { useContext, useCallback } from 'react'
-import { Context } from '../../context/context'
+import { Context } from '../../providers/Context/context'
 import StyledToggle from './Toggle.styled'
 
 const Toggle = React.memo(() => {

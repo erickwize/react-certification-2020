@@ -2,7 +2,7 @@
 
 exports[`Testing Videodetailes component Renders Videodetailes without crashing 1`] = `
 <div
-  className="sc-bdvvaa gqXjVR viewdetailes"
+  className="sc-bdvvaa fduyJp viewdetailes"
 >
   <iframe
     className="iframe"
@@ -11,8 +11,12 @@ exports[`Testing Videodetailes component Renders Videodetailes without crashing 
     width="100%"
   />
   <div
-    className="iframeTitle"
-  />
+    className="statusCard"
+  >
+    <div
+      className="iframeTitle"
+    />
+  </div>
   <div
     className="iframeDescription"
   />

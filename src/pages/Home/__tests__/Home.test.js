@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Context } from '../../../context/context'
+import { Context } from '../../../providers/Context/context'
 import Home from '../Home.page'
 
 const jsonFile = require('../../../utils/assets/youtube-videos-mock.json')

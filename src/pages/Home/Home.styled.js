@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const StyledHomepage = styled.div.attrs({
+const StyledPrivate = styled.div.attrs({
   role: 'home',
 })`
   padding: 1em;
@@ -23,4 +23,4 @@ const StyledHomepage = styled.div.attrs({
     flex-direction: row;
   }
 `
-export default StyledHomepage
+export default StyledPrivate

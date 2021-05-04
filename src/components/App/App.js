@@ -1,11 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { ContextProvider } from '../../context/context'
-import AuthProvider from '../../providers/Auth'
-import Home from '../../pages/Home/Home.page'
-import SecretPage from '../../pages/Secret'
-import Private from '../Private/Private'
+import { ContextProvider } from '../../providers/Context/context'
+import { AuthProvider } from '../../providers/Auth/auth'
 import Layout from '../Layout/Layout'
+import routes from '../../setup/routes'
 
 const App = React.memo(() => (
   <BrowserRouter>
@@ -13,18 +11,9 @@ const App = React.memo(() => (
       <ContextProvider>
         <Layout>
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/login">
-              <Home />
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route path="*">
-              <Home />
-            </Route>
+            {routes.map((route) => (
+              <Route {...route} key={`${route}_key`} />
+            ))}
           </Switch>
         </Layout>
       </ContextProvider>

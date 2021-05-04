@@ -1,19 +1,10 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react'
-
-import { AUTH_STORAGE_KEY } from '../../utils/constants'
+import React, { useState, useEffect, createContext, useCallback } from 'react'
+import { AUTH_STORAGE_KEY, AUTH_STORAGE_USER } from '../../utils/constants'
 import { storage } from '../../utils/storage'
 
-const AuthContext = React.createContext(null)
+export const AuthContext = createContext(null)
 
-function useAuth() {
-  const context = useContext(AuthContext)
-  if (!context) {
-    throw new Error(`Can't use "useAuth" without an AuthProvider!`)
-  }
-  return context
-}
-
-function AuthProvider({ children }) {
+export const AuthProvider = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false)
 
   useEffect(() => {
@@ -23,14 +14,16 @@ function AuthProvider({ children }) {
     setAuthenticated(isAuthenticated)
   }, [])
 
-  const login = useCallback(() => {
+  const login = useCallback((user) => {
     setAuthenticated(true)
     storage.set(AUTH_STORAGE_KEY, true)
+    storage.set(AUTH_STORAGE_USER, user)
   }, [])
 
-  const logout = useCallback(() => {
+  const logout = useCallback((user) => {
     setAuthenticated(false)
     storage.set(AUTH_STORAGE_KEY, false)
+    storage.set(AUTH_STORAGE_USER, user)
   }, [])
 
   return (
@@ -40,5 +33,5 @@ function AuthProvider({ children }) {
   )
 }
 
-export { useAuth }
+// export { useAuth }
 export default AuthProvider

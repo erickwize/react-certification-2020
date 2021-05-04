@@ -5,16 +5,12 @@ exports[`Testing Menu component Renders Menu without crashing 1`] = `
   className="sc-bdvvaa bYAoZE menu"
 >
   <a
+    className="homeLink"
     href="/"
     onClick={[Function]}
   >
     Home
   </a>
-  <a
-    href="/"
-    onClick={[Function]}
-  >
-    Favorites
-  </a>
+  <div />
 </div>
 `;
