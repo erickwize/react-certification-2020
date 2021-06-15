@@ -1,0 +1,23 @@
+.card {
+    height: 200px;
+    width:200px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin: 10px;
+    flex-basis: calc(20% - 22px);
+  }
+  
+  .card > h2 {
+    color: black;
+    font-size: 1em;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+  }
